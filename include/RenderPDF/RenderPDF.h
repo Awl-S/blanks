@@ -4,12 +4,19 @@
 #include <vector>
 #include <hpdf.h>
 #include <filesystem>
+#include <cmath>
 #include "../struct/cfm.h"
 #include "../struct/zgt.h"
 #include "../struct/nbr.h"
 #include "../struct/point_data.h"
 #include "../struct/tbl.h"
 
+/**
+ * @class RenderPDF
+ * @brief Класс для генерации PDF-файла.
+ *
+ * Класс RenderPDF предоставляет функциональность для создания и рендеринга PDF-файлов.
+ */
 class RenderPDF {
 
     HPDF_Font loadFont(const std::string& fontPath);
@@ -50,22 +57,20 @@ public:
     ~RenderPDF();
 
 private:
-    const double PI = 3.14159265358979323846;
-    double margitText = 1;
-    bool new_page = false;
-    std::filesystem::path fontPath_;
+    const double PI = 3.14159265358979323846; /**< Значение числа Пи */
+    double margitText = 1; /**< Отступ для текста */
+    bool new_page = false; /**< Флаг новой страницы */
+    std::filesystem::path fontPath_; /**< Путь к файлу шрифта */
 
+    HPDF_Doc pdf_; /**< Документ PDF */
+    HPDF_Font font_; /**< Шрифт PDF */
 
-    HPDF_Doc pdf_;
-    HPDF_Font font_;
-
-    cfm cfm_data_;
-    zgt zgt_data_;
-    nbr nbr_data_;
-    point point_data_;
-    std::vector<tbl> tbl_data_;
-    std::vector<size_t> point_tbl;
-
-    std::vector<double> marks;
+    cfm cfm_data_; /**< Данные типа cfm */
+    zgt zgt_data_; /**< Данные типа zgt */
+    nbr nbr_data_; /**< Данные типа nbr */
+    point point_data_; /**< Данные типа point */
+    std::vector<tbl> tbl_data_; /**< Вектор данных типа tbl */
+    std::vector<size_t> point_tbl; /**< Таблица точек */
+    std::vector<double> marks; /**< Метки */
 };
 #endif //BLANKS_RENDERPDF_H

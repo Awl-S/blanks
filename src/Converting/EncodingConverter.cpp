@@ -6,24 +6,26 @@
 #include "fstream"
 
 /**
-@brief Конструктор класса EncodingConverter
-@param inputDir Входной каталог
-@param outputDir Выходной каталог
-Конструктор класса EncodingConverter принимает два параметра: inputDir (входной каталог) и outputDir (выходной каталог).
-Значение inputDir передается в качестве rvalue (std::move), а outputDir передается как const reference.
-Кроме того, конструктор инициализирует переменные-члены класса:
-inputDirectory - с помощью std::move(inputDir) перемещается входной каталог в переменную-член inputDirectory;
-outputDirectory - инициализируется переданным выходным каталогом outputDir;
-useTempDirectory - инициализируется значением outputDir.empty() - если выходной каталог не задан, то флаг useTempDirectory устанавливается в true.
-Далее, в конструкторе вызывается функция loadSettingsFromXml(), которая загружает настройки из XML-файла.
-После этого, переменные-члены filesConverted и filesProcessed инициализируются значением 0.
-*/
+ * @brief Конструктор объекта EncodingConverter.
+ *
+ * @param inputDir Входной каталог.
+ * @param outputDir Выходной каталог.
+ *
+ * Если outputDir пуст, используется временный каталог.
+ * Загружает настройки преобразования кодировки и сбрасывает счетчики файлов.
+ */
 EncodingConverter::EncodingConverter(std::string inputDir, const std::string& outputDir)
         : inputDirectory(std::move(inputDir)), outputDirectory(outputDir), useTempDirectory(outputDir.empty()) {
-    loadSettingsFromXml(), filesConverted = 0, filesProcessed = 0;
+    loadSettings(), filesConverted = 0, filesProcessed = 0;
 }
 
-void EncodingConverter::loadSettingsFromXml(){
+/**
+ * @brief Загружает настройки преобразования кодировки.
+ *
+ * Устанавливает исходную кодировку в "UTF-8" и целевую кодировку в "WINDOWS-1251".
+ * Задает расширения файлов, которые следует преобразовывать.
+ */
+void EncodingConverter::loadSettings(){
     sourceEncoding = "UTF-8";
     targetEncoding = "WINDOWS-1251";
 

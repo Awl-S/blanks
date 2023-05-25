@@ -6,19 +6,32 @@
 #include <array>
 #include <iostream>
 
+/**
+ * @struct cfm
+ * @brief Структура для хранения данных типа cfm.
+ *
+ * Структура cfm содержит поля для хранения различных данных типа cfm,
+ * которые представляют параметры для отображения графика.
+ */
 struct cfm {
-    std::string header;
-    std::string blank;
-    std::vector<double> marks;
-    std::array<int, 2> format;
-    int diameter;
-    std::array<double, 2> small_tick;
-    std::array<double, 2> big_tick;
-    std::array<double, 4> digital_tick;
-    int digit_height;
-    int label_height;
-    std::string tick_mask;
+    std::string header; /**< Заголовок */
+    std::string blank; /**< модель */
+    std::vector<double> marks; /**< Метки */
+    std::array<int, 2> format; /**< Формат */
+    int diameter; /**< Диаметр */
+    std::array<double, 2> small_tick; /**< Малый делитель */
+    std::array<double, 2> big_tick; /**< Большой делитель */
+    std::array<double, 4> digital_tick; /**< Цифровой делитель */
+    int digit_height; /**< Высота цифр */
+    int label_height; /**< Высота меток */
+    std::string tick_mask; /**< Маска делителей */
 
+
+    /**
+     * @brief Выводит содержимое структуры cfm на консоль.
+     *
+     * Функция display() выводит значения каждого поля структуры cfm на консоль.
+     */
     void display() const {
         std::cout << "Header: " << header << "\n";
         std::cout << "Blank: " << blank << "\n";

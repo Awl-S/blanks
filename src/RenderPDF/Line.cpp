@@ -2,6 +2,11 @@
 
 #include "../../include/RenderPDF/RenderPDF.h"
 
+/**
+ * @brief Генерирует маркеры на основе измерений из данных таблицы.
+ *
+ * @param blank Индекс строки в таблице данных, из которой следует сгенерировать маркеры.
+ */
 void RenderPDF::generate_Marks(size_t blank) {
     size_t size = tbl_data_[blank].measurements.size();
     auto a0 = (tbl_data_[blank].measurements[0][0] + tbl_data_[blank].measurements[0][1]) / 2.0;
@@ -38,6 +43,12 @@ void RenderPDF::generate_Marks(size_t blank) {
     }
 }
 
+/**
+ * @brief Рисует основные линии на странице PDF.
+ *
+ * @param page Страница PDF, на которой будут нарисованы основные линии.
+ * @param blank Индекс строки в таблице данных, на основе которой следует рисовать линии.
+ */
 void RenderPDF::drawMainLines(HPDF_Page page, size_t blank) {
     //Рисуем линии главные
     double radius = cfm_data_.diameter / 2.0;
@@ -104,6 +115,13 @@ void RenderPDF::drawMainLines(HPDF_Page page, size_t blank) {
     }
 }
 
+
+/**
+ * @brief Рисует дополнительные отметки на странице PDF.
+ *
+ * @param page Страница PDF, на которой будут нарисованы дополнительные отметки.
+ * @param blank Индекс строки в таблице данных, на основе которой следует рисовать отметки.
+ */
 void RenderPDF::drawAdditionalTicks(HPDF_Page page, size_t blank) {
     auto radius = cfm_data_.diameter / 2.0f;
     size_t size_tick_mask = cfm_data_.tick_mask.size() - 1;

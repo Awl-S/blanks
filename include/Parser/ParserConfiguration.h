@@ -6,6 +6,13 @@
 #include <memory>
 #include <filesystem>
 
+/**
+ * @class ParserConfiguration
+ * @brief Класс для создания объекта конфигурации парсера.
+ *
+ * Класс ParserConfiguration предоставляет статический метод create() для создания объекта конфигурации парсера.
+ * Объект конфигурации может быть создан на основе файла конфигурации формата JSON.
+ */
 class ParserConfiguration {
 public:
     virtual ~ParserConfiguration() = default;
@@ -50,6 +57,16 @@ public:
      */
     static std::unique_ptr<ParserConfiguration> create(const std::string& config_file_path);
 
+    /**
+ * @brief Возвращает целочисленное значение, соответствующее заданному ключу.
+ * @param key Ключ для получения целочисленного значения.
+ * @return Целочисленное значение, соответствующее заданному ключу.
+ * @throws std::runtime_error Если ключ отсутствует в конфигурации.
+ *
+ * Виртуальная функция getInteger() возвращает целочисленное значение,
+ * соответствующее заданному ключу key. Данная функция должна быть реализована в классах-наследниках.
+ * Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error.
+ */
     virtual long long getInteger(const std::string &key);
-    };
+};
 #endif //BLANKS_PARSERCONFIGURATION_H

@@ -1,11 +1,13 @@
-//
-// Created by stawl on 19.05.2023.
-//
-
-#include <iostream>
 #include "../../include/Reader/textReader.h"
+#include <iostream>
 #include <regex>
 
+/**
+ * @brief Читает данные из файла в формате CFM
+ *
+ * @param data ссылка на структуру cfm, в которую будут записаны данные из файла
+ * @throw std::runtime_error в случае ошибки открытия файла
+ */
 void textReader::read_cfm(cfm &data) {
     std::ifstream file(file_path_);
     if (!file.is_open()) {
@@ -44,6 +46,12 @@ void textReader::read_cfm(cfm &data) {
     }
 }
 
+/**
+ * @brief Читает данные из файла в формате ZGT
+ *
+ * @param data ссылка на структуру zgt, в которую будут записаны данные из файла
+ * @throw std::runtime_error в случае ошибки открытия файла
+ */
 void textReader::read_zgt(zgt &data) {
     std::ifstream file(file_path_);
     if (!file.is_open()) {
@@ -78,6 +86,12 @@ void textReader::read_zgt(zgt &data) {
     }
 }
 
+/**
+ * @brief Читает данные из файла в формате TBL
+ *
+ * @param data ссылка на структуру tbl, в которую будут записаны данные из файла
+ * @throw std::runtime_error в случае ошибки открытия файла или если не удается извлечь число из имени файла
+ */
 void textReader::read_tbl(tbl &data) {
     std::ifstream file(file_path_);
     if (!file.is_open()) {
@@ -122,6 +136,12 @@ void textReader::read_tbl(tbl &data) {
     }
 }
 
+/**
+ * @brief Читает данные из файла в формате точки
+ *
+ * @param data ссылка на структуру point, в которую будут записаны данные из файла
+ * @throw std::runtime_error в случае ошибки открытия файла
+ */
 void textReader::read_point(point &data) {
     std::ifstream file(file_path_);
     if (!file.is_open()) {
@@ -134,6 +154,12 @@ void textReader::read_point(point &data) {
     }
 }
 
+/**
+ * @brief Читает данные из файла в формате NBR
+ *
+ * @param data ссылка на структуру nbr, в которую будут записаны данные из файла
+ * @throw std::runtime_error в случае ошибки открытия файла
+ */
 void textReader::read_nbr(nbr &data) {
     std::ifstream file(file_path_);
     if (!file.is_open()) {

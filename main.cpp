@@ -136,7 +136,7 @@ int main(int argc, char *argv[]) {
             auto config_parser = ParserConfiguration::create(args[0]);
 
 
-          }
+        }
 
     }
 

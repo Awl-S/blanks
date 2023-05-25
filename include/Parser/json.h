@@ -4,6 +4,12 @@
 #include <nlohmann/json.hpp>
 #include "ParserConfiguration.h"
 
+/**
+ * @class json
+ * @brief Класс для работы с JSON-конфигурацией.
+ *
+ * Класс json предоставляет функциональность для чтения и обработки JSON-конфигурационных файлов.
+ */
 class json: public ParserConfiguration{
 public:
     void display() override;

@@ -5,11 +5,21 @@
 #include <vector>
 #include <iostream>
 
+/**
+ * @brief Структура для хранения данных таблицы.
+ *
+ * @param position Позиция в таблице.
+ * @param model Модель из таблицы.
+ * @param measurements Измерения, связанные с таблицей.
+ */
 struct tbl {
     int position;
     std::string model;
     std::vector<std::vector<double>> measurements;
 
+    /**
+ * @brief Выводит данные таблицы в стандартный вывод.
+ */
     void display() const {
         std::cout << "Position: " << position << "\n";
         std::cout << "Model: " << model << "\n";
