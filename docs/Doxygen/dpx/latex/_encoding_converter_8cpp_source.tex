@@ -1,0 +1,135 @@
+\doxysection{Encoding\+Converter.\+cpp}
+\hypertarget{_encoding_converter_8cpp_source}{}\label{_encoding_converter_8cpp_source}\index{EncodingConverter.cpp@{EncodingConverter.cpp}}
+\mbox{\hyperlink{_encoding_converter_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/converting/EncodingConverter.h"{}}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}iconv.h"{}}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}filesystem"{}}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}fstream"{}}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00017}\mbox{\hyperlink{class_encoding_converter_ab3102bc4fcd6c5ebf7768b4d6dbcff62}{00017}}\ \mbox{\hyperlink{class_encoding_converter_ab3102bc4fcd6c5ebf7768b4d6dbcff62}{EncodingConverter::EncodingConverter}}(std::string\ inputDir,\ \textcolor{keyword}{const}\ std::string\&\ outputDir)}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ :\ inputDirectory(std::move(inputDir)),\ outputDirectory(outputDir),\ useTempDirectory(outputDir.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4}{loadSettings}}(),\ \mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{filesConverted}}\ =\ 0,\ \mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{filesProcessed}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00028}\mbox{\hyperlink{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4}{EncodingConverter::loadSettings}}()\{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f}{sourceEncoding}}\ =\ \textcolor{stringliteral}{"{}WINDOWS-\/1251"{}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7}{targetEncoding}}\ =\ \textcolor{stringliteral}{"{}UTF-\/8"{}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Создаем\ массив\ итераторов\ на\ строки,\ которые\ нужно\ добавить}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00033}00033\ \ \ \ \ std::string\ extensions[]\ =\ \{\ \textcolor{stringliteral}{"{}.tbl"{}},\ \textcolor{stringliteral}{"{}.нбр"{}},\ \textcolor{stringliteral}{"{}.згт"{}},\ \textcolor{stringliteral}{"{}.cfm"{}}\ \};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ numExtensions\ =\ \textcolor{keyword}{sizeof}(extensions)\ /\ \textcolor{keyword}{sizeof}(extensions[0]);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Используем\ конструктор\ std::vector,\ принимающий\ два\ итератора}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.insert(\mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.end(),\ extensions,\ extensions\ +\ numExtensions);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00046}\mbox{\hyperlink{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3}{EncodingConverter::convert}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00047}00047\ \ \ \ \ std::filesystem::path\ inputPath(\mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{inputDirectory}});}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_ab066b92f365f593c44d6825071463e08}{convertDirectory}}(inputPath);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0}{printStats}}();}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00061}\mbox{\hyperlink{class_encoding_converter_ab066b92f365f593c44d6825071463e08}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_ab066b92f365f593c44d6825071463e08}{EncodingConverter::convertDirectory}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ dir)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ std::filesystem::recursive\_directory\_iterator(dir))\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file())\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{filesProcessed}}++;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::path\ relativePath\ =\ std::filesystem::relative(entry,\ \mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{inputDirectory}});}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::path\ outputPath\ =\ \mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{useTempDirectory}}\ ?\ std::filesystem::temp\_directory\_path()\ /\ relativePath\ :\ \mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{outputDirectory}}\ /\ relativePath;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(\mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.begin(),\ \mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.end(),\ entry.path().extension())\ !=\ \mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a460858eb34940271be93a5aa08452a66}{convertFile}}(entry.path());}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{outputDirectory}}.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Если\ файл\ имеет\ другое\ расширение\ и\ outputDirectory\ указана,\ копируем\ его}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::create\_directories(outputPath.parent\_path());}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::copy\_file(entry,\ outputPath,\ std::filesystem::copy\_options::overwrite\_existing);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00090}\mbox{\hyperlink{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf}{00090}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf}{EncodingConverter::iconvConvert}}(\textcolor{keyword}{const}\ std::string\&\ input,\ std::string\&\ output,\ \textcolor{keyword}{const}\ std::string\&\ fromCharset,\ \textcolor{keyword}{const}\ std::string\&\ toCharset)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00091}00091\ \ \ \ \ iconv\_t\ cd\ =\ iconv\_open(toCharset.c\_str(),\ fromCharset.c\_str());}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (cd\ ==\ (iconv\_t)-\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}iconv\_open"{}});}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00097}00097\ \ \ \ \ std::vector<char>\ inBuf(input.begin(),\ input.end());}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ inLeft\ =\ inBuf.size();}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ outLeft\ =\ inLeft\ *\ 4;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00100}00100\ \ \ \ \ std::vector<char>\ outBuf(outLeft);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{char}*\ inPtr\ =\ inBuf.data();}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{char}*\ outPtr\ =\ outBuf.data();}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{while}\ (inLeft\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ result\ =\ iconv(cd,\ \&inPtr,\ \&inLeft,\ \&outPtr,\ \&outLeft);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ ==\ (\textcolor{keywordtype}{size\_t})-\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ iconv\_close(cd);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00113}00113\ \ \ \ \ iconv\_close(cd);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00114}00114\ \ \ \ \ outBuf.resize(outBuf.size()\ -\/\ outLeft);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00116}00116\ \ \ \ \ output.assign(outBuf.begin(),\ outBuf.end());}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00128}\mbox{\hyperlink{class_encoding_converter_a460858eb34940271be93a5aa08452a66}{00128}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_a460858eb34940271be93a5aa08452a66}{EncodingConverter::convertFile}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ filepath)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00129}00129\ \ \ \ \ std::cout\ <<\ filepath\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00130}00130\ \ \ \ \ std::ifstream\ inFile(filepath,\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00131}00131\ \ \ \ \ std::string\ content((std::istreambuf\_iterator<char>(inFile)),\ std::istreambuf\_iterator<char>());}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00133}00133\ \ \ \ \ std::filesystem::path\ relativePath\ =\ std::filesystem::relative(filepath,\ \mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{inputDirectory}});}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00134}00134\ \ \ \ \ std::filesystem::path\ outputPath\ =\ \mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{useTempDirectory}}\ ?\ std::filesystem::temp\_directory\_path()\ /\ relativePath\ :\ \mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{outputDirectory}}\ /\ relativePath;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00135}00135\ \ \ \ \ std::filesystem::create\_directories(outputPath.parent\_path());}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7}{is\_utf8}}(content))\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ std::string\ utf8Content;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf}{iconvConvert}}(content,\ utf8Content,\ \mbox{\hyperlink{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f}{sourceEncoding}},\ \mbox{\hyperlink{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7}{targetEncoding}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ content\ =\ utf8Content;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{filesConverted}}++;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ Converting\ file\ '"{}}\ <<\ filepath\ <<\ \textcolor{stringliteral}{"{}':\ Invalid\ or\ incomplete\ multibyte\ or\ wide\ character"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00147}00147\ \ \ \ \ std::ofstream\ outFile(outputPath,\ std::ios::binary);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00148}00148\ \ \ \ \ outFile.write(content.data(),\ content.size());}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00149}00149\ \ \ \ \ outFile.close();}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{useTempDirectory}})\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ std::filesystem::copy(outputPath,\ filepath,\ std::filesystem::copy\_options::overwrite\_existing);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ std::filesystem::remove(outputPath);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00155}00155\ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00162}\mbox{\hyperlink{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0}{00162}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0}{EncodingConverter::printStats}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00163}00163\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Files\ processed:\ "{}}\ <<\ \mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{filesProcessed}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00164}00164\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Files\ converted:\ "{}}\ <<\ \mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{filesConverted}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00176}\mbox{\hyperlink{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7}{00176}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7}{EncodingConverter::is\_utf8}}(\textcolor{keyword}{const}\ std::string\ \&str)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00177}00177\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ length\ =\ str.size();}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ length;\ )\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((str[i]\ \&\ 0x80)\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((str[i]\ \&\ 0xE0)\ ==\ 0xC0\ \&\&\ i\ +\ 1\ <\ length\ \&\&\ (str[i\ +\ 1]\ \&\ 0xC0)\ ==\ 0x80)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 2;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((str[i]\ \&\ 0xF0)\ ==\ 0xE0\ \&\&\ i\ +\ 2\ <\ length\ \&\&\ (str[i\ +\ 1]\ \&\ 0xC0)\ ==\ 0x80\ \&\&\ (str[i\ +\ 2]\ \&\ 0xC0)\ ==\ 0x80)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 3;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((str[i]\ \&\ 0xF8)\ ==\ 0xF0\ \&\&\ i\ +\ 3\ <\ length\ \&\&\ (str[i\ +\ 1]\ \&\ 0xC0)\ ==\ 0x80\ \&\&\ (str[i\ +\ 2]\ \&\ 0xC0)\ ==\ 0x80\ \&\&\ (str[i\ +\ 3]\ \&\ 0xC0)\ ==\ 0x80)\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 4;}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00190}00190\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00191}00191\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8cpp_source_l00192}00192\ \}}
+
+\end{DoxyCode}

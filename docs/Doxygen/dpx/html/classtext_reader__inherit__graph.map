@@ -1,0 +1,5 @@
+<map id="textReader" name="textReader">
+<area shape="rect" id="Node000001" title="Класс для чтения текстового файла." alt="" coords="5,80,90,107"/>
+<area shape="rect" id="Node000002" href="$class_file_reader.html" title="Класс для чтения файла." alt="" coords="6,5,89,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,47,50,80,45,80,45,47"/>
+</map>

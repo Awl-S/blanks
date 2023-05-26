@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="dir_06cab3a81b35ca7bdfaa2da1fffea9da" kind="dir">
+    <compoundname>struct</compoundname>
+    <innerfile refid="cfm_8h">cfm.h</innerfile>
+    <innerfile refid="nbr_8h">nbr.h</innerfile>
+    <innerfile refid="point__data_8h">point_data.h</innerfile>
+    <innerfile refid="tbl_8h">tbl.h</innerfile>
+    <innerfile refid="zgt_8h">zgt.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/"/>
+  </compounddef>
+</doxygen>

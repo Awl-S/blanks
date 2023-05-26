@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_p_d_f_8h_source" xml:lang="ru">
+<title>RenderPDF.h</title>
+<indexterm><primary>RenderPDF.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="__render_p_d_f_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANKS_RENDERPDF_H</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANKS_RENDERPDF_H</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00003"/>00003 
+<anchor xml:id="__render_p_d_f_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;hpdf.h&gt;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;filesystem&gt;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&lt;cmath&gt;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&quot;../struct/cfm.h&quot;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&quot;../struct/zgt.h&quot;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00010"/>00010 <emphasis role="preprocessor">#include&#32;&quot;../struct/nbr.h&quot;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00011"/>00011 <emphasis role="preprocessor">#include&#32;&quot;../struct/point_data.h&quot;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00012"/>00012 <emphasis role="preprocessor">#include&#32;&quot;../struct/tbl.h&quot;</emphasis>
+<anchor xml:id="__render_p_d_f_8h_source_1l00013"/>00013 
+<anchor xml:id="__render_p_d_f_8h_source_1l00020"/><link linkend="_class_render_p_d_f">00020</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_render_p_d_f">RenderPDF</link>&#32;{
+<anchor xml:id="__render_p_d_f_8h_source_1l00021"/>00021 
+<anchor xml:id="__render_p_d_f_8h_source_1l00022"/>00022 &#32;&#32;&#32;&#32;HPDF_Font&#32;<link linkend="_class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0">loadFont</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;fontPath);
+<anchor xml:id="__render_p_d_f_8h_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f">sortTblData</link>();
+<anchor xml:id="__render_p_d_f_8h_source_1l00024"/>00024 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3">populatePointTbl</link>();
+<anchor xml:id="__render_p_d_f_8h_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087">checkForNewPage</link>();
+<anchor xml:id="__render_p_d_f_8h_source_1l00026"/>00026 
+<anchor xml:id="__render_p_d_f_8h_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277">createA3Page</link>();
+<anchor xml:id="__render_p_d_f_8h_source_1l00028"/>00028 
+<anchor xml:id="__render_p_d_f_8h_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36">setFontSize</link>(HPDF_Page&#32;page,&#32;<emphasis role="keywordtype">double</emphasis>&#32;size);
+<anchor xml:id="__render_p_d_f_8h_source_1l00030"/>00030 
+<anchor xml:id="__render_p_d_f_8h_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27">drawCircle</link>(HPDF_Page&#32;page,&#32;<emphasis role="keywordtype">double</emphasis>&#32;x,&#32;<emphasis role="keywordtype">double</emphasis>&#32;y,&#32;<emphasis role="keywordtype">double</emphasis>&#32;radius);
+<anchor xml:id="__render_p_d_f_8h_source_1l00032"/>00032 
+<anchor xml:id="__render_p_d_f_8h_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679">draw_line</link>(HPDF_Page&#32;page,&#32;HPDF_REAL&#32;x1,&#32;HPDF_REAL&#32;y1,&#32;HPDF_REAL&#32;x2,&#32;HPDF_REAL&#32;y2);
+<anchor xml:id="__render_p_d_f_8h_source_1l00034"/>00034 
+<anchor xml:id="__render_p_d_f_8h_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e">generate_Marks</link>(<emphasis role="keywordtype">size_t</emphasis>&#32;blank);
+<anchor xml:id="__render_p_d_f_8h_source_1l00036"/>00036 
+<anchor xml:id="__render_p_d_f_8h_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52">drawDigitIndices</link>(HPDF_Page&#32;page,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;blank);
+<anchor xml:id="__render_p_d_f_8h_source_1l00038"/>00038 
+<anchor xml:id="__render_p_d_f_8h_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673">drawMainLines</link>(HPDF_Page&#32;page,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;blank);
+<anchor xml:id="__render_p_d_f_8h_source_1l00040"/>00040 
+<anchor xml:id="__render_p_d_f_8h_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb">drawAdditionalTicks</link>(HPDF_Page&#32;page,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;blank);
+<anchor xml:id="__render_p_d_f_8h_source_1l00042"/>00042 
+<anchor xml:id="__render_p_d_f_8h_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94">initializeData</link>(<link linkend="_structcfm">cfm</link>&#32;cfm_data,&#32;<link linkend="_structzgt">zgt</link>&#32;zgt_data,&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;tbl&gt;&#32;&amp;tbl_data,&#32;<link linkend="_structnbr">nbr</link>&#32;nbr_data,&#32;<link linkend="_structpoint">point</link>&#32;point_data,&#32;std::filesystem::path&#32;fontPath);
+<anchor xml:id="__render_p_d_f_8h_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f">initializePDF</link>();
+<anchor xml:id="__render_p_d_f_8h_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0">adjustFontSize</link>();
+<anchor xml:id="__render_p_d_f_8h_source_1l00046"/>00046 
+<anchor xml:id="__render_p_d_f_8h_source_1l00047"/>00047 &#32;&#32;&#32;&#32;HPDF_REAL&#32;<link linkend="_class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b">calculateYCoordinate</link>(HPDF_REAL&#32;angle,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;blank);
+<anchor xml:id="__render_p_d_f_8h_source_1l00048"/>00048 &#32;&#32;&#32;&#32;HPDF_REAL&#32;<link linkend="_class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f">calculateXCoordinate</link>(HPDF_REAL&#32;angle,&#32;<emphasis role="keywordtype">double</emphasis>&#32;textWidth,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;blank);
+<anchor xml:id="__render_p_d_f_8h_source_1l00049"/>00049 &#32;&#32;&#32;&#32;std::string&#32;<link linkend="_class_render_p_d_f_1a87d9d5335c694603bf6686851879879a">formatText</link>(<emphasis role="keywordtype">int</emphasis>&#32;i);
+<anchor xml:id="__render_p_d_f_8h_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1af00237dc614fc46323aead1daae13a15">drawText</link>(HPDF_Page&#32;page,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;text,&#32;HPDF_REAL&#32;x,&#32;HPDF_REAL&#32;y);
+<anchor xml:id="__render_p_d_f_8h_source_1l00051"/>00051 
+<anchor xml:id="__render_p_d_f_8h_source_1l00052"/>00052 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="__render_p_d_f_8h_source_1l00053"/>00053 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2">generatePDF</link>(std::string&amp;&#32;filename);
+<anchor xml:id="__render_p_d_f_8h_source_1l00054"/>00054 
+<anchor xml:id="__render_p_d_f_8h_source_1l00055"/>00055 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f">RenderPDF</link>(<link linkend="_structcfm">cfm</link>&#32;cfm_data,&#32;<link linkend="_structzgt">zgt</link>&#32;zgt_data,&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;tbl&gt;&#32;&amp;tbl_data,&#32;<link linkend="_structnbr">nbr</link>&#32;nbr_data,&#32;<link linkend="_structpoint">point</link>&#32;point_data,&#32;std::filesystem::path&#32;fontPath);
+<anchor xml:id="__render_p_d_f_8h_source_1l00056"/>00056 
+<anchor xml:id="__render_p_d_f_8h_source_1l00057"/>00057 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7">~RenderPDF</link>();
+<anchor xml:id="__render_p_d_f_8h_source_1l00058"/>00058 
+<anchor xml:id="__render_p_d_f_8h_source_1l00059"/>00059 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="__render_p_d_f_8h_source_1l00060"/><link linkend="_class_render_p_d_f_1adda47ac0eef121635099a286e784f610">00060</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_render_p_d_f_1adda47ac0eef121635099a286e784f610">PI</link>&#32;=&#32;3.14159265358979323846;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00061"/><link linkend="_class_render_p_d_f_1aa5d08b1fd3f72c78879fea437d978fdb">00061</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_render_p_d_f_1aa5d08b1fd3f72c78879fea437d978fdb">margitText</link>&#32;=&#32;1;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00062"/><link linkend="_class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489">00062</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489">new_page</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00063"/><link linkend="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4">00063</link> &#32;&#32;&#32;&#32;std::filesystem::path&#32;<link linkend="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00065"/><link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">00065</link> &#32;&#32;&#32;&#32;HPDF_Doc&#32;<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00066"/><link linkend="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781">00066</link> &#32;&#32;&#32;&#32;HPDF_Font&#32;<link linkend="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781">font_</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00068"/><link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">00068</link> &#32;&#32;&#32;&#32;<link linkend="_structcfm">cfm</link>&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00069"/><link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">00069</link> &#32;&#32;&#32;&#32;<link linkend="_structzgt">zgt</link>&#32;<link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00070"/><link linkend="_class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec">00070</link> &#32;&#32;&#32;&#32;<link linkend="_structnbr">nbr</link>&#32;<link linkend="_class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec">nbr_data_</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00071"/><link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">00071</link> &#32;&#32;&#32;&#32;<link linkend="_structpoint">point</link>&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00072"/><link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">00072</link> &#32;&#32;&#32;&#32;std::vector&lt;tbl&gt;&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00073"/><link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">00073</link> &#32;&#32;&#32;&#32;std::vector&lt;size_t&gt;&#32;<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00074"/><link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">00074</link> &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>;&#32;
+<anchor xml:id="__render_p_d_f_8h_source_1l00075"/>00075 };
+<anchor xml:id="__render_p_d_f_8h_source_1l00076"/>00076 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//BLANKS_RENDERPDF_H</emphasis>
+</programlisting></section>

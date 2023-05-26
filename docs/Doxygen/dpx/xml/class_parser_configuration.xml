@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="class_parser_configuration" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>ParserConfiguration</compoundname>
+    <derivedcompoundref refid="classjson" prot="public" virt="non-virtual">json</derivedcompoundref>
+    <includes refid="_parser_configuration_8h" local="yes">ParserConfiguration.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_parser_configuration_1a11a307d9f31f64bffdb881abf94e66b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ParserConfiguration::~ParserConfiguration</definition>
+        <argsstring>()=default</argsstring>
+        <name>~ParserConfiguration</name>
+        <qualifiedname>ParserConfiguration::~ParserConfiguration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/ParserConfiguration.h" line="18" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_parser_configuration_1ab44f9c6fed060b33544224ddeb473e59" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::filesystem::path</type>
+        <definition>virtual std::filesystem::path ParserConfiguration::getFilePath</definition>
+        <argsstring>(const std::string &amp;key)=0</argsstring>
+        <name>getFilePath</name>
+        <qualifiedname>ParserConfiguration::getFilePath</qualifiedname>
+        <reimplementedby refid="classjson_1a760a6ea6469d17e611ccf23921753d20">getFilePath</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает путь к файлу на основе указанного ключа. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод возвращает путь к файлу, связанный с указанным ключом, из конфигурационного файла.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ключ для поиска пути к файлу. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Путь к файлу. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/ParserConfiguration.h" line="28" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_parser_configuration_1a70fcdbc2a2a83b1dabaecf576d1cff71" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::filesystem::path &gt;</type>
+        <definition>virtual std::vector&lt; std::filesystem::path &gt; ParserConfiguration::getFileList</definition>
+        <argsstring>(const std::string &amp;key, const std::string &amp;search)=0</argsstring>
+        <name>getFileList</name>
+        <qualifiedname>ParserConfiguration::getFileList</qualifiedname>
+        <reimplementedby refid="classjson_1a335a17f634ae297aa36dbc40855dd8da">getFileList</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>search</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает список файлов на основе указанного ключа и поискового запроса. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод возвращает список файлов, связанных с указанным ключом и удовлетворяющих поисковому запросу, из конфигурационного файла.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ключ для поиска списка файлов. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>search</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Поисковый запрос для фильтрации файлов. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Список файлов. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/ParserConfiguration.h" line="39" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_parser_configuration_1af35d73849ce2faf5cf19196a662fc19a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void ParserConfiguration::display</definition>
+        <argsstring>()=0</argsstring>
+        <name>display</name>
+        <qualifiedname>ParserConfiguration::display</qualifiedname>
+        <reimplementedby refid="classjson_1a7d5c22a97d49085310994af222c28f8c">display</reimplementedby>
+        <briefdescription>
+<para>Отображает информацию из конфигурационного файла. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод отображает информацию из конфигурационного файла, используемого классом. Данный метод может быть переопределен в производных классах. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/ParserConfiguration.h" line="47" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long long</type>
+        <definition>virtual long long ParserConfiguration::getInteger</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getInteger</name>
+        <qualifiedname>ParserConfiguration::getInteger</qualifiedname>
+        <reimplementedby refid="classjson_1a3f5e7618318c6e39387a917589aa3d38">getInteger</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Создает экземпляр класса ConfigParser на основе пути к конфигурационному файлу. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Статический метод create() создает и возвращает экземпляр класса ConfigParser на основе пути к конфигурационному файлу.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к конфигурационному файлу. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Указатель на созданный экземпляр класса ConfigParser.</para>
+</simplesect>
+Создает объект конфигурации парсера на основе указанного файла. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к файлу конфигурации. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Указатель на объект конфигурации парсера. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Если тип файла не поддерживается.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Статический метод create() создает объект конфигурации парсера на основе указанного файла конфигурации. Если файл имеет расширение &quot;.json&quot;, создается объект json, иначе выбрасывается исключение std::runtime_error.</para>
+<para>Возвращает целочисленное значение, соответствующее заданному ключу. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ключ для получения целочисленного значения. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Целочисленное значение, соответствующее заданному ключу. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Если ключ отсутствует в конфигурации.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Виртуальная функция <ref refid="class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580" kindref="member">getInteger()</ref> возвращает целочисленное значение, соответствующее заданному ключу key. Данная функция должна быть реализована в классах-наследниках. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/ParserConfiguration.h" line="83" column="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс для создания объекта конфигурации парсера. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Класс <ref refid="class_parser_configuration" kindref="compound">ParserConfiguration</ref> предоставляет статический метод create() для создания объекта конфигурации парсера. Объект конфигурации может быть создан на основе файла конфигурации формата JSON. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ParserConfiguration</label>
+        <link refid="class_parser_configuration"/>
+      </node>
+      <node id="2">
+        <label>json</label>
+        <link refid="classjson"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/ParserConfiguration.h" line="16" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/ParserConfiguration.h" bodystart="16" bodyend="84"/>
+    <listofallmembers>
+      <member refid="class_parser_configuration_1af35d73849ce2faf5cf19196a662fc19a" prot="public" virt="pure-virtual"><scope>ParserConfiguration</scope><name>display</name></member>
+      <member refid="class_parser_configuration_1a70fcdbc2a2a83b1dabaecf576d1cff71" prot="public" virt="pure-virtual"><scope>ParserConfiguration</scope><name>getFileList</name></member>
+      <member refid="class_parser_configuration_1ab44f9c6fed060b33544224ddeb473e59" prot="public" virt="pure-virtual"><scope>ParserConfiguration</scope><name>getFilePath</name></member>
+      <member refid="class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580" prot="public" virt="virtual"><scope>ParserConfiguration</scope><name>getInteger</name></member>
+      <member refid="class_parser_configuration_1a11a307d9f31f64bffdb881abf94e66b5" prot="public" virt="virtual"><scope>ParserConfiguration</scope><name>~ParserConfiguration</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

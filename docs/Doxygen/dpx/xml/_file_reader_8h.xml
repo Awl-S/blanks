@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="_file_reader_8h" kind="file" language="C++">
+    <compoundname>FileReader.h</compoundname>
+    <includes local="no">filesystem</includes>
+    <includes local="no">utility</includes>
+    <includes local="yes">string</includes>
+    <includes local="yes">fstream</includes>
+    <includedby refid="_file_reader_8cpp" local="yes">FileReader.cpp</includedby>
+    <includedby refid="text_reader_8h" local="yes">textReader.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>FileReader.h</label>
+        <link refid="_file_reader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>filesystem</label>
+      </node>
+      <node id="5">
+        <label>fstream</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>FileReader.h</label>
+        <link refid="_file_reader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>textReader.h</label>
+        <link refid="text_reader_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2">
+        <label>FileReader.cpp</label>
+        <link refid="_file_reader_8cpp"/>
+      </node>
+      <node id="5">
+        <label>textReader.cpp</label>
+        <link refid="text_reader_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_file_reader" prot="public">FileReader</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>BLANKS_FILEREADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLANKS_FILEREADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;string&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fstream&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_file_reader" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_file_reader" kindref="compound">FileReader</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="class_file_reader_1a1dae37584804731f11c9c932219d8282" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_file_reader_1a1dae37584804731f11c9c932219d8282" kindref="member">FileReader</ref>(std::filesystem::path<sp/>file_path)<sp/>:<sp/><ref refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" kindref="member">file_path_</ref>(std::move(file_path))<sp/>{}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::path<sp/><ref refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" kindref="member">file_path_</ref>;<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_file_reader_1a8e183bdc265152f0309184debb4af6a3" kindref="member">readLineString</ref>(std::ifstream<sp/>&amp;file);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22" kindref="member">trim</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>s);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//BLANKS_FILEREADER_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,32 @@
+\doxysection{tbl.\+h}
+\hypertarget{tbl_8h_source}{}\label{tbl_8h_source}\index{tbl.h@{tbl.h}}
+\mbox{\hyperlink{tbl_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BLANK\_TBL\_H}}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BLANK\_TBL\_H}}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00015}\mbox{\hyperlink{structtbl}{00015}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtbl}{tbl}}\ \{}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00016}\mbox{\hyperlink{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8}{00016}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8}{position}};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00017}\mbox{\hyperlink{structtbl_ac995e4da6d437a046c2074f9dc33b833}{00017}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structtbl_ac995e4da6d437a046c2074f9dc33b833}{model}};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00018}\mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{00018}}\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{measurements}};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00023}\mbox{\hyperlink{structtbl_a1656f3d8341995db3e9711ecf583cc94}{00023}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structtbl_a1656f3d8341995db3e9711ecf583cc94}{display}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Position:\ "{}}\ <<\ \mbox{\hyperlink{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8}{position}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Model:\ "{}}\ <<\ \mbox{\hyperlink{structtbl_ac995e4da6d437a046c2074f9dc33b833}{model}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Measurements:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ row\ :\ \mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{measurements}})\ \{}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ value\ :\ row)\ \{}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ value\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00035}00035\ \};}
+\DoxyCodeLine{\Hypertarget{tbl_8h_source_l00036}00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLANK\_TBL\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\doxysection{draw.\+cpp}
+\hypertarget{draw_8cpp_source}{}\label{draw_8cpp_source}\index{draw.cpp@{draw.cpp}}
+\mbox{\hyperlink{draw_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/RenderPDF/RenderPDF.h"{}}}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00010}\mbox{\hyperlink{class_render_p_d_f_a0c2cb9d669fedf5910e7be20e7bb4b36}{00010}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a0c2cb9d669fedf5910e7be20e7bb4b36}{RenderPDF::setFontSize}}(HPDF\_Page\ page,\ \textcolor{keywordtype}{double}\ size)\ \{}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00011}00011\ \ \ \ \ HPDF\_Page\_SetFontAndSize(page,\ \mbox{\hyperlink{class_render_p_d_f_a501db80f3bb869b9b3cff1722b040781}{font\_}},\ size);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00012}00012\ \ \ \ \ HPDF\_Page\_SetHeight(page,\ 420);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00013}00013\ \ \ \ \ HPDF\_Page\_SetWidth(page,\ 297);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00024}\mbox{\hyperlink{class_render_p_d_f_a50a4d487307986751eb5087f25961c27}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a50a4d487307986751eb5087f25961c27}{RenderPDF::drawCircle}}(HPDF\_Page\ page,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ radius)\ \{}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00025}00025\ \ \ \ \ HPDF\_Page\_Circle(page,\ x,\ y,\ radius);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00026}00026\ \ \ \ \ HPDF\_Page\_Stroke(page);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00038}\mbox{\hyperlink{class_render_p_d_f_ae17f88d413daf207f1b93fc43a8fd679}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_ae17f88d413daf207f1b93fc43a8fd679}{RenderPDF::draw\_line}}(HPDF\_Page\ page,\ HPDF\_REAL\ x1,\ HPDF\_REAL\ y1,\ HPDF\_REAL\ x2,\ HPDF\_REAL\ y2)\ \{}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00039}00039\ \ \ \ \ HPDF\_Page\_MoveTo(page,\ x1,\ y1);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00040}00040\ \ \ \ \ HPDF\_Page\_LineTo(page,\ x2,\ y2);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00041}00041\ \ \ \ \ HPDF\_Page\_Stroke(page);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00052}\mbox{\hyperlink{class_render_p_d_f_af00237dc614fc46323aead1daae13a15}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_af00237dc614fc46323aead1daae13a15}{RenderPDF::drawText}}(HPDF\_Page\ page,\ \textcolor{keyword}{const}\ std::string\&\ text,\ HPDF\_REAL\ x,\ HPDF\_REAL\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00053}00053\ \ \ \ \ HPDF\_Page\_BeginText(page);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00054}00054\ \ \ \ \ HPDF\_Page\_MoveTextPos(page,\ x,\ y);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00055}00055\ \ \ \ \ HPDF\_Page\_ShowText(page,\ text.c\_str());}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00056}00056\ \ \ \ \ HPDF\_Page\_EndText(page);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00065}\mbox{\hyperlink{class_render_p_d_f_a87d9d5335c694603bf6686851879879a}{00065}}\ std::string\ \mbox{\hyperlink{class_render_p_d_f_a87d9d5335c694603bf6686851879879a}{RenderPDF::formatText}}(\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00066}00066\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00067}00067\ \ \ \ \ ss.precision(\mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[1]);}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00068}00068\ \ \ \ \ ss\ <<\ std::fixed\ <<\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_ad4cec00bcb67870e82af90e5d3676161}{marks}}[i];}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00080}\mbox{\hyperlink{class_render_p_d_f_a98e9f7f26365660413fb541ecd7dc92f}{00080}}\ HPDF\_REAL\ \mbox{\hyperlink{class_render_p_d_f_a98e9f7f26365660413fb541ecd7dc92f}{RenderPDF::calculateXCoordinate}}(HPDF\_REAL\ angle,\ \textcolor{keywordtype}{double}\ textWidth,\ \textcolor{keywordtype}{size\_t}\ blank)\ \{}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{double}\ marginText\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{auto}\ radius\ =\ (\mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}}\ /\ 2.0)\ -\/\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[0]\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00083}00083\ \ \ \ \ HPDF\_REAL\ x\ =\ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ marginText].first\ +}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (radius\ -\/\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[0]-\/1)\ *\ cos(angle)\ -\/\ textWidth\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00095}\mbox{\hyperlink{class_render_p_d_f_a7931b27233f110635d4c15fd83508a3b}{00095}}\ HPDF\_REAL\ \mbox{\hyperlink{class_render_p_d_f_a7931b27233f110635d4c15fd83508a3b}{RenderPDF::calculateYCoordinate}}(HPDF\_REAL\ angle,\ \textcolor{keywordtype}{size\_t}\ blank)\ \{}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{double}\ marginText\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{auto}\ radius\ =\ (\mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}}\ /\ 2.0)\ -\/\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[0]\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00098}00098\ \ \ \ \ HPDF\_REAL\ y\ =\ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ marginText].second\ +}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (radius\ -\/\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[0]-\/1)\ *\ sin(angle)\ -\/\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\_height}}\ /\ 2.5\ +\ 0.5;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{draw_8cpp_source_l00101}00101\ \}}
+
+\end{DoxyCode}

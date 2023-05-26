@@ -1,0 +1,175 @@
+\doxysection{Класс Parser\+Configuration}
+\hypertarget{class_parser_configuration}{}\label{class_parser_configuration}\index{ParserConfiguration@{ParserConfiguration}}
+
+
+Класс для создания объекта конфигурации парсера.  
+
+
+
+
+{\ttfamily \#include \"{}Parser\+Configuration.\+h\"{}}
+
+
+
+Граф наследования\+:Parser\+Configuration\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_parser_configuration__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_parser_configuration_a11a307d9f31f64bffdb881abf94e66b5}{\texorpdfstring{$\sim$}{\string~}\+Parser\+Configuration}} ()=default
+\item 
+virtual std\+::filesystem\+::path \mbox{\hyperlink{class_parser_configuration_ab44f9c6fed060b33544224ddeb473e59}{get\+File\+Path}} (const std\+::string \&key)=0
+\begin{DoxyCompactList}\small\item\em Возвращает путь к файлу на основе указанного ключа. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::filesystem\+::path $>$ \mbox{\hyperlink{class_parser_configuration_a70fcdbc2a2a83b1dabaecf576d1cff71}{get\+File\+List}} (const std\+::string \&key, const std\+::string \&search)=0
+\begin{DoxyCompactList}\small\item\em Возвращает список файлов на основе указанного ключа и поискового запроса. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_parser_configuration_af35d73849ce2faf5cf19196a662fc19a}{display}} ()=0
+\begin{DoxyCompactList}\small\item\em Отображает информацию из конфигурационного файла. \end{DoxyCompactList}\item 
+virtual long long \mbox{\hyperlink{class_parser_configuration_a542aa87ab4a21ce9d52d388456ab8580}{get\+Integer}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em Создает экземпляр класса Config\+Parser на основе пути к конфигурационному файлу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для создания объекта конфигурации парсера. 
+
+Класс \doxylink{class_parser_configuration}{Parser\+Configuration} предоставляет статический метод create() для создания объекта конфигурации парсера. Объект конфигурации может быть создан на основе файла конфигурации формата JSON. 
+
+См. определение в файле \mbox{\hyperlink{_parser_configuration_8h_source}{Parser\+Configuration.\+h}} строка \mbox{\hyperlink{_parser_configuration_8h_source_l00016}{16}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{class_parser_configuration_a11a307d9f31f64bffdb881abf94e66b5}\label{class_parser_configuration_a11a307d9f31f64bffdb881abf94e66b5} 
+\index{ParserConfiguration@{ParserConfiguration}!````~ParserConfiguration@{\texorpdfstring{$\sim$}{\string~}ParserConfiguration}}
+\index{````~ParserConfiguration@{\texorpdfstring{$\sim$}{\string~}ParserConfiguration}!ParserConfiguration@{ParserConfiguration}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ParserConfiguration()}{\string~ParserConfiguration()}}
+{\footnotesize\ttfamily virtual Parser\+Configuration\+::\texorpdfstring{$\sim$}{\string~}\+Parser\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Методы}
+\Hypertarget{class_parser_configuration_af35d73849ce2faf5cf19196a662fc19a}\label{class_parser_configuration_af35d73849ce2faf5cf19196a662fc19a} 
+\index{ParserConfiguration@{ParserConfiguration}!display@{display}}
+\index{display@{display}!ParserConfiguration@{ParserConfiguration}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily virtual void Parser\+Configuration\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Отображает информацию из конфигурационного файла. 
+
+Метод отображает информацию из конфигурационного файла, используемого классом. Данный метод может быть переопределен в производных классах. 
+
+Замещается в \mbox{\hyperlink{classjson_a7d5c22a97d49085310994af222c28f8c}{json}}.
+
+\Hypertarget{class_parser_configuration_a70fcdbc2a2a83b1dabaecf576d1cff71}\label{class_parser_configuration_a70fcdbc2a2a83b1dabaecf576d1cff71} 
+\index{ParserConfiguration@{ParserConfiguration}!getFileList@{getFileList}}
+\index{getFileList@{getFileList}!ParserConfiguration@{ParserConfiguration}}
+\doxysubsubsection{\texorpdfstring{getFileList()}{getFileList()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ std\+::filesystem\+::path $>$ Parser\+Configuration\+::get\+File\+List (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{search }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Возвращает список файлов на основе указанного ключа и поискового запроса. 
+
+Метод возвращает список файлов, связанных с указанным ключом и удовлетворяющих поисковому запросу, из конфигурационного файла.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ для поиска списка файлов. \\
+\hline
+{\em search} & Поисковый запрос для фильтрации файлов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Список файлов. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classjson_a335a17f634ae297aa36dbc40855dd8da}{json}}.
+
+\Hypertarget{class_parser_configuration_ab44f9c6fed060b33544224ddeb473e59}\label{class_parser_configuration_ab44f9c6fed060b33544224ddeb473e59} 
+\index{ParserConfiguration@{ParserConfiguration}!getFilePath@{getFilePath}}
+\index{getFilePath@{getFilePath}!ParserConfiguration@{ParserConfiguration}}
+\doxysubsubsection{\texorpdfstring{getFilePath()}{getFilePath()}}
+{\footnotesize\ttfamily virtual std\+::filesystem\+::path Parser\+Configuration\+::get\+File\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Возвращает путь к файлу на основе указанного ключа. 
+
+Метод возвращает путь к файлу, связанный с указанным ключом, из конфигурационного файла.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ для поиска пути к файлу. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Путь к файлу. 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{classjson_a760a6ea6469d17e611ccf23921753d20}{json}}.
+
+\Hypertarget{class_parser_configuration_a542aa87ab4a21ce9d52d388456ab8580}\label{class_parser_configuration_a542aa87ab4a21ce9d52d388456ab8580} 
+\index{ParserConfiguration@{ParserConfiguration}!getInteger@{getInteger}}
+\index{getInteger@{getInteger}!ParserConfiguration@{ParserConfiguration}}
+\doxysubsubsection{\texorpdfstring{getInteger()}{getInteger()}}
+{\footnotesize\ttfamily virtual long long Parser\+Configuration\+::get\+Integer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Создает экземпляр класса Config\+Parser на основе пути к конфигурационному файлу. 
+
+Статический метод create() создает и возвращает экземпляр класса Config\+Parser на основе пути к конфигурационному файлу.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em config\+\_\+file\+\_\+path} & Путь к конфигурационному файлу. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на созданный экземпляр класса Config\+Parser.
+\end{DoxyReturn}
+Создает объект конфигурации парсера на основе указанного файла. 
+\begin{DoxyParams}{Аргументы}
+{\em config\+\_\+file\+\_\+path} & Путь к файлу конфигурации. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на объект конфигурации парсера. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если тип файла не поддерживается.\\
+\hline
+\end{DoxyExceptions}
+Статический метод create() создает объект конфигурации парсера на основе указанного файла конфигурации. Если файл имеет расширение \"{}.\+json\"{}, создается объект json, иначе выбрасывается исключение std\+::runtime\+\_\+error.
+
+Возвращает целочисленное значение, соответствующее заданному ключу. 
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ для получения целочисленного значения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Целочисленное значение, соответствующее заданному ключу. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если ключ отсутствует в конфигурации.\\
+\hline
+\end{DoxyExceptions}
+Виртуальная функция \doxylink{class_parser_configuration_a542aa87ab4a21ce9d52d388456ab8580}{get\+Integer()} возвращает целочисленное значение, соответствующее заданному ключу key. Данная функция должна быть реализована в классах-\/наследниках. Если ключ отсутствует в конфигурации, выбрасывается исключение std\+::runtime\+\_\+error. 
+
+Переопределяется в \mbox{\hyperlink{classjson_a3f5e7618318c6e39387a917589aa3d38}{json}}.
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_parser_configuration_8h}{Parser\+Configuration.\+h}}\end{DoxyCompactItemize}

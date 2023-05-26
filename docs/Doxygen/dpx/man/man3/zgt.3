@@ -1,0 +1,107 @@
+.TH "zgt" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+zgt \- Структура для хранения данных типа zgt\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'zgt\&.h'\fP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBdisplay\fP () const"
+.br
+.RI "Выводит содержимое структуры zgt на консоль\&. "
+.in -1c
+.SS "Открытые атрибуты"
+
+.in +1c
+.ti -1c
+.RI "double \fBdiameter\fP"
+.br
+.ti -1c
+.RI "double \fBcenter_hole_diameter\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBmounting_holes\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBmarker_position\fP"
+.br
+.ti -1c
+.RI "std::array< double, 2 > \fBfont_serial_number\fP {}"
+.br
+.ti -1c
+.RI "std::array< double, 3 > \fBstop_position\fP {}"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Структура для хранения данных типа zgt\&. 
+
+Структура zgt содержит поля для хранения различных данных типа zgt, которые представляют параметры для зубчатой передачи\&. 
+.PP
+См\&. определение в файле \fBzgt\&.h\fP строка \fB15\fP
+.SH "Методы"
+.PP 
+.SS "void zgt::display () const\fC [inline]\fP"
+
+.PP
+Выводит содержимое структуры zgt на консоль\&. Функция \fBdisplay()\fP выводит значения каждого поля структуры zgt на консоль\&. Затем выводит значения отверстий для крепления, позицию маркера, серийный номер шрифта и позицию стопора\&. 
+.PP
+См\&. определение в файле \fBzgt\&.h\fP строка \fB30\fP.PP
+.nf
+30                          {
+31         std::cout << "Diameter: " << diameter << "\\n";
+32         std::cout << "Center Hole Diameter: " << center_hole_diameter << "\\n";
+33 
+34         std::cout << "Mounting Holes: ";
+35         for (auto val : mounting_holes)
+36             std::cout << val << " ";
+37         std::cout << "\\n";
+38 
+39         std::cout << "Marker Position: ";
+40         for (auto val : marker_position)
+41             std::cout << val << " ";
+42         std::cout << "\\n";
+43 
+44         std::cout << "Font Serial Number: " << font_serial_number[0] << " " << font_serial_number[1] << "\\n";
+45 
+46         std::cout << "Stop Position: " << stop_position[0] << " " << stop_position[1] << " " << stop_position[2] << "\\n";
+47     }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "double zgt::center_hole_diameter"
+Диаметр центрального отверстия 
+.PP
+См\&. определение в файле \fBzgt\&.h\fP строка \fB17\fP
+.SS "double zgt::diameter"
+Диаметр 
+.PP
+См\&. определение в файле \fBzgt\&.h\fP строка \fB16\fP
+.SS "std::array<double, 2> zgt::font_serial_number {}"
+Серийный номер шрифта 
+.PP
+См\&. определение в файле \fBzgt\&.h\fP строка \fB20\fP
+.SS "std::vector<double> zgt::marker_position"
+Позиция маркера 
+.PP
+См\&. определение в файле \fBzgt\&.h\fP строка \fB19\fP
+.SS "std::vector<double> zgt::mounting_holes"
+Отверстия для крепления 
+.PP
+См\&. определение в файле \fBzgt\&.h\fP строка \fB18\fP
+.SS "std::array<double, 3> zgt::stop_position {}"
+Позиция стопора 
+.PP
+См\&. определение в файле \fBzgt\&.h\fP строка \fB21\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

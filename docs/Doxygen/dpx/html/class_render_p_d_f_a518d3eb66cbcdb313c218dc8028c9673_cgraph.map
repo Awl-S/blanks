@@ -1,0 +1,5 @@
+<map id="RenderPDF::drawMainLines" name="RenderPDF::drawMainLines">
+<area shape="rect" id="Node000001" title="Рисует основные линии на странице PDF." alt="" coords="5,5,188,32"/>
+<area shape="rect" id="Node000002" href="$class_render_p_d_f.html#ae17f88d413daf207f1b93fc43a8fd679" title="Рисует линию на странице PDF." alt="" coords="236,5,386,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,16,221,16,221,21,188,21"/>
+</map>

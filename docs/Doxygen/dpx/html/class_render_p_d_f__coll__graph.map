@@ -1,0 +1,43 @@
+<map id="RenderPDF" name="RenderPDF">
+<area shape="rect" id="Node000001" title="Класс для генерации PDF&#45;файла." alt="" coords="1092,419,1180,445"/>
+<area shape="rect" id="Node000002" href="$structcfm.html" title="Структура для хранения данных типа cfm." alt="" coords="620,276,662,303"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="677,297,1092,417,1090,422,675,302"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="291,43,370,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,75,409,102,419,124,420,143,422,161,433,178,459,195,484,199,512,200,545,211,592,242,627,274,624,278,589,247,543,216,512,206,484,204,457,200,429,182,417,162,415,143,414,125,405,106,375,79"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="568,5,713,48"/>
+<area shape="poly" id="edge14_Node000012_Node000003" title=" " alt="" coords="384,43,431,36,568,26,568,31,431,41,385,48"/>
+<area shape="rect" id="Node000016" href="$structtbl.html" title="Структура для хранения данных таблицы." alt="" coords="621,89,660,116"/>
+<area shape="poly" id="edge19_Node000016_Node000003" title=" " alt="" coords="385,61,621,97,621,103,384,67"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="14,35,140,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="154,53,290,53,290,59,154,59"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,376,149,403"/>
+<area shape="poly" id="edge23_Node000001_Node000005" title=" " alt="" coords="98,412,135,457,188,508,220,531,254,550,291,562,329,567,904,567,939,563,973,552,1006,537,1036,518,1087,478,1121,444,1124,448,1090,482,1039,523,1008,542,975,557,940,568,904,572,329,572,290,567,252,554,217,535,185,512,131,461,94,416"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="113,366,177,334,253,305,305,294,360,286,465,279,557,280,619,285,619,290,557,286,466,285,360,291,306,299,254,311,179,339,116,371"/>
+<area shape="rect" id="Node000009" href="$structzgt.html" title="Структура для хранения данных типа zgt." alt="" coords="621,420,660,447"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="107,410,172,456,212,477,254,493,335,511,399,511,464,497,543,471,567,458,620,437,622,442,569,462,545,476,465,502,400,516,334,516,253,499,210,482,169,460,104,415"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="254,116,407,159"/>
+<area shape="poly" id="edge21_Node000017_Node000005" title=" " alt="" coords="91,361,125,309,171,251,232,198,291,157,294,161,236,202,175,255,129,312,95,364"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="266,320,395,347"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="409,322,544,304,618,291,619,296,544,309,410,327"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="254,372,407,399"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="421,382,482,374,543,358,589,331,624,301,628,305,592,335,545,362,484,380,422,387"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="384,401,432,413,538,427,621,430,621,436,538,432,430,419,383,406"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="254,205,407,232"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="422,229,545,255,620,279,618,284,543,260,421,235"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="675,431,1091,429,1091,435,675,436"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="254,425,407,452"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="394,453,431,460,488,465,544,460,585,450,620,438,621,444,586,456,544,465,488,470,431,465,393,459"/>
+<area shape="rect" id="Node000011" href="$structnbr.html" title="Структура для хранения данных типа nbr." alt="" coords="883,71,922,97"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="937,98,1004,143,1039,174,1070,211,1100,267,1119,326,1131,380,1136,418,1131,419,1125,381,1114,328,1095,269,1065,213,1036,178,1001,147,934,103"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="729,43,883,77,882,83,727,48"/>
+<area shape="rect" id="Node000013" href="$structpoint.html" title="Структура для хранения координат точек." alt="" coords="878,480,927,507"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="942,488,1001,480,1067,464,1111,443,1114,448,1069,469,1002,485,942,493"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="570,472,711,515"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="726,491,878,491,878,496,726,496"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="843,163,962,189"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="945,195,1007,236,1040,263,1070,293,1092,325,1111,360,1133,417,1128,419,1106,362,1088,328,1066,296,1037,267,1004,240,942,199"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="675,109,853,160,851,165,673,114"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="422,125,621,102,621,107,422,130"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="832,607,973,633"/>
+<area shape="poly" id="edge22_Node000001_Node000018" title=" " alt="" coords="987,626,1029,620,1048,612,1066,602,1083,585,1097,566,1117,522,1127,478,1131,445,1136,446,1132,479,1122,523,1102,569,1087,589,1069,606,1051,617,1030,625,988,631"/>
+</map>

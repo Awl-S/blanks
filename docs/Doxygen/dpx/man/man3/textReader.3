@@ -1,0 +1,379 @@
+.TH "textReader" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+textReader \- Класс для чтения текстового файла\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'textReader\&.h'\fP
+.PP
+Базовые классы:\fBFileReader\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBtextReader\fP (const std::filesystem::path &file_path)"
+.br
+.RI "Конструктор класса \fBtextReader\fP\&. "
+.ti -1c
+.RI "void \fBread_nbr\fP (\fBnbr\fP &data)"
+.br
+.RI "Читает данные типа nbr из файла\&. "
+.ti -1c
+.RI "void \fBread_point\fP (\fBpoint\fP &data)"
+.br
+.RI "Читает данные типа point из файла\&. "
+.ti -1c
+.RI "void \fBread_tbl\fP (\fBtbl\fP &data)"
+.br
+.RI "Читает данные типа tbl из файла\&. "
+.ti -1c
+.RI "void \fBread_cfm\fP (\fBcfm\fP &data)"
+.br
+.RI "Читает данные типа cfm из файла\&. "
+.ti -1c
+.RI "void \fBread_zgt\fP (\fBzgt\fP &data)"
+.br
+.RI "Читает данные типа zgt из файла\&. "
+.in -1c
+
+Открытые члены унаследованные от \fBFileReader\fP
+.in +1c
+.ti -1c
+.RI "\fBFileReader\fP (std::filesystem::path file_path)"
+.br
+.RI "Конструктор класса \fBFileReader\fP\&. "
+.in -1c
+.SS "Дополнительные унаследованные члены"
+
+
+Защищенные статические члены унаследованные от \fBFileReader\fP
+.in +1c
+.ti -1c
+.RI "static std::string \fBreadLineString\fP (std::ifstream &file)"
+.br
+.RI "Читает строку из файла и удаляет ведущие и завершающие пробелы\&. "
+.ti -1c
+.RI "static std::string \fBtrim\fP (const std::string &s)"
+.br
+.RI "Удаляет ведущие и завершающие пробелы из строки\&. "
+.in -1c
+
+Защищенные данные унаследованные от \fBFileReader\fP
+.in +1c
+.ti -1c
+.RI "std::filesystem::path \fBfile_path_\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс для чтения текстового файла\&. 
+
+Класс \fBtextReader\fP наследуется от класса \fBFileReader\fP и предоставляет функциональность чтения различных типов данных из текстового файла\&. 
+.PP
+См\&. определение в файле \fBtextReader\&.h\fP строка \fB18\fP
+.SH "Конструктор(ы)"
+.PP 
+.SS "textReader::textReader (const std::filesystem::path & file_path)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Конструктор класса \fBtextReader\fP\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIfile_path\fP Путь к файлу для чтения\&.
+.RE
+.PP
+Конструктор инициализирует объект \fBtextReader\fP с указанным путем к файлу file_path и вызывает конструктор базового класса \fBFileReader\fP\&. 
+.PP
+См\&. определение в файле \fBtextReader\&.h\fP строка \fB27\fP.PP
+.nf
+27 : FileReader(file_path) {}
+.fi
+
+.SH "Методы"
+.PP 
+.SS "void textReader::read_cfm (\fBcfm\fP & data)"
+
+.PP
+Читает данные типа cfm из файла\&. Читает данные из файла в формате CFM\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP Ссылка на объект типа cfm для сохранения прочитанных данных\&.
+.RE
+.PP
+Функция \fBread_cfm()\fP читает данные типа cfm из файла и сохраняет их в объекте data\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP ссылка на структуру cfm, в которую будут записаны данные из файла 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP в случае ошибки открытия файла 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBtextReader\&.cpp\fP строка \fB11\fP.PP
+.nf
+11                                    {
+12     std::ifstream file(file_path_);
+13     if (!file\&.is_open()) {
+14         throw std::runtime_error("Failed to open file: " + file_path_\&.string());
+15     }
+16 
+17     std::string line;
+18     size_t count = 1;
+19     while (std::getline(file, line)) {
+20         if (count == 1) {
+21             data\&.header = trim(line);
+22         } else if (count == 3) {
+23             data\&.blank = trim(line);
+24         } else if (count == 6) {
+25             std::istringstream iss(line);
+26             double temp;
+27             while (iss >> temp) {
+28                 data\&.marks\&.push_back(temp);
+29             }
+30         } else if (count == 8) {
+31             std::istringstream(line) >> data\&.format[0] >> data\&.format[1];
+32         } else if (count == 10) {
+33             std::istringstream(line) >> data\&.diameter;
+34         } else if (count == 12) {
+35             std::istringstream(line) >> data\&.small_tick[0] >> data\&.small_tick[1];
+36         } else if (count == 14) {
+37             std::istringstream(line) >> data\&.big_tick[0] >> data\&.big_tick[1];
+38         } else if (count == 16) {
+39             std::istringstream(line) >> data\&.digital_tick[0] >> data\&.digital_tick[1] >> data\&.digital_tick[2] >> data\&.digital_tick[3];
+40         } else if (count == 18) {
+41             std::istringstream(line) >> data\&.digit_height >> data\&.label_height;
+42         } else if (count == 20) {
+43             data\&.tick_mask = trim(line);
+44         }
+45         count++;
+46     }
+47 }
+.fi
+
+.SS "void textReader::read_nbr (\fBnbr\fP & data)"
+
+.PP
+Читает данные типа nbr из файла\&. Читает данные из файла в формате NBR\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP Ссылка на объект типа nbr для сохранения прочитанных данных\&.
+.RE
+.PP
+Функция \fBread_nbr()\fP читает данные типа nbr из файла и сохраняет их в объекте data\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP ссылка на структуру nbr, в которую будут записаны данные из файла 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP в случае ошибки открытия файла 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBtextReader\&.cpp\fP строка \fB163\fP.PP
+.nf
+163                                    {
+164     std::ifstream file(file_path_);
+165     if (!file\&.is_open()) {
+166         throw std::runtime_error("Failed to open file: " + file_path_\&.string());
+167     }
+168 
+169     std::string line;
+170     size_t line_number = 1;
+171     while (std::getline(file, line)) {
+172         data\&.icon\&.insert(std::make_pair(line_number, line));
+173         line_number++;
+174     }
+175 }
+.fi
+
+.SS "void textReader::read_point (\fBpoint\fP & data)"
+
+.PP
+Читает данные типа point из файла\&. Читает данные из файла в формате точки
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP Ссылка на объект типа point для сохранения прочитанных данных\&.
+.RE
+.PP
+Функция \fBread_point()\fP читает данные типа point из файла и сохраняет их в объекте data\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP ссылка на структуру point, в которую будут записаны данные из файла 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP в случае ошибки открытия файла 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBtextReader\&.cpp\fP строка \fB145\fP.PP
+.nf
+145                                        {
+146     std::ifstream file(file_path_);
+147     if (!file\&.is_open()) {
+148         throw std::runtime_error("Failed to open file: " + file_path_\&.string());
+149     }
+150 
+151     double x, y;
+152     while (file >> x >> y) {
+153         data\&.coordinates\&.emplace_back(x, y);
+154     }
+155 }
+.fi
+
+.SS "void textReader::read_tbl (\fBtbl\fP & data)"
+
+.PP
+Читает данные типа tbl из файла\&. Читает данные из файла в формате TBL\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP Ссылка на объект типа tbl для сохранения прочитанных данных\&.
+.RE
+.PP
+Функция \fBread_tbl()\fP читает данные типа tbl из файла и сохраняет их в объекте data\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP ссылка на структуру tbl, в которую будут записаны данные из файла 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP в случае ошибки открытия файла или если не удается извлечь число из имени файла 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBtextReader\&.cpp\fP строка \fB95\fP.PP
+.nf
+95                                    {
+96     std::ifstream file(file_path_);
+97     if (!file\&.is_open()) {
+98         throw std::runtime_error("Failed to open file: " + file_path_\&.string());
+99     }
+100 
+101     std::string file_name = file_path_\&.filename()\&.string();
+102 
+103     std::string prefix = "scale";
+104     std::string suffix = "\&.tbl";
+105 
+106     auto start = file_name\&.find(prefix);
+107     auto end = file_name\&.find(suffix);
+108 
+109     if (start == std::string::npos || end == std::string::npos || start >= end) {
+110         throw std::runtime_error("Could not extract number from file name");
+111     }
+112 
+113     start += prefix\&.length();
+114     std::string number_str = file_name\&.substr(start, end \- start);
+115 
+116     try {
+117         data\&.position = std::stoi(number_str);
+118     } catch (const std::invalid_argument& e) {
+119         throw std::runtime_error("Invalid number in file name: " + number_str);
+120     } catch (const std::out_of_range& e) {
+121         throw std::runtime_error("Number in file name is out of range: " + number_str);
+122     }
+123 
+124     std::string line;
+125     readLineString(file);
+126     data\&.model = readLineString(file);
+127 
+128     data\&.measurements\&.reserve(20);
+129     while (std::getline(file, line)) {
+130         double temp;
+131         double col2;
+132         double col3;
+133         if (std::istringstream(line) >> temp >> col2 >> col3) {
+134             data\&.measurements\&.push_back({col2, col3});
+135         }
+136     }
+137 }
+.fi
+
+.SS "void textReader::read_zgt (\fBzgt\fP & data)"
+
+.PP
+Читает данные типа zgt из файла\&. Читает данные из файла в формате ZGT\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP Ссылка на объект типа zgt для сохранения прочитанных данных\&.
+.RE
+.PP
+Функция \fBread_zgt()\fP читает данные типа zgt из файла и сохраняет их в объекте data\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdata\fP ссылка на структуру zgt, в которую будут записаны данные из файла 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP в случае ошибки открытия файла 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBtextReader\&.cpp\fP строка \fB55\fP.PP
+.nf
+55                                    {
+56     std::ifstream file(file_path_);
+57     if (!file\&.is_open()) {
+58         throw std::runtime_error("Failed to open file: " + file_path_\&.string());
+59     }
+60 
+61     size_t count = 1;
+62     std::string line;
+63     while (std::getline(file, line)) {
+64         if (count == 2) {
+65             std::istringstream(line) >> data\&.diameter;
+66         } else if (count == 4) {
+67             std::istringstream(line) >> data\&.center_hole_diameter;
+68         } else if (count == 6) {
+69             std::istringstream iss(line);
+70             double temp;
+71             while (iss >> temp) {
+72                 data\&.mounting_holes\&.push_back(temp);
+73             }
+74         } else if (count == 8) {
+75             std::istringstream iss(line);
+76             double temp;
+77             while (iss >> temp) {
+78                 data\&.marker_position\&.push_back(temp);
+79             }
+80         } else if (count == 10) {
+81             std::istringstream(line) >> data\&.font_serial_number[0] >> data\&.font_serial_number[1];
+82         } else if (count == 12) {
+83             std::istringstream(line) >> data\&.stop_position[0] >> data\&.stop_position[1] >> data\&.stop_position[2];
+84         }
+85         count++;
+86     }
+87 }
+.fi
+
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

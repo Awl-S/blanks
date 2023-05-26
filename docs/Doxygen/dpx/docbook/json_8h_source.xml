@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_json_8h_source" xml:lang="ru">
+<title>json.h</title>
+<indexterm><primary>json.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_json_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANKS_JSON_H</emphasis>
+<anchor xml:id="_json_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANKS_JSON_H</emphasis>
+<anchor xml:id="_json_8h_source_1l00003"/>00003 
+<anchor xml:id="_json_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;nlohmann/json.hpp&gt;</emphasis>
+<anchor xml:id="_json_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__parser_configuration_8h">ParserConfiguration.h</link>&quot;</emphasis>
+<anchor xml:id="_json_8h_source_1l00006"/>00006 
+<anchor xml:id="_json_8h_source_1l00013"/><link linkend="_classjson">00013</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_classjson">json</link>:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_parser_configuration">ParserConfiguration</link>{
+<anchor xml:id="_json_8h_source_1l00014"/>00014 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_json_8h_source_1l00015"/>00015 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classjson_1a7d5c22a97d49085310994af222c28f8c">display</link>()&#32;<emphasis role="keyword">override</emphasis>;
+<anchor xml:id="_json_8h_source_1l00016"/>00016 
+<anchor xml:id="_json_8h_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_classjson">json</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;config_file_path);
+<anchor xml:id="_json_8h_source_1l00018"/>00018 
+<anchor xml:id="_json_8h_source_1l00019"/>00019 &#32;&#32;&#32;&#32;std::filesystem::path&#32;<link linkend="_classjson_1a760a6ea6469d17e611ccf23921753d20">getFilePath</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;key)&#32;<emphasis role="keyword">override</emphasis>;
+<anchor xml:id="_json_8h_source_1l00020"/>00020 
+<anchor xml:id="_json_8h_source_1l00021"/>00021 &#32;&#32;&#32;&#32;std::vector&lt;std::filesystem::path&gt;&#32;<link linkend="_classjson_1a335a17f634ae297aa36dbc40855dd8da">getFileList</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;key,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;search)&#32;<emphasis role="keyword">override</emphasis>;
+<anchor xml:id="_json_8h_source_1l00022"/>00022 
+<anchor xml:id="_json_8h_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_classjson_1a3f5e7618318c6e39387a917589aa3d38">getInteger</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;key);
+<anchor xml:id="_json_8h_source_1l00024"/>00024 
+<anchor xml:id="_json_8h_source_1l00025"/>00025 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_json_8h_source_1l00026"/><link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">00026</link> &#32;&#32;&#32;&#32;nlohmann::json&#32;<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>;
+<anchor xml:id="_json_8h_source_1l00027"/>00027 };
+<anchor xml:id="_json_8h_source_1l00028"/>00028 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//BLANKS_JSON_H</emphasis>
+</programlisting></section>

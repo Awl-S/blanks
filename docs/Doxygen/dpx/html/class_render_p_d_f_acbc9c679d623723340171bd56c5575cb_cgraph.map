@@ -1,0 +1,5 @@
+<map id="RenderPDF::drawAdditionalTicks" name="RenderPDF::drawAdditionalTicks">
+<area shape="rect" id="Node000001" title="Рисует дополнительные отметки на странице PDF." alt="" coords="5,5,186,48"/>
+<area shape="rect" id="Node000002" href="$class_render_p_d_f.html#ae17f88d413daf207f1b93fc43a8fd679" title="Рисует линию на странице PDF." alt="" coords="234,13,384,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,24,219,24,219,29,186,29"/>
+</map>

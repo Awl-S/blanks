@@ -1,0 +1,550 @@
+\doxysection{Класс Encoding\+Converter}
+\hypertarget{class_encoding_converter}{}\label{class_encoding_converter}\index{EncodingConverter@{EncodingConverter}}
+
+
+Класс для преобразования кодировки файлов.  
+
+
+
+
+{\ttfamily \#include \"{}Encoding\+Converter.\+h\"{}}
+
+
+
+Граф связей класса Encoding\+Converter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_encoding_converter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_encoding_converter_ab3102bc4fcd6c5ebf7768b4d6dbcff62}{Encoding\+Converter}} (std\+::string input\+Dir, const std\+::string \&output\+Dir=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em Конструктор объекта \doxylink{class_encoding_converter}{Encoding\+Converter}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3}{convert}} ()
+\begin{DoxyCompactList}\small\item\em Конвертирует файлы в директории. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4}{load\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em Загружает настройки преобразования кодировки. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_encoding_converter_ab066b92f365f593c44d6825071463e08}{convert\+Directory}} (const std\+::filesystem\+::path \&dir)
+\begin{DoxyCompactList}\small\item\em Конвертирует файлы в указанной директории и её поддиректориях. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_encoding_converter_a460858eb34940271be93a5aa08452a66}{convert\+File}} (const std\+::filesystem\+::path \&filepath)
+\begin{DoxyCompactList}\small\item\em Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0}{print\+Stats}} () const
+\begin{DoxyCompactList}\small\item\em Выводит статистику по конвертированным файлам. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf}{iconv\+Convert}} (const std\+::string \&input, std\+::string \&output, const std\+::string \&from\+Charset, const std\+::string \&to\+Charset)
+\begin{DoxyCompactList}\small\item\em Конвертирует строку из одной кодировки в другую с помощью iconv. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7}{is\+\_\+utf8}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли строка в кодировке UTF-\/8. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{input\+Directory}}
+\item 
+std\+::string \mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{output\+Directory}}
+\item 
+bool \mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{use\+Temp\+Directory}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{file\+Extensions}}
+\item 
+std\+::string \mbox{\hyperlink{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f}{source\+Encoding}}
+\item 
+std\+::string \mbox{\hyperlink{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7}{target\+Encoding}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{files\+Processed}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{files\+Converted}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для преобразования кодировки файлов. 
+
+Конструктор класса принимает входной и выходной каталоги. Если выходной каталог не указан, используется временный каталог. 
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00014}{14}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{class_encoding_converter_ab3102bc4fcd6c5ebf7768b4d6dbcff62}\label{class_encoding_converter_ab3102bc4fcd6c5ebf7768b4d6dbcff62} 
+\index{EncodingConverter@{EncodingConverter}!EncodingConverter@{EncodingConverter}}
+\index{EncodingConverter@{EncodingConverter}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{EncodingConverter()}{EncodingConverter()}}
+{\footnotesize\ttfamily Encoding\+Converter\+::\+Encoding\+Converter (\begin{DoxyParamCaption}\item[{std\+::string}]{input\+Dir,  }\item[{const std\+::string \&}]{output\+Dir = {\ttfamily \"{}\"{}} }\end{DoxyParamCaption})}
+
+
+
+Конструктор объекта \doxylink{class_encoding_converter}{Encoding\+Converter}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em input\+Dir} & Входной каталог. \\
+\hline
+{\em output\+Dir} & Выходной каталог.\\
+\hline
+\end{DoxyParams}
+Если output\+Dir пуст, используется временный каталог. Загружает настройки преобразования кодировки и сбрасывает счетчики файлов. 
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8cpp_source}{Encoding\+Converter.\+cpp}} строка \mbox{\hyperlink{_encoding_converter_8cpp_source_l00017}{17}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{inputDirectory}}(std::move(inputDir)),\ \mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{outputDirectory}}(outputDir),\ \mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{useTempDirectory}}(outputDir.empty())\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4}{loadSettings}}(),\ \mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{filesConverted}}\ =\ 0,\ \mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{filesProcessed}}\ =\ 0;}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_encoding_converter_ab3102bc4fcd6c5ebf7768b4d6dbcff62_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Методы}
+\Hypertarget{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3}\label{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3} 
+\index{EncodingConverter@{EncodingConverter}!convert@{convert}}
+\index{convert@{convert}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily void Encoding\+Converter\+::convert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Конвертирует файлы в директории. 
+
+Метод конвертирует файлы в указанной директории и выводит статистику по конвертированным файлам. Путь к директории, содержащей исходные файлы, задается в переменной input\+Directory. 
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8cpp_source}{Encoding\+Converter.\+cpp}} строка \mbox{\hyperlink{_encoding_converter_8cpp_source_l00046}{46}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ std::filesystem::path\ inputPath(\mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{inputDirectory}});}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_ab066b92f365f593c44d6825071463e08}{convertDirectory}}(inputPath);}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0}{printStats}}();}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3_cgraph}
+\end{center}
+\end{figure}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_encoding_converter_ab066b92f365f593c44d6825071463e08}\label{class_encoding_converter_ab066b92f365f593c44d6825071463e08} 
+\index{EncodingConverter@{EncodingConverter}!convertDirectory@{convertDirectory}}
+\index{convertDirectory@{convertDirectory}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{convertDirectory()}{convertDirectory()}}
+{\footnotesize\ttfamily void Encoding\+Converter\+::convert\+Directory (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Конвертирует файлы в указанной директории и её поддиректориях. 
+
+Метод рекурсивно конвертирует все файлы в указанной директории и её поддиректориях. Конвертируемые файлы должны иметь расширения, указанные в списке file\+Extensions. Если файл имеет другое расширение и output\+Directory указана, он будет скопирован в указанную выходную директорию.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em dir} & Путь к директории, в которой нужно выполнить конвертацию файлов. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8cpp_source}{Encoding\+Converter.\+cpp}} строка \mbox{\hyperlink{_encoding_converter_8cpp_source_l00061}{61}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ std::filesystem::recursive\_directory\_iterator(dir))\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file())\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{filesProcessed}}++;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::path\ relativePath\ =\ std::filesystem::relative(entry,\ \mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{inputDirectory}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::path\ outputPath\ =\ \mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{useTempDirectory}}\ ?\ std::filesystem::temp\_directory\_path()\ /\ relativePath\ :\ \mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{outputDirectory}}\ /\ relativePath;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(\mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.begin(),\ \mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.end(),\ entry.path().extension())\ !=\ \mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.end())\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a460858eb34940271be93a5aa08452a66}{convertFile}}(entry.path());}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{outputDirectory}}.empty())\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Если\ файл\ имеет\ другое\ расширение\ и\ outputDirectory\ указана,\ копируем\ его}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::create\_directories(outputPath.parent\_path());}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::copy\_file(entry,\ outputPath,\ std::filesystem::copy\_options::overwrite\_existing);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoding_converter_ab066b92f365f593c44d6825071463e08_cgraph}
+\end{center}
+\end{figure}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoding_converter_ab066b92f365f593c44d6825071463e08_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_encoding_converter_a460858eb34940271be93a5aa08452a66}\label{class_encoding_converter_a460858eb34940271be93a5aa08452a66} 
+\index{EncodingConverter@{EncodingConverter}!convertFile@{convertFile}}
+\index{convertFile@{convertFile}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{convertFile()}{convertFile()}}
+{\footnotesize\ttfamily void Encoding\+Converter\+::convert\+File (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл. 
+
+Метод читает содержимое файла с указанным путем, конвертирует его из исходной кодировки в целевую и сохраняет результат в файл. Если включена опция use\+Temp\+Directory, то промежуточный файл будет создан во временной директории, а затем скопирован и заменит исходный файл.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em filepath} & Путь к файлу, который нужно конвертировать. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8cpp_source}{Encoding\+Converter.\+cpp}} строка \mbox{\hyperlink{_encoding_converter_8cpp_source_l00128}{128}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ std::cout\ <<\ filepath\ <<\ std::endl;}
+\DoxyCodeLine{00130\ \ \ \ \ std::ifstream\ inFile(filepath,\ std::ios::binary);}
+\DoxyCodeLine{00131\ \ \ \ \ std::string\ content((std::istreambuf\_iterator<char>(inFile)),\ std::istreambuf\_iterator<char>());}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ std::filesystem::path\ relativePath\ =\ std::filesystem::relative(filepath,\ \mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{inputDirectory}});}
+\DoxyCodeLine{00134\ \ \ \ \ std::filesystem::path\ outputPath\ =\ \mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{useTempDirectory}}\ ?\ std::filesystem::temp\_directory\_path()\ /\ relativePath\ :\ \mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{outputDirectory}}\ /\ relativePath;}
+\DoxyCodeLine{00135\ \ \ \ \ std::filesystem::create\_directories(outputPath.parent\_path());}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7}{is\_utf8}}(content))\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ std::string\ utf8Content;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf}{iconvConvert}}(content,\ utf8Content,\ \mbox{\hyperlink{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f}{sourceEncoding}},\ \mbox{\hyperlink{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7}{targetEncoding}}))\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ content\ =\ utf8Content;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{filesConverted}}++;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ Converting\ file\ '"{}}\ <<\ filepath\ <<\ \textcolor{stringliteral}{"{}':\ Invalid\ or\ incomplete\ multibyte\ or\ wide\ character"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ std::ofstream\ outFile(outputPath,\ std::ios::binary);}
+\DoxyCodeLine{00148\ \ \ \ \ outFile.write(content.data(),\ content.size());}
+\DoxyCodeLine{00149\ \ \ \ \ outFile.close();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{useTempDirectory}})\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ std::filesystem::copy(outputPath,\ filepath,\ std::filesystem::copy\_options::overwrite\_existing);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ std::filesystem::remove(outputPath);}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_encoding_converter_a460858eb34940271be93a5aa08452a66_cgraph}
+\end{center}
+\end{figure}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoding_converter_a460858eb34940271be93a5aa08452a66_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf}\label{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf} 
+\index{EncodingConverter@{EncodingConverter}!iconvConvert@{iconvConvert}}
+\index{iconvConvert@{iconvConvert}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{iconvConvert()}{iconvConvert()}}
+{\footnotesize\ttfamily bool Encoding\+Converter\+::iconv\+Convert (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input,  }\item[{std\+::string \&}]{output,  }\item[{const std\+::string \&}]{from\+Charset,  }\item[{const std\+::string \&}]{to\+Charset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Конвертирует строку из одной кодировки в другую с помощью iconv. 
+
+Метод конвертирует строку из одной кодировки в другую с использованием функций iconv.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em input} & Входная строка для конвертации. \\
+\hline
+{\em output} & Строка, в которую будет записан результат конвертации. \\
+\hline
+{\em from\+Charset} & Исходная кодировка. \\
+\hline
+{\em to\+Charset} & Целевая кодировка. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если конвертация прошла успешно, иначе false. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8cpp_source}{Encoding\+Converter.\+cpp}} строка \mbox{\hyperlink{_encoding_converter_8cpp_source_l00090}{90}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ iconv\_t\ cd\ =\ iconv\_open(toCharset.c\_str(),\ fromCharset.c\_str());}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (cd\ ==\ (iconv\_t)-\/1)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}iconv\_open"{}});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ std::vector<char>\ inBuf(input.begin(),\ input.end());}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ inLeft\ =\ inBuf.size();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ outLeft\ =\ inLeft\ *\ 4;}
+\DoxyCodeLine{00100\ \ \ \ \ std::vector<char>\ outBuf(outLeft);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{char}*\ inPtr\ =\ inBuf.data();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{char}*\ outPtr\ =\ outBuf.data();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{while}\ (inLeft\ >\ 0)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ result\ =\ iconv(cd,\ \&inPtr,\ \&inLeft,\ \&outPtr,\ \&outLeft);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ ==\ (\textcolor{keywordtype}{size\_t})-\/1)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ iconv\_close(cd);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ iconv\_close(cd);}
+\DoxyCodeLine{00114\ \ \ \ \ outBuf.resize(outBuf.size()\ -\/\ outLeft);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ output.assign(outBuf.begin(),\ outBuf.end());}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7}\label{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7} 
+\index{EncodingConverter@{EncodingConverter}!is\_utf8@{is\_utf8}}
+\index{is\_utf8@{is\_utf8}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{is\_utf8()}{is\_utf8()}}
+{\footnotesize\ttfamily bool Encoding\+Converter\+::is\+\_\+utf8 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Проверяет, является ли строка в кодировке UTF-\/8. 
+
+Метод проверяет, является ли строка в кодировке UTF-\/8 путем анализа байтовой последовательности. Возвращает true, если строка является корректной UTF-\/8 строкой, иначе false.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em str} & Строка, которую нужно проверить. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если строка является корректной UTF-\/8 строкой, иначе false. 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8cpp_source}{Encoding\+Converter.\+cpp}} строка \mbox{\hyperlink{_encoding_converter_8cpp_source_l00176}{176}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ length\ =\ str.size();}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ length;\ )\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((str[i]\ \&\ 0x80)\ ==\ 0)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 1;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((str[i]\ \&\ 0xE0)\ ==\ 0xC0\ \&\&\ i\ +\ 1\ <\ length\ \&\&\ (str[i\ +\ 1]\ \&\ 0xC0)\ ==\ 0x80)\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 2;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((str[i]\ \&\ 0xF0)\ ==\ 0xE0\ \&\&\ i\ +\ 2\ <\ length\ \&\&\ (str[i\ +\ 1]\ \&\ 0xC0)\ ==\ 0x80\ \&\&\ (str[i\ +\ 2]\ \&\ 0xC0)\ ==\ 0x80)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 3;}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((str[i]\ \&\ 0xF8)\ ==\ 0xF0\ \&\&\ i\ +\ 3\ <\ length\ \&\&\ (str[i\ +\ 1]\ \&\ 0xC0)\ ==\ 0x80\ \&\&\ (str[i\ +\ 2]\ \&\ 0xC0)\ ==\ 0x80\ \&\&\ (str[i\ +\ 3]\ \&\ 0xC0)\ ==\ 0x80)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 4;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00192\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4}\label{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4} 
+\index{EncodingConverter@{EncodingConverter}!loadSettings@{loadSettings}}
+\index{loadSettings@{loadSettings}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{loadSettings()}{loadSettings()}}
+{\footnotesize\ttfamily void Encoding\+Converter\+::load\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Загружает настройки преобразования кодировки. 
+
+Устанавливает исходную кодировку в \"{}\+UTF-\/8\"{} и целевую кодировку в \"{}\+WINDOWS-\/1251\"{}. Задает расширения файлов, которые следует преобразовывать. 
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8cpp_source}{Encoding\+Converter.\+cpp}} строка \mbox{\hyperlink{_encoding_converter_8cpp_source_l00028}{28}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f}{sourceEncoding}}\ =\ \textcolor{stringliteral}{"{}WINDOWS-\/1251"{}};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7}{targetEncoding}}\ =\ \textcolor{stringliteral}{"{}UTF-\/8"{}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Создаем\ массив\ итераторов\ на\ строки,\ которые\ нужно\ добавить}}
+\DoxyCodeLine{00033\ \ \ \ \ std::string\ extensions[]\ =\ \{\ \textcolor{stringliteral}{"{}.tbl"{}},\ \textcolor{stringliteral}{"{}.нбр"{}},\ \textcolor{stringliteral}{"{}.згт"{}},\ \textcolor{stringliteral}{"{}.cfm"{}}\ \};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ numExtensions\ =\ \textcolor{keyword}{sizeof}(extensions)\ /\ \textcolor{keyword}{sizeof}(extensions[0]);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Используем\ конструктор\ std::vector,\ принимающий\ два\ итератора}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.insert(\mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}}.end(),\ extensions,\ extensions\ +\ numExtensions);}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0}\label{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0} 
+\index{EncodingConverter@{EncodingConverter}!printStats@{printStats}}
+\index{printStats@{printStats}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{printStats()}{printStats()}}
+{\footnotesize\ttfamily void Encoding\+Converter\+::print\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Выводит статистику по конвертированным файлам. 
+
+Метод выводит информацию о количестве обработанных и конвертированных файлов. 
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8cpp_source}{Encoding\+Converter.\+cpp}} строка \mbox{\hyperlink{_encoding_converter_8cpp_source_l00162}{162}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Files\ processed:\ "{}}\ <<\ \mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{filesProcessed}}\ <<\ std::endl;}
+\DoxyCodeLine{00164\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Files\ converted:\ "{}}\ <<\ \mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{filesConverted}}\ <<\ std::endl;}
+\DoxyCodeLine{00165\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}\label{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89} 
+\index{EncodingConverter@{EncodingConverter}!fileExtensions@{fileExtensions}}
+\index{fileExtensions@{fileExtensions}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{fileExtensions}{fileExtensions}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Encoding\+Converter\+::file\+Extensions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00022}{22}}
+
+\Hypertarget{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}\label{class_encoding_converter_a560484bdcdc929771c7d42877cab9643} 
+\index{EncodingConverter@{EncodingConverter}!filesConverted@{filesConverted}}
+\index{filesConverted@{filesConverted}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{filesConverted}{filesConverted}}
+{\footnotesize\ttfamily size\+\_\+t Encoding\+Converter\+::files\+Converted\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00026}{26}}
+
+\Hypertarget{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}\label{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b} 
+\index{EncodingConverter@{EncodingConverter}!filesProcessed@{filesProcessed}}
+\index{filesProcessed@{filesProcessed}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{filesProcessed}{filesProcessed}}
+{\footnotesize\ttfamily size\+\_\+t Encoding\+Converter\+::files\+Processed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00025}{25}}
+
+\Hypertarget{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}\label{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e} 
+\index{EncodingConverter@{EncodingConverter}!inputDirectory@{inputDirectory}}
+\index{inputDirectory@{inputDirectory}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{inputDirectory}{inputDirectory}}
+{\footnotesize\ttfamily std\+::string Encoding\+Converter\+::input\+Directory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00019}{19}}
+
+\Hypertarget{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}\label{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4} 
+\index{EncodingConverter@{EncodingConverter}!outputDirectory@{outputDirectory}}
+\index{outputDirectory@{outputDirectory}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{outputDirectory}{outputDirectory}}
+{\footnotesize\ttfamily std\+::string Encoding\+Converter\+::output\+Directory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00020}{20}}
+
+\Hypertarget{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f}\label{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f} 
+\index{EncodingConverter@{EncodingConverter}!sourceEncoding@{sourceEncoding}}
+\index{sourceEncoding@{sourceEncoding}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{sourceEncoding}{sourceEncoding}}
+{\footnotesize\ttfamily std\+::string Encoding\+Converter\+::source\+Encoding\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00023}{23}}
+
+\Hypertarget{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7}\label{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7} 
+\index{EncodingConverter@{EncodingConverter}!targetEncoding@{targetEncoding}}
+\index{targetEncoding@{targetEncoding}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{targetEncoding}{targetEncoding}}
+{\footnotesize\ttfamily std\+::string Encoding\+Converter\+::target\+Encoding\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00024}{24}}
+
+\Hypertarget{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}\label{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02} 
+\index{EncodingConverter@{EncodingConverter}!useTempDirectory@{useTempDirectory}}
+\index{useTempDirectory@{useTempDirectory}!EncodingConverter@{EncodingConverter}}
+\doxysubsubsection{\texorpdfstring{useTempDirectory}{useTempDirectory}}
+{\footnotesize\ttfamily bool Encoding\+Converter\+::use\+Temp\+Directory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_encoding_converter_8h_source}{Encoding\+Converter.\+h}} строка \mbox{\hyperlink{_encoding_converter_8h_source_l00021}{21}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_encoding_converter_8h}{Encoding\+Converter.\+h}}\item 
+\mbox{\hyperlink{_encoding_converter_8cpp}{Encoding\+Converter.\+cpp}}\end{DoxyCompactItemize}

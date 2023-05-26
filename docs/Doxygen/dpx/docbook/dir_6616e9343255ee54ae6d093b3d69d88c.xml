@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_6616e9343255ee54ae6d093b3d69d88c" xml:lang="ru">
+<title>Содержание директории Reader</title>
+<indexterm><primary>Содержание директории Reader</primary></indexterm>
+Директория графа зависимостей Reader:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_6616e9343255ee54ae6d093b3d69d88c_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="__file_reader_8h">FileReader.h</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="_text_reader_8h">textReader.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

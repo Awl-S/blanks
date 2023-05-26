@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_draw_8cpp" xml:lang="ru">
+<title>Файл draw.cpp</title>
+<indexterm><primary>draw.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../include/RenderPDF/RenderPDF.h&quot;<?linebreak?>#include &lt;cmath&gt;<?linebreak?></programlisting>Граф включаемых заголовочных файлов для draw.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="draw_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>

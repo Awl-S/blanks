@@ -1,0 +1,302 @@
+\doxysection{Класс json}
+\hypertarget{classjson}{}\label{classjson}\index{json@{json}}
+
+
+Класс для работы с JSON-\/конфигурацией.  
+
+
+
+
+{\ttfamily \#include \"{}json.\+h\"{}}
+
+
+
+Граф наследования\+:json\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classjson__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса json\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classjson__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classjson_a7d5c22a97d49085310994af222c28f8c}{display}} () override
+\begin{DoxyCompactList}\small\item\em Отображает информацию из конфигурационного файла. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classjson_a4630c59c2653fc787d1059a1a1e905cb}{json}} (const std\+::string \&config\+\_\+file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Возвращает целочисленное значение, соответствующее заданному ключу. \end{DoxyCompactList}\item 
+std\+::filesystem\+::path \mbox{\hyperlink{classjson_a760a6ea6469d17e611ccf23921753d20}{get\+File\+Path}} (const std\+::string \&key) override
+\begin{DoxyCompactList}\small\item\em Возвращает список файлов, соответствующих заданному ключу и поисковому запросу. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::filesystem\+::path $>$ \mbox{\hyperlink{classjson_a335a17f634ae297aa36dbc40855dd8da}{get\+File\+List}} (const std\+::string \&key, const std\+::string \&search) override
+\begin{DoxyCompactList}\small\item\em Конструктор класса json. \end{DoxyCompactList}\item 
+long long \mbox{\hyperlink{classjson_a3f5e7618318c6e39387a917589aa3d38}{get\+Integer}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em Возвращает путь к файлу, соответствующий заданному ключу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{class_parser_configuration}{Parser\+Configuration}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_parser_configuration_a11a307d9f31f64bffdb881abf94e66b5}{\texorpdfstring{$\sim$}{\string~}\+Parser\+Configuration}} ()=default
+\item 
+virtual std\+::filesystem\+::path \mbox{\hyperlink{class_parser_configuration_ab44f9c6fed060b33544224ddeb473e59}{get\+File\+Path}} (const std\+::string \&key)=0
+\begin{DoxyCompactList}\small\item\em Возвращает путь к файлу на основе указанного ключа. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::filesystem\+::path $>$ \mbox{\hyperlink{class_parser_configuration_a70fcdbc2a2a83b1dabaecf576d1cff71}{get\+File\+List}} (const std\+::string \&key, const std\+::string \&search)=0
+\begin{DoxyCompactList}\small\item\em Возвращает список файлов на основе указанного ключа и поискового запроса. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_parser_configuration_af35d73849ce2faf5cf19196a662fc19a}{display}} ()=0
+\begin{DoxyCompactList}\small\item\em Отображает информацию из конфигурационного файла. \end{DoxyCompactList}\item 
+virtual long long \mbox{\hyperlink{class_parser_configuration_a542aa87ab4a21ce9d52d388456ab8580}{get\+Integer}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em Создает экземпляр класса Config\+Parser на основе пути к конфигурационному файлу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+nlohmann\+::json \mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\+\_\+json}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для работы с JSON-\/конфигурацией. 
+
+Класс json предоставляет функциональность для чтения и обработки JSON-\/конфигурационных файлов. 
+
+См. определение в файле \mbox{\hyperlink{json_8h_source}{json.\+h}} строка \mbox{\hyperlink{json_8h_source_l00013}{13}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classjson_a4630c59c2653fc787d1059a1a1e905cb}\label{classjson_a4630c59c2653fc787d1059a1a1e905cb} 
+\index{json@{json}!json@{json}}
+\index{json@{json}!json@{json}}
+\doxysubsubsection{\texorpdfstring{json()}{json()}}
+{\footnotesize\ttfamily json\+::json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{config\+\_\+file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Возвращает целочисленное значение, соответствующее заданному ключу. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ для получения целочисленного значения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Целочисленное значение, соответствующее заданному ключу. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если ключ отсутствует в конфигурации.\\
+\hline
+\end{DoxyExceptions}
+Функция возвращает целочисленное значение, соответствующее заданному ключу key, извлекая его из объекта config\+\_\+json. Если ключ отсутствует в конфигурации, выбрасывается исключение std\+::runtime\+\_\+error. 
+
+См. определение в файле \mbox{\hyperlink{json_8cpp_source}{json.\+cpp}} строка \mbox{\hyperlink{json_8cpp_source_l00074}{74}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ std::ifstream\ config\_file(config\_file\_path);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (!config\_file.is\_open())\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ open\ configuration\ file:\ "{}}\ +\ config\_file\_path);}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ config\_file\ >>\ \mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}};}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Методы}
+\Hypertarget{classjson_a7d5c22a97d49085310994af222c28f8c}\label{classjson_a7d5c22a97d49085310994af222c28f8c} 
+\index{json@{json}!display@{display}}
+\index{display@{display}!json@{json}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void json\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Отображает информацию из конфигурационного файла. 
+
+Метод отображает информацию из конфигурационного файла, используемого классом. Данный метод может быть переопределен в производных классах. 
+
+Замещает \mbox{\hyperlink{class_parser_configuration_af35d73849ce2faf5cf19196a662fc19a}{Parser\+Configuration}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{json_8cpp_source}{json.\+cpp}} строка \mbox{\hyperlink{json_8cpp_source_l00082}{82}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [key,\ value]\ :\ \mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}.items())\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::cout\ <<\ key\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ value\ <<\ std::endl;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classjson_a335a17f634ae297aa36dbc40855dd8da}\label{classjson_a335a17f634ae297aa36dbc40855dd8da} 
+\index{json@{json}!getFileList@{getFileList}}
+\index{getFileList@{getFileList}!json@{json}}
+\doxysubsubsection{\texorpdfstring{getFileList()}{getFileList()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::filesystem\+::path $>$ json\+::get\+File\+List (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{search }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Конструктор класса json. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em config\+\_\+file\+\_\+path} & Путь к файлу конфигурации. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если не удалось открыть файл конфигурации.\\
+\hline
+\end{DoxyExceptions}
+Конструктор открывает файл конфигурации и загружает его содержимое в объект config\+\_\+json. Если файл конфигурации не будет найден, выбрасывается исключение std\+::runtime\+\_\+error. 
+
+Замещает \mbox{\hyperlink{class_parser_configuration_a70fcdbc2a2a83b1dabaecf576d1cff71}{Parser\+Configuration}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{json_8cpp_source}{json.\+cpp}} строка \mbox{\hyperlink{json_8cpp_source_l00013}{13}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<std::filesystem::path>\ files;}
+\DoxyCodeLine{00015\ \ \ \ \ std::filesystem::path\ directory\ =\ \mbox{\hyperlink{classjson_a760a6ea6469d17e611ccf23921753d20}{getFilePath}}(key);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::filesystem::exists(directory))\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ std::filesystem::recursive\_directory\_iterator(directory))\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file()\ \&\&\ entry.path().filename().string().find(search)\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ files.push\_back(entry.path());}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ entry.path().string()\ <<\ "{}\(\backslash\)t"{}\ <<\ entry.path()\ <<\ std::endl;}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Обработка\ ошибки}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Directory\ does\ not\ exist\ or\ is\ not\ accessible:\ "{}}\ <<\ directory\ <<\ std::endl;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ files;}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classjson_a335a17f634ae297aa36dbc40855dd8da_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classjson_a760a6ea6469d17e611ccf23921753d20}\label{classjson_a760a6ea6469d17e611ccf23921753d20} 
+\index{json@{json}!getFilePath@{getFilePath}}
+\index{getFilePath@{getFilePath}!json@{json}}
+\doxysubsubsection{\texorpdfstring{getFilePath()}{getFilePath()}}
+{\footnotesize\ttfamily std\+::filesystem\+::path json\+::get\+File\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Возвращает список файлов, соответствующих заданному ключу и поисковому запросу. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ для получения пути к директории. \\
+\hline
+{\em search} & Поисковый запрос для фильтрации файлов. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Список файлов, удовлетворяющих условиям поиска.
+\end{DoxyReturn}
+Функция возвращает список файлов, найденных в директории, определенной ключом key. Файлы фильтруются с помощью поискового запроса search. 
+
+Замещает \mbox{\hyperlink{class_parser_configuration_ab44f9c6fed060b33544224ddeb473e59}{Parser\+Configuration}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{json_8cpp_source}{json.\+cpp}} строка \mbox{\hyperlink{json_8cpp_source_l00041}{41}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}.contains(key))\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Configuration\ file\ does\ not\ contain\ key:\ "{}}\ +\ key);}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ std::filesystem::u8path(\mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}[key].get<std::string>());}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classjson_a760a6ea6469d17e611ccf23921753d20_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classjson_a3f5e7618318c6e39387a917589aa3d38}\label{classjson_a3f5e7618318c6e39387a917589aa3d38} 
+\index{json@{json}!getInteger@{getInteger}}
+\index{getInteger@{getInteger}!json@{json}}
+\doxysubsubsection{\texorpdfstring{getInteger()}{getInteger()}}
+{\footnotesize\ttfamily long long json\+::get\+Integer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Возвращает путь к файлу, соответствующий заданному ключу. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em key} & Ключ для получения пути к файлу. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Путь к файлу, соответствующий заданному ключу. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если ключ отсутствует в конфигурации.\\
+\hline
+\end{DoxyExceptions}
+Функция возвращает путь к файлу, соответствующий заданному ключу key, извлекая его из объекта config\+\_\+json. Если ключ отсутствует в конфигурации, выбрасывается исключение std\+::runtime\+\_\+error. 
+
+Переопределяет метод предка \mbox{\hyperlink{class_parser_configuration_a542aa87ab4a21ce9d52d388456ab8580}{Parser\+Configuration}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{json_8cpp_source}{json.\+cpp}} строка \mbox{\hyperlink{json_8cpp_source_l00058}{58}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}.contains(key))\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Configuration\ file\ does\ not\ contain\ key:\ "{}}\ +\ key);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}[key];}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{classjson_a39265872195766ea0181f7c7ca0e2e6c}\label{classjson_a39265872195766ea0181f7c7ca0e2e6c} 
+\index{json@{json}!config\_json@{config\_json}}
+\index{config\_json@{config\_json}!json@{json}}
+\doxysubsubsection{\texorpdfstring{config\_json}{config\_json}}
+{\footnotesize\ttfamily nlohmann\+::json json\+::config\+\_\+json\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{json_8h_source}{json.\+h}} строка \mbox{\hyperlink{json_8h_source_l00026}{26}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{json_8h}{json.\+h}}\item 
+\mbox{\hyperlink{json_8cpp}{json.\+cpp}}\end{DoxyCompactItemize}

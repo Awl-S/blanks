@@ -1,0 +1,53 @@
+\doxysection{cfm.\+h}
+\hypertarget{cfm_8h_source}{}\label{cfm_8h_source}\index{cfm.h@{cfm.h}}
+\mbox{\hyperlink{cfm_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BLANK\_CFM\_H}}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BLANK\_CFM\_H}}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00016}\mbox{\hyperlink{structcfm}{00016}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcfm}{cfm}}\ \{}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00017}\mbox{\hyperlink{structcfm_a7a658677e62202d59ef8a14da194d65b}{00017}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structcfm_a7a658677e62202d59ef8a14da194d65b}{header}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00018}\mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{00018}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{blank}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00019}\mbox{\hyperlink{structcfm_ad4cec00bcb67870e82af90e5d3676161}{00019}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{structcfm_ad4cec00bcb67870e82af90e5d3676161}{marks}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00020}\mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{00020}}\ \ \ \ \ std::array<int,\ 2>\ \mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00021}\mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{00021}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00022}\mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{00022}}\ \ \ \ \ std::array<double,\ 2>\ \mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00023}\mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{00023}}\ \ \ \ \ std::array<double,\ 2>\ \mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00024}\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{00024}}\ \ \ \ \ std::array<double,\ 4>\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00025}\mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{00025}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\_height}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00026}\mbox{\hyperlink{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060}{00026}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060}{label\_height}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00027}\mbox{\hyperlink{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2}{00027}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2}{tick\_mask}};\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00035}\mbox{\hyperlink{structcfm_a34655b4bfca15e5fb6afeedcf05c1289}{00035}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structcfm_a34655b4bfca15e5fb6afeedcf05c1289}{display}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Header:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a7a658677e62202d59ef8a14da194d65b}{header}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Blank:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{blank}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Marks:\ "{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ \mbox{\hyperlink{structcfm_ad4cec00bcb67870e82af90e5d3676161}{marks}})}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ val\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Format:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Diameter:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Small\ Tick:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}}[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Big\ Tick:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}}[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Digital\ Tick:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[1]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[2]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[3]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Digit\ Height:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\_height}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Label\ Height:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060}{label\_height}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tick\ Mask:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2}{tick\_mask}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00060}00060\ \};}
+\DoxyCodeLine{\Hypertarget{cfm_8h_source_l00061}00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLANK\_CFM\_H}}
+
+\end{DoxyCode}

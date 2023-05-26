@@ -1,0 +1,175 @@
+.TH "CommandLine" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CommandLine \- Класс, представляющий интерфейс командной строки\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'CommandLine\&.h'\fP
+.SS "Открытые типы"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBCommandType\fP { \fBCONVERT\fP, \fBPRINT\fP, \fBGEN\fP, \fBUNKNOWN\fP }"
+.br
+.in -1c
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBCommandLine\fP (int argc, char *argv[])"
+.br
+.RI "Конструктор объекта \fBCommandLine\fP\&. "
+.ti -1c
+.RI "\fBCommandType\fP \fBget_command_type\fP () const"
+.br
+.RI "Получить тип команды\&. "
+.ti -1c
+.RI "std::vector< std::string > \fBget_args\fP () const"
+.br
+.RI "Получить аргументы команды\&. "
+.in -1c
+.SS "Закрытые данные"
+
+.in +1c
+.ti -1c
+.RI "\fBCommandType\fP \fBcommand_type\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBargs\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс, представляющий интерфейс командной строки\&. 
+
+Этот класс обрабатывает аргументы командной строки и категоризирует тип команды на основе аргументов\&. В настоящее время поддерживаются команды 'convert', 'print' и 'gen'\&. 
+.PP
+См\&. определение в файле \fBCommandLine\&.h\fP строка \fB12\fP
+.SH "Перечисления"
+.PP 
+.SS "enum class \fBCommandLine::CommandType\fP\fC [strong]\fP"
+
+.PP
+\fBЭлементы перечислений\fP
+.in +1c
+.TP
+\fB\fICONVERT \fP\fP
+.TP
+\fB\fIPRINT \fP\fP
+.TP
+\fB\fIGEN \fP\fP
+.TP
+\fB\fIUNKNOWN \fP\fP
+.PP
+См\&. определение в файле \fBCommandLine\&.h\fP строка \fB15\fP.PP
+.nf
+15                            {
+16         CONVERT,
+17         PRINT,
+18         GEN,
+19         UNKNOWN
+20     };
+.fi
+
+.SH "Конструктор(ы)"
+.PP 
+.SS "CommandLine::CommandLine (int argc, char * argv[])"
+
+.PP
+Конструктор объекта \fBCommandLine\fP\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIargc\fP Количество аргументов командной строки\&. 
+.br
+\fIargv\fP Массив аргументов командной строки\&.
+.RE
+.PP
+Если количество аргументов меньше двух, тип команды будет определен как UNKNOWN\&. В противном случае тип команды определяется на основе первого аргумента\&. Остальные аргументы сохраняются в векторе args\&. 
+.PP
+См\&. определение в файле \fBCommandLine\&.cpp\fP строка \fB15\fP.PP
+.nf
+15                                                {
+16     if (argc < 2) {
+17         command_type = CommandType::UNKNOWN;
+18         return;
+19     }
+20 
+21     std::string command(argv[1]);
+22     if (command == "convert") {
+23         command_type = CommandType::CONVERT;
+24     }
+25     else if (command == "print") {
+26         command_type = CommandType::PRINT;
+27     }
+28     else if (command == "gen") {
+29         command_type = CommandType::GEN;
+30     }
+31     else {
+32         command_type = CommandType::UNKNOWN;
+33     }
+34 
+35     for (int i = 2; i < argc; ++i) {
+36         args\&.emplace_back(argv[i]);
+37     }
+38 }
+.fi
+
+.SH "Методы"
+.PP 
+.SS "std::vector< std::string > CommandLine::get_args () const"
+
+.PP
+Получить аргументы команды\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+std::vector<std::string> Аргументы команды\&.
+.RE
+.PP
+Возвращает вектор строк, представляющих аргументы команды, сохраненные при создании объекта \fBCommandLine\fP\&. 
+.PP
+См\&. определение в файле \fBCommandLine\&.cpp\fP строка \fB58\fP.PP
+.nf
+58                                                  {
+59     return args;
+60 }
+.fi
+
+.SS "\fBCommandLine::CommandType\fP CommandLine::get_command_type () const"
+
+.PP
+Получить тип команды\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+CommandType Тип команды\&.
+.RE
+.PP
+Возвращает тип команды, определенный при создании объекта \fBCommandLine\fP\&. 
+.PP
+См\&. определение в файле \fBCommandLine\&.cpp\fP строка \fB47\fP.PP
+.nf
+47                                                            {
+48     return command_type;
+49 }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "std::vector<std::string> CommandLine::args\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBCommandLine\&.h\fP строка \fB25\fP
+.SS "\fBCommandType\fP CommandLine::command_type\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBCommandLine\&.h\fP строка \fB24\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

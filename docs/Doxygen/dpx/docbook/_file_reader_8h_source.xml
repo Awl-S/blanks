@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__file_reader_8h_source" xml:lang="ru">
+<title>FileReader.h</title>
+<indexterm><primary>FileReader.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="__file_reader_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANKS_FILEREADER_H</emphasis>
+<anchor xml:id="__file_reader_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANKS_FILEREADER_H</emphasis>
+<anchor xml:id="__file_reader_8h_source_1l00003"/>00003 
+<anchor xml:id="__file_reader_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;filesystem&gt;</emphasis>
+<anchor xml:id="__file_reader_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;utility&gt;</emphasis>
+<anchor xml:id="__file_reader_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&quot;string&quot;</emphasis>
+<anchor xml:id="__file_reader_8h_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&quot;fstream&quot;</emphasis>
+<anchor xml:id="__file_reader_8h_source_1l00008"/>00008 
+<anchor xml:id="__file_reader_8h_source_1l00015"/><link linkend="_class_file_reader">00015</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_file_reader">FileReader</link>&#32;{
+<anchor xml:id="__file_reader_8h_source_1l00016"/>00016 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="__file_reader_8h_source_1l00023"/><link linkend="_class_file_reader_1a1dae37584804731f11c9c932219d8282">00023</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_class_file_reader_1a1dae37584804731f11c9c932219d8282">FileReader</link>(std::filesystem::path&#32;file_path)&#32;:&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>(std::move(file_path))&#32;{}
+<anchor xml:id="__file_reader_8h_source_1l00024"/>00024 
+<anchor xml:id="__file_reader_8h_source_1l00025"/>00025 <emphasis role="keyword">protected</emphasis>:
+<anchor xml:id="__file_reader_8h_source_1l00026"/><link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">00026</link> &#32;&#32;&#32;&#32;std::filesystem::path&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>;&#32;
+<anchor xml:id="__file_reader_8h_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;std::string&#32;<link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">readLineString</link>(std::ifstream&#32;&amp;file);
+<anchor xml:id="__file_reader_8h_source_1l00038"/>00038 
+<anchor xml:id="__file_reader_8h_source_1l00047"/>00047 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;std::string&#32;<link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;s);
+<anchor xml:id="__file_reader_8h_source_1l00048"/>00048 };
+<anchor xml:id="__file_reader_8h_source_1l00049"/>00049 
+<anchor xml:id="__file_reader_8h_source_1l00050"/>00050 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//BLANKS_FILEREADER_H</emphasis>
+</programlisting></section>

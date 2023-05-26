@@ -5,8 +5,8 @@
 #include "include/struct/zgt.h"
 #include "include/Reader/textReader.h"
 #include "include/Generated/Generated.h"
-#include "include/Parser/ParserConfiguration.h"
 #include "include/RenderPDF/RenderPDF.h"
+#include "include/Parser/Plug.h"
 
 void print_duration(const auto& start) {
     auto stop = std::chrono::high_resolution_clock::now();
@@ -49,9 +49,32 @@ int main(int argc, char *argv[]) {
         auto command_type = cmd.get_command_type();
         auto args = cmd.get_args();
 
-        //УДАЛИТЬ
+        if(command_type == CommandLine::CommandType::GEN){
+            Generated gen;
+            gen.generateJsonFile("setting.json");
+        }
+
         if(command_type == CommandLine::CommandType::UNKNOWN){
-            auto config_parser = ParserConfiguration::create("C:/GenerateBlank/path/path.json");
+            print_duration(start);
+            std::cout << "Неизвестная команда\n";
+            return -1;
+        }
+
+        if(command_type == CommandLine::CommandType::CONVERT){
+            if(args.size() == 1){
+                EncodingConverter converter(args[0]);
+                converter.convert();
+            } else if (args.size() == 2) {
+                EncodingConverter converter(args[0], args[1]);
+                converter.convert();
+            } else {
+                std::cerr << "Неверное количество аргументов." << std::endl;
+                return 1;
+            }
+        }
+
+        if(CommandLine::CommandType::PRINT == command_type){
+            auto config_parser = parser::create(args[0]);
             const auto debug = config_parser->getInteger("debug");
 
             auto tbl_directory = config_parser->getFilePath("tbl");
@@ -101,40 +124,9 @@ int main(int argc, char *argv[]) {
             if(debug == 0){
             }
 
-                RenderPDF pdf(cfm_data, zgt_data, tbl_data, nbr_data, point_data, config_parser->getFilePath("fontPath"));
+            RenderPDF pdf(cfm_data, zgt_data, tbl_data, nbr_data, point_data, config_parser->getFilePath("fontPath"));
             std::string filename = getCurrentDateTime() + "(" + cfm_data.blank + ")";
-            pdf.generatePDF(filename);
-            print_duration(start);
-            return 0;
-        }
-
-        if(command_type == CommandLine::CommandType::GEN){
-            Generated gen;
-            gen.generateJsonFile("setting.json");
-        }
-
-        if(command_type == CommandLine::CommandType::UNKNOWN){
-            print_duration(start);
-            std::cout << "Неизвестная команда\n";
-            return -1;
-        }
-
-        if(command_type == CommandLine::CommandType::CONVERT){
-            if(args.size() == 1){
-                EncodingConverter converter(args[0]);
-                converter.convert();
-            } else if (args.size() == 2) {
-                EncodingConverter converter(args[0], args[1]);
-                converter.convert();
-            } else {
-                std::cerr << "Неверное количество аргументов." << std::endl;
-                return 1;
-            }
-        }
-
-        if(CommandLine::CommandType::PRINT == command_type){
-            auto config_parser = ParserConfiguration::create(args[0]);
-
+            pdf.generatePDF(filename, args);
 
         }
 

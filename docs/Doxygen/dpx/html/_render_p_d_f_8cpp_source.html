@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Blanks: Исходный файл RenderPDF.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Blanks
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_render_p_d_f_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">RenderPDF.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_render_p_d_f_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../../include/RenderPDF/RenderPDF.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_render_p_d_f.html#a22fa693e95126bb362fe324470ba2277">    7</a></span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_p_d_f.html#a22fa693e95126bb362fe324470ba2277">RenderPDF::createA3Page</a>() {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    HPDF_Page page = HPDF_AddPage(<a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    HPDF_Page_SetSize(page, HPDF_PAGE_SIZE_A3, HPDF_PAGE_PORTRAIT);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_render_p_d_f.html#ac3ba6c62b21e04dbe57cedf12b3f06c0">   19</a></span>HPDF_Font <a class="code hl_function" href="class_render_p_d_f.html#ac3ba6c62b21e04dbe57cedf12b3f06c0">RenderPDF::loadFont</a>(<span class="keyword">const</span> std::string&amp; fontPath) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">auto</span> font_name = HPDF_LoadTTFontFromFile(<a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a>, fontPath.c_str(), HPDF_TRUE);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">auto</span> font = HPDF_GetFont(<a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a>, font_name, <span class="stringliteral">&quot;CP1251&quot;</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span>(!font){</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Не удалось загрузить шрифт.&quot;</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> font;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_render_p_d_f.html#ab1e1309fbda18c7ebd8aa9b75a1f69d7">   35</a></span><a class="code hl_function" href="class_render_p_d_f.html#ab1e1309fbda18c7ebd8aa9b75a1f69d7">RenderPDF::~RenderPDF</a>() {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a>) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        HPDF_Free(<a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_render_p_d_f.html#af0e199f862cb39e5600325bd2c69600f">   47</a></span><a class="code hl_function" href="class_render_p_d_f.html#af0e199f862cb39e5600325bd2c69600f">RenderPDF::RenderPDF</a>(<a class="code hl_struct" href="structcfm.html">cfm</a> cfm_data, <a class="code hl_struct" href="structzgt.html">zgt</a> zgt_data, <span class="keyword">const</span> std::vector&lt;tbl&gt; &amp;tbl_data, <a class="code hl_struct" href="structnbr.html">nbr</a> nbr_data, <a class="code hl_struct" href="structpoint.html">point</a> point_data, std::filesystem::path fontPath) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="class_render_p_d_f.html#a6ac6011ccf3a8df169125c3d72b93c94">initializeData</a>(std::move(cfm_data), std::move(zgt_data), tbl_data, std::move(nbr_data), std::move(point_data), fontPath);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_function" href="class_render_p_d_f.html#aaaeb1e6ddb96e6404cdfd22ad557fe6f">initializePDF</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="class_render_p_d_f.html#a9c8b019dbb7873ad236e5b15c52fd4f0">adjustFontSize</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_variable" href="class_render_p_d_f.html#a501db80f3bb869b9b3cff1722b040781">font_</a> = <a class="code hl_function" href="class_render_p_d_f.html#ac3ba6c62b21e04dbe57cedf12b3f06c0">loadFont</a>(<a class="code hl_variable" href="class_render_p_d_f.html#a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</a>.string());</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="class_render_p_d_f.html#ae8716d07394557fb0434e419be24d04f">sortTblData</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="class_render_p_d_f.html#a1b6a4f2724661a30f767d37d2bf041b3">populatePointTbl</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_variable" href="class_render_p_d_f.html#aa8780af3344ed124f9ad0f4189344489">new_page</a> = <a class="code hl_function" href="class_render_p_d_f.html#ae7ea70ad51e168a5c255de4ea54db087">checkForNewPage</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_render_p_d_f.html#a6ac6011ccf3a8df169125c3d72b93c94">   67</a></span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_p_d_f.html#a6ac6011ccf3a8df169125c3d72b93c94">RenderPDF::initializeData</a>(<a class="code hl_struct" href="structcfm.html">cfm</a> cfm_data, <a class="code hl_struct" href="structzgt.html">zgt</a> zgt_data, <span class="keyword">const</span> std::vector&lt;tbl&gt; &amp;tbl_data, <a class="code hl_struct" href="structnbr.html">nbr</a> nbr_data, <a class="code hl_struct" href="structpoint.html">point</a> point_data, std::filesystem::path fontPath) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_variable" href="class_render_p_d_f.html#a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</a> = std::move(cfm_data);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_variable" href="class_render_p_d_f.html#a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</a> = std::move(zgt_data);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_variable" href="class_render_p_d_f.html#a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</a> = tbl_data;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_variable" href="class_render_p_d_f.html#a10939476ae873b9782a7af7e363bb9ec">nbr_data_</a> = std::move(nbr_data);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a> = std::move(point_data);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_variable" href="class_render_p_d_f.html#a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</a> = fontPath;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_render_p_d_f.html#aaaeb1e6ddb96e6404cdfd22ad557fe6f">RenderPDF::initializePDF</a>() {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a> = HPDF_New(<span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a>){</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Не удалось создать PDF документ.&quot;</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_render_p_d_f.html#a9c8b019dbb7873ad236e5b15c52fd4f0">   92</a></span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_render_p_d_f.html#a9c8b019dbb7873ad236e5b15c52fd4f0">RenderPDF::adjustFontSize</a>() {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_variable" href="class_render_p_d_f.html#a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</a>.<a class="code hl_variable" href="structcfm.html#af1376357880c15d011d9c96fd485714e">digit_height</a>*=1.090248; <span class="comment">//коэффициент поправки размера для шрифта GOST_B</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+<div class="ttc" id="aclass_render_p_d_f_html_a0b894cccbec97da627a095dde9f054eb"><div class="ttname"><a href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">RenderPDF::pdf_</a></div><div class="ttdeci">HPDF_Doc pdf_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00065">RenderPDF.h:65</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a10939476ae873b9782a7af7e363bb9ec"><div class="ttname"><a href="class_render_p_d_f.html#a10939476ae873b9782a7af7e363bb9ec">RenderPDF::nbr_data_</a></div><div class="ttdeci">nbr nbr_data_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00070">RenderPDF.h:70</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a1b6a4f2724661a30f767d37d2bf041b3"><div class="ttname"><a href="class_render_p_d_f.html#a1b6a4f2724661a30f767d37d2bf041b3">RenderPDF::populatePointTbl</a></div><div class="ttdeci">void populatePointTbl()</div><div class="ttdoc">Заполняет point_tbl данными из tbl_data_.</div><div class="ttdef"><b>Definition</b> <a href="_processor_8cpp_source.html#l00039">Processor.cpp:39</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a22fa693e95126bb362fe324470ba2277"><div class="ttname"><a href="class_render_p_d_f.html#a22fa693e95126bb362fe324470ba2277">RenderPDF::createA3Page</a></div><div class="ttdeci">void createA3Page()</div><div class="ttdoc">Создает новую страницу формата A3.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00007">RenderPDF.cpp:7</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a2b011efd97045da1e9ccdab286d35d8c"><div class="ttname"><a href="class_render_p_d_f.html#a2b011efd97045da1e9ccdab286d35d8c">RenderPDF::tbl_data_</a></div><div class="ttdeci">std::vector&lt; tbl &gt; tbl_data_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00072">RenderPDF.h:72</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a36b057897ad1e0b0ff20fd7c97107bc4"><div class="ttname"><a href="class_render_p_d_f.html#a36b057897ad1e0b0ff20fd7c97107bc4">RenderPDF::fontPath_</a></div><div class="ttdeci">std::filesystem::path fontPath_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00063">RenderPDF.h:63</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a4188a6f45597ad36f520c78b6ef1278d"><div class="ttname"><a href="class_render_p_d_f.html#a4188a6f45597ad36f520c78b6ef1278d">RenderPDF::cfm_data_</a></div><div class="ttdeci">cfm cfm_data_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00068">RenderPDF.h:68</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a501db80f3bb869b9b3cff1722b040781"><div class="ttname"><a href="class_render_p_d_f.html#a501db80f3bb869b9b3cff1722b040781">RenderPDF::font_</a></div><div class="ttdeci">HPDF_Font font_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00066">RenderPDF.h:66</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a6ac6011ccf3a8df169125c3d72b93c94"><div class="ttname"><a href="class_render_p_d_f.html#a6ac6011ccf3a8df169125c3d72b93c94">RenderPDF::initializeData</a></div><div class="ttdeci">void initializeData(cfm cfm_data, zgt zgt_data, const std::vector&lt; tbl &gt; &amp;tbl_data, nbr nbr_data, point point_data, std::filesystem::path fontPath)</div><div class="ttdoc">Инициализирует данные.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00067">RenderPDF.cpp:67</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a88ea75db7b69bd6540445e3bf67febe2"><div class="ttname"><a href="class_render_p_d_f.html#a88ea75db7b69bd6540445e3bf67febe2">RenderPDF::zgt_data_</a></div><div class="ttdeci">zgt zgt_data_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00069">RenderPDF.h:69</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a9c8b019dbb7873ad236e5b15c52fd4f0"><div class="ttname"><a href="class_render_p_d_f.html#a9c8b019dbb7873ad236e5b15c52fd4f0">RenderPDF::adjustFontSize</a></div><div class="ttdeci">void adjustFontSize()</div><div class="ttdoc">Подгоняет размер шрифта.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00092">RenderPDF.cpp:92</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_aa8780af3344ed124f9ad0f4189344489"><div class="ttname"><a href="class_render_p_d_f.html#aa8780af3344ed124f9ad0f4189344489">RenderPDF::new_page</a></div><div class="ttdeci">bool new_page</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00062">RenderPDF.h:62</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_aaaeb1e6ddb96e6404cdfd22ad557fe6f"><div class="ttname"><a href="class_render_p_d_f.html#aaaeb1e6ddb96e6404cdfd22ad557fe6f">RenderPDF::initializePDF</a></div><div class="ttdeci">void initializePDF()</div><div class="ttdoc">Инициализирует объект HPDF_Doc для работы с PDF.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00080">RenderPDF.cpp:80</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_ab1e1309fbda18c7ebd8aa9b75a1f69d7"><div class="ttname"><a href="class_render_p_d_f.html#ab1e1309fbda18c7ebd8aa9b75a1f69d7">RenderPDF::~RenderPDF</a></div><div class="ttdeci">~RenderPDF()</div><div class="ttdoc">Деструктор класса RenderPDF.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00035">RenderPDF.cpp:35</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_ac3ba6c62b21e04dbe57cedf12b3f06c0"><div class="ttname"><a href="class_render_p_d_f.html#ac3ba6c62b21e04dbe57cedf12b3f06c0">RenderPDF::loadFont</a></div><div class="ttdeci">HPDF_Font loadFont(const std::string &amp;fontPath)</div><div class="ttdoc">Загружает шрифт из указанного файла.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00019">RenderPDF.cpp:19</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_ae7ea70ad51e168a5c255de4ea54db087"><div class="ttname"><a href="class_render_p_d_f.html#ae7ea70ad51e168a5c255de4ea54db087">RenderPDF::checkForNewPage</a></div><div class="ttdeci">bool checkForNewPage()</div><div class="ttdoc">Проверяет наличие дубликатов координат в point_data_.</div><div class="ttdef"><b>Definition</b> <a href="_processor_8cpp_source.html#l00008">Processor.cpp:8</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_ae8716d07394557fb0434e419be24d04f"><div class="ttname"><a href="class_render_p_d_f.html#ae8716d07394557fb0434e419be24d04f">RenderPDF::sortTblData</a></div><div class="ttdeci">void sortTblData()</div><div class="ttdoc">Сортирует данные в tbl_data_ по положению элементов.</div><div class="ttdef"><b>Definition</b> <a href="_processor_8cpp_source.html#l00025">Processor.cpp:25</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_af0e199f862cb39e5600325bd2c69600f"><div class="ttname"><a href="class_render_p_d_f.html#af0e199f862cb39e5600325bd2c69600f">RenderPDF::RenderPDF</a></div><div class="ttdeci">RenderPDF(cfm cfm_data, zgt zgt_data, const std::vector&lt; tbl &gt; &amp;tbl_data, nbr nbr_data, point point_data, std::filesystem::path fontPath)</div><div class="ttdoc">Конструктор класса RenderPDF.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00047">RenderPDF.cpp:47</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_afa788735693ee164252a3af3c83bc431"><div class="ttname"><a href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">RenderPDF::point_data_</a></div><div class="ttdeci">point point_data_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00071">RenderPDF.h:71</a></div></div>
+<div class="ttc" id="astructcfm_html"><div class="ttname"><a href="structcfm.html">cfm</a></div><div class="ttdoc">Структура для хранения данных типа cfm.</div><div class="ttdef"><b>Definition</b> <a href="cfm_8h_source.html#l00016">cfm.h:16</a></div></div>
+<div class="ttc" id="astructcfm_html_af1376357880c15d011d9c96fd485714e"><div class="ttname"><a href="structcfm.html#af1376357880c15d011d9c96fd485714e">cfm::digit_height</a></div><div class="ttdeci">int digit_height</div><div class="ttdef"><b>Definition</b> <a href="cfm_8h_source.html#l00025">cfm.h:25</a></div></div>
+<div class="ttc" id="astructnbr_html"><div class="ttname"><a href="structnbr.html">nbr</a></div><div class="ttdoc">Структура для хранения данных типа nbr.</div><div class="ttdef"><b>Definition</b> <a href="nbr_8h_source.html#l00014">nbr.h:14</a></div></div>
+<div class="ttc" id="astructpoint_html"><div class="ttname"><a href="structpoint.html">point</a></div><div class="ttdoc">Структура для хранения координат точек.</div><div class="ttdef"><b>Definition</b> <a href="point__data_8h_source.html#l00010">point_data.h:10</a></div></div>
+<div class="ttc" id="astructzgt_html"><div class="ttname"><a href="structzgt.html">zgt</a></div><div class="ttdoc">Структура для хранения данных типа zgt.</div><div class="ttdef"><b>Definition</b> <a href="zgt_8h_source.html#l00015">zgt.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f55266e5be93c507bcd98ce2c24d3f64.html">RenderPDF</a></li><li class="navelem"><a class="el" href="_render_p_d_f_8cpp.html">RenderPDF.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

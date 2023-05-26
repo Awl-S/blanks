@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_402311c011274d4063aba34f75c813eb" xml:lang="ru">
+<title>Содержание директории RenderPDF</title>
+<indexterm><primary>Содержание директории RenderPDF</primary></indexterm>
+Директория графа зависимостей RenderPDF:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_402311c011274d4063aba34f75c813eb_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="__render_p_d_f_8h">RenderPDF.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

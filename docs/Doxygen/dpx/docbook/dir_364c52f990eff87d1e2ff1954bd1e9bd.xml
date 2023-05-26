@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_364c52f990eff87d1e2ff1954bd1e9bd" xml:lang="ru">
+<title>Содержание директории cmake-build-minsizerel</title>
+<indexterm><primary>Содержание директории cmake-build-minsizerel</primary></indexterm>
+<simplesect>
+    <title>Директории    </title>
+        <itemizedlist>
+            <listitem><para>директория <link linkend="_dir_b60c3d908c3c0a6ecc78658bafb3b190">CMakeFiles</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

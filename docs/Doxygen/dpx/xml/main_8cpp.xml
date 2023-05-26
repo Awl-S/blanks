@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes refid="_encoding_converter_8h" local="yes">include/Converting/EncodingConverter.h</includes>
+    <includes refid="_command_line_8h" local="yes">include/CommandLine/CommandLine.h</includes>
+    <includes refid="cfm_8h" local="yes">include/struct/cfm.h</includes>
+    <includes refid="zgt_8h" local="yes">include/struct/zgt.h</includes>
+    <includes refid="text_reader_8h" local="yes">include/Reader/textReader.h</includes>
+    <includes refid="_generated_8h" local="yes">include/Generated/Generated.h</includes>
+    <includes refid="_render_p_d_f_8h" local="yes">include/RenderPDF/RenderPDF.h</includes>
+    <includes refid="_plug_8h" local="yes">include/Parser/Plug.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>include/CommandLine/CommandLine.h</label>
+        <link refid="_command_line_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/Converting/EncodingConverter.h</label>
+        <link refid="_encoding_converter_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>include/Generated/Generated.h</label>
+        <link refid="_generated_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ParserConfiguration.h</label>
+        <link refid="_parser_configuration_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>include/Parser/Plug.h</label>
+        <link refid="_plug_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>json.h</label>
+        <link refid="json_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>FileReader.h</label>
+        <link refid="_file_reader_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>include/Reader/textReader.h</label>
+        <link refid="text_reader_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>include/RenderPDF/RenderPDF.h</label>
+        <link refid="_render_p_d_f_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>include/struct/cfm.h</label>
+        <link refid="cfm_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>../struct/nbr.h</label>
+        <link refid="nbr_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>../struct/point_data.h</label>
+        <link refid="point__data_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>../struct/tbl.h</label>
+        <link refid="tbl_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>include/struct/zgt.h</label>
+        <link refid="zgt_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>array</label>
+      </node>
+      <node id="24">
+        <label>cmath</label>
+      </node>
+      <node id="6">
+        <label>filesystem</label>
+      </node>
+      <node id="15">
+        <label>fstream</label>
+      </node>
+      <node id="23">
+        <label>hpdf.h</label>
+      </node>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+      <node id="17">
+        <label>map</label>
+      </node>
+      <node id="27">
+        <label>memory</label>
+      </node>
+      <node id="21">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="12">
+        <label>regex</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="14">
+        <label>utility</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1ab97d7330981023823ad0d4017ddbec3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_duration</definition>
+        <argsstring>(const auto &amp;start)</argsstring>
+        <name>print_duration</name>
+        <param>
+          <type>const auto &amp;</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp" line="11" column="6" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp" bodystart="11" bodyend="17"/>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path find_file_by_name</definition>
+        <argsstring>(const std::filesystem::path &amp;directory, std::string &amp;model_name, const std::string &amp;extension)</argsstring>
+        <name>find_file_by_name</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>directory</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>model_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>extension</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp" line="19" column="23" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp" bodystart="19" bodyend="32"/>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a333b5413e0cb25ebfc2919e897c49e0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string getCurrentDateTime</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentDateTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp" line="34" column="13" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp" bodystart="34" bodyend="42"/>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp" line="44" column="5" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp" bodystart="44" bodyend="136"/>
+        <references refid="structcfm_1a6400105680203ffabfa9860662530647" compoundref="cfm_8h" startline="18">cfm::blank</references>
+        <references refid="class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2">CommandLine::CONVERT</references>
+        <references refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" compoundref="_encoding_converter_8cpp" startline="46" endline="50">EncodingConverter::convert</references>
+        <references refid="namespaceparser_1a6a1b9a41dcebf3bc40e63bcb26a93f64" compoundref="_plug_8h" startline="9" endline="16">parser::create</references>
+        <references refid="structpoint_1a0b248ae2a8dab47a95f68ffb03f33ede" compoundref="point__data_8h" startline="15" endline="19">point::display</references>
+        <references refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">cfm::display</references>
+        <references refid="structtbl_1a1656f3d8341995db3e9711ecf583cc94" compoundref="tbl_8h" startline="23" endline="34">tbl::display</references>
+        <references refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" compoundref="zgt_8h" startline="30" endline="47">zgt::display</references>
+        <references refid="main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4" compoundref="main_8cpp" startline="19" endline="32">find_file_by_name</references>
+        <references refid="class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26">CommandLine::GEN</references>
+        <references refid="class_generated_1a83bc49c8c5facc46a56afe4f1af0d01a" compoundref="_generated_8cpp" startline="10" endline="30">Generated::generateJsonFile</references>
+        <references refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">RenderPDF::generatePDF</references>
+        <references refid="class_command_line_1a58060c2f8b6032c5d1feab576b642125" compoundref="_command_line_8cpp" startline="58" endline="60">CommandLine::get_args</references>
+        <references refid="class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6" compoundref="_command_line_8cpp" startline="47" endline="49">CommandLine::get_command_type</references>
+        <references refid="main_8cpp_1a333b5413e0cb25ebfc2919e897c49e0c" compoundref="main_8cpp" startline="34" endline="42">getCurrentDateTime</references>
+        <references refid="class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b">CommandLine::PRINT</references>
+        <references refid="main_8cpp_1ab97d7330981023823ad0d4017ddbec3b" compoundref="main_8cpp" startline="11" endline="17">print_duration</references>
+        <references refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</references>
+        <references refid="classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5" compoundref="text_reader_8cpp" startline="145" endline="155">textReader::read_point</references>
+        <references refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" compoundref="text_reader_8cpp" startline="95" endline="137">textReader::read_tbl</references>
+        <references refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" compoundref="text_reader_8cpp" startline="55" endline="87">textReader::read_zgt</references>
+        <references refid="class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">CommandLine::UNKNOWN</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_encoding_converter_8h" kindref="compound">include/Converting/EncodingConverter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_command_line_8h" kindref="compound">include/CommandLine/CommandLine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cfm_8h" kindref="compound">include/struct/cfm.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="zgt_8h" kindref="compound">include/struct/zgt.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="text_reader_8h" kindref="compound">include/Reader/textReader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_generated_8h" kindref="compound">include/Generated/Generated.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_render_p_d_f_8h" kindref="compound">include/RenderPDF/RenderPDF.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_plug_8h" kindref="compound">include/Parser/Plug.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="main_8cpp_1ab97d7330981023823ad0d4017ddbec3b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1ab97d7330981023823ad0d4017ddbec3b" kindref="member">print_duration</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>start)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>stop<sp/>=<sp/>std::chrono::high_resolution_clock::now();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>duration_microseconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(stop<sp/>-<sp/>start);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>duration_milliseconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(stop<sp/>-<sp/>start);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Время<sp/>выполнения:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>duration_microseconds.count()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>microseconds&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Время<sp/>выполнения:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>duration_milliseconds.count()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>milliseconds&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4" refkind="member"><highlight class="normal">std::filesystem::path<sp/><ref refid="main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4" kindref="member">find_file_by_name</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::filesystem::path&amp;<sp/>directory,<sp/>std::string&amp;<sp/>model_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>extension)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>entry<sp/>:<sp/>std::filesystem::recursive_directory_iterator(directory))<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entry.is_regular_file())<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>file_name<sp/>=<sp/>entry.path().filename().string();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>file_extension<sp/>=<sp/>entry.path().extension().string();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(file_name<sp/>==<sp/>model_name<sp/>+<sp/>file_extension<sp/>&amp;&amp;<sp/>file_extension<sp/>==<sp/>extension)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::path<sp/>path_str<sp/>=<sp/>entry.path();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::replace(path_str.string().begin(),<sp/>path_str.string().end(),<sp/>&apos;\\&apos;,<sp/>&apos;/&apos;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>path_str;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;File<sp/>not<sp/>found:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>model_name);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="main_8cpp_1a333b5413e0cb25ebfc2919e897c49e0c" refkind="member"><highlight class="normal">std::string<sp/><ref refid="main_8cpp_1a333b5413e0cb25ebfc2919e897c49e0c" kindref="member">getCurrentDateTime</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::time_t<sp/>currentTime<sp/>=<sp/>std::time(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::tm*<sp/>localTime<sp/>=<sp/>std::localtime(&amp;currentTime);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>dateTimeString[20];</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::strftime(dateTimeString,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(dateTimeString),<sp/></highlight><highlight class="stringliteral">&quot;%Y-%m-%d_%H-%M-%S&quot;</highlight><highlight class="normal">,<sp/>localTime);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string(dateTimeString);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>setlocale(LC_ALL,<sp/></highlight><highlight class="stringliteral">&quot;ru_RU.UTF-8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>start<sp/>=<sp/>std::chrono::high_resolution_clock::now();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_command_line" kindref="compound">CommandLine</ref><sp/>cmd(argc,<sp/>argv);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>command_type<sp/>=<sp/>cmd.<ref refid="class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6" kindref="member">get_command_type</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>args<sp/>=<sp/>cmd.<ref refid="class_command_line_1a58060c2f8b6032c5d1feab576b642125" kindref="member">get_args</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(command_type<sp/>==<sp/><ref refid="class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26" kindref="member">CommandLine::CommandType::GEN</ref>){</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_generated" kindref="compound">Generated</ref><sp/>gen;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gen.<ref refid="class_generated_1a83bc49c8c5facc46a56afe4f1af0d01a" kindref="member">generateJsonFile</ref>(</highlight><highlight class="stringliteral">&quot;setting.json&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(command_type<sp/>==<sp/><ref refid="class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3" kindref="member">CommandLine::CommandType::UNKNOWN</ref>){</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab97d7330981023823ad0d4017ddbec3b" kindref="member">print_duration</ref>(start);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Неизвестная<sp/>команда\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(command_type<sp/>==<sp/><ref refid="class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2" kindref="member">CommandLine::CommandType::CONVERT</ref>){</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(args.size()<sp/>==<sp/>1){</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter" kindref="compound">EncodingConverter</ref><sp/>converter(args[0]);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>converter.<ref refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" kindref="member">convert</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(args.size()<sp/>==<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter" kindref="compound">EncodingConverter</ref><sp/>converter(args[0],<sp/>args[1]);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>converter.<ref refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" kindref="member">convert</ref>();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Неверное<sp/>количество<sp/>аргументов.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b" kindref="member">CommandLine::CommandType::PRINT</ref><sp/>==<sp/>command_type){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>config_parser<sp/>=<sp/><ref refid="namespaceparser_1a6a1b9a41dcebf3bc40e63bcb26a93f64" kindref="member">parser::create</ref>(args[0]);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>debug<sp/>=<sp/>config_parser-&gt;getInteger(</highlight><highlight class="stringliteral">&quot;debug&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tbl_directory<sp/>=<sp/>config_parser-&gt;getFilePath(</highlight><highlight class="stringliteral">&quot;tbl&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>tbl_files<sp/>=<sp/>config_parser-&gt;getFileList(</highlight><highlight class="stringliteral">&quot;tbl&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;scale&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;tbl&gt;<sp/>tbl_data;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>tbl_file<sp/>:<sp/>tbl_files)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Чтение<sp/>TBL:\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tbl_file<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structtbl" kindref="compound">tbl</ref><sp/>temp_tbl;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtext_reader" kindref="compound">textReader</ref>(tbl_file).<ref refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" kindref="member">read_tbl</ref>(temp_tbl);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tbl_data.push_back(temp_tbl);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(debug){</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_tbl.<ref refid="structtbl_1a1656f3d8341995db3e9711ecf583cc94" kindref="member">display</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>cfm_file<sp/>=<sp/>config_parser-&gt;getFilePath(</highlight><highlight class="stringliteral">&quot;cfm&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>cfm_file_path<sp/>=<sp/><ref refid="main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4" kindref="member">find_file_by_name</ref>(cfm_file,<sp/>tbl_data[0].model,<sp/></highlight><highlight class="stringliteral">&quot;.cfm&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Чтение<sp/>CFM:\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>cfm_file_path<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structcfm" kindref="compound">cfm</ref><sp/>cfm_data;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtext_reader" kindref="compound">textReader</ref>(cfm_file_path).<ref refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" kindref="member">read_cfm</ref>(cfm_data);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(debug){</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfm_data.<ref refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" kindref="member">display</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>point_file<sp/>=<sp/>config_parser-&gt;getFilePath(</highlight><highlight class="stringliteral">&quot;point&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>point_file_path<sp/>=<sp/><ref refid="main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4" kindref="member">find_file_by_name</ref>(point_file,<sp/>tbl_data[0].model,<sp/></highlight><highlight class="stringliteral">&quot;.point&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Чтение<sp/>набора<sp/>точек:\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>point_file_path<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structpoint" kindref="compound">point</ref><sp/>point_data;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtext_reader" kindref="compound">textReader</ref>(point_file_path).<ref refid="classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5" kindref="member">read_point</ref>(point_data);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(debug){</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>point_data.<ref refid="structpoint_1a0b248ae2a8dab47a95f68ffb03f33ede" kindref="member">display</ref>();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>zgt_file<sp/>=<sp/>config_parser-&gt;getFilePath(</highlight><highlight class="stringliteral">&quot;zgt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>zgt_file_path<sp/>=<sp/><ref refid="main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4" kindref="member">find_file_by_name</ref>(zgt_file,<sp/>cfm_data.<ref refid="structcfm_1a6400105680203ffabfa9860662530647" kindref="member">blank</ref>,<sp/></highlight><highlight class="stringliteral">&quot;.згт&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Чтение<sp/>заготовок:\t&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>zgt_file_path<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structzgt" kindref="compound">zgt</ref><sp/>zgt_data;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtext_reader" kindref="compound">textReader</ref>(zgt_file_path).<ref refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" kindref="member">read_zgt</ref>(zgt_data);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(debug){</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zgt_data.<ref refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" kindref="member">display</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Чтение<sp/>наборов<sp/>изображений:\t&quot;<sp/>&lt;&lt;<sp/>nbr_file_path<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>nbr_file<sp/>=<sp/>config_parser-&gt;getFilePath(</highlight><highlight class="stringliteral">&quot;nbr&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//auto<sp/>nbr_file_path<sp/>=<sp/>find_file_by_name(zgt_file,<sp/>cfm_data.blank,<sp/>&quot;.нбр&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structnbr" kindref="compound">nbr</ref><sp/>nbr_data;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//textReader(nbr_file_path).read_nbr(nbr_data);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(debug<sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f" kindref="compound">RenderPDF</ref><sp/>pdf(cfm_data,<sp/>zgt_data,<sp/>tbl_data,<sp/>nbr_data,<sp/>point_data,<sp/>config_parser-&gt;getFilePath(</highlight><highlight class="stringliteral">&quot;fontPath&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>filename<sp/>=<sp/><ref refid="main_8cpp_1a333b5413e0cb25ebfc2919e897c49e0c" kindref="member">getCurrentDateTime</ref>()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>+<sp/>cfm_data.<ref refid="structcfm_1a6400105680203ffabfa9860662530647" kindref="member">blank</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pdf.<ref refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" kindref="member">generatePDF</ref>(filename);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab97d7330981023823ad0d4017ddbec3b" kindref="member">print_duration</ref>(start);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/main.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_text_reader_8h_source" xml:lang="ru">
+<title>textReader.h</title>
+<indexterm><primary>textReader.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_text_reader_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANKS_TEXTREADER_H</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANKS_TEXTREADER_H</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00003"/>00003 
+<anchor xml:id="_text_reader_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;regex&gt;</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__file_reader_8h">FileReader.h</link>&quot;</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&quot;../struct/nbr.h&quot;</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&quot;../struct/point_data.h&quot;</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&quot;../struct/tbl.h&quot;</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&quot;../struct/cfm.h&quot;</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00010"/>00010 <emphasis role="preprocessor">#include&#32;&quot;../struct/zgt.h&quot;</emphasis>
+<anchor xml:id="_text_reader_8h_source_1l00011"/>00011 
+<anchor xml:id="_text_reader_8h_source_1l00018"/><link linkend="_classtext_reader">00018</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_classtext_reader">textReader</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_file_reader">FileReader</link>&#32;{
+<anchor xml:id="_text_reader_8h_source_1l00019"/>00019 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_text_reader_8h_source_1l00027"/><link linkend="_classtext_reader_1a8b98efd0fd952fd929ea441f26bc69ba">00027</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_classtext_reader_1a8b98efd0fd952fd929ea441f26bc69ba">textReader</link>(<emphasis role="keyword">const</emphasis>&#32;std::filesystem::path&amp;&#32;file_path)&#32;:&#32;<link linkend="_class_file_reader">FileReader</link>(file_path)&#32;{}
+<anchor xml:id="_text_reader_8h_source_1l00028"/>00028 
+<anchor xml:id="_text_reader_8h_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1ad25e94320aa8adce9de68445d963b570">read_nbr</link>(<link linkend="_structnbr">nbr</link>&amp;&#32;data);
+<anchor xml:id="_text_reader_8h_source_1l00036"/>00036 
+<anchor xml:id="_text_reader_8h_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5">read_point</link>(<link linkend="_structpoint">point</link>&amp;&#32;data);
+<anchor xml:id="_text_reader_8h_source_1l00044"/>00044 
+<anchor xml:id="_text_reader_8h_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1ac9b23d5e5a58431fb114f221098a2640">read_tbl</link>(<link linkend="_structtbl">tbl</link>&amp;&#32;data);
+<anchor xml:id="_text_reader_8h_source_1l00052"/>00052 
+<anchor xml:id="_text_reader_8h_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1a5cd4eeebf53787a1434d037c54993071">read_cfm</link>(<link linkend="_structcfm">cfm</link>&amp;&#32;data);
+<anchor xml:id="_text_reader_8h_source_1l00060"/>00060 
+<anchor xml:id="_text_reader_8h_source_1l00067"/>00067 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1af98fb017c822ba0f17c58a1dda32a787">read_zgt</link>(<link linkend="_structzgt">zgt</link>&amp;&#32;data);
+<anchor xml:id="_text_reader_8h_source_1l00068"/>00068 };
+<anchor xml:id="_text_reader_8h_source_1l00069"/>00069 
+<anchor xml:id="_text_reader_8h_source_1l00070"/>00070 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//BLANKS_TEXTREADER_H</emphasis>
+</programlisting></section>

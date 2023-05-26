@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceparser" xml:lang="ru">
+<title>Пространство имен parser</title>
+<indexterm><primary>parser</primary></indexterm>
+<simplesect>
+    <title>Функции    </title>
+        <itemizedlist>
+            <listitem><para>static std::unique_ptr&lt; <link linkend="_class_parser_configuration">ParserConfiguration</link> &gt; <link linkend="_namespaceparser_1a6a1b9a41dcebf3bc40e63bcb26a93f64">create</link> (const std::string &amp;config_file_path)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Функции</title>
+<anchor xml:id="_namespaceparser_1a6a1b9a41dcebf3bc40e63bcb26a93f64"/><section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>parser</secondary></indexterm>
+<indexterm><primary>parser</primary><secondary>create</secondary></indexterm>
+<para><computeroutput>static std::unique_ptr&lt; <link linkend="_class_parser_configuration">ParserConfiguration</link> &gt; parser::create (const std::string &amp; config_file_path)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__plug_8h_source">Plug.h</link> строка <link linkend="__plug_8h_source_1l00009">9</link></para>
+<programlisting linenumbering="unnumbered">00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(config_file_path.ends_with(<emphasis role="stringliteral">&quot;.json&quot;</emphasis>))&#32;{
+00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::make_unique&lt;json&gt;(config_file_path);
+00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Unsupported&#32;file&#32;type:&#32;&quot;</emphasis>&#32;+&#32;config_file_path);
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00016 &#32;&#32;&#32;&#32;}
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="namespaceparser_a6a1b9a41dcebf3bc40e63bcb26a93f64_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

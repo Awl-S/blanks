@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__command_line_8cpp_source" xml:lang="ru">
+<title>CommandLine.cpp</title>
+<indexterm><primary>CommandLine.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="__command_line_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../../include/CommandLine/CommandLine.h&quot;</emphasis>
+<anchor xml:id="__command_line_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+<anchor xml:id="__command_line_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+<anchor xml:id="__command_line_8cpp_source_1l00004"/>00004 
+<anchor xml:id="__command_line_8cpp_source_1l00015"/><link linkend="_class_command_line_1a1aa9581e68b84a283af934ccb8aeef3b">00015</link> <link linkend="_class_command_line_1a1aa9581e68b84a283af934ccb8aeef3b">CommandLine::CommandLine</link>(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*argv[])&#32;{
+<anchor xml:id="__command_line_8cpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(argc&#32;&lt;&#32;2)&#32;{
+<anchor xml:id="__command_line_8cpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">CommandType::UNKNOWN</link>;
+<anchor xml:id="__command_line_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+<anchor xml:id="__command_line_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__command_line_8cpp_source_1l00020"/>00020 
+<anchor xml:id="__command_line_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;std::string&#32;command(argv[1]);
+<anchor xml:id="__command_line_8cpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;convert&quot;</emphasis>)&#32;{
+<anchor xml:id="__command_line_8cpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2">CommandType::CONVERT</link>;
+<anchor xml:id="__command_line_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__command_line_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;print&quot;</emphasis>)&#32;{
+<anchor xml:id="__command_line_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b">CommandType::PRINT</link>;
+<anchor xml:id="__command_line_8cpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__command_line_8cpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;gen&quot;</emphasis>)&#32;{
+<anchor xml:id="__command_line_8cpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26">CommandType::GEN</link>;
+<anchor xml:id="__command_line_8cpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__command_line_8cpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__command_line_8cpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">CommandType::UNKNOWN</link>;
+<anchor xml:id="__command_line_8cpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__command_line_8cpp_source_1l00034"/>00034 
+<anchor xml:id="__command_line_8cpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;2;&#32;i&#32;&lt;&#32;argc;&#32;++i)&#32;{
+<anchor xml:id="__command_line_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca">args</link>.emplace_back(argv[i]);
+<anchor xml:id="__command_line_8cpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__command_line_8cpp_source_1l00038"/>00038 }
+<anchor xml:id="__command_line_8cpp_source_1l00039"/>00039 
+<anchor xml:id="__command_line_8cpp_source_1l00047"/><link linkend="_class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6">00047</link> <link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandLine::CommandType</link>&#32;<link linkend="_class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6">CommandLine::get_command_type</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+<anchor xml:id="__command_line_8cpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>;
+<anchor xml:id="__command_line_8cpp_source_1l00049"/>00049 }
+<anchor xml:id="__command_line_8cpp_source_1l00050"/>00050 
+<anchor xml:id="__command_line_8cpp_source_1l00058"/><link linkend="_class_command_line_1a58060c2f8b6032c5d1feab576b642125">00058</link> std::vector&lt;std::string&gt;&#32;<link linkend="_class_command_line_1a58060c2f8b6032c5d1feab576b642125">CommandLine::get_args</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+<anchor xml:id="__command_line_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca">args</link>;
+<anchor xml:id="__command_line_8cpp_source_1l00060"/>00060 }
+</programlisting></section>

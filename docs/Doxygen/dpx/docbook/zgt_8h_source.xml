@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_zgt_8h_source" xml:lang="ru">
+<title>zgt.h</title>
+<indexterm><primary>zgt.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_zgt_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANK_ZGT_H</emphasis>
+<anchor xml:id="_zgt_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANK_ZGT_H</emphasis>
+<anchor xml:id="_zgt_8h_source_1l00003"/>00003 
+<anchor xml:id="_zgt_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+<anchor xml:id="_zgt_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;array&gt;</emphasis>
+<anchor xml:id="_zgt_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+<anchor xml:id="_zgt_8h_source_1l00007"/>00007 
+<anchor xml:id="_zgt_8h_source_1l00015"/><link linkend="_structzgt">00015</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_structzgt">zgt</link>{
+<anchor xml:id="_zgt_8h_source_1l00016"/><link linkend="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544">00016</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544">diameter</link>;&#32;
+<anchor xml:id="_zgt_8h_source_1l00017"/><link linkend="_structzgt_1a158a8320351f554c1aa14cf6436b505f">00017</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_structzgt_1a158a8320351f554c1aa14cf6436b505f">center_hole_diameter</link>;&#32;
+<anchor xml:id="_zgt_8h_source_1l00018"/><link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">00018</link> &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;<link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link>;&#32;
+<anchor xml:id="_zgt_8h_source_1l00019"/><link linkend="_structzgt_1a9ca1baeee9e45b33b39efc727f206e34">00019</link> &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;<link linkend="_structzgt_1a9ca1baeee9e45b33b39efc727f206e34">marker_position</link>;&#32;
+<anchor xml:id="_zgt_8h_source_1l00020"/><link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">00020</link> &#32;&#32;&#32;&#32;std::array&lt;double,&#32;2&gt;&#32;<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>{};&#32;
+<anchor xml:id="_zgt_8h_source_1l00021"/><link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">00021</link> &#32;&#32;&#32;&#32;std::array&lt;double,&#32;3&gt;&#32;<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>{};&#32;
+<anchor xml:id="_zgt_8h_source_1l00030"/><link linkend="_structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2">00030</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2">display</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+<anchor xml:id="_zgt_8h_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Diameter:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544">diameter</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Center&#32;Hole&#32;Diameter:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1a158a8320351f554c1aa14cf6436b505f">center_hole_diameter</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00033"/>00033 
+<anchor xml:id="_zgt_8h_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Mounting&#32;Holes:&#32;&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&#32;val&#32;:&#32;<link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link>)
+<anchor xml:id="_zgt_8h_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;val&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00038"/>00038 
+<anchor xml:id="_zgt_8h_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Marker&#32;Position:&#32;&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&#32;val&#32;:&#32;<link linkend="_structzgt_1a9ca1baeee9e45b33b39efc727f206e34">marker_position</link>)
+<anchor xml:id="_zgt_8h_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;val&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00043"/>00043 
+<anchor xml:id="_zgt_8h_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Font&#32;Serial&#32;Number:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>[0]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>[1]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00045"/>00045 
+<anchor xml:id="_zgt_8h_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Stop&#32;Position:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[0]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[1]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[2]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_zgt_8h_source_1l00047"/>00047 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_zgt_8h_source_1l00048"/>00048 };
+<anchor xml:id="_zgt_8h_source_1l00049"/>00049 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//BLANK_ZGT_H</emphasis>
+</programlisting></section>

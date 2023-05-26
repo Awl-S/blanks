@@ -1,0 +1,9 @@
+<map id="zgt" name="zgt">
+<area shape="rect" id="Node000001" title="Структура для хранения данных типа zgt." alt="" coords="229,112,269,139"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,149,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,41,121,64,149,86,191,105,230,117,228,122,189,110,146,90,118,68,94,45"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="172,5,326,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="252,47,252,112,246,112,246,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="350,5,503,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="413,46,394,69,369,90,344,104,317,113,270,124,268,119,315,108,342,99,366,86,390,65,409,42"/>
+</map>

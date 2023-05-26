@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_generated" xml:lang="ru">
+<title>Класс Generated</title>
+<indexterm><primary>Generated</primary></indexterm>
+<para>
+
+<para>Класс, содержащий функцию для генерации JSON-файла. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;Generated.h&quot;</computeroutput>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_generated_1a83bc49c8c5facc46a56afe4f1af0d01a">generateJsonFile</link> (const std::string &amp;filename)</para>
+
+<para>Генерирует JSON-файл с заданным именем. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Класс, содержащий функцию для генерации JSON-файла. </para>
+<para>
+См. определение в файле <link linkend="__generated_8h_source">Generated.h</link> строка <link linkend="__generated_8h_source_1l00011">11</link></para>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_generated_1a83bc49c8c5facc46a56afe4f1af0d01a"/><section>
+    <title>generateJsonFile()</title>
+<indexterm><primary>generateJsonFile</primary><secondary>Generated</secondary></indexterm>
+<indexterm><primary>Generated</primary><secondary>generateJsonFile</secondary></indexterm>
+<para><computeroutput>void Generated::generateJsonFile (const std::string &amp; filename)</computeroutput></para><para>
+
+<para>Генерирует JSON-файл с заданным именем. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>filename</entry><entry>
+<para>Имя файла для сохранения JSON.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Функция генерирует JSON-файл, содержащий информацию о директориях, тексте справки и имени файла PDF. </para>
+<para>
+См. определение в файле <link linkend="__generated_8cpp_source">Generated.cpp</link> строка <link linkend="__generated_8cpp_source_1l00010">10</link></para>
+<programlisting linenumbering="unnumbered">00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00011 &#32;&#32;&#32;&#32;nlohmann::json&#32;j;
+00012 
+00013 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Установка&#32;путей&#32;к&#32;различным&#32;директориям</emphasis>
+00014 &#32;&#32;&#32;&#32;j[<emphasis role="stringliteral">&quot;directories&quot;</emphasis>][<emphasis role="stringliteral">&quot;tbl&quot;</emphasis>]&#32;=&#32;<emphasis role="stringliteral">&quot;/path/to/tbl&quot;</emphasis>;
+00015 &#32;&#32;&#32;&#32;j[<emphasis role="stringliteral">&quot;directories&quot;</emphasis>][<emphasis role="stringliteral">&quot;cfm&quot;</emphasis>]&#32;=&#32;<emphasis role="stringliteral">&quot;/path/to/cfm&quot;</emphasis>;
+00016 &#32;&#32;&#32;&#32;j[<emphasis role="stringliteral">&quot;directories&quot;</emphasis>][<emphasis role="stringliteral">&quot;zagotovki&quot;</emphasis>]&#32;=&#32;<emphasis role="stringliteral">&quot;/path/to/zgt&quot;</emphasis>;
+00017 &#32;&#32;&#32;&#32;j[<emphasis role="stringliteral">&quot;directories&quot;</emphasis>][<emphasis role="stringliteral">&quot;nabor&quot;</emphasis>]&#32;=&#32;<emphasis role="stringliteral">&quot;/path/to/наборы&quot;</emphasis>;
+00018 &#32;&#32;&#32;&#32;j[<emphasis role="stringliteral">&quot;directories&quot;</emphasis>][<emphasis role="stringliteral">&quot;font&quot;</emphasis>]&#32;=&#32;<emphasis role="stringliteral">&quot;/path/to/font&quot;</emphasis>;
+00019 
+00020 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Установка&#32;текста&#32;справки</emphasis>
+00021 &#32;&#32;&#32;&#32;j[<emphasis role="stringliteral">&quot;help&quot;</emphasis>]&#32;=&#32;<emphasis role="stringliteral">&quot;Текст&#32;помощи&#32;здесь...&quot;</emphasis>;
+00022 
+00023 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Установка&#32;имени&#32;файла&#32;PDF</emphasis>
+00024 &#32;&#32;&#32;&#32;j[<emphasis role="stringliteral">&quot;pdf_file_name&quot;</emphasis>]&#32;=&#32;<emphasis role="stringliteral">&quot;example.pdf&quot;</emphasis>;
+00025 
+00026 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Открытие&#32;файла&#32;для&#32;записи</emphasis>
+00027 &#32;&#32;&#32;&#32;std::ofstream&#32;o(filename);
+00028 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Запись&#32;JSON-объекта&#32;в&#32;файл&#32;с&#32;отступом&#32;4&#32;пробела&#32;для&#32;форматирования</emphasis>
+00029 &#32;&#32;&#32;&#32;o&#32;&lt;&lt;&#32;std::setw(4)&#32;&lt;&lt;&#32;j&#32;&lt;&lt;&#32;std::endl;
+00030 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_generated_a83bc49c8c5facc46a56afe4f1af0d01a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+<link linkend="__generated_8h">Generated.h</link><link linkend="__generated_8cpp">Generated.cpp</link></section>
+</section>

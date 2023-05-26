@@ -1,0 +1,243 @@
+.TH "json" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+json \- Класс для работы с JSON-конфигурацией\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'json\&.h'\fP
+.PP
+Базовые классы:\fBParserConfiguration\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBdisplay\fP () override"
+.br
+.RI "Отображает информацию из конфигурационного файла\&. "
+.ti -1c
+.RI "\fBjson\fP (const std::string &config_file_path)"
+.br
+.RI "Возвращает целочисленное значение, соответствующее заданному ключу\&. "
+.ti -1c
+.RI "std::filesystem::path \fBgetFilePath\fP (const std::string &key) override"
+.br
+.RI "Возвращает список файлов, соответствующих заданному ключу и поисковому запросу\&. "
+.ti -1c
+.RI "std::vector< std::filesystem::path > \fBgetFileList\fP (const std::string &key, const std::string &search) override"
+.br
+.RI "Конструктор класса json\&. "
+.ti -1c
+.RI "long long \fBgetInteger\fP (const std::string &key)"
+.br
+.RI "Возвращает путь к файлу, соответствующий заданному ключу\&. "
+.in -1c
+
+Открытые члены унаследованные от \fBParserConfiguration\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~ParserConfiguration\fP ()=default"
+.br
+.ti -1c
+.RI "virtual std::filesystem::path \fBgetFilePath\fP (const std::string &key)=0"
+.br
+.RI "Возвращает путь к файлу на основе указанного ключа\&. "
+.ti -1c
+.RI "virtual std::vector< std::filesystem::path > \fBgetFileList\fP (const std::string &key, const std::string &search)=0"
+.br
+.RI "Возвращает список файлов на основе указанного ключа и поискового запроса\&. "
+.ti -1c
+.RI "virtual void \fBdisplay\fP ()=0"
+.br
+.RI "Отображает информацию из конфигурационного файла\&. "
+.ti -1c
+.RI "virtual long long \fBgetInteger\fP (const std::string &key)"
+.br
+.RI "Создает экземпляр класса ConfigParser на основе пути к конфигурационному файлу\&. "
+.in -1c
+.SS "Закрытые данные"
+
+.in +1c
+.ti -1c
+.RI "nlohmann::json \fBconfig_json\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс для работы с JSON-конфигурацией\&. 
+
+Класс json предоставляет функциональность для чтения и обработки JSON-конфигурационных файлов\&. 
+.PP
+См\&. определение в файле \fBjson\&.h\fP строка \fB13\fP
+.SH "Конструктор(ы)"
+.PP 
+.SS "json::json (const std::string & config_file_path)\fC [explicit]\fP"
+
+.PP
+Возвращает целочисленное значение, соответствующее заданному ключу\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIkey\fP Ключ для получения целочисленного значения\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Целочисленное значение, соответствующее заданному ключу\&. 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP Если ключ отсутствует в конфигурации\&.
+.RE
+.PP
+Функция возвращает целочисленное значение, соответствующее заданному ключу key, извлекая его из объекта config_json\&. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error\&. 
+.PP
+См\&. определение в файле \fBjson\&.cpp\fP строка \fB74\fP.PP
+.nf
+74                                             {
+75     std::ifstream config_file(config_file_path);
+76     if (!config_file\&.is_open()) {
+77         throw std::runtime_error("Cannot open configuration file: " + config_file_path);
+78     }
+79     config_file >> config_json;
+80 }
+.fi
+
+.SH "Методы"
+.PP 
+.SS "void json::display ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Отображает информацию из конфигурационного файла\&. Метод отображает информацию из конфигурационного файла, используемого классом\&. Данный метод может быть переопределен в производных классах\&. 
+.PP
+Замещает \fBParserConfiguration\fP\&.
+.PP
+См\&. определение в файле \fBjson\&.cpp\fP строка \fB82\fP.PP
+.nf
+82                    {
+83     for (const auto& [key, value] : config_json\&.items()) {
+84         std::cout << key << ": " << value << std::endl;
+85     }
+86 }
+.fi
+
+.SS "std::vector< std::filesystem::path > json::getFileList (const std::string & key, const std::string & search)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Конструктор класса json\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIconfig_file_path\fP Путь к файлу конфигурации\&. 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP Если не удалось открыть файл конфигурации\&.
+.RE
+.PP
+Конструктор открывает файл конфигурации и загружает его содержимое в объект config_json\&. Если файл конфигурации не будет найден, выбрасывается исключение std::runtime_error\&. 
+.PP
+Замещает \fBParserConfiguration\fP\&.
+.PP
+См\&. определение в файле \fBjson\&.cpp\fP строка \fB13\fP.PP
+.nf
+13                                                                                             {
+14     std::vector<std::filesystem::path> files;
+15     std::filesystem::path directory = getFilePath(key);
+16 
+17     if (std::filesystem::exists(directory)) {
+18         for (const auto& entry : std::filesystem::recursive_directory_iterator(directory)) {
+19             if (entry\&.is_regular_file() && entry\&.path()\&.filename()\&.string()\&.find(search) != std::string::npos) {
+20                 files\&.push_back(entry\&.path());
+21                 //std::cout << entry\&.path()\&.string() << "\\t" << entry\&.path() << std::endl;
+22             }
+23         }
+24     } else {
+25         // Обработка ошибки
+26         std::cout << "Directory does not exist or is not accessible: " << directory << std::endl;
+27     }
+28 
+29     return files;
+30 }
+.fi
+
+.SS "std::filesystem::path json::getFilePath (const std::string & key)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Возвращает список файлов, соответствующих заданному ключу и поисковому запросу\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIkey\fP Ключ для получения пути к директории\&. 
+.br
+\fIsearch\fP Поисковый запрос для фильтрации файлов\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Список файлов, удовлетворяющих условиям поиска\&.
+.RE
+.PP
+Функция возвращает список файлов, найденных в директории, определенной ключом key\&. Файлы фильтруются с помощью поискового запроса search\&. 
+.PP
+Замещает \fBParserConfiguration\fP\&.
+.PP
+См\&. определение в файле \fBjson\&.cpp\fP строка \fB41\fP.PP
+.nf
+41                                                         {
+42     if (!config_json\&.contains(key)) {
+43         throw std::runtime_error("Configuration file does not contain key: " + key);
+44     }
+45     return std::filesystem::u8path(config_json[key]\&.get<std::string>());
+46 }
+.fi
+
+.SS "long long json::getInteger (const std::string & key)\fC [virtual]\fP"
+
+.PP
+Возвращает путь к файлу, соответствующий заданному ключу\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIkey\fP Ключ для получения пути к файлу\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Путь к файлу, соответствующий заданному ключу\&. 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP Если ключ отсутствует в конфигурации\&.
+.RE
+.PP
+Функция возвращает путь к файлу, соответствующий заданному ключу key, извлекая его из объекта config_json\&. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error\&. 
+.PP
+Переопределяет метод предка \fBParserConfiguration\fP\&.
+.PP
+См\&. определение в файле \fBjson\&.cpp\fP строка \fB58\fP.PP
+.nf
+58                                                {
+59     if (!config_json\&.contains(key)) {
+60         throw std::runtime_error("Configuration file does not contain key: " + key);
+61     }
+62     return config_json[key];
+63 }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "nlohmann::json json::config_json\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBjson\&.h\fP строка \fB26\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

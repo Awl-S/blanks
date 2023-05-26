@@ -1,0 +1,151 @@
+.TH "ParserConfiguration" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ParserConfiguration \- Класс для создания объекта конфигурации парсера\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'ParserConfiguration\&.h'\fP
+.PP
+Производные классы:\fBjson\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~ParserConfiguration\fP ()=default"
+.br
+.ti -1c
+.RI "virtual std::filesystem::path \fBgetFilePath\fP (const std::string &key)=0"
+.br
+.RI "Возвращает путь к файлу на основе указанного ключа\&. "
+.ti -1c
+.RI "virtual std::vector< std::filesystem::path > \fBgetFileList\fP (const std::string &key, const std::string &search)=0"
+.br
+.RI "Возвращает список файлов на основе указанного ключа и поискового запроса\&. "
+.ti -1c
+.RI "virtual void \fBdisplay\fP ()=0"
+.br
+.RI "Отображает информацию из конфигурационного файла\&. "
+.ti -1c
+.RI "virtual long long \fBgetInteger\fP (const std::string &key)"
+.br
+.RI "Создает экземпляр класса ConfigParser на основе пути к конфигурационному файлу\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс для создания объекта конфигурации парсера\&. 
+
+Класс \fBParserConfiguration\fP предоставляет статический метод create() для создания объекта конфигурации парсера\&. Объект конфигурации может быть создан на основе файла конфигурации формата JSON\&. 
+.PP
+См\&. определение в файле \fBParserConfiguration\&.h\fP строка \fB16\fP
+.SH "Конструктор(ы)"
+.PP 
+.SS "virtual ParserConfiguration::~ParserConfiguration ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Методы"
+.PP 
+.SS "virtual void ParserConfiguration::display ()\fC [pure virtual]\fP"
+
+.PP
+Отображает информацию из конфигурационного файла\&. Метод отображает информацию из конфигурационного файла, используемого классом\&. Данный метод может быть переопределен в производных классах\&. 
+.PP
+Замещается в \fBjson\fP\&.
+.SS "virtual std::vector< std::filesystem::path > ParserConfiguration::getFileList (const std::string & key, const std::string & search)\fC [pure virtual]\fP"
+
+.PP
+Возвращает список файлов на основе указанного ключа и поискового запроса\&. Метод возвращает список файлов, связанных с указанным ключом и удовлетворяющих поисковому запросу, из конфигурационного файла\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIkey\fP Ключ для поиска списка файлов\&. 
+.br
+\fIsearch\fP Поисковый запрос для фильтрации файлов\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Список файлов\&. 
+.RE
+.PP
+
+.PP
+Замещается в \fBjson\fP\&.
+.SS "virtual std::filesystem::path ParserConfiguration::getFilePath (const std::string & key)\fC [pure virtual]\fP"
+
+.PP
+Возвращает путь к файлу на основе указанного ключа\&. Метод возвращает путь к файлу, связанный с указанным ключом, из конфигурационного файла\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIkey\fP Ключ для поиска пути к файлу\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Путь к файлу\&. 
+.RE
+.PP
+
+.PP
+Замещается в \fBjson\fP\&.
+.SS "virtual long long ParserConfiguration::getInteger (const std::string & key)\fC [virtual]\fP"
+
+.PP
+Создает экземпляр класса ConfigParser на основе пути к конфигурационному файлу\&. Статический метод create() создает и возвращает экземпляр класса ConfigParser на основе пути к конфигурационному файлу\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIconfig_file_path\fP Путь к конфигурационному файлу\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Указатель на созданный экземпляр класса ConfigParser\&.
+.RE
+.PP
+Создает объект конфигурации парсера на основе указанного файла\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIconfig_file_path\fP Путь к файлу конфигурации\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Указатель на объект конфигурации парсера\&. 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP Если тип файла не поддерживается\&.
+.RE
+.PP
+Статический метод create() создает объект конфигурации парсера на основе указанного файла конфигурации\&. Если файл имеет расширение '\&.json', создается объект json, иначе выбрасывается исключение std::runtime_error\&.
+.PP
+Возвращает целочисленное значение, соответствующее заданному ключу\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIkey\fP Ключ для получения целочисленного значения\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Целочисленное значение, соответствующее заданному ключу\&. 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP Если ключ отсутствует в конфигурации\&.
+.RE
+.PP
+Виртуальная функция \fBgetInteger()\fP возвращает целочисленное значение, соответствующее заданному ключу key\&. Данная функция должна быть реализована в классах-наследниках\&. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error\&. 
+.PP
+Переопределяется в \fBjson\fP\&.
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

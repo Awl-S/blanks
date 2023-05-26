@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structnbr" xml:lang="ru">
+<title>Структура nbr</title>
+<indexterm><primary>nbr</primary></indexterm>
+<para>
+
+<para>Структура для хранения данных типа nbr. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;nbr.h&quot;</computeroutput>
+</para>
+Граф связей класса nbr:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structnbr__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые атрибуты    </title>
+        <itemizedlist>
+            <listitem><para>std::map&lt; size_t, std::string &gt; <link linkend="_structnbr_1a54d820aea6c166beb70523a0694dc669">icon</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Структура для хранения данных типа nbr. </para>
+
+
+
+<para>Структура nbr содержит поле для хранения отображения иконок в виде ассоциативного контейнера std::map. Ключом является размер иконки, а значением - строка, представляющая иконку. </para>
+<para>
+См. определение в файле <link linkend="_nbr_8h_source">nbr.h</link> строка <link linkend="_nbr_8h_source_1l00014">14</link></para>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_structnbr_1a54d820aea6c166beb70523a0694dc669"/><section>
+    <title>icon</title>
+<indexterm><primary>icon</primary><secondary>nbr</secondary></indexterm>
+<indexterm><primary>nbr</primary><secondary>icon</secondary></indexterm>
+<para><computeroutput>std::map&lt;size_t, std::string&gt; nbr::icon</computeroutput></para>
+<para>Контейнер для хранения иконок </para>
+<para>
+См. определение в файле <link linkend="_nbr_8h_source">nbr.h</link> строка <link linkend="_nbr_8h_source_1l00015">15</link></para>
+</section>
+<para>
+Объявления и описания членов структуры находятся в файле:</para>
+<link linkend="_nbr_8h">nbr.h</link></section>
+</section>

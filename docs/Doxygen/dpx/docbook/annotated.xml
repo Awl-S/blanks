@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="ru">
+<title>Классы</title>
+Классы с их кратким описанием.<link linkend="_structcfm">cfm</link>
+<para>Структура для хранения данных типа cfm </para>
+<link linkend="_class_command_line">CommandLine</link>
+<para>Класс, представляющий интерфейс командной строки </para>
+<link linkend="_class_encoding_converter">EncodingConverter</link>
+<para>Класс для преобразования кодировки файлов </para>
+<link linkend="_class_file_reader">FileReader</link>
+<para>Класс для чтения файла </para>
+<link linkend="_class_generated">Generated</link>
+<para>Класс, содержащий функцию для генерации JSON-файла </para>
+<link linkend="_classjson">json</link>
+<para>Класс для работы с JSON-конфигурацией </para>
+<link linkend="_structnbr">nbr</link>
+<para>Структура для хранения данных типа nbr </para>
+<link linkend="_class_parser_configuration">ParserConfiguration</link>
+<para>Класс для создания объекта конфигурации парсера </para>
+<link linkend="_structpoint">point</link>
+<para>Структура для хранения координат точек </para>
+<link linkend="_class_render_p_d_f">RenderPDF</link>
+<para>Класс для генерации PDF-файла </para>
+<link linkend="_structtbl">tbl</link>
+<para>Структура для хранения данных таблицы </para>
+<link linkend="_classtext_reader">textReader</link>
+<para>Класс для чтения текстового файла </para>
+<link linkend="_structzgt">zgt</link>
+<para>Структура для хранения данных типа zgt </para>
+</section>

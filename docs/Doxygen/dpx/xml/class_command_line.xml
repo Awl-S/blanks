@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="class_command_line" kind="class" language="C++" prot="public">
+    <compoundname>CommandLine</compoundname>
+    <includes refid="_command_line_8h" local="yes">CommandLine.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_command_line_1a92cbc16916d68d2117eef38093155941" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>CommandType</name>
+        <qualifiedname>CommandLine::CommandType</qualifiedname>
+        <enumvalue id="class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2" prot="public">
+          <name>CONVERT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b" prot="public">
+          <name>PRINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26" prot="public">
+          <name>GEN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3" prot="public">
+          <name>UNKNOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" line="15" column="5" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" bodystart="15" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_command_line_1ab4fd31333cdf63113b591497e40d2c82" prot="private" static="no" mutable="no">
+        <type><ref refid="class_command_line_1a92cbc16916d68d2117eef38093155941" kindref="member">CommandType</ref></type>
+        <definition>CommandType CommandLine::command_type</definition>
+        <argsstring></argsstring>
+        <name>command_type</name>
+        <qualifiedname>CommandLine::command_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" line="24" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="class_command_line_1a1aa9581e68b84a283af934ccb8aeef3b" compoundref="_command_line_8cpp" startline="15" endline="38">CommandLine</referencedby>
+        <referencedby refid="class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6" compoundref="_command_line_8cpp" startline="47" endline="49">get_command_type</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; CommandLine::args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <qualifiedname>CommandLine::args</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" line="25" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_command_line_1a1aa9581e68b84a283af934ccb8aeef3b" compoundref="_command_line_8cpp" startline="15" endline="38">CommandLine</referencedby>
+        <referencedby refid="class_command_line_1a58060c2f8b6032c5d1feab576b642125" compoundref="_command_line_8cpp" startline="58" endline="60">get_args</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_command_line_1a1aa9581e68b84a283af934ccb8aeef3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CommandLine::CommandLine</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>CommandLine</name>
+        <qualifiedname>CommandLine::CommandLine</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Конструктор объекта <ref refid="class_command_line" kindref="compound">CommandLine</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Количество аргументов командной строки. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Массив аргументов командной строки.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Если количество аргументов меньше двух, тип команды будет определен как UNKNOWN. В противном случае тип команды определяется на основе первого аргумента. Остальные аргументы сохраняются в векторе args. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" line="14" column="5" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/CommandLine/CommandLine.cpp" bodystart="15" bodyend="38"/>
+        <references refid="class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca" compoundref="_command_line_8h" startline="25">args</references>
+        <references refid="class_command_line_1ab4fd31333cdf63113b591497e40d2c82" compoundref="_command_line_8h" startline="24">command_type</references>
+        <references refid="class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2">CONVERT</references>
+        <references refid="class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26">GEN</references>
+        <references refid="class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b">PRINT</references>
+        <references refid="class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">UNKNOWN</references>
+      </memberdef>
+      <memberdef kind="function" id="class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_command_line_1a92cbc16916d68d2117eef38093155941" kindref="member">CommandType</ref></type>
+        <definition>CommandLine::CommandType CommandLine::get_command_type</definition>
+        <argsstring>() const</argsstring>
+        <name>get_command_type</name>
+        <qualifiedname>CommandLine::get_command_type</qualifiedname>
+        <briefdescription>
+<para>Получить тип команды. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>CommandType Тип команды.</para>
+</simplesect>
+Возвращает тип команды, определенный при создании объекта <ref refid="class_command_line" kindref="compound">CommandLine</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" line="21" column="18" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/CommandLine/CommandLine.cpp" bodystart="47" bodyend="49"/>
+        <references refid="class_command_line_1ab4fd31333cdf63113b591497e40d2c82" compoundref="_command_line_8h" startline="24">command_type</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_command_line_1a58060c2f8b6032c5d1feab576b642125" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; CommandLine::get_args</definition>
+        <argsstring>() const</argsstring>
+        <name>get_args</name>
+        <qualifiedname>CommandLine::get_args</qualifiedname>
+        <briefdescription>
+<para>Получить аргументы команды. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::vector&lt;std::string&gt; Аргументы команды.</para>
+</simplesect>
+Возвращает вектор строк, представляющих аргументы команды, сохраненные при создании объекта <ref refid="class_command_line" kindref="compound">CommandLine</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" line="22" column="18" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/CommandLine/CommandLine.cpp" bodystart="58" bodyend="60"/>
+        <references refid="class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca" compoundref="_command_line_8h" startline="25">args</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс, представляющий интерфейс командной строки. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Этот класс обрабатывает аргументы командной строки и категоризирует тип команды на основе аргументов. В настоящее время поддерживаются команды &apos;convert&apos;, &apos;print&apos; и &apos;gen&apos;. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>CommandLine</label>
+        <link refid="class_command_line"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>args</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" line="12" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/CommandLine/CommandLine.h" bodystart="12" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca" prot="private" virt="non-virtual"><scope>CommandLine</scope><name>args</name></member>
+      <member refid="class_command_line_1ab4fd31333cdf63113b591497e40d2c82" prot="private" virt="non-virtual"><scope>CommandLine</scope><name>command_type</name></member>
+      <member refid="class_command_line_1a1aa9581e68b84a283af934ccb8aeef3b" prot="public" virt="non-virtual"><scope>CommandLine</scope><name>CommandLine</name></member>
+      <member refid="class_command_line_1a92cbc16916d68d2117eef38093155941" prot="public" virt="non-virtual"><scope>CommandLine</scope><name>CommandType</name></member>
+      <member refid="class_command_line_1a58060c2f8b6032c5d1feab576b642125" prot="public" virt="non-virtual"><scope>CommandLine</scope><name>get_args</name></member>
+      <member refid="class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6" prot="public" virt="non-virtual"><scope>CommandLine</scope><name>get_command_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

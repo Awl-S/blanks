@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_command_line" xml:lang="ru">
+<title>Класс CommandLine</title>
+<indexterm><primary>CommandLine</primary></indexterm>
+<para>
+
+<para>Класс, представляющий интерфейс командной строки. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;CommandLine.h&quot;</computeroutput>
+</para>
+Граф связей класса CommandLine:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_command_line__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые типы    </title>
+        <itemizedlist>
+            <listitem><para>enum class <link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandType</link> { <link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2">CONVERT</link>
+, <link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b">PRINT</link>
+, <link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26">GEN</link>
+, <link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">UNKNOWN</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_command_line_1a1aa9581e68b84a283af934ccb8aeef3b">CommandLine</link> (int argc, char *argv[])</para>
+
+<para>Конструктор объекта <link linkend="_class_command_line">CommandLine</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandType</link> <link linkend="_class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6">get_command_type</link> () const</para>
+
+<para>Получить тип команды. </para>
+</listitem>
+            <listitem><para>std::vector&lt; std::string &gt; <link linkend="_class_command_line_1a58060c2f8b6032c5d1feab576b642125">get_args</link> () const</para>
+
+<para>Получить аргументы команды. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Закрытые данные    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandType</link> <link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; std::string &gt; <link linkend="_class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca">args</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Класс, представляющий интерфейс командной строки. </para>
+
+
+
+<para>Этот класс обрабатывает аргументы командной строки и категоризирует тип команды на основе аргументов. В настоящее время поддерживаются команды &apos;convert&apos;, &apos;print&apos; и &apos;gen&apos;. </para>
+<para>
+См. определение в файле <link linkend="__command_line_8h_source">CommandLine.h</link> строка <link linkend="__command_line_8h_source_1l00012">12</link></para>
+</section>
+<section>
+<title>Перечисления</title>
+<anchor xml:id="_class_command_line_1a92cbc16916d68d2117eef38093155941"/><section>
+    <title>CommandType</title>
+<indexterm><primary>CommandType</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>CommandType</secondary></indexterm>
+<para><computeroutput>enum class <link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandLine::CommandType</link><computeroutput>[strong]</computeroutput></computeroutput></para><informaltable frame="all">
+<title>Элементы перечислений</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>CONVERT</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>CONVERT</secondary></indexterm>
+<anchor xml:id="_class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2"/>CONVERT</entry><entry></entry></row><row><entry><indexterm><primary>PRINT</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>PRINT</secondary></indexterm>
+<anchor xml:id="_class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b"/>PRINT</entry><entry></entry></row><row><entry><indexterm><primary>GEN</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>GEN</secondary></indexterm>
+<anchor xml:id="_class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26"/>GEN</entry><entry></entry></row><row><entry><indexterm><primary>UNKNOWN</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>UNKNOWN</secondary></indexterm>
+<anchor xml:id="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3"/>UNKNOWN</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+<para>
+См. определение в файле <link linkend="__command_line_8h_source">CommandLine.h</link> строка <link linkend="__command_line_8h_source_1l00015">15</link></para>
+<programlisting linenumbering="unnumbered">00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2">CONVERT</link>,
+00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b">PRINT</link>,
+00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26">GEN</link>,
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">UNKNOWN</link>
+00020 &#32;&#32;&#32;&#32;};
+</programlisting></section>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_class_command_line_1a1aa9581e68b84a283af934ccb8aeef3b"/><section>
+    <title>CommandLine()</title>
+<indexterm><primary>CommandLine</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>CommandLine</secondary></indexterm>
+<para><computeroutput>CommandLine::CommandLine (int argc, char * argv[])</computeroutput></para><para>
+
+<para>Конструктор объекта <link linkend="_class_command_line">CommandLine</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>argc</entry><entry>
+<para>Количество аргументов командной строки. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>argv</entry><entry>
+<para>Массив аргументов командной строки.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Если количество аргументов меньше двух, тип команды будет определен как UNKNOWN. В противном случае тип команды определяется на основе первого аргумента. Остальные аргументы сохраняются в векторе args. </para>
+<para>
+См. определение в файле <link linkend="__command_line_8cpp_source">CommandLine.cpp</link> строка <link linkend="__command_line_8cpp_source_1l00015">15</link></para>
+<programlisting linenumbering="unnumbered">00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(argc&#32;&lt;&#32;2)&#32;{
+00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">CommandType::UNKNOWN</link>;
+00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00019 &#32;&#32;&#32;&#32;}
+00020 
+00021 &#32;&#32;&#32;&#32;std::string&#32;command(argv[1]);
+00022 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;convert&quot;</emphasis>)&#32;{
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2">CommandType::CONVERT</link>;
+00024 &#32;&#32;&#32;&#32;}
+00025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;print&quot;</emphasis>)&#32;{
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b">CommandType::PRINT</link>;
+00027 &#32;&#32;&#32;&#32;}
+00028 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(command&#32;==&#32;<emphasis role="stringliteral">&quot;gen&quot;</emphasis>)&#32;{
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26">CommandType::GEN</link>;
+00030 &#32;&#32;&#32;&#32;}
+00031 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>&#32;=&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">CommandType::UNKNOWN</link>;
+00033 &#32;&#32;&#32;&#32;}
+00034 
+00035 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;2;&#32;i&#32;&lt;&#32;argc;&#32;++i)&#32;{
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca">args</link>.emplace_back(argv[i]);
+00037 &#32;&#32;&#32;&#32;}
+00038 }
+</programlisting></section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_command_line_1a58060c2f8b6032c5d1feab576b642125"/><section>
+    <title>get_args()</title>
+<indexterm><primary>get_args</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>get_args</secondary></indexterm>
+<para><computeroutput>std::vector&lt; std::string &gt; CommandLine::get_args ( ) const</computeroutput></para><para>
+
+<para>Получить аргументы команды. </para>
+</para>
+
+<para><formalpara><title>Возвращает</title>
+
+<para>std::vector&lt;std::string&gt; Аргументы команды.</para>
+</formalpara>
+Возвращает вектор строк, представляющих аргументы команды, сохраненные при создании объекта <link linkend="_class_command_line">CommandLine</link>. </para>
+<para>
+См. определение в файле <link linkend="__command_line_8cpp_source">CommandLine.cpp</link> строка <link linkend="__command_line_8cpp_source_1l00058">58</link></para>
+<programlisting linenumbering="unnumbered">00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00059 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca">args</link>;
+00060 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_command_line_a58060c2f8b6032c5d1feab576b642125_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6"/><section>
+    <title>get_command_type()</title>
+<indexterm><primary>get_command_type</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>get_command_type</secondary></indexterm>
+<para><computeroutput><link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandLine::CommandType</link> CommandLine::get_command_type ( ) const</computeroutput></para><para>
+
+<para>Получить тип команды. </para>
+</para>
+
+<para><formalpara><title>Возвращает</title>
+
+<para>CommandType Тип команды.</para>
+</formalpara>
+Возвращает тип команды, определенный при создании объекта <link linkend="_class_command_line">CommandLine</link>. </para>
+<para>
+См. определение в файле <link linkend="__command_line_8cpp_source">CommandLine.cpp</link> строка <link linkend="__command_line_8cpp_source_1l00047">47</link></para>
+<programlisting linenumbering="unnumbered">00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00048 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>;
+00049 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_command_line_aa17cd3db7ef897f09cb04bd2acbfabd6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca"/><section>
+    <title>args</title>
+<indexterm><primary>args</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>args</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::string&gt; CommandLine::args<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__command_line_8h_source">CommandLine.h</link> строка <link linkend="__command_line_8h_source_1l00025">25</link></para>
+</section>
+<anchor xml:id="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82"/><section>
+    <title>command_type</title>
+<indexterm><primary>command_type</primary><secondary>CommandLine</secondary></indexterm>
+<indexterm><primary>CommandLine</primary><secondary>command_type</secondary></indexterm>
+<para><computeroutput><link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandType</link> CommandLine::command_type<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__command_line_8h_source">CommandLine.h</link> строка <link linkend="__command_line_8h_source_1l00024">24</link></para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+<link linkend="__command_line_8h">CommandLine.h</link><link linkend="__command_line_8cpp">CommandLine.cpp</link></section>
+</section>

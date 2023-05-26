@@ -1,0 +1,28 @@
+\doxysection{json.\+h}
+\hypertarget{json_8h_source}{}\label{json_8h_source}\index{json.h@{json.h}}
+\mbox{\hyperlink{json_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BLANKS\_JSON\_H}}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BLANKS\_JSON\_H}}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_parser_configuration_8h}{ParserConfiguration.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00013}\mbox{\hyperlink{classjson}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classjson}{json}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_parser_configuration}{ParserConfiguration}}\{}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00014}00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classjson_a7d5c22a97d49085310994af222c28f8c}{display}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classjson}{json}}(\textcolor{keyword}{const}\ std::string\&\ config\_file\_path);}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00019}00019\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classjson_a760a6ea6469d17e611ccf23921753d20}{getFilePath}}(\textcolor{keyword}{const}\ std::string\&\ key)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00021}00021\ \ \ \ \ std::vector<std::filesystem::path>\ \mbox{\hyperlink{classjson_a335a17f634ae297aa36dbc40855dd8da}{getFileList}}(\textcolor{keyword}{const}\ std::string\&\ key,\ \textcolor{keyword}{const}\ std::string\&\ search)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{classjson_a3f5e7618318c6e39387a917589aa3d38}{getInteger}}(\textcolor{keyword}{const}\ std::string\ \&key);}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00025}00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00026}\mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{00026}}\ \ \ \ \ nlohmann::json\ \mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}};}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00027}00027\ \};}
+\DoxyCodeLine{\Hypertarget{json_8h_source_l00028}00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLANKS\_JSON\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,35 @@
+.TH "parser" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+parser
+.SH SYNOPSIS
+.br
+.PP
+.SS "Функции"
+
+.in +1c
+.ti -1c
+.RI "static std::unique_ptr< \fBParserConfiguration\fP > \fBcreate\fP (const std::string &config_file_path)"
+.br
+.in -1c
+.SH "Функции"
+.PP 
+.SS "static std::unique_ptr< \fBParserConfiguration\fP > parser::create (const std::string & config_file_path)\fC [static]\fP"
+
+.PP
+См\&. определение в файле \fBPlug\&.h\fP строка \fB9\fP.PP
+.nf
+9                                                                                         {
+10         if (config_file_path\&.ends_with("\&.json")) {
+11             return std::make_unique<json>(config_file_path);
+12         }
+13         else {
+14             throw std::runtime_error("Unsupported file type: " + config_file_path);
+15         }
+16     }
+.fi
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

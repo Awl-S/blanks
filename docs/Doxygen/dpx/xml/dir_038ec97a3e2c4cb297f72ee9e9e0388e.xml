@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="dir_038ec97a3e2c4cb297f72ee9e9e0388e" kind="dir">
+    <compoundname>CommandLine</compoundname>
+    <innerfile refid="_command_line_8cpp">CommandLine.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/CommandLine/"/>
+  </compounddef>
+</doxygen>

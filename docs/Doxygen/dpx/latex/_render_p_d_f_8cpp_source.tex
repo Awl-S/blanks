@@ -1,0 +1,59 @@
+\doxysection{Render\+PDF.\+cpp}
+\hypertarget{_render_p_d_f_8cpp_source}{}\label{_render_p_d_f_8cpp_source}\index{RenderPDF.cpp@{RenderPDF.cpp}}
+\mbox{\hyperlink{_render_p_d_f_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../../include/RenderPDF/RenderPDF.h"{}}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00007}\mbox{\hyperlink{class_render_p_d_f_a22fa693e95126bb362fe324470ba2277}{00007}}\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a22fa693e95126bb362fe324470ba2277}{RenderPDF::createA3Page}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00008}00008\ \ \ \ \ HPDF\_Page\ page\ =\ HPDF\_AddPage(\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}});}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00009}00009\ \ \ \ \ HPDF\_Page\_SetSize(page,\ HPDF\_PAGE\_SIZE\_A3,\ HPDF\_PAGE\_PORTRAIT);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00019}\mbox{\hyperlink{class_render_p_d_f_ac3ba6c62b21e04dbe57cedf12b3f06c0}{00019}}\ HPDF\_Font\ \mbox{\hyperlink{class_render_p_d_f_ac3ba6c62b21e04dbe57cedf12b3f06c0}{RenderPDF::loadFont}}(\textcolor{keyword}{const}\ std::string\&\ fontPath)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{auto}\ font\_name\ =\ HPDF\_LoadTTFontFromFile(\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}},\ fontPath.c\_str(),\ HPDF\_TRUE);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{auto}\ font\ =\ HPDF\_GetFont(\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}},\ font\_name,\ \textcolor{stringliteral}{"{}CP1251"{}});}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}(!font)\{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Не\ удалось\ загрузить\ шрифт."{}});}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ font;}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00035}\mbox{\hyperlink{class_render_p_d_f_ab1e1309fbda18c7ebd8aa9b75a1f69d7}{00035}}\ \mbox{\hyperlink{class_render_p_d_f_ab1e1309fbda18c7ebd8aa9b75a1f69d7}{RenderPDF::\string~RenderPDF}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ HPDF\_Free(\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}});}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00047}\mbox{\hyperlink{class_render_p_d_f_af0e199f862cb39e5600325bd2c69600f}{00047}}\ \mbox{\hyperlink{class_render_p_d_f_af0e199f862cb39e5600325bd2c69600f}{RenderPDF::RenderPDF}}(\mbox{\hyperlink{structcfm}{cfm}}\ cfm\_data,\ \mbox{\hyperlink{structzgt}{zgt}}\ zgt\_data,\ \textcolor{keyword}{const}\ std::vector<tbl>\ \&tbl\_data,\ \mbox{\hyperlink{structnbr}{nbr}}\ nbr\_data,\ \mbox{\hyperlink{structpoint}{point}}\ point\_data,\ std::filesystem::path\ fontPath)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a6ac6011ccf3a8df169125c3d72b93c94}{initializeData}}(std::move(cfm\_data),\ std::move(zgt\_data),\ tbl\_data,\ std::move(nbr\_data),\ std::move(point\_data),\ fontPath);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_aaaeb1e6ddb96e6404cdfd22ad557fe6f}{initializePDF}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a9c8b019dbb7873ad236e5b15c52fd4f0}{adjustFontSize}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a501db80f3bb869b9b3cff1722b040781}{font\_}}\ =\ \mbox{\hyperlink{class_render_p_d_f_ac3ba6c62b21e04dbe57cedf12b3f06c0}{loadFont}}(\mbox{\hyperlink{class_render_p_d_f_a36b057897ad1e0b0ff20fd7c97107bc4}{fontPath\_}}.string());}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_ae8716d07394557fb0434e419be24d04f}{sortTblData}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a1b6a4f2724661a30f767d37d2bf041b3}{populatePointTbl}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_aa8780af3344ed124f9ad0f4189344489}{new\_page}}\ =\ \mbox{\hyperlink{class_render_p_d_f_ae7ea70ad51e168a5c255de4ea54db087}{checkForNewPage}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00067}\mbox{\hyperlink{class_render_p_d_f_a6ac6011ccf3a8df169125c3d72b93c94}{00067}}\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a6ac6011ccf3a8df169125c3d72b93c94}{RenderPDF::initializeData}}(\mbox{\hyperlink{structcfm}{cfm}}\ cfm\_data,\ \mbox{\hyperlink{structzgt}{zgt}}\ zgt\_data,\ \textcolor{keyword}{const}\ std::vector<tbl>\ \&tbl\_data,\ \mbox{\hyperlink{structnbr}{nbr}}\ nbr\_data,\ \mbox{\hyperlink{structpoint}{point}}\ point\_data,\ std::filesystem::path\ fontPath)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}\ =\ std::move(cfm\_data);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a88ea75db7b69bd6540445e3bf67febe2}{zgt\_data\_}}\ =\ std::move(zgt\_data);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a2b011efd97045da1e9ccdab286d35d8c}{tbl\_data\_}}\ =\ tbl\_data;}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a10939476ae873b9782a7af7e363bb9ec}{nbr\_data\_}}\ =\ std::move(nbr\_data);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}\ =\ std::move(point\_data);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a36b057897ad1e0b0ff20fd7c97107bc4}{fontPath\_}}\ =\ fontPath;}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00075}00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_aaaeb1e6ddb96e6404cdfd22ad557fe6f}{RenderPDF::initializePDF}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}}\ =\ HPDF\_New(\textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}})\{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Не\ удалось\ создать\ PDF\ документ."{}});}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00092}\mbox{\hyperlink{class_render_p_d_f_a9c8b019dbb7873ad236e5b15c52fd4f0}{00092}}\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a9c8b019dbb7873ad236e5b15c52fd4f0}{RenderPDF::adjustFontSize}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\_height}}*=1.090248;\ \textcolor{comment}{//коэффициент\ поправки\ размера\ для\ шрифта\ GOST\_B}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8cpp_source_l00094}00094\ \}}
+
+\end{DoxyCode}

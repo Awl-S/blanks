@@ -1,0 +1,230 @@
+\doxysection{Структура cfm}
+\hypertarget{structcfm}{}\label{structcfm}\index{cfm@{cfm}}
+
+
+Структура для хранения данных типа cfm.  
+
+
+
+
+{\ttfamily \#include \"{}cfm.\+h\"{}}
+
+
+
+Граф связей класса cfm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structcfm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structcfm_a34655b4bfca15e5fb6afeedcf05c1289}{display}} () const
+\begin{DoxyCompactList}\small\item\em Выводит содержимое структуры cfm на консоль. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structcfm_a7a658677e62202d59ef8a14da194d65b}{header}}
+\item 
+std\+::string \mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{blank}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structcfm_ad4cec00bcb67870e82af90e5d3676161}{marks}}
+\item 
+std\+::array$<$ int, 2 $>$ \mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}
+\item 
+int \mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}}
+\item 
+std\+::array$<$ double, 2 $>$ \mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\+\_\+tick}}
+\item 
+std\+::array$<$ double, 2 $>$ \mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\+\_\+tick}}
+\item 
+std\+::array$<$ double, 4 $>$ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\+\_\+tick}}
+\item 
+int \mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\+\_\+height}}
+\item 
+int \mbox{\hyperlink{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060}{label\+\_\+height}}
+\item 
+std\+::string \mbox{\hyperlink{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2}{tick\+\_\+mask}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура для хранения данных типа cfm. 
+
+Структура cfm содержит поля для хранения различных данных типа cfm, которые представляют параметры для отображения графика. 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00016}{16}}
+
+
+
+\doxysubsection{Методы}
+\Hypertarget{structcfm_a34655b4bfca15e5fb6afeedcf05c1289}\label{structcfm_a34655b4bfca15e5fb6afeedcf05c1289} 
+\index{cfm@{cfm}!display@{display}}
+\index{display@{display}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void cfm\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит содержимое структуры cfm на консоль. 
+
+Функция \doxylink{structcfm_a34655b4bfca15e5fb6afeedcf05c1289}{display()} выводит значения каждого поля структуры cfm на консоль. 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00035}{35}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Header:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a7a658677e62202d59ef8a14da194d65b}{header}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Blank:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{blank}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Marks:\ "{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ \mbox{\hyperlink{structcfm_ad4cec00bcb67870e82af90e5d3676161}{marks}})}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ val\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Format:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Diameter:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Small\ Tick:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}}[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Big\ Tick:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}}[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Digital\ Tick:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[1]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[2]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[3]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Digit\ Height:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\_height}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Label\ Height:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060}{label\_height}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tick\ Mask:\ "{}}\ <<\ \mbox{\hyperlink{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2}{tick\_mask}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{structcfm_a34655b4bfca15e5fb6afeedcf05c1289_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}\label{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72} 
+\index{cfm@{cfm}!big\_tick@{big\_tick}}
+\index{big\_tick@{big\_tick}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{big\_tick}{big\_tick}}
+{\footnotesize\ttfamily std\+::array$<$double, 2$>$ cfm\+::big\+\_\+tick}
+
+Большой делитель 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00023}{23}}
+
+\Hypertarget{structcfm_a6400105680203ffabfa9860662530647}\label{structcfm_a6400105680203ffabfa9860662530647} 
+\index{cfm@{cfm}!blank@{blank}}
+\index{blank@{blank}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{blank}{blank}}
+{\footnotesize\ttfamily std\+::string cfm\+::blank}
+
+модель 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00018}{18}}
+
+\Hypertarget{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}\label{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85} 
+\index{cfm@{cfm}!diameter@{diameter}}
+\index{diameter@{diameter}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{diameter}{diameter}}
+{\footnotesize\ttfamily int cfm\+::diameter}
+
+Диаметр 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00021}{21}}
+
+\Hypertarget{structcfm_af1376357880c15d011d9c96fd485714e}\label{structcfm_af1376357880c15d011d9c96fd485714e} 
+\index{cfm@{cfm}!digit\_height@{digit\_height}}
+\index{digit\_height@{digit\_height}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{digit\_height}{digit\_height}}
+{\footnotesize\ttfamily int cfm\+::digit\+\_\+height}
+
+Высота цифр 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00025}{25}}
+
+\Hypertarget{structcfm_a8fe3ba9b353d58719364384fc2132825}\label{structcfm_a8fe3ba9b353d58719364384fc2132825} 
+\index{cfm@{cfm}!digital\_tick@{digital\_tick}}
+\index{digital\_tick@{digital\_tick}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{digital\_tick}{digital\_tick}}
+{\footnotesize\ttfamily std\+::array$<$double, 4$>$ cfm\+::digital\+\_\+tick}
+
+Цифровой делитель 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00024}{24}}
+
+\Hypertarget{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}\label{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6} 
+\index{cfm@{cfm}!format@{format}}
+\index{format@{format}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily std\+::array$<$int, 2$>$ cfm\+::format}
+
+Формат 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00020}{20}}
+
+\Hypertarget{structcfm_a7a658677e62202d59ef8a14da194d65b}\label{structcfm_a7a658677e62202d59ef8a14da194d65b} 
+\index{cfm@{cfm}!header@{header}}
+\index{header@{header}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily std\+::string cfm\+::header}
+
+Заголовок 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00017}{17}}
+
+\Hypertarget{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060}\label{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060} 
+\index{cfm@{cfm}!label\_height@{label\_height}}
+\index{label\_height@{label\_height}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{label\_height}{label\_height}}
+{\footnotesize\ttfamily int cfm\+::label\+\_\+height}
+
+Высота меток 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00026}{26}}
+
+\Hypertarget{structcfm_ad4cec00bcb67870e82af90e5d3676161}\label{structcfm_ad4cec00bcb67870e82af90e5d3676161} 
+\index{cfm@{cfm}!marks@{marks}}
+\index{marks@{marks}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{marks}{marks}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ cfm\+::marks}
+
+Метки 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00019}{19}}
+
+\Hypertarget{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}\label{structcfm_ac4b86bca5f71ce33c545d435fd2027ae} 
+\index{cfm@{cfm}!small\_tick@{small\_tick}}
+\index{small\_tick@{small\_tick}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{small\_tick}{small\_tick}}
+{\footnotesize\ttfamily std\+::array$<$double, 2$>$ cfm\+::small\+\_\+tick}
+
+Малый делитель 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00022}{22}}
+
+\Hypertarget{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2}\label{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2} 
+\index{cfm@{cfm}!tick\_mask@{tick\_mask}}
+\index{tick\_mask@{tick\_mask}!cfm@{cfm}}
+\doxysubsubsection{\texorpdfstring{tick\_mask}{tick\_mask}}
+{\footnotesize\ttfamily std\+::string cfm\+::tick\+\_\+mask}
+
+Маска делителей 
+
+См. определение в файле \mbox{\hyperlink{cfm_8h_source}{cfm.\+h}} строка \mbox{\hyperlink{cfm_8h_source_l00027}{27}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cfm_8h}{cfm.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,149 @@
+.TH "cfm" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cfm \- Структура для хранения данных типа cfm\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'cfm\&.h'\fP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBdisplay\fP () const"
+.br
+.RI "Выводит содержимое структуры cfm на консоль\&. "
+.in -1c
+.SS "Открытые атрибуты"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBheader\fP"
+.br
+.ti -1c
+.RI "std::string \fBblank\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBmarks\fP"
+.br
+.ti -1c
+.RI "std::array< int, 2 > \fBformat\fP"
+.br
+.ti -1c
+.RI "int \fBdiameter\fP"
+.br
+.ti -1c
+.RI "std::array< double, 2 > \fBsmall_tick\fP"
+.br
+.ti -1c
+.RI "std::array< double, 2 > \fBbig_tick\fP"
+.br
+.ti -1c
+.RI "std::array< double, 4 > \fBdigital_tick\fP"
+.br
+.ti -1c
+.RI "int \fBdigit_height\fP"
+.br
+.ti -1c
+.RI "int \fBlabel_height\fP"
+.br
+.ti -1c
+.RI "std::string \fBtick_mask\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Структура для хранения данных типа cfm\&. 
+
+Структура cfm содержит поля для хранения различных данных типа cfm, которые представляют параметры для отображения графика\&. 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB16\fP
+.SH "Методы"
+.PP 
+.SS "void cfm::display () const\fC [inline]\fP"
+
+.PP
+Выводит содержимое структуры cfm на консоль\&. Функция \fBdisplay()\fP выводит значения каждого поля структуры cfm на консоль\&. 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB35\fP.PP
+.nf
+35                          {
+36         std::cout << "Header: " << header << "\\n";
+37         std::cout << "Blank: " << blank << "\\n";
+38 
+39         std::cout << "Marks: ";
+40         for (auto val : marks)
+41             std::cout << val << " ";
+42         std::cout << "\\n";
+43 
+44         std::cout << "Format: " << format[0] << " " << format[1] << "\\n";
+45 
+46         std::cout << "Diameter: " << diameter << "\\n";
+47 
+48         std::cout << "Small Tick: " << small_tick[0] << " " << small_tick[1] << "\\n";
+49 
+50         std::cout << "Big Tick: " << big_tick[0] << " " << big_tick[1] << "\\n";
+51 
+52         std::cout << "Digital Tick: " << digital_tick[0] << " " << digital_tick[1] << " " << digital_tick[2] << " " << digital_tick[3] << "\\n";
+53 
+54         std::cout << "Digit Height: " << digit_height << "\\n";
+55 
+56         std::cout << "Label Height: " << label_height << "\\n";
+57 
+58         std::cout << "Tick Mask: " << tick_mask << "\\n";
+59     }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "std::array<double, 2> cfm::big_tick"
+Большой делитель 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB23\fP
+.SS "std::string cfm::blank"
+модель 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB18\fP
+.SS "int cfm::diameter"
+Диаметр 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB21\fP
+.SS "int cfm::digit_height"
+Высота цифр 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB25\fP
+.SS "std::array<double, 4> cfm::digital_tick"
+Цифровой делитель 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB24\fP
+.SS "std::array<int, 2> cfm::format"
+Формат 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB20\fP
+.SS "std::string cfm::header"
+Заголовок 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB17\fP
+.SS "int cfm::label_height"
+Высота меток 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB26\fP
+.SS "std::vector<double> cfm::marks"
+Метки 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB19\fP
+.SS "std::array<double, 2> cfm::small_tick"
+Малый делитель 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB22\fP
+.SS "std::string cfm::tick_mask"
+Маска делителей 
+.PP
+См\&. определение в файле \fBcfm\&.h\fP строка \fB27\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

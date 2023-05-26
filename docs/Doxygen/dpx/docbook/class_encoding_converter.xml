@@ -1,0 +1,622 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_encoding_converter" xml:lang="ru">
+<title>Класс EncodingConverter</title>
+<indexterm><primary>EncodingConverter</primary></indexterm>
+<para>
+
+<para>Класс для преобразования кодировки файлов. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;EncodingConverter.h&quot;</computeroutput>
+</para>
+Граф связей класса EncodingConverter:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62">EncodingConverter</link> (std::string inputDir, const std::string &amp;outputDir=&quot;&quot;)</para>
+
+<para>Конструктор объекта <link linkend="_class_encoding_converter">EncodingConverter</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3">convert</link> ()</para>
+
+<para>Конвертирует файлы в директории. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Закрытые члены    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4">loadSettings</link> ()</para>
+
+<para>Загружает настройки преобразования кодировки. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_encoding_converter_1ab066b92f365f593c44d6825071463e08">convertDirectory</link> (const std::filesystem::path &amp;dir)</para>
+
+<para>Конвертирует файлы в указанной директории и её поддиректориях. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_encoding_converter_1a460858eb34940271be93a5aa08452a66">convertFile</link> (const std::filesystem::path &amp;filepath)</para>
+
+<para>Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0">printStats</link> () const</para>
+
+<para>Выводит статистику по конвертированным файлам. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Закрытые статические члены    </title>
+        <itemizedlist>
+            <listitem><para>static bool <link linkend="_class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf">iconvConvert</link> (const std::string &amp;input, std::string &amp;output, const std::string &amp;fromCharset, const std::string &amp;toCharset)</para>
+
+<para>Конвертирует строку из одной кодировки в другую с помощью iconv. </para>
+</listitem>
+            <listitem><para>static bool <link linkend="_class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7">is_utf8</link> (const std::string &amp;str)</para>
+
+<para>Проверяет, является ли строка в кодировке UTF-8. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Закрытые данные    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e">inputDirectory</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4">outputDirectory</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02">useTempDirectory</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; std::string &gt; <link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f">sourceEncoding</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7">targetEncoding</link></para>
+</listitem>
+            <listitem><para>size_t <link linkend="_class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b">filesProcessed</link></para>
+</listitem>
+            <listitem><para>size_t <link linkend="_class_encoding_converter_1a560484bdcdc929771c7d42877cab9643">filesConverted</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Класс для преобразования кодировки файлов. </para>
+
+
+
+<para>Конструктор класса принимает входной и выходной каталоги. Если выходной каталог не указан, используется временный каталог. </para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00014">14</link></para>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62"/><section>
+    <title>EncodingConverter()</title>
+<indexterm><primary>EncodingConverter</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>EncodingConverter</secondary></indexterm>
+<para><computeroutput>EncodingConverter::EncodingConverter (std::string inputDir, const std::string &amp; outputDir = <computeroutput>&quot;&quot;</computeroutput>
+)</computeroutput></para><para>
+
+<para>Конструктор объекта <link linkend="_class_encoding_converter">EncodingConverter</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>inputDir</entry><entry>
+<para>Входной каталог. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>outputDir</entry><entry>
+<para>Выходной каталог.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Если outputDir пуст, используется временный каталог. Загружает настройки преобразования кодировки и сбрасывает счетчики файлов. </para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8cpp_source">EncodingConverter.cpp</link> строка <link linkend="__encoding_converter_8cpp_source_1l00017">17</link></para>
+<programlisting linenumbering="unnumbered">00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<link linkend="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e">inputDirectory</link>(std::move(inputDir)),&#32;<link linkend="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4">outputDirectory</link>(outputDir),&#32;<link linkend="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02">useTempDirectory</link>(outputDir.empty())&#32;{
+00019 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4">loadSettings</link>(),&#32;<link linkend="_class_encoding_converter_1a560484bdcdc929771c7d42877cab9643">filesConverted</link>&#32;=&#32;0,&#32;<link linkend="_class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b">filesProcessed</link>&#32;=&#32;0;
+00020 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_ab3102bc4fcd6c5ebf7768b4d6dbcff62_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3"/><section>
+    <title>convert()</title>
+<indexterm><primary>convert</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>convert</secondary></indexterm>
+<para><computeroutput>void EncodingConverter::convert ( )</computeroutput></para><para>
+
+<para>Конвертирует файлы в директории. </para>
+</para>
+
+<para>Метод конвертирует файлы в указанной директории и выводит статистику по конвертированным файлам. Путь к директории, содержащей исходные файлы, задается в переменной inputDirectory. </para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8cpp_source">EncodingConverter.cpp</link> строка <link linkend="__encoding_converter_8cpp_source_1l00046">46</link></para>
+<programlisting linenumbering="unnumbered">00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00047 &#32;&#32;&#32;&#32;std::filesystem::path&#32;inputPath(<link linkend="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e">inputDirectory</link>);
+00048 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1ab066b92f365f593c44d6825071463e08">convertDirectory</link>(inputPath);
+00049 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0">printStats</link>();
+00050 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_encoding_converter_1ab066b92f365f593c44d6825071463e08"/><section>
+    <title>convertDirectory()</title>
+<indexterm><primary>convertDirectory</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>convertDirectory</secondary></indexterm>
+<para><computeroutput>void EncodingConverter::convertDirectory (const std::filesystem::path &amp; dir)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Конвертирует файлы в указанной директории и её поддиректориях. </para>
+</para>
+
+<para>Метод рекурсивно конвертирует все файлы в указанной директории и её поддиректориях. Конвертируемые файлы должны иметь расширения, указанные в списке fileExtensions. Если файл имеет другое расширение и outputDirectory указана, он будет скопирован в указанную выходную директорию.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dir</entry><entry>
+<para>Путь к директории, в которой нужно выполнить конвертацию файлов. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8cpp_source">EncodingConverter.cpp</link> строка <link linkend="__encoding_converter_8cpp_source_1l00061">61</link></para>
+<programlisting linenumbering="unnumbered">00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00062 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;entry&#32;:&#32;std::filesystem::recursive_directory_iterator(dir))&#32;{
+00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(entry.is_regular_file())&#32;{
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b">filesProcessed</link>++;
+00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::path&#32;relativePath&#32;=&#32;std::filesystem::relative(entry,&#32;<link linkend="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e">inputDirectory</link>);
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::path&#32;outputPath&#32;=&#32;<link linkend="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02">useTempDirectory</link>&#32;?&#32;std::filesystem::temp_directory_path()&#32;/&#32;relativePath&#32;:&#32;<link linkend="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4">outputDirectory</link>&#32;/&#32;relativePath;
+00067 
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(std::find(<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.begin(),&#32;<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.end(),&#32;entry.path().extension())&#32;!=&#32;<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.end())&#32;{
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a460858eb34940271be93a5aa08452a66">convertFile</link>(entry.path());
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4">outputDirectory</link>.empty())&#32;{
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Если&#32;файл&#32;имеет&#32;другое&#32;расширение&#32;и&#32;outputDirectory&#32;указана,&#32;копируем&#32;его</emphasis>
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::create_directories(outputPath.parent_path());
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::copy_file(entry,&#32;outputPath,&#32;std::filesystem::copy_options::overwrite_existing);
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00076 &#32;&#32;&#32;&#32;}
+00077 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_ab066b92f365f593c44d6825071463e08_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_ab066b92f365f593c44d6825071463e08_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_encoding_converter_1a460858eb34940271be93a5aa08452a66"/><section>
+    <title>convertFile()</title>
+<indexterm><primary>convertFile</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>convertFile</secondary></indexterm>
+<para><computeroutput>void EncodingConverter::convertFile (const std::filesystem::path &amp; filepath)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл. </para>
+</para>
+
+<para>Метод читает содержимое файла с указанным путем, конвертирует его из исходной кодировки в целевую и сохраняет результат в файл. Если включена опция useTempDirectory, то промежуточный файл будет создан во временной директории, а затем скопирован и заменит исходный файл.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>filepath</entry><entry>
+<para>Путь к файлу, который нужно конвертировать. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8cpp_source">EncodingConverter.cpp</link> строка <link linkend="__encoding_converter_8cpp_source_1l00128">128</link></para>
+<programlisting linenumbering="unnumbered">00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00129 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;filepath&#32;&lt;&lt;&#32;std::endl;
+00130 &#32;&#32;&#32;&#32;std::ifstream&#32;inFile(filepath,&#32;std::ios::binary);
+00131 &#32;&#32;&#32;&#32;std::string&#32;content((std::istreambuf_iterator&lt;char&gt;(inFile)),&#32;std::istreambuf_iterator&lt;char&gt;());
+00132 
+00133 &#32;&#32;&#32;&#32;std::filesystem::path&#32;relativePath&#32;=&#32;std::filesystem::relative(filepath,&#32;<link linkend="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e">inputDirectory</link>);
+00134 &#32;&#32;&#32;&#32;std::filesystem::path&#32;outputPath&#32;=&#32;<link linkend="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02">useTempDirectory</link>&#32;?&#32;std::filesystem::temp_directory_path()&#32;/&#32;relativePath&#32;:&#32;<link linkend="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4">outputDirectory</link>&#32;/&#32;relativePath;
+00135 &#32;&#32;&#32;&#32;std::filesystem::create_directories(outputPath.parent_path());
+00136 
+00137 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7">is_utf8</link>(content))&#32;{
+00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;utf8Content;
+00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf">iconvConvert</link>(content,&#32;utf8Content,&#32;<link linkend="_class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f">sourceEncoding</link>,&#32;<link linkend="_class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7">targetEncoding</link>))&#32;{
+00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;content&#32;=&#32;utf8Content;
+00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a560484bdcdc929771c7d42877cab9643">filesConverted</link>++;
+00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cerr&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Error&#32;Converting&#32;file&#32;&apos;&quot;</emphasis>&#32;&lt;&lt;&#32;filepath&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&apos;:&#32;Invalid&#32;or&#32;incomplete&#32;multibyte&#32;or&#32;wide&#32;character&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00145 &#32;&#32;&#32;&#32;}
+00146 
+00147 &#32;&#32;&#32;&#32;std::ofstream&#32;outFile(outputPath,&#32;std::ios::binary);
+00148 &#32;&#32;&#32;&#32;outFile.write(content.data(),&#32;content.size());
+00149 &#32;&#32;&#32;&#32;outFile.close();
+00150 
+00151 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02">useTempDirectory</link>)&#32;{
+00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::copy(outputPath,&#32;filepath,&#32;std::filesystem::copy_options::overwrite_existing);
+00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::remove(outputPath);
+00154 &#32;&#32;&#32;&#32;}
+00155 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_a460858eb34940271be93a5aa08452a66_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_a460858eb34940271be93a5aa08452a66_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf"/><section>
+    <title>iconvConvert()</title>
+<indexterm><primary>iconvConvert</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>iconvConvert</secondary></indexterm>
+<para><computeroutput>bool EncodingConverter::iconvConvert (const std::string &amp; input, std::string &amp; output, const std::string &amp; fromCharset, const std::string &amp; toCharset)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Конвертирует строку из одной кодировки в другую с помощью iconv. </para>
+</para>
+
+<para>Метод конвертирует строку из одной кодировки в другую с использованием функций iconv.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>input</entry><entry>
+<para>Входная строка для конвертации. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>output</entry><entry>
+<para>Строка, в которую будет записан результат конвертации. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fromCharset</entry><entry>
+<para>Исходная кодировка. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>toCharset</entry><entry>
+<para>Целевая кодировка. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>true, если конвертация прошла успешно, иначе false. </para>
+</formalpara>
+</para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8cpp_source">EncodingConverter.cpp</link> строка <link linkend="__encoding_converter_8cpp_source_1l00090">90</link></para>
+<programlisting linenumbering="unnumbered">00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00091 &#32;&#32;&#32;&#32;iconv_t&#32;cd&#32;=&#32;iconv_open(toCharset.c_str(),&#32;fromCharset.c_str());
+00092 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(cd&#32;==&#32;(iconv_t)-1)&#32;{
+00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;perror(<emphasis role="stringliteral">&quot;iconv_open&quot;</emphasis>);
+00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+00095 &#32;&#32;&#32;&#32;}
+00096 
+00097 &#32;&#32;&#32;&#32;std::vector&lt;char&gt;&#32;inBuf(input.begin(),&#32;input.end());
+00098 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;inLeft&#32;=&#32;inBuf.size();
+00099 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;outLeft&#32;=&#32;inLeft&#32;*&#32;4;
+00100 &#32;&#32;&#32;&#32;std::vector&lt;char&gt;&#32;outBuf(outLeft);
+00101 
+00102 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;inPtr&#32;=&#32;inBuf.data();
+00103 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;outPtr&#32;=&#32;outBuf.data();
+00104 
+00105 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(inLeft&#32;&gt;&#32;0)&#32;{
+00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;result&#32;=&#32;iconv(cd,&#32;&amp;inPtr,&#32;&amp;inLeft,&#32;&amp;outPtr,&#32;&amp;outLeft);
+00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(result&#32;==&#32;(<emphasis role="keywordtype">size_t</emphasis>)-1)&#32;{
+00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iconv_close(cd);
+00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00111 &#32;&#32;&#32;&#32;}
+00112 
+00113 &#32;&#32;&#32;&#32;iconv_close(cd);
+00114 &#32;&#32;&#32;&#32;outBuf.resize(outBuf.size()&#32;-&#32;outLeft);
+00115 
+00116 &#32;&#32;&#32;&#32;output.assign(outBuf.begin(),&#32;outBuf.end());
+00117 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+00118 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7"/><section>
+    <title>is_utf8()</title>
+<indexterm><primary>is_utf8</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>is_utf8</secondary></indexterm>
+<para><computeroutput>bool EncodingConverter::is_utf8 (const std::string &amp; str)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Проверяет, является ли строка в кодировке UTF-8. </para>
+</para>
+
+<para>Метод проверяет, является ли строка в кодировке UTF-8 путем анализа байтовой последовательности. Возвращает true, если строка является корректной UTF-8 строкой, иначе false.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>str</entry><entry>
+<para>Строка, которую нужно проверить. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>true, если строка является корректной UTF-8 строкой, иначе false. </para>
+</formalpara>
+</para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8cpp_source">EncodingConverter.cpp</link> строка <link linkend="__encoding_converter_8cpp_source_1l00176">176</link></para>
+<programlisting linenumbering="unnumbered">00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00177 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;length&#32;=&#32;str.size();
+00178 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;length;&#32;)&#32;{
+00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((str[i]&#32;&amp;&#32;0x80)&#32;==&#32;0)&#32;{
+00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;1;
+00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;((str[i]&#32;&amp;&#32;0xE0)&#32;==&#32;0xC0&#32;&amp;&amp;&#32;i&#32;+&#32;1&#32;&lt;&#32;length&#32;&amp;&amp;&#32;(str[i&#32;+&#32;1]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80)&#32;{
+00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;2;
+00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;((str[i]&#32;&amp;&#32;0xF0)&#32;==&#32;0xE0&#32;&amp;&amp;&#32;i&#32;+&#32;2&#32;&lt;&#32;length&#32;&amp;&amp;&#32;(str[i&#32;+&#32;1]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80&#32;&amp;&amp;&#32;(str[i&#32;+&#32;2]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80)&#32;{
+00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;3;
+00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;((str[i]&#32;&amp;&#32;0xF8)&#32;==&#32;0xF0&#32;&amp;&amp;&#32;i&#32;+&#32;3&#32;&lt;&#32;length&#32;&amp;&amp;&#32;(str[i&#32;+&#32;1]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80&#32;&amp;&amp;&#32;(str[i&#32;+&#32;2]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80&#32;&amp;&amp;&#32;(str[i&#32;+&#32;3]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80)&#32;{
+00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;4;
+00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00190 &#32;&#32;&#32;&#32;}
+00191 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+00192 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4"/><section>
+    <title>loadSettings()</title>
+<indexterm><primary>loadSettings</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>loadSettings</secondary></indexterm>
+<para><computeroutput>void EncodingConverter::loadSettings ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Загружает настройки преобразования кодировки. </para>
+</para>
+
+<para>Устанавливает исходную кодировку в &quot;UTF-8&quot; и целевую кодировку в &quot;WINDOWS-1251&quot;. Задает расширения файлов, которые следует преобразовывать. </para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8cpp_source">EncodingConverter.cpp</link> строка <link linkend="__encoding_converter_8cpp_source_1l00028">28</link></para>
+<programlisting linenumbering="unnumbered">00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00029 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f">sourceEncoding</link>&#32;=&#32;<emphasis role="stringliteral">&quot;WINDOWS-1251&quot;</emphasis>;
+00030 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7">targetEncoding</link>&#32;=&#32;<emphasis role="stringliteral">&quot;UTF-8&quot;</emphasis>;
+00031 
+00032 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Создаем&#32;массив&#32;итераторов&#32;на&#32;строки,&#32;которые&#32;нужно&#32;добавить</emphasis>
+00033 &#32;&#32;&#32;&#32;std::string&#32;extensions[]&#32;=&#32;{&#32;<emphasis role="stringliteral">&quot;.tbl&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;.нбр&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;.згт&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;.cfm&quot;</emphasis>&#32;};
+00034 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;numExtensions&#32;=&#32;<emphasis role="keyword">sizeof</emphasis>(extensions)&#32;/&#32;<emphasis role="keyword">sizeof</emphasis>(extensions[0]);
+00035 
+00036 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Используем&#32;конструктор&#32;std::vector,&#32;принимающий&#32;два&#32;итератора</emphasis>
+00037 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.insert(<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.end(),&#32;extensions,&#32;extensions&#32;+&#32;numExtensions);
+00038 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0"/><section>
+    <title>printStats()</title>
+<indexterm><primary>printStats</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>printStats</secondary></indexterm>
+<para><computeroutput>void EncodingConverter::printStats ( ) const<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Выводит статистику по конвертированным файлам. </para>
+</para>
+
+<para>Метод выводит информацию о количестве обработанных и конвертированных файлов. </para>
+<para>
+См. определение в файле <link linkend="__encoding_converter_8cpp_source">EncodingConverter.cpp</link> строка <link linkend="__encoding_converter_8cpp_source_1l00162">162</link></para>
+<programlisting linenumbering="unnumbered">00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00163 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Files&#32;processed:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b">filesProcessed</link>&#32;&lt;&lt;&#32;std::endl;
+00164 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Files&#32;converted:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_class_encoding_converter_1a560484bdcdc929771c7d42877cab9643">filesConverted</link>&#32;&lt;&lt;&#32;std::endl;
+00165 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89"/><section>
+    <title>fileExtensions</title>
+<indexterm><primary>fileExtensions</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>fileExtensions</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::string&gt; EncodingConverter::fileExtensions<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00022">22</link></para>
+</section>
+<anchor xml:id="_class_encoding_converter_1a560484bdcdc929771c7d42877cab9643"/><section>
+    <title>filesConverted</title>
+<indexterm><primary>filesConverted</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>filesConverted</secondary></indexterm>
+<para><computeroutput>size_t EncodingConverter::filesConverted<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00026">26</link></para>
+</section>
+<anchor xml:id="_class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b"/><section>
+    <title>filesProcessed</title>
+<indexterm><primary>filesProcessed</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>filesProcessed</secondary></indexterm>
+<para><computeroutput>size_t EncodingConverter::filesProcessed<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00025">25</link></para>
+</section>
+<anchor xml:id="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e"/><section>
+    <title>inputDirectory</title>
+<indexterm><primary>inputDirectory</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>inputDirectory</secondary></indexterm>
+<para><computeroutput>std::string EncodingConverter::inputDirectory<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00019">19</link></para>
+</section>
+<anchor xml:id="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4"/><section>
+    <title>outputDirectory</title>
+<indexterm><primary>outputDirectory</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>outputDirectory</secondary></indexterm>
+<para><computeroutput>std::string EncodingConverter::outputDirectory<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00020">20</link></para>
+</section>
+<anchor xml:id="_class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f"/><section>
+    <title>sourceEncoding</title>
+<indexterm><primary>sourceEncoding</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>sourceEncoding</secondary></indexterm>
+<para><computeroutput>std::string EncodingConverter::sourceEncoding<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00023">23</link></para>
+</section>
+<anchor xml:id="_class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7"/><section>
+    <title>targetEncoding</title>
+<indexterm><primary>targetEncoding</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>targetEncoding</secondary></indexterm>
+<para><computeroutput>std::string EncodingConverter::targetEncoding<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00024">24</link></para>
+</section>
+<anchor xml:id="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02"/><section>
+    <title>useTempDirectory</title>
+<indexterm><primary>useTempDirectory</primary><secondary>EncodingConverter</secondary></indexterm>
+<indexterm><primary>EncodingConverter</primary><secondary>useTempDirectory</secondary></indexterm>
+<para><computeroutput>bool EncodingConverter::useTempDirectory<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="__encoding_converter_8h_source">EncodingConverter.h</link> строка <link linkend="__encoding_converter_8h_source_1l00021">21</link></para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+<link linkend="__encoding_converter_8h">EncodingConverter.h</link><link linkend="__encoding_converter_8cpp">EncodingConverter.cpp</link></section>
+</section>

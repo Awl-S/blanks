@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_c6a676202078dcb155fbbadf4483ceb9" xml:lang="ru">
+<title>Содержание директории CompilerIdCXX</title>
+<indexterm><primary>Содержание директории CompilerIdCXX</primary></indexterm>
+Директория графа зависимостей CompilerIdCXX:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_c6a676202078dcb155fbbadf4483ceb9_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="_cmake-build-minsizerel_2_c_make_files_23_825_82_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp">cmake-build-minsizerel/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

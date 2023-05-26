@@ -1,0 +1,7 @@
+<map id="FileReader::readLineString" name="FileReader::readLineString">
+<area shape="rect" id="Node000001" title="Читает строку из файла и удаляет ведущие и завершающие пробелы." alt="" coords="289,5,463,32"/>
+<area shape="rect" id="Node000002" href="$classtext_reader.html#ac9b23d5e5a58431fb114f221098a2640" title="Читает данные типа tbl из файла." alt="" coords="103,5,241,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,21,241,21,241,16,274,16"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,21,55,21,55,16,88,16"/>
+</map>

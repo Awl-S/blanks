@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_06cab3a81b35ca7bdfaa2da1fffea9da" xml:lang="ru">
+<title>Содержание директории struct</title>
+<indexterm><primary>Содержание директории struct</primary></indexterm>
+Директория графа зависимостей struct:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_06cab3a81b35ca7bdfaa2da1fffea9da_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="_cfm_8h">cfm.h</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="_nbr_8h">nbr.h</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="_point__data_8h">point_data.h</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="_tbl_8h">tbl.h</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="_zgt_8h">zgt.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

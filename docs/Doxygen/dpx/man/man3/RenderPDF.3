@@ -1,0 +1,943 @@
+.TH "RenderPDF" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RenderPDF \- Класс для генерации PDF-файла\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'RenderPDF\&.h'\fP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBgeneratePDF\fP (std::string &filename)"
+.br
+.RI "Создает PDF-документ, используя графические элементы, определенные в других методах класса\&. "
+.ti -1c
+.RI "\fBRenderPDF\fP (\fBcfm\fP cfm_data, \fBzgt\fP zgt_data, const std::vector< \fBtbl\fP > &tbl_data, \fBnbr\fP nbr_data, \fBpoint\fP point_data, std::filesystem::path fontPath)"
+.br
+.RI "Конструктор класса \fBRenderPDF\fP\&. "
+.ti -1c
+.RI "\fB~RenderPDF\fP ()"
+.br
+.RI "Деструктор класса \fBRenderPDF\fP\&. "
+.in -1c
+.SS "Закрытые члены"
+
+.in +1c
+.ti -1c
+.RI "HPDF_Font \fBloadFont\fP (const std::string &fontPath)"
+.br
+.RI "Загружает шрифт из указанного файла\&. "
+.ti -1c
+.RI "void \fBsortTblData\fP ()"
+.br
+.RI "Сортирует данные в tbl_data_ по положению элементов\&. "
+.ti -1c
+.RI "void \fBpopulatePointTbl\fP ()"
+.br
+.RI "Заполняет point_tbl данными из tbl_data_\&. "
+.ti -1c
+.RI "bool \fBcheckForNewPage\fP ()"
+.br
+.RI "Проверяет наличие дубликатов координат в point_data_\&. "
+.ti -1c
+.RI "void \fBcreateA3Page\fP ()"
+.br
+.RI "Создает новую страницу формата A3\&. "
+.ti -1c
+.RI "void \fBsetFontSize\fP (HPDF_Page page, double size)"
+.br
+.RI "Устанавливает размер шрифта и размер страницы PDF\&. "
+.ti -1c
+.RI "void \fBgenerate_Marks\fP (size_t blank)"
+.br
+.RI "Генерирует маркеры на основе измерений из данных таблицы\&. "
+.ti -1c
+.RI "void \fBdrawDigitIndices\fP (HPDF_Page page, size_t blank)"
+.br
+.RI "Рисует индексы (цифры) на PDF странице\&. "
+.ti -1c
+.RI "void \fBdrawMainLines\fP (HPDF_Page page, size_t blank)"
+.br
+.RI "Рисует основные линии на странице PDF\&. "
+.ti -1c
+.RI "void \fBdrawAdditionalTicks\fP (HPDF_Page page, size_t blank)"
+.br
+.RI "Рисует дополнительные отметки на странице PDF\&. "
+.ti -1c
+.RI "void \fBinitializeData\fP (\fBcfm\fP cfm_data, \fBzgt\fP zgt_data, const std::vector< \fBtbl\fP > &tbl_data, \fBnbr\fP nbr_data, \fBpoint\fP point_data, std::filesystem::path fontPath)"
+.br
+.RI "Инициализирует данные\&. "
+.ti -1c
+.RI "void \fBinitializePDF\fP ()"
+.br
+.RI "Инициализирует объект HPDF_Doc для работы с PDF\&. "
+.ti -1c
+.RI "void \fBadjustFontSize\fP ()"
+.br
+.RI "Подгоняет размер шрифта\&. "
+.ti -1c
+.RI "HPDF_REAL \fBcalculateYCoordinate\fP (HPDF_REAL angle, size_t blank)"
+.br
+.RI "Вычисляет координату Y для текста маркера\&. "
+.ti -1c
+.RI "HPDF_REAL \fBcalculateXCoordinate\fP (HPDF_REAL angle, double textWidth, size_t blank)"
+.br
+.RI "Вычисляет координату X для текста маркера\&. "
+.ti -1c
+.RI "std::string \fBformatText\fP (int i)"
+.br
+.RI "Форматирует текст с использованием заданной точности\&. "
+.ti -1c
+.RI "void \fBdrawText\fP (HPDF_Page page, const std::string &text, HPDF_REAL x, HPDF_REAL y)"
+.br
+.RI "Рисует текст на странице PDF\&. "
+.in -1c
+.SS "Закрытые статические члены"
+
+.in +1c
+.ti -1c
+.RI "static void \fBdrawCircle\fP (HPDF_Page page, double x, double y, double radius)"
+.br
+.RI "Рисует круг на странице PDF\&. "
+.ti -1c
+.RI "static void \fBdraw_line\fP (HPDF_Page page, HPDF_REAL x1, HPDF_REAL y1, HPDF_REAL x2, HPDF_REAL y2)"
+.br
+.RI "Рисует линию на странице PDF\&. "
+.in -1c
+.SS "Закрытые данные"
+
+.in +1c
+.ti -1c
+.RI "const double \fBPI\fP = 3\&.14159265358979323846"
+.br
+.ti -1c
+.RI "double \fBmargitText\fP = 1"
+.br
+.ti -1c
+.RI "bool \fBnew_page\fP = false"
+.br
+.ti -1c
+.RI "std::filesystem::path \fBfontPath_\fP"
+.br
+.ti -1c
+.RI "HPDF_Doc \fBpdf_\fP"
+.br
+.ti -1c
+.RI "HPDF_Font \fBfont_\fP"
+.br
+.ti -1c
+.RI "\fBcfm\fP \fBcfm_data_\fP"
+.br
+.ti -1c
+.RI "\fBzgt\fP \fBzgt_data_\fP"
+.br
+.ti -1c
+.RI "\fBnbr\fP \fBnbr_data_\fP"
+.br
+.ti -1c
+.RI "\fBpoint\fP \fBpoint_data_\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBtbl\fP > \fBtbl_data_\fP"
+.br
+.ti -1c
+.RI "std::vector< size_t > \fBpoint_tbl\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBmarks\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс для генерации PDF-файла\&. 
+
+Класс \fBRenderPDF\fP предоставляет функциональность для создания и рендеринга PDF-файлов\&. 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB20\fP
+.SH "Конструктор(ы)"
+.PP 
+.SS "RenderPDF::RenderPDF (\fBcfm\fP cfm_data, \fBzgt\fP zgt_data, const std::vector< \fBtbl\fP > & tbl_data, \fBnbr\fP nbr_data, \fBpoint\fP point_data, std::filesystem::path fontPath)"
+
+.PP
+Конструктор класса \fBRenderPDF\fP\&. Инициализирует данные, создает объект PDF, подгоняет размер шрифта, загружает шрифт, сортирует данные таблицы и заполняет таблицу точек\&. 
+.PP
+См\&. определение в файле \fBRenderPDF\&.cpp\fP строка \fB47\fP.PP
+.nf
+47                                                                                                                                            {
+48     initializeData(std::move(cfm_data), std::move(zgt_data), tbl_data, std::move(nbr_data), std::move(point_data), fontPath);
+49     initializePDF();
+50     adjustFontSize();
+51     font_ = loadFont(fontPath_\&.string());
+52     sortTblData();
+53     populatePointTbl();
+54     new_page = checkForNewPage();
+55 }
+.fi
+
+.SS "RenderPDF::~RenderPDF ()"
+
+.PP
+Деструктор класса \fBRenderPDF\fP\&. Освобождает ресурсы, связанные с объектом HPDF_Doc\&. 
+.PP
+См\&. определение в файле \fBRenderPDF\&.cpp\fP строка \fB35\fP.PP
+.nf
+35                       {
+36     if (pdf_) {
+37         HPDF_Free(pdf_);
+38     }
+39 }
+.fi
+
+.SH "Методы"
+.PP 
+.SS "void RenderPDF::adjustFontSize ()\fC [private]\fP"
+
+.PP
+Подгоняет размер шрифта\&. Использует коэффициент поправки размера для шрифта GOST_B\&. 
+.PP
+См\&. определение в файле \fBRenderPDF\&.cpp\fP строка \fB92\fP.PP
+.nf
+92                                 {
+93     cfm_data_\&.digit_height*=1\&.090248; //коэффициент поправки размера для шрифта GOST_B
+94 }
+.fi
+
+.SS "HPDF_REAL RenderPDF::calculateXCoordinate (HPDF_REAL angle, double textWidth, size_t blank)\fC [private]\fP"
+
+.PP
+Вычисляет координату X для текста маркера\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIangle\fP Угол маркера\&. 
+.br
+\fItextWidth\fP Ширина текста маркера\&. 
+.br
+\fIblank\fP Размер пустого пространства на странице\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Координата X для текста маркера\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBdraw\&.cpp\fP строка \fB80\fP.PP
+.nf
+80                                                                                          {
+81     double marginText = 1;
+82     auto radius = (cfm_data_\&.diameter / 2\&.0) \- cfm_data_\&.digital_tick[0] / 2;
+83     HPDF_REAL x = point_data_\&.coordinates[point_tbl[blank] \- marginText]\&.first +
+84                   (radius \- cfm_data_\&.digital_tick[0]\-1) * cos(angle) \- textWidth / 2;
+85     return x;
+86 }
+.fi
+
+.SS "HPDF_REAL RenderPDF::calculateYCoordinate (HPDF_REAL angle, size_t blank)\fC [private]\fP"
+
+.PP
+Вычисляет координату Y для текста маркера\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIangle\fP Угол маркера\&. 
+.br
+\fIblank\fP Размер пустого пространства на странице\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Координата Y для текста маркера\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBdraw\&.cpp\fP строка \fB95\fP.PP
+.nf
+95                                                                        {
+96     double marginText = 1;
+97     auto radius = (cfm_data_\&.diameter / 2\&.0) \- cfm_data_\&.digital_tick[0] / 2;
+98     HPDF_REAL y = point_data_\&.coordinates[point_tbl[blank] \- marginText]\&.second +
+99                   (radius \- cfm_data_\&.digital_tick[0]\-1) * sin(angle) \- cfm_data_\&.digit_height / 2\&.5 + 0\&.5;
+100     return y;
+101 }
+.fi
+
+.SS "bool RenderPDF::checkForNewPage ()\fC [private]\fP"
+
+.PP
+Проверяет наличие дубликатов координат в point_data_\&. 
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает true, если есть дубликаты координат, указывающие на необходимость новой страницы, иначе false\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBProcessor\&.cpp\fP строка \fB8\fP.PP
+.nf
+8                                 {
+9     for (size_t i = 0; i < point_data_\&.coordinates\&.size(); ++i) {
+10         for (size_t j = i + 1; j < point_data_\&.coordinates\&.size(); ++j) {
+11             if (point_data_\&.coordinates[i] == point_data_\&.coordinates[j]) {
+12                 return true;
+13             }
+14         }
+15     }
+16     return false;
+17 }
+.fi
+
+.SS "void RenderPDF::createA3Page ()\fC [private]\fP"
+
+.PP
+Создает новую страницу формата A3\&. 
+.PP
+См\&. определение в файле \fBRenderPDF\&.cpp\fP строка \fB7\fP.PP
+.nf
+7                               {
+8     HPDF_Page page = HPDF_AddPage(pdf_);
+9     HPDF_Page_SetSize(page, HPDF_PAGE_SIZE_A3, HPDF_PAGE_PORTRAIT);
+10 }
+.fi
+
+.SS "void RenderPDF::draw_line (HPDF_Page page, HPDF_REAL x1, HPDF_REAL y1, HPDF_REAL x2, HPDF_REAL y2)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Рисует линию на странице PDF\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIpage\fP Страница PDF, на которой будет нарисована линия\&. 
+.br
+\fIx1\fP Координата X начала линии\&. 
+.br
+\fIy1\fP Координата Y начала линии\&. 
+.br
+\fIx2\fP Координата X конца линии\&. 
+.br
+\fIy2\fP Координата Y конца линии\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBdraw\&.cpp\fP строка \fB38\fP.PP
+.nf
+38                                                                                                 {
+39     HPDF_Page_MoveTo(page, x1, y1);
+40     HPDF_Page_LineTo(page, x2, y2);
+41     HPDF_Page_Stroke(page);
+42 }
+.fi
+
+.SS "void RenderPDF::drawAdditionalTicks (HPDF_Page page, size_t blank)\fC [private]\fP"
+
+.PP
+Рисует дополнительные отметки на странице PDF\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIpage\fP Страница PDF, на которой будут нарисованы дополнительные отметки\&. 
+.br
+\fIblank\fP Индекс строки в таблице данных, на основе которой следует рисовать отметки\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBLine\&.cpp\fP строка \fB125\fP.PP
+.nf
+125                                                                 {
+126     auto radius = cfm_data_\&.diameter / 2\&.0f;
+127     size_t size_tick_mask = cfm_data_\&.tick_mask\&.size() \- 1;
+128     for (size_t k = 0; k < marks\&.size() \- 1; k++) {
+129         double angle1 = 4\&.71239 \- marks[k];
+130         double angle2 = 4\&.71239 \- marks[k + 1];
+131         double angle_diff = (angle2 \- angle1) / double(size_tick_mask);
+132 
+133         for (size_t j = 1; j <= size_tick_mask; j++) {
+134             double angle = angle1 + j * angle_diff;
+135             HPDF_REAL x1 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first + radius * cos(angle);
+136             HPDF_REAL y1 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second + radius * sin(angle);
+137             HPDF_REAL x2, y2;
+138             HPDF_REAL height_line;
+139 
+140             if (cfm_data_\&.tick_mask[j] == '1') {
+141                 height_line = cfm_data_\&.small_tick[0];
+142             }
+143             if (cfm_data_\&.tick_mask[j] == '2') {
+144                 height_line = cfm_data_\&.big_tick[0];
+145             }
+146             if (cfm_data_\&.tick_mask[j] == '3') {
+147                 height_line = cfm_data_\&.digital_tick[0];
+148             }
+149 
+150             x2 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first + (radius \- height_line) * cos(angle);
+151             y2 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second + (radius \- height_line) * sin(angle);
+152 
+153             draw_line(page, x1, y1, x2, y2);
+154         }
+155     }
+156 }
+.fi
+
+.SS "void RenderPDF::drawCircle (HPDF_Page page, double x, double y, double radius)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Рисует круг на странице PDF\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIpage\fP Страница PDF, на которой будет нарисован круг\&. 
+.br
+\fIx\fP Координата X центра круга\&. 
+.br
+\fIy\fP Координата Y центра круга\&. 
+.br
+\fIradius\fP Радиус круга\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBdraw\&.cpp\fP строка \fB24\fP.PP
+.nf
+24                                                                             {
+25     HPDF_Page_Circle(page, x, y, radius);
+26     HPDF_Page_Stroke(page);
+27 }
+.fi
+
+.SS "void RenderPDF::drawDigitIndices (HPDF_Page page, size_t blank)\fC [private]\fP"
+
+.PP
+Рисует индексы (цифры) на PDF странице\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIpage\fP Страница PDF, на которую будут нарисованы индексы\&. 
+.br
+\fIblank\fP Размер пустого пространства на странице\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBdigit\&.cpp\fP строка \fB9\fP.PP
+.nf
+9                                                              {
+10     // Установка размера шрифта для индексов
+11     setFontSize(page, cfm_data_\&.digit_height);
+12 
+13     // Цикл по всем меткам
+14     for (int i = 0; i < marks\&.size(); i++) {
+15         // Вычисление угла для каждой метки
+16         HPDF_REAL angle = 4\&.71239 \- marks[i];
+17 
+18         // Форматирование текста метки
+19         auto text = formatText(i);
+20 
+21         // Вычисление ширины текста метки
+22         auto textWidth = HPDF_Page_TextWidth(page, text\&.c_str());
+23 
+24         // Вычисление координат x и y для текста метки
+25         HPDF_REAL x = calculateXCoordinate(angle, textWidth, blank);
+26         HPDF_REAL y = calculateYCoordinate(angle, blank);
+27 
+28         // Рисование текста метки на странице
+29         drawText(page, text, x, y);
+30     }
+31 }
+.fi
+
+.SS "void RenderPDF::drawMainLines (HPDF_Page page, size_t blank)\fC [private]\fP"
+
+.PP
+Рисует основные линии на странице PDF\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIpage\fP Страница PDF, на которой будут нарисованы основные линии\&. 
+.br
+\fIblank\fP Индекс строки в таблице данных, на основе которой следует рисовать линии\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBLine\&.cpp\fP строка \fB52\fP.PP
+.nf
+52                                                           {
+53     //Рисуем линии главные
+54     double radius = cfm_data_\&.diameter / 2\&.0;
+55     size_t i = 0;
+56     for (double angle: marks) {
+57         angle = 4\&.71239 \- angle;
+58 
+59         double sinAngle = sin(angle);
+60         double cosAngle = cos(angle);
+61         HPDF_REAL x1, x2, y1, y2;
+62 
+63         x1 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first +
+64              (radius \- cfm_data_\&.digital_tick[0]) * cosAngle;
+65         y1 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second +
+66              (radius \- cfm_data_\&.digital_tick[0]) * sinAngle;
+67 
+68         if (i == 0) { // Если это первая итерация, сместить верхнюю линию на 90 градусов
+69             double shift_angle = angle + 1\&.5708; // Смещение на 90 градусов вправо
+70             double center_offset = cfm_data_\&.digital_tick[2] / 2; // Размер центра
+71 
+72             x1 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first +
+73                  (radius \- cfm_data_\&.digital_tick[0]) * cosAngle;
+74             y1 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second +
+75                  (radius \- cfm_data_\&.digital_tick[0]) * sinAngle;
+76 
+77             x1 \-= center_offset * cos(shift_angle); // Смещение x координаты
+78             y1 \-= center_offset * sin(shift_angle); // Смещение y координаты
+79 
+80             x2 = x1 + (cfm_data_\&.digital_tick[0] \- cfm_data_\&.digital_tick[2]) *
+81                       cos(shift_angle); // Правая часть линии
+82             y2 = y1 + (cfm_data_\&.digital_tick[0] \- cfm_data_\&.digital_tick[2]) *
+83                       sin(shift_angle); // Правая часть линии
+84         } else {
+85             x2 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first +
+86                  (radius \- cfm_data_\&.digital_tick[2]) * cosAngle;
+87             y2 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second +
+88                  (radius \- cfm_data_\&.digital_tick[2]) * sinAngle;
+89         }
+90 
+91         // Верняя линия
+92         HPDF_Page_SetLineWidth(page, cfm_data_\&.digital_tick[3]);
+93 
+94         draw_line(page, x2, y2, x1, y1);
+95 
+96         // Нижняя линия
+97         x1 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first + radius * cos(angle);
+98         y1 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second + radius * sin(angle);
+99         x2 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first +
+100              (radius \- cfm_data_\&.digital_tick[2]) * cosAngle;
+101         y2 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second +
+102              (radius \- cfm_data_\&.digital_tick[2]) * sinAngle;
+103 
+104         if (i == 0) {
+105             x2 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first +
+106                  (radius \- cfm_data_\&.digital_tick[0]) * cosAngle;
+107             y2 = point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second +
+108                  (radius \- cfm_data_\&.digital_tick[0]) * sinAngle;
+109         }
+110 
+111         HPDF_Page_SetLineWidth(page, cfm_data_\&.digital_tick[1]);
+112         draw_line(page, x2, y2, x1, y1);
+113 
+114         i++;
+115     }
+116 }
+.fi
+
+.SS "void RenderPDF::drawText (HPDF_Page page, const std::string & text, HPDF_REAL x, HPDF_REAL y)\fC [private]\fP"
+
+.PP
+Рисует текст на странице PDF\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIpage\fP Страница PDF, на которой будет нарисован текст\&. 
+.br
+\fItext\fP Текст для вывода на страницу\&. 
+.br
+\fIx\fP Координата X, где будет нарисован текст\&. 
+.br
+\fIy\fP Координата Y, где будет нарисован текст\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBdraw\&.cpp\fP строка \fB52\fP.PP
+.nf
+52                                                                                         {
+53     HPDF_Page_BeginText(page);
+54     HPDF_Page_MoveTextPos(page, x, y);
+55     HPDF_Page_ShowText(page, text\&.c_str());
+56     HPDF_Page_EndText(page);
+57 }
+.fi
+
+.SS "std::string RenderPDF::formatText (int i)\fC [private]\fP"
+
+.PP
+Форматирует текст с использованием заданной точности\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIi\fP Индекс маркера, текст для которого нужно отформатировать\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Отформатированный текст\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBdraw\&.cpp\fP строка \fB65\fP.PP
+.nf
+65                                      {
+66     std::stringstream ss;
+67     ss\&.precision(cfm_data_\&.format[1]);
+68     ss << std::fixed << cfm_data_\&.marks[i];
+69     return ss\&.str();
+70 }
+.fi
+
+.SS "void RenderPDF::generate_Marks (size_t blank)\fC [private]\fP"
+
+.PP
+Генерирует маркеры на основе измерений из данных таблицы\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIblank\fP Индекс строки в таблице данных, из которой следует сгенерировать маркеры\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBLine\&.cpp\fP строка \fB10\fP.PP
+.nf
+10                                            {
+11     size_t size = tbl_data_[blank]\&.measurements\&.size();
+12     auto a0 = (tbl_data_[blank]\&.measurements[0][0] + tbl_data_[blank]\&.measurements[0][1]) / 2\&.0;
+13     auto an =
+14             (tbl_data_[blank]\&.measurements[size \- 1][0] + tbl_data_[blank]\&.measurements[size \- 1][1]) / 2\&.0;
+15     auto aDelta = (an \- a0) / size;
+16 
+17     for (int i = 0; i < size; i++) {
+18         auto asred = (tbl_data_[blank]\&.measurements[i][0] + tbl_data_[blank]\&.measurements[i][1]) / 2\&.0;
+19         marks\&.push_back(asred + aDelta);
+20     }
+21     std::vector<double> angles_deg(marks\&.size());
+22 
+23     // Конвертация углов из радиан в градусы
+24     for (size_t i = 0; i < marks\&.size(); i++) {
+25         angles_deg[i] = marks[i] * (180\&.0 / PI);
+26     }
+27 
+28     double a0_deg = angles_deg\&.front();
+29     double an_deg = angles_deg\&.back();
+30 
+31     // Вычисление добавочного угла \\Delta
+32     double delta = (360\&.0 \- an_deg \- a0_deg) / 2;
+33 
+34     // Пересчет углов с использованием \\Delta
+35     std::vector<double> new_angles_deg(angles_deg\&.size());
+36     for (size_t i = 0; i < angles_deg\&.size(); i++) {
+37         new_angles_deg[i] = angles_deg[i] + delta;
+38     }
+39 
+40     // Конвертация углов обратно в радианы
+41     for (size_t i = 0; i < new_angles_deg\&.size(); i++) {
+42         marks[i] = new_angles_deg[i] * (PI / 180\&.0);
+43     }
+44 }
+.fi
+
+.SS "void RenderPDF::generatePDF (std::string & filename)"
+
+.PP
+Создает PDF-документ, используя графические элементы, определенные в других методах класса\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIfilename\fP Ссылка на строку, содержащую имя будущего файла PDF\&. Если будет создано несколько страниц, то функция модифицирует эту строку, добавляя номер каждой страницы\&.
+.RE
+.PP
+Она создает страницы формата A3 и на каждой странице рисует набор элементов, таких как основные линии, индексы и дополнительные отметки, для каждого элемента в таблице точек (\fCpoint_tbl\fP)\&. Генерация этих элементов осуществляется с помощью функций \fCgenerate_Marks\fP, \fCdrawMainLines\fP, \fCdrawDigitIndices\fP и \fCdrawAdditionalTicks\fP\&. Эти функции используют данные из других членов класса, таких как \fCcfm_data_\fP и \fCzgt_data_\fP\&. В конце, документ сохраняется в файл с указанным именем\&. 
+.PP
+См\&. определение в файле \fBPrint\&.cpp\fP строка \fB12\fP.PP
+.nf
+12                                                {
+13 
+14     HPDF_Page page;
+15     size_t size_point_tbl = point_tbl\&.size();
+16     int blank = 0;
+17     int totalPage = 1;
+18     if(new_page){
+19         size_point_tbl/=2;
+20         totalPage = 2;
+21     }
+22 
+23     for(auto page_list = 0; page_list < totalPage; ++page_list) {
+24         if(page_list == 1) {
+25             pdf_ = HPDF_New(nullptr, nullptr);
+26             font_ = loadFont(fontPath_\&.string());
+27 
+28             size_point_tbl = point_tbl\&.size();
+29         }
+30         createA3Page();
+31         page = HPDF_GetCurrentPage(pdf_);
+32         for (; blank < size_point_tbl; blank++) {
+33 
+34             HPDF_Page_SetLineWidth(page, cfm_data_\&.digital_tick[1]);
+35 
+36             //test Удалить в конце, не рисуется
+37             if (false) {
+38                 drawCircle(page, point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first,
+39                            point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second, cfm_data_\&.diameter / 2\&.0f);
+40             }
+41 
+42             // отрисовка круга
+43             if (false) {
+44                 drawCircle(page, point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first,
+45                            point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second, zgt_data_\&.diameter / 2\&.0f);
+46             }
+47 
+48             //Центральный отверстие
+49             if (false) {
+50                 drawCircle(page, point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first,
+51                            point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second,
+52                            zgt_data_\&.center_hole_diameter / 2\&.0f);
+53             }
+54 
+55             // Индексы не изменяются (исправить!!!)
+56             if(false){
+57                 double xy, yz, radius;
+58                 for (int i = 0; i < 2; ++i) {
+59                     xy = zgt_data_\&.mounting_holes[i * 3];
+60                     yz = zgt_data_\&.mounting_holes[i * 3 + 1];
+61                     yz = (yz > 0) ? \-yz : abs(yz);
+62                     radius = zgt_data_\&.mounting_holes[i * 3 + 2] / 2\&.0f;
+63 
+64                     drawCircle(page, point_data_\&.coordinates[point_tbl[blank] \- 1]\&.first + xy,
+65                                point_data_\&.coordinates[point_tbl[blank] \- 1]\&.second + yz,
+66                                radius);
+67                 }
+68             }
+69 
+70             generate_Marks(blank);
+71             drawMainLines(page, blank);
+72 
+73             drawDigitIndices(page, blank);
+74             drawAdditionalTicks(page, blank);
+75             marks\&.clear();
+76 
+77             generate_Marks(blank);
+78             drawMainLines(page, blank);
+79 
+80             drawDigitIndices(page, blank);
+81             drawAdditionalTicks(page, blank);
+82             marks\&.clear();
+83         }
+84         if(page_list == 1){
+85             filename+= "(" + std::to_string(page_list + 1) + ")";
+86         }
+87         HPDF_SaveToFile(pdf_, (filename + "\&.pdf")\&.c_str());
+88     }
+89 }
+.fi
+
+.SS "void RenderPDF::initializeData (\fBcfm\fP cfm_data, \fBzgt\fP zgt_data, const std::vector< \fBtbl\fP > & tbl_data, \fBnbr\fP nbr_data, \fBpoint\fP point_data, std::filesystem::path fontPath)\fC [private]\fP"
+
+.PP
+Инициализирует данные\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIcfm_data\fP Данные для cfm\&. 
+.br
+\fIzgt_data\fP Данные для zgt\&. 
+.br
+\fItbl_data\fP Данные для tbl\&. 
+.br
+\fInbr_data\fP Данные для nbr\&. 
+.br
+\fIpoint_data\fP Данные для точки\&. 
+.br
+\fIfontPath\fP Путь к файлу шрифта\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBRenderPDF\&.cpp\fP строка \fB67\fP.PP
+.nf
+67                                                                                                                                                       {
+68     cfm_data_ = std::move(cfm_data);
+69     zgt_data_ = std::move(zgt_data);
+70     tbl_data_ = tbl_data;
+71     nbr_data_ = std::move(nbr_data);
+72     point_data_ = std::move(point_data);
+73     fontPath_ = fontPath;
+74 }
+.fi
+
+.SS "void RenderPDF::initializePDF ()\fC [private]\fP"
+
+.PP
+Инициализирует объект HPDF_Doc для работы с PDF\&. 
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP если не удается создать объект PDF\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBRenderPDF\&.cpp\fP строка \fB80\fP.PP
+.nf
+80                                  {
+81     pdf_ = HPDF_New(nullptr, nullptr);
+82     if(!pdf_){
+83         throw std::runtime_error("Не удалось создать PDF документ\&.");
+84     }
+85 }
+.fi
+
+.SS "HPDF_Font RenderPDF::loadFont (const std::string & fontPath)\fC [private]\fP"
+
+.PP
+Загружает шрифт из указанного файла\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIfontPath\fP Путь к файлу шрифта\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Возвращает объект HPDF_Font\&. 
+.RE
+.PP
+\fBИсключения\fP
+.RS 4
+\fIstd::runtime_error\fP если не удается загрузить шрифт\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBRenderPDF\&.cpp\fP строка \fB19\fP.PP
+.nf
+19                                                        {
+20     auto font_name = HPDF_LoadTTFontFromFile(pdf_, fontPath\&.c_str(), HPDF_TRUE);
+21     auto font = HPDF_GetFont(pdf_, font_name, "CP1251");
+22 
+23     if(!font){
+24         throw std::runtime_error("Не удалось загрузить шрифт\&.");
+25     }
+26 
+27     return font;
+28 }
+.fi
+
+.SS "void RenderPDF::populatePointTbl ()\fC [private]\fP"
+
+.PP
+Заполняет point_tbl данными из tbl_data_\&. Эта функция используется для копирования данных о позициях из tbl_data_ в point_tbl\&. 
+.PP
+См\&. определение в файле \fBProcessor\&.cpp\fP строка \fB39\fP.PP
+.nf
+39                                  {
+40     for(auto i : tbl_data_){
+41         point_tbl\&.push_back(i\&.position);
+42     }
+43 }
+.fi
+
+.SS "void RenderPDF::setFontSize (HPDF_Page page, double size)\fC [private]\fP"
+
+.PP
+Устанавливает размер шрифта и размер страницы PDF\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIpage\fP Страница PDF, для которой нужно установить размер шрифта и размеры страницы\&. 
+.br
+\fIsize\fP Размер шрифта для установки\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBdraw\&.cpp\fP строка \fB10\fP.PP
+.nf
+10                                                        {
+11     HPDF_Page_SetFontAndSize(page, font_, size);
+12     HPDF_Page_SetHeight(page, 420);
+13     HPDF_Page_SetWidth(page, 297);
+14 }
+.fi
+
+.SS "void RenderPDF::sortTblData ()\fC [private]\fP"
+
+.PP
+Сортирует данные в tbl_data_ по положению элементов\&. Эта функция использует стандартную функцию сортировки из библиотеки алгоритмов STL и лямбда-функцию для сравнения положения элементов\&. 
+.PP
+См\&. определение в файле \fBProcessor\&.cpp\fP строка \fB25\fP.PP
+.nf
+25                             {
+26     auto compare_position = [](const tbl& a, const tbl& b) {
+27         return a\&.position < b\&.position;
+28     };
+29 
+30     // Сортировка вектора tbl_data_ с использованием функции сравнения
+31     std::sort(tbl_data_\&.begin(), tbl_data_\&.end(), compare_position);
+32 }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "\fBcfm\fP RenderPDF::cfm_data_\fC [private]\fP"
+Данные типа cfm 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB68\fP
+.SS "HPDF_Font RenderPDF::font_\fC [private]\fP"
+Шрифт PDF 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB66\fP
+.SS "std::filesystem::path RenderPDF::fontPath_\fC [private]\fP"
+Путь к файлу шрифта 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB63\fP
+.SS "double RenderPDF::margitText = 1\fC [private]\fP"
+Отступ для текста 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB61\fP
+.SS "std::vector<double> RenderPDF::marks\fC [private]\fP"
+Метки 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB74\fP
+.SS "\fBnbr\fP RenderPDF::nbr_data_\fC [private]\fP"
+Данные типа nbr 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB70\fP
+.SS "bool RenderPDF::new_page = false\fC [private]\fP"
+Флаг новой страницы 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB62\fP
+.SS "HPDF_Doc RenderPDF::pdf_\fC [private]\fP"
+Документ PDF 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB65\fP
+.SS "const double RenderPDF::PI = 3\&.14159265358979323846\fC [private]\fP"
+Значение числа Пи 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB60\fP
+.SS "\fBpoint\fP RenderPDF::point_data_\fC [private]\fP"
+Данные типа point 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB71\fP
+.SS "std::vector<size_t> RenderPDF::point_tbl\fC [private]\fP"
+Таблица точек 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB73\fP
+.SS "std::vector<\fBtbl\fP> RenderPDF::tbl_data_\fC [private]\fP"
+Вектор данных типа tbl 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB72\fP
+.SS "\fBzgt\fP RenderPDF::zgt_data_\fC [private]\fP"
+Данные типа zgt 
+.PP
+См\&. определение в файле \fBRenderPDF\&.h\fP строка \fB69\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

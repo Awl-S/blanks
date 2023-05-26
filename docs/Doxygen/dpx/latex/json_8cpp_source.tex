@@ -1,0 +1,65 @@
+\doxysection{json.\+cpp}
+\hypertarget{json_8cpp_source}{}\label{json_8cpp_source}\index{json.cpp@{json.cpp}}
+\mbox{\hyperlink{json_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../../include/Parser/json.h"{}}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00013}\mbox{\hyperlink{classjson_a335a17f634ae297aa36dbc40855dd8da}{00013}}\ std::vector<std::filesystem::path>\ \mbox{\hyperlink{classjson_a335a17f634ae297aa36dbc40855dd8da}{json::getFileList}}(\textcolor{keyword}{const}\ std::string\ \&key,\ \textcolor{keyword}{const}\ std::string\ \&search)\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00014}00014\ \ \ \ \ std::vector<std::filesystem::path>\ files;}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00015}00015\ \ \ \ \ std::filesystem::path\ directory\ =\ \mbox{\hyperlink{classjson_a760a6ea6469d17e611ccf23921753d20}{getFilePath}}(key);}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::filesystem::exists(directory))\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ std::filesystem::recursive\_directory\_iterator(directory))\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file()\ \&\&\ entry.path().filename().string().find(search)\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ files.push\_back(entry.path());}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ entry.path().string()\ <<\ "{}\(\backslash\)t"{}\ <<\ entry.path()\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00024}00024\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Обработка\ ошибки}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Directory\ does\ not\ exist\ or\ is\ not\ accessible:\ "{}}\ <<\ directory\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ files;}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00041}\mbox{\hyperlink{classjson_a760a6ea6469d17e611ccf23921753d20}{00041}}\ std::filesystem::path\ \mbox{\hyperlink{classjson_a760a6ea6469d17e611ccf23921753d20}{json::getFilePath}}(\textcolor{keyword}{const}\ std::string\ \&key)\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}.contains(key))\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Configuration\ file\ does\ not\ contain\ key:\ "{}}\ +\ key);}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ std::filesystem::u8path(\mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}[key].get<std::string>());}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00058}\mbox{\hyperlink{classjson_a3f5e7618318c6e39387a917589aa3d38}{00058}}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{classjson_a3f5e7618318c6e39387a917589aa3d38}{json::getInteger}}(\textcolor{keyword}{const}\ std::string\ \&key)\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}.contains(key))\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Configuration\ file\ does\ not\ contain\ key:\ "{}}\ +\ key);}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}[key];}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00074}\mbox{\hyperlink{classjson_a4630c59c2653fc787d1059a1a1e905cb}{00074}}\ \mbox{\hyperlink{classjson_a4630c59c2653fc787d1059a1a1e905cb}{json::json}}(\textcolor{keyword}{const}\ std::string\ \&config\_file\_path)\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00075}00075\ \ \ \ \ std::ifstream\ config\_file(config\_file\_path);}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (!config\_file.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ open\ configuration\ file:\ "{}}\ +\ config\_file\_path);}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00079}00079\ \ \ \ \ config\_file\ >>\ \mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}};}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00082}\mbox{\hyperlink{classjson_a7d5c22a97d49085310994af222c28f8c}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classjson_a7d5c22a97d49085310994af222c28f8c}{json::display}}()\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [key,\ value]\ :\ \mbox{\hyperlink{classjson_a39265872195766ea0181f7c7ca0e2e6c}{config\_json}}.items())\ \{}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ std::cout\ <<\ key\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ value\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{json_8cpp_source_l00096}00096\ }
+
+\end{DoxyCode}

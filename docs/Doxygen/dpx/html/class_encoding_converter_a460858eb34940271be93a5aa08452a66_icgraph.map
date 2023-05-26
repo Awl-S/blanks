@@ -1,0 +1,9 @@
+<map id="EncodingConverter::convertFile" name="EncodingConverter::convertFile">
+<area shape="rect" id="Node000001" title="Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл." alt="" coords="473,5,611,48"/>
+<area shape="rect" id="Node000002" href="$class_encoding_converter.html#ab066b92f365f593c44d6825071463e08" title="Конвертирует файлы в указанной директории и её поддиректориях." alt="" coords="288,5,425,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="459,29,426,29,426,24,459,24"/>
+<area shape="rect" id="Node000003" href="$class_encoding_converter.html#ae79126a88077fe4ac04a5cd09edf72d3" title="Конвертирует файлы в директории." alt="" coords="103,5,240,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="273,29,240,29,240,24,273,24"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>

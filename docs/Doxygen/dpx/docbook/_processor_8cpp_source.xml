@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__processor_8cpp_source" xml:lang="ru">
+<title>Processor.cpp</title>
+<indexterm><primary>Processor.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="__processor_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../../include/RenderPDF/RenderPDF.h&quot;</emphasis>
+<anchor xml:id="__processor_8cpp_source_1l00002"/>00002 
+<anchor xml:id="__processor_8cpp_source_1l00008"/><link linkend="_class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087">00008</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087">RenderPDF::checkForNewPage</link>()&#32;{
+<anchor xml:id="__processor_8cpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>.size();&#32;++i)&#32;{
+<anchor xml:id="__processor_8cpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;j&#32;=&#32;i&#32;+&#32;1;&#32;j&#32;&lt;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>.size();&#32;++j)&#32;{
+<anchor xml:id="__processor_8cpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[i]&#32;==&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[j])&#32;{
+<anchor xml:id="__processor_8cpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="__processor_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__processor_8cpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__processor_8cpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__processor_8cpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="__processor_8cpp_source_1l00017"/>00017 }
+<anchor xml:id="__processor_8cpp_source_1l00018"/>00018 
+<anchor xml:id="__processor_8cpp_source_1l00025"/><link linkend="_class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f">00025</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f">RenderPDF::sortTblData</link>()&#32;{
+<anchor xml:id="__processor_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;compare_position&#32;=&#32;[](<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structtbl">tbl</link>&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structtbl">tbl</link>&amp;&#32;b)&#32;{
+<anchor xml:id="__processor_8cpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;a.<link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">position</link>&#32;&lt;&#32;b.position;
+<anchor xml:id="__processor_8cpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;};
+<anchor xml:id="__processor_8cpp_source_1l00029"/>00029 
+<anchor xml:id="__processor_8cpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Сортировка&#32;вектора&#32;tbl_data_&#32;с&#32;использованием&#32;функции&#32;сравнения</emphasis>
+<anchor xml:id="__processor_8cpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;std::sort(<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>.begin(),&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>.end(),&#32;compare_position);
+<anchor xml:id="__processor_8cpp_source_1l00032"/>00032 }
+<anchor xml:id="__processor_8cpp_source_1l00033"/>00033 
+<anchor xml:id="__processor_8cpp_source_1l00039"/><link linkend="_class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3">00039</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3">RenderPDF::populatePointTbl</link>()&#32;{
+<anchor xml:id="__processor_8cpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;i&#32;:&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>){
+<anchor xml:id="__processor_8cpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>.push_back(i.position);
+<anchor xml:id="__processor_8cpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__processor_8cpp_source_1l00043"/>00043 }
+</programlisting></section>

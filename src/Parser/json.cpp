@@ -11,22 +11,22 @@
  * Если файл конфигурации не будет найден, выбрасывается исключение std::runtime_error.
  */
 std::vector<std::filesystem::path> json::getFileList(const std::string &key, const std::string &search) {
-std::vector<std::filesystem::path> files;
-std::filesystem::path directory = getFilePath(key);
+    std::vector<std::filesystem::path> files;
+    std::filesystem::path directory = getFilePath(key);
 
-if (std::filesystem::exists(directory)) {
-    for (const auto& entry : std::filesystem::recursive_directory_iterator(directory)) {
-        if (entry.is_regular_file() && entry.path().filename().string().find(search) != std::string::npos) {
-            files.push_back(entry.path());
-            //std::cout << entry.path().string() << "\t" << entry.path() << std::endl;
+    if (std::filesystem::exists(directory)) {
+        for (const auto& entry : std::filesystem::recursive_directory_iterator(directory)) {
+            if (entry.is_regular_file() && entry.path().filename().string().find(search) != std::string::npos) {
+                files.push_back(entry.path());
+                //std::cout << entry.path().string() << "\t" << entry.path() << std::endl;
+            }
         }
+    } else {
+        // Обработка ошибки
+        std::cout << "Directory does not exist or is not accessible: " << directory << std::endl;
     }
-} else {
-    // Обработка ошибки
-    std::cout << "Directory does not exist or is not accessible: " << directory << std::endl;
-}
 
-return files;
+    return files;
 }
 
 /**
@@ -78,13 +78,19 @@ json::json(const std::string &config_file_path) {
     }
     config_file >> config_json;
 }
-/**
- * @brief Выводит содержимое конфигурации на консоль.
- *
- * Функция выводит все ключи и значения из объекта config_json на консоль.
- */
+
 void json::display() {
     for (const auto& [key, value] : config_json.items()) {
         std::cout << key << ": " << value << std::endl;
     }
 }
+
+
+
+
+
+
+
+
+
+

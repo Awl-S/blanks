@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_c2c259897cc2262388737d6a290322c8" xml:lang="ru">
+<title>Содержание директории Generated</title>
+<indexterm><primary>Содержание директории Generated</primary></indexterm>
+Директория графа зависимостей Generated:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_c2c259897cc2262388737d6a290322c8_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="__generated_8h">Generated.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

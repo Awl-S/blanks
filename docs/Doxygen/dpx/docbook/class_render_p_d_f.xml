@@ -1,0 +1,1595 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_render_p_d_f" xml:lang="ru">
+<title>Класс RenderPDF</title>
+<indexterm><primary>RenderPDF</primary></indexterm>
+<para>
+
+<para>Класс для генерации PDF-файла. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;RenderPDF.h&quot;</computeroutput>
+</para>
+Граф связей класса RenderPDF:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2">generatePDF</link> (std::string &amp;filename)</para>
+
+<para>Создает PDF-документ, используя графические элементы, определенные в других методах класса. </para>
+</listitem>
+            <listitem><para><link linkend="_class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f">RenderPDF</link> (<link linkend="_structcfm">cfm</link> cfm_data, <link linkend="_structzgt">zgt</link> zgt_data, const std::vector&lt; <link linkend="_structtbl">tbl</link> &gt; &amp;tbl_data, <link linkend="_structnbr">nbr</link> nbr_data, <link linkend="_structpoint">point</link> point_data, std::filesystem::path fontPath)</para>
+
+<para>Конструктор класса <link linkend="_class_render_p_d_f">RenderPDF</link>. </para>
+</listitem>
+            <listitem><para><link linkend="_class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7">~RenderPDF</link> ()</para>
+
+<para>Деструктор класса <link linkend="_class_render_p_d_f">RenderPDF</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Закрытые члены    </title>
+        <itemizedlist>
+            <listitem><para>HPDF_Font <link linkend="_class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0">loadFont</link> (const std::string &amp;fontPath)</para>
+
+<para>Загружает шрифт из указанного файла. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f">sortTblData</link> ()</para>
+
+<para>Сортирует данные в tbl_data_ по положению элементов. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3">populatePointTbl</link> ()</para>
+
+<para>Заполняет point_tbl данными из tbl_data_. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087">checkForNewPage</link> ()</para>
+
+<para>Проверяет наличие дубликатов координат в point_data_. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277">createA3Page</link> ()</para>
+
+<para>Создает новую страницу формата A3. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36">setFontSize</link> (HPDF_Page page, double size)</para>
+
+<para>Устанавливает размер шрифта и размер страницы PDF. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e">generate_Marks</link> (size_t blank)</para>
+
+<para>Генерирует маркеры на основе измерений из данных таблицы. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52">drawDigitIndices</link> (HPDF_Page page, size_t blank)</para>
+
+<para>Рисует индексы (цифры) на PDF странице. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673">drawMainLines</link> (HPDF_Page page, size_t blank)</para>
+
+<para>Рисует основные линии на странице PDF. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb">drawAdditionalTicks</link> (HPDF_Page page, size_t blank)</para>
+
+<para>Рисует дополнительные отметки на странице PDF. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94">initializeData</link> (<link linkend="_structcfm">cfm</link> cfm_data, <link linkend="_structzgt">zgt</link> zgt_data, const std::vector&lt; <link linkend="_structtbl">tbl</link> &gt; &amp;tbl_data, <link linkend="_structnbr">nbr</link> nbr_data, <link linkend="_structpoint">point</link> point_data, std::filesystem::path fontPath)</para>
+
+<para>Инициализирует данные. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f">initializePDF</link> ()</para>
+
+<para>Инициализирует объект HPDF_Doc для работы с PDF. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0">adjustFontSize</link> ()</para>
+
+<para>Подгоняет размер шрифта. </para>
+</listitem>
+            <listitem><para>HPDF_REAL <link linkend="_class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b">calculateYCoordinate</link> (HPDF_REAL angle, size_t blank)</para>
+
+<para>Вычисляет координату Y для текста маркера. </para>
+</listitem>
+            <listitem><para>HPDF_REAL <link linkend="_class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f">calculateXCoordinate</link> (HPDF_REAL angle, double textWidth, size_t blank)</para>
+
+<para>Вычисляет координату X для текста маркера. </para>
+</listitem>
+            <listitem><para>std::string <link linkend="_class_render_p_d_f_1a87d9d5335c694603bf6686851879879a">formatText</link> (int i)</para>
+
+<para>Форматирует текст с использованием заданной точности. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_render_p_d_f_1af00237dc614fc46323aead1daae13a15">drawText</link> (HPDF_Page page, const std::string &amp;text, HPDF_REAL x, HPDF_REAL y)</para>
+
+<para>Рисует текст на странице PDF. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Закрытые статические члены    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27">drawCircle</link> (HPDF_Page page, double x, double y, double radius)</para>
+
+<para>Рисует круг на странице PDF. </para>
+</listitem>
+            <listitem><para>static void <link linkend="_class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679">draw_line</link> (HPDF_Page page, HPDF_REAL x1, HPDF_REAL y1, HPDF_REAL x2, HPDF_REAL y2)</para>
+
+<para>Рисует линию на странице PDF. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Закрытые данные    </title>
+        <itemizedlist>
+            <listitem><para>const double <link linkend="_class_render_p_d_f_1adda47ac0eef121635099a286e784f610">PI</link> = 3.14159265358979323846</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_render_p_d_f_1aa5d08b1fd3f72c78879fea437d978fdb">margitText</link> = 1</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489">new_page</link> = false</para>
+</listitem>
+            <listitem><para>std::filesystem::path <link linkend="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</link></para>
+</listitem>
+            <listitem><para>HPDF_Doc <link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link></para>
+</listitem>
+            <listitem><para>HPDF_Font <link linkend="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781">font_</link></para>
+</listitem>
+            <listitem><para><link linkend="_structcfm">cfm</link> <link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link></para>
+</listitem>
+            <listitem><para><link linkend="_structzgt">zgt</link> <link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link></para>
+</listitem>
+            <listitem><para><link linkend="_structnbr">nbr</link> <link linkend="_class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec">nbr_data_</link></para>
+</listitem>
+            <listitem><para><link linkend="_structpoint">point</link> <link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_structtbl">tbl</link> &gt; <link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; size_t &gt; <link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; double &gt; <link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Класс для генерации PDF-файла. </para>
+
+
+
+<para>Класс <link linkend="_class_render_p_d_f">RenderPDF</link> предоставляет функциональность для создания и рендеринга PDF-файлов. </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00020">20</link></para>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f"/><section>
+    <title>RenderPDF()</title>
+<indexterm><primary>RenderPDF</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>RenderPDF</secondary></indexterm>
+<para><computeroutput>RenderPDF::RenderPDF (<link linkend="_structcfm">cfm</link> cfm_data, <link linkend="_structzgt">zgt</link> zgt_data, const std::vector&lt; <link linkend="_structtbl">tbl</link> &gt; &amp; tbl_data, <link linkend="_structnbr">nbr</link> nbr_data, <link linkend="_structpoint">point</link> point_data, std::filesystem::path fontPath)</computeroutput></para><para>
+
+<para>Конструктор класса <link linkend="_class_render_p_d_f">RenderPDF</link>. </para>
+</para>
+
+<para>Инициализирует данные, создает объект PDF, подгоняет размер шрифта, загружает шрифт, сортирует данные таблицы и заполняет таблицу точек. </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8cpp_source">RenderPDF.cpp</link> строка <link linkend="__render_p_d_f_8cpp_source_1l00047">47</link></para>
+<programlisting linenumbering="unnumbered">00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00048 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94">initializeData</link>(std::move(cfm_data),&#32;std::move(zgt_data),&#32;tbl_data,&#32;std::move(nbr_data),&#32;std::move(point_data),&#32;fontPath);
+00049 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f">initializePDF</link>();
+00050 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0">adjustFontSize</link>();
+00051 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781">font_</link>&#32;=&#32;<link linkend="_class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0">loadFont</link>(<link linkend="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</link>.string());
+00052 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f">sortTblData</link>();
+00053 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3">populatePointTbl</link>();
+00054 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489">new_page</link>&#32;=&#32;<link linkend="_class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087">checkForNewPage</link>();
+00055 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_af0e199f862cb39e5600325bd2c69600f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7"/><section>
+    <title>~RenderPDF()</title>
+<indexterm><primary>~RenderPDF</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>~RenderPDF</secondary></indexterm>
+<para><computeroutput>RenderPDF::~RenderPDF ( )</computeroutput></para><para>
+
+<para>Деструктор класса <link linkend="_class_render_p_d_f">RenderPDF</link>. </para>
+</para>
+
+<para>Освобождает ресурсы, связанные с объектом HPDF_Doc. </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8cpp_source">RenderPDF.cpp</link> строка <link linkend="__render_p_d_f_8cpp_source_1l00035">35</link></para>
+<programlisting linenumbering="unnumbered">00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00036 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>)&#32;{
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_Free(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>);
+00038 &#32;&#32;&#32;&#32;}
+00039 }
+</programlisting></section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0"/><section>
+    <title>adjustFontSize()</title>
+<indexterm><primary>adjustFontSize</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>adjustFontSize</secondary></indexterm>
+<para><computeroutput>void RenderPDF::adjustFontSize ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Подгоняет размер шрифта. </para>
+</para>
+
+<para>Использует коэффициент поправки размера для шрифта GOST_B. </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8cpp_source">RenderPDF.cpp</link> строка <link linkend="__render_p_d_f_8cpp_source_1l00092">92</link></para>
+<programlisting linenumbering="unnumbered">00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00093 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>*=1.090248;&#32;<emphasis role="comment">//коэффициент&#32;поправки&#32;размера&#32;для&#32;шрифта&#32;GOST_B</emphasis>
+00094 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a9c8b019dbb7873ad236e5b15c52fd4f0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f"/><section>
+    <title>calculateXCoordinate()</title>
+<indexterm><primary>calculateXCoordinate</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>calculateXCoordinate</secondary></indexterm>
+<para><computeroutput>HPDF_REAL RenderPDF::calculateXCoordinate (HPDF_REAL angle, double textWidth, size_t blank)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Вычисляет координату X для текста маркера. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>angle</entry><entry>
+<para>Угол маркера. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>textWidth</entry><entry>
+<para>Ширина текста маркера. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>blank</entry><entry>
+<para>Размер пустого пространства на странице. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Координата X для текста маркера. </para>
+</formalpara>
+</para>
+<para>
+См. определение в файле <link linkend="_draw_8cpp_source">draw.cpp</link> строка <link linkend="_draw_8cpp_source_1l00080">80</link></para>
+<programlisting linenumbering="unnumbered">00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00081 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;marginText&#32;=&#32;1;
+00082 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;radius&#32;=&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>&#32;/&#32;2.0)&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;/&#32;2;
+00083 &#32;&#32;&#32;&#32;HPDF_REAL&#32;x&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;marginText].first&#32;+
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]-1)&#32;*&#32;cos(angle)&#32;-&#32;textWidth&#32;/&#32;2;
+00085 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x;
+00086 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a98e9f7f26365660413fb541ecd7dc92f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b"/><section>
+    <title>calculateYCoordinate()</title>
+<indexterm><primary>calculateYCoordinate</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>calculateYCoordinate</secondary></indexterm>
+<para><computeroutput>HPDF_REAL RenderPDF::calculateYCoordinate (HPDF_REAL angle, size_t blank)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Вычисляет координату Y для текста маркера. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>angle</entry><entry>
+<para>Угол маркера. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>blank</entry><entry>
+<para>Размер пустого пространства на странице. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Координата Y для текста маркера. </para>
+</formalpara>
+</para>
+<para>
+См. определение в файле <link linkend="_draw_8cpp_source">draw.cpp</link> строка <link linkend="_draw_8cpp_source_1l00095">95</link></para>
+<programlisting linenumbering="unnumbered">00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00096 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;marginText&#32;=&#32;1;
+00097 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;radius&#32;=&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>&#32;/&#32;2.0)&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;/&#32;2;
+00098 &#32;&#32;&#32;&#32;HPDF_REAL&#32;y&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;marginText].second&#32;+
+00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]-1)&#32;*&#32;sin(angle)&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>&#32;/&#32;2.5&#32;+&#32;0.5;
+00100 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;y;
+00101 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a7931b27233f110635d4c15fd83508a3b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087"/><section>
+    <title>checkForNewPage()</title>
+<indexterm><primary>checkForNewPage</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>checkForNewPage</secondary></indexterm>
+<para><computeroutput>bool RenderPDF::checkForNewPage ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Проверяет наличие дубликатов координат в point_data_. </para>
+</para>
+
+<para><formalpara><title>Возвращает</title>
+
+<para>Возвращает true, если есть дубликаты координат, указывающие на необходимость новой страницы, иначе false. </para>
+</formalpara>
+</para>
+<para>
+См. определение в файле <link linkend="__processor_8cpp_source">Processor.cpp</link> строка <link linkend="__processor_8cpp_source_1l00008">8</link></para>
+<programlisting linenumbering="unnumbered">00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00009 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>.size();&#32;++i)&#32;{
+00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;j&#32;=&#32;i&#32;+&#32;1;&#32;j&#32;&lt;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>.size();&#32;++j)&#32;{
+00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[i]&#32;==&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[j])&#32;{
+00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00015 &#32;&#32;&#32;&#32;}
+00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+00017 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_ae7ea70ad51e168a5c255de4ea54db087_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277"/><section>
+    <title>createA3Page()</title>
+<indexterm><primary>createA3Page</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>createA3Page</secondary></indexterm>
+<para><computeroutput>void RenderPDF::createA3Page ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Создает новую страницу формата A3. </para>
+</para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8cpp_source">RenderPDF.cpp</link> строка <link linkend="__render_p_d_f_8cpp_source_1l00007">7</link></para>
+<programlisting linenumbering="unnumbered">00007 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00008 &#32;&#32;&#32;&#32;HPDF_Page&#32;page&#32;=&#32;HPDF_AddPage(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>);
+00009 &#32;&#32;&#32;&#32;HPDF_Page_SetSize(page,&#32;HPDF_PAGE_SIZE_A3,&#32;HPDF_PAGE_PORTRAIT);
+00010 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a22fa693e95126bb362fe324470ba2277_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679"/><section>
+    <title>draw_line()</title>
+<indexterm><primary>draw_line</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>draw_line</secondary></indexterm>
+<para><computeroutput>void RenderPDF::draw_line (HPDF_Page page, HPDF_REAL x1, HPDF_REAL y1, HPDF_REAL x2, HPDF_REAL y2)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Рисует линию на странице PDF. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>page</entry><entry>
+<para>Страница PDF, на которой будет нарисована линия. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x1</entry><entry>
+<para>Координата X начала линии. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y1</entry><entry>
+<para>Координата Y начала линии. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x2</entry><entry>
+<para>Координата X конца линии. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y2</entry><entry>
+<para>Координата Y конца линии. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_draw_8cpp_source">draw.cpp</link> строка <link linkend="_draw_8cpp_source_1l00038">38</link></para>
+<programlisting linenumbering="unnumbered">00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00039 &#32;&#32;&#32;&#32;HPDF_Page_MoveTo(page,&#32;x1,&#32;y1);
+00040 &#32;&#32;&#32;&#32;HPDF_Page_LineTo(page,&#32;x2,&#32;y2);
+00041 &#32;&#32;&#32;&#32;HPDF_Page_Stroke(page);
+00042 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_ae17f88d413daf207f1b93fc43a8fd679_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb"/><section>
+    <title>drawAdditionalTicks()</title>
+<indexterm><primary>drawAdditionalTicks</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>drawAdditionalTicks</secondary></indexterm>
+<para><computeroutput>void RenderPDF::drawAdditionalTicks (HPDF_Page page, size_t blank)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Рисует дополнительные отметки на странице PDF. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>page</entry><entry>
+<para>Страница PDF, на которой будут нарисованы дополнительные отметки. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>blank</entry><entry>
+<para>Индекс строки в таблице данных, на основе которой следует рисовать отметки. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="__line_8cpp_source">Line.cpp</link> строка <link linkend="__line_8cpp_source_1l00125">125</link></para>
+<programlisting linenumbering="unnumbered">00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00126 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;radius&#32;=&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>&#32;/&#32;2.0f;
+00127 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;size_tick_mask&#32;=&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2">tick_mask</link>.size()&#32;-&#32;1;
+00128 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;k&#32;=&#32;0;&#32;k&#32;&lt;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>.size()&#32;-&#32;1;&#32;k++)&#32;{
+00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;angle1&#32;=&#32;4.71239&#32;-&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>[k];
+00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;angle2&#32;=&#32;4.71239&#32;-&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>[k&#32;+&#32;1];
+00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;angle_diff&#32;=&#32;(angle2&#32;-&#32;angle1)&#32;/&#32;<emphasis role="keywordtype">double</emphasis>(size_tick_mask);
+00132 
+00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;j&#32;=&#32;1;&#32;j&#32;&lt;=&#32;size_tick_mask;&#32;j++)&#32;{
+00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;angle&#32;=&#32;angle1&#32;+&#32;j&#32;*&#32;angle_diff;
+00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;x1&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+&#32;radius&#32;*&#32;cos(angle);
+00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;y1&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+&#32;radius&#32;*&#32;sin(angle);
+00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;x2,&#32;y2;
+00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;height_line;
+00139 
+00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2">tick_mask</link>[j]&#32;==&#32;<emphasis role="charliteral">&apos;1&apos;</emphasis>)&#32;{
+00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;height_line&#32;=&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae">small_tick</link>[0];
+00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2">tick_mask</link>[j]&#32;==&#32;<emphasis role="charliteral">&apos;2&apos;</emphasis>)&#32;{
+00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;height_line&#32;=&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72">big_tick</link>[0];
+00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2">tick_mask</link>[j]&#32;==&#32;<emphasis role="charliteral">&apos;3&apos;</emphasis>)&#32;{
+00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;height_line&#32;=&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0];
+00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00149 
+00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x2&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+&#32;(radius&#32;-&#32;height_line)&#32;*&#32;cos(angle);
+00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y2&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+&#32;(radius&#32;-&#32;height_line)&#32;*&#32;sin(angle);
+00152 
+00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679">draw_line</link>(page,&#32;x1,&#32;y1,&#32;x2,&#32;y2);
+00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00155 &#32;&#32;&#32;&#32;}
+00156 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_acbc9c679d623723340171bd56c5575cb_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_acbc9c679d623723340171bd56c5575cb_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27"/><section>
+    <title>drawCircle()</title>
+<indexterm><primary>drawCircle</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>drawCircle</secondary></indexterm>
+<para><computeroutput>void RenderPDF::drawCircle (HPDF_Page page, double x, double y, double radius)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Рисует круг на странице PDF. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>page</entry><entry>
+<para>Страница PDF, на которой будет нарисован круг. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x</entry><entry>
+<para>Координата X центра круга. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y</entry><entry>
+<para>Координата Y центра круга. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>radius</entry><entry>
+<para>Радиус круга. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_draw_8cpp_source">draw.cpp</link> строка <link linkend="_draw_8cpp_source_1l00024">24</link></para>
+<programlisting linenumbering="unnumbered">00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00025 &#32;&#32;&#32;&#32;HPDF_Page_Circle(page,&#32;x,&#32;y,&#32;radius);
+00026 &#32;&#32;&#32;&#32;HPDF_Page_Stroke(page);
+00027 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a50a4d487307986751eb5087f25961c27_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52"/><section>
+    <title>drawDigitIndices()</title>
+<indexterm><primary>drawDigitIndices</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>drawDigitIndices</secondary></indexterm>
+<para><computeroutput>void RenderPDF::drawDigitIndices (HPDF_Page page, size_t blank)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Рисует индексы (цифры) на PDF странице. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>page</entry><entry>
+<para>Страница PDF, на которую будут нарисованы индексы. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>blank</entry><entry>
+<para>Размер пустого пространства на странице. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_digit_8cpp_source">digit.cpp</link> строка <link linkend="_digit_8cpp_source_1l00009">9</link></para>
+<programlisting linenumbering="unnumbered">00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00010 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Установка&#32;размера&#32;шрифта&#32;для&#32;индексов</emphasis>
+00011 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36">setFontSize</link>(page,&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>);
+00012 
+00013 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Цикл&#32;по&#32;всем&#32;меткам</emphasis>
+00014 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>.size();&#32;i++)&#32;{
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Вычисление&#32;угла&#32;для&#32;каждой&#32;метки</emphasis>
+00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;angle&#32;=&#32;4.71239&#32;-&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>[i];
+00017 
+00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Форматирование&#32;текста&#32;метки</emphasis>
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;text&#32;=&#32;<link linkend="_class_render_p_d_f_1a87d9d5335c694603bf6686851879879a">formatText</link>(i);
+00020 
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Вычисление&#32;ширины&#32;текста&#32;метки</emphasis>
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;textWidth&#32;=&#32;HPDF_Page_TextWidth(page,&#32;text.c_str());
+00023 
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Вычисление&#32;координат&#32;x&#32;и&#32;y&#32;для&#32;текста&#32;метки</emphasis>
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;x&#32;=&#32;<link linkend="_class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f">calculateXCoordinate</link>(angle,&#32;textWidth,&#32;blank);
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;y&#32;=&#32;<link linkend="_class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b">calculateYCoordinate</link>(angle,&#32;blank);
+00027 
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Рисование&#32;текста&#32;метки&#32;на&#32;странице</emphasis>
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1af00237dc614fc46323aead1daae13a15">drawText</link>(page,&#32;text,&#32;x,&#32;y);
+00030 &#32;&#32;&#32;&#32;}
+00031 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_abaccfd0526f13c8d8c5d9f74ceb31f52_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_abaccfd0526f13c8d8c5d9f74ceb31f52_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673"/><section>
+    <title>drawMainLines()</title>
+<indexterm><primary>drawMainLines</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>drawMainLines</secondary></indexterm>
+<para><computeroutput>void RenderPDF::drawMainLines (HPDF_Page page, size_t blank)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Рисует основные линии на странице PDF. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>page</entry><entry>
+<para>Страница PDF, на которой будут нарисованы основные линии. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>blank</entry><entry>
+<para>Индекс строки в таблице данных, на основе которой следует рисовать линии. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="__line_8cpp_source">Line.cpp</link> строка <link linkend="__line_8cpp_source_1l00052">52</link></para>
+<programlisting linenumbering="unnumbered">00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00053 &#32;&#32;&#32;&#32;<emphasis role="comment">//Рисуем&#32;линии&#32;главные</emphasis>
+00054 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;radius&#32;=&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>&#32;/&#32;2.0;
+00055 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;i&#32;=&#32;0;
+00056 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">double</emphasis>&#32;angle:&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>)&#32;{
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;angle&#32;=&#32;4.71239&#32;-&#32;angle;
+00058 
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;sinAngle&#32;=&#32;sin(angle);
+00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;cosAngle&#32;=&#32;cos(angle);
+00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;x1,&#32;x2,&#32;y1,&#32;y2;
+00062 
+00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x1&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0])&#32;*&#32;cosAngle;
+00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y1&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0])&#32;*&#32;sinAngle;
+00067 
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(i&#32;==&#32;0)&#32;{&#32;<emphasis role="comment">//&#32;Если&#32;это&#32;первая&#32;итерация,&#32;сместить&#32;верхнюю&#32;линию&#32;на&#32;90&#32;градусов</emphasis>
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;shift_angle&#32;=&#32;angle&#32;+&#32;1.5708;&#32;<emphasis role="comment">//&#32;Смещение&#32;на&#32;90&#32;градусов&#32;вправо</emphasis>
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;center_offset&#32;=&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2]&#32;/&#32;2;&#32;<emphasis role="comment">//&#32;Размер&#32;центра</emphasis>
+00071 
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x1&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0])&#32;*&#32;cosAngle;
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y1&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0])&#32;*&#32;sinAngle;
+00076 
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x1&#32;-=&#32;center_offset&#32;*&#32;cos(shift_angle);&#32;<emphasis role="comment">//&#32;Смещение&#32;x&#32;координаты</emphasis>
+00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y1&#32;-=&#32;center_offset&#32;*&#32;sin(shift_angle);&#32;<emphasis role="comment">//&#32;Смещение&#32;y&#32;координаты</emphasis>
+00079 
+00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x2&#32;=&#32;x1&#32;+&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2])&#32;*
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cos(shift_angle);&#32;<emphasis role="comment">//&#32;Правая&#32;часть&#32;линии</emphasis>
+00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y2&#32;=&#32;y1&#32;+&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2])&#32;*
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sin(shift_angle);&#32;<emphasis role="comment">//&#32;Правая&#32;часть&#32;линии</emphasis>
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x2&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+
+00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2])&#32;*&#32;cosAngle;
+00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y2&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+
+00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2])&#32;*&#32;sinAngle;
+00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00090 
+00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Верняя&#32;линия</emphasis>
+00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_Page_SetLineWidth(page,&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[3]);
+00093 
+00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679">draw_line</link>(page,&#32;x2,&#32;y2,&#32;x1,&#32;y1);
+00095 
+00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Нижняя&#32;линия</emphasis>
+00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x1&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+&#32;radius&#32;*&#32;cos(angle);
+00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y1&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+&#32;radius&#32;*&#32;sin(angle);
+00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x2&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+
+00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2])&#32;*&#32;cosAngle;
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y2&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+
+00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2])&#32;*&#32;sinAngle;
+00103 
+00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(i&#32;==&#32;0)&#32;{
+00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x2&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+
+00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0])&#32;*&#32;cosAngle;
+00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;y2&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+
+00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0])&#32;*&#32;sinAngle;
+00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00110 
+00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_Page_SetLineWidth(page,&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[1]);
+00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679">draw_line</link>(page,&#32;x2,&#32;y2,&#32;x1,&#32;y1);
+00113 
+00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i++;
+00115 &#32;&#32;&#32;&#32;}
+00116 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a518d3eb66cbcdb313c218dc8028c9673_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a518d3eb66cbcdb313c218dc8028c9673_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1af00237dc614fc46323aead1daae13a15"/><section>
+    <title>drawText()</title>
+<indexterm><primary>drawText</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>drawText</secondary></indexterm>
+<para><computeroutput>void RenderPDF::drawText (HPDF_Page page, const std::string &amp; text, HPDF_REAL x, HPDF_REAL y)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Рисует текст на странице PDF. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>page</entry><entry>
+<para>Страница PDF, на которой будет нарисован текст. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>text</entry><entry>
+<para>Текст для вывода на страницу. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>x</entry><entry>
+<para>Координата X, где будет нарисован текст. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>y</entry><entry>
+<para>Координата Y, где будет нарисован текст. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_draw_8cpp_source">draw.cpp</link> строка <link linkend="_draw_8cpp_source_1l00052">52</link></para>
+<programlisting linenumbering="unnumbered">00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00053 &#32;&#32;&#32;&#32;HPDF_Page_BeginText(page);
+00054 &#32;&#32;&#32;&#32;HPDF_Page_MoveTextPos(page,&#32;x,&#32;y);
+00055 &#32;&#32;&#32;&#32;HPDF_Page_ShowText(page,&#32;text.c_str());
+00056 &#32;&#32;&#32;&#32;HPDF_Page_EndText(page);
+00057 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_af00237dc614fc46323aead1daae13a15_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a87d9d5335c694603bf6686851879879a"/><section>
+    <title>formatText()</title>
+<indexterm><primary>formatText</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>formatText</secondary></indexterm>
+<para><computeroutput>std::string RenderPDF::formatText (int i)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Форматирует текст с использованием заданной точности. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>i</entry><entry>
+<para>Индекс маркера, текст для которого нужно отформатировать. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Отформатированный текст. </para>
+</formalpara>
+</para>
+<para>
+См. определение в файле <link linkend="_draw_8cpp_source">draw.cpp</link> строка <link linkend="_draw_8cpp_source_1l00065">65</link></para>
+<programlisting linenumbering="unnumbered">00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00066 &#32;&#32;&#32;&#32;std::stringstream&#32;ss;
+00067 &#32;&#32;&#32;&#32;ss.precision(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link>[1]);
+00068 &#32;&#32;&#32;&#32;ss&#32;&lt;&lt;&#32;std::fixed&#32;&lt;&lt;&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1ad4cec00bcb67870e82af90e5d3676161">marks</link>[i];
+00069 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ss.str();
+00070 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a87d9d5335c694603bf6686851879879a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e"/><section>
+    <title>generate_Marks()</title>
+<indexterm><primary>generate_Marks</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>generate_Marks</secondary></indexterm>
+<para><computeroutput>void RenderPDF::generate_Marks (size_t blank)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Генерирует маркеры на основе измерений из данных таблицы. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>blank</entry><entry>
+<para>Индекс строки в таблице данных, из которой следует сгенерировать маркеры. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="__line_8cpp_source">Line.cpp</link> строка <link linkend="__line_8cpp_source_1l00010">10</link></para>
+<programlisting linenumbering="unnumbered">00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00011 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;size&#32;=&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>[blank].measurements.size();
+00012 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;a0&#32;=&#32;(<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>[blank].measurements[0][0]&#32;+&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>[blank].measurements[0][1])&#32;/&#32;2.0;
+00013 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;an&#32;=
+00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>[blank].measurements[size&#32;-&#32;1][0]&#32;+&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>[blank].measurements[size&#32;-&#32;1][1])&#32;/&#32;2.0;
+00015 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;aDelta&#32;=&#32;(an&#32;-&#32;a0)&#32;/&#32;size;
+00016 
+00017 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;size;&#32;i++)&#32;{
+00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;asred&#32;=&#32;(<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>[blank].measurements[i][0]&#32;+&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>[blank].measurements[i][1])&#32;/&#32;2.0;
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>.push_back(asred&#32;+&#32;aDelta);
+00020 &#32;&#32;&#32;&#32;}
+00021 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;angles_deg(<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>.size());
+00022 
+00023 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Конвертация&#32;углов&#32;из&#32;радиан&#32;в&#32;градусы</emphasis>
+00024 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>.size();&#32;i++)&#32;{
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;angles_deg[i]&#32;=&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>[i]&#32;*&#32;(180.0&#32;/&#32;<link linkend="_class_render_p_d_f_1adda47ac0eef121635099a286e784f610">PI</link>);
+00026 &#32;&#32;&#32;&#32;}
+00027 
+00028 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;a0_deg&#32;=&#32;angles_deg.front();
+00029 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;an_deg&#32;=&#32;angles_deg.back();
+00030 
+00031 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Вычисление&#32;добавочного&#32;угла&#32;\Delta</emphasis>
+00032 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;delta&#32;=&#32;(360.0&#32;-&#32;an_deg&#32;-&#32;a0_deg)&#32;/&#32;2;
+00033 
+00034 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Пересчет&#32;углов&#32;с&#32;использованием&#32;\Delta</emphasis>
+00035 &#32;&#32;&#32;&#32;std::vector&lt;double&gt;&#32;new_angles_deg(angles_deg.size());
+00036 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;angles_deg.size();&#32;i++)&#32;{
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_angles_deg[i]&#32;=&#32;angles_deg[i]&#32;+&#32;delta;
+00038 &#32;&#32;&#32;&#32;}
+00039 
+00040 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Конвертация&#32;углов&#32;обратно&#32;в&#32;радианы</emphasis>
+00041 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;new_angles_deg.size();&#32;i++)&#32;{
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>[i]&#32;=&#32;new_angles_deg[i]&#32;*&#32;(<link linkend="_class_render_p_d_f_1adda47ac0eef121635099a286e784f610">PI</link>&#32;/&#32;180.0);
+00043 &#32;&#32;&#32;&#32;}
+00044 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a3f2e7a6479a84eaecbe8a07b17aaeb5e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2"/><section>
+    <title>generatePDF()</title>
+<indexterm><primary>generatePDF</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>generatePDF</secondary></indexterm>
+<para><computeroutput>void RenderPDF::generatePDF (std::string &amp; filename)</computeroutput></para><para>
+
+<para>Создает PDF-документ, используя графические элементы, определенные в других методах класса. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>filename</entry><entry>
+<para>Ссылка на строку, содержащую имя будущего файла PDF. Если будет создано несколько страниц, то функция модифицирует эту строку, добавляя номер каждой страницы.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Она создает страницы формата A3 и на каждой странице рисует набор элементов, таких как основные линии, индексы и дополнительные отметки, для каждого элемента в таблице точек (<computeroutput>point_tbl</computeroutput>). Генерация этих элементов осуществляется с помощью функций <computeroutput>generate_Marks</computeroutput>, <computeroutput>drawMainLines</computeroutput>, <computeroutput>drawDigitIndices</computeroutput> и <computeroutput>drawAdditionalTicks</computeroutput>. Эти функции используют данные из других членов класса, таких как <computeroutput>cfm_data_</computeroutput> и <computeroutput>zgt_data_</computeroutput>. В конце, документ сохраняется в файл с указанным именем. </para>
+<para>
+См. определение в файле <link linkend="__print_8cpp_source">Print.cpp</link> строка <link linkend="__print_8cpp_source_1l00012">12</link></para>
+<programlisting linenumbering="unnumbered">00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00013 
+00014 &#32;&#32;&#32;&#32;HPDF_Page&#32;page;
+00015 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;size_point_tbl&#32;=&#32;<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>.size();
+00016 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;blank&#32;=&#32;0;
+00017 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;totalPage&#32;=&#32;1;
+00018 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489">new_page</link>){
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;size_point_tbl/=2;
+00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;totalPage&#32;=&#32;2;
+00021 &#32;&#32;&#32;&#32;}
+00022 
+00023 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;page_list&#32;=&#32;0;&#32;page_list&#32;&lt;&#32;totalPage;&#32;++page_list)&#32;{
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(page_list&#32;==&#32;1)&#32;{
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>&#32;=&#32;HPDF_New(<emphasis role="keyword">nullptr</emphasis>,&#32;<emphasis role="keyword">nullptr</emphasis>);
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781">font_</link>&#32;=&#32;<link linkend="_class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0">loadFont</link>(<link linkend="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</link>.string());
+00027 
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;size_point_tbl&#32;=&#32;<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>.size();
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277">createA3Page</link>();
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;page&#32;=&#32;HPDF_GetCurrentPage(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>);
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(;&#32;blank&#32;&lt;&#32;size_point_tbl;&#32;blank++)&#32;{
+00033 
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_Page_SetLineWidth(page,&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[1]);
+00035 
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//test&#32;Удалить&#32;в&#32;конце,&#32;не&#32;рисуется</emphasis>
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">false</emphasis>)&#32;{
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27">drawCircle</link>(page,&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first,
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second,&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>&#32;/&#32;2.0f);
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00041 
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;отрисовка&#32;круга</emphasis>
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">false</emphasis>)&#32;{
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27">drawCircle</link>(page,&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first,
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second,&#32;<link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link>.<link linkend="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544">diameter</link>&#32;/&#32;2.0f);
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00047 
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Центральный&#32;отверстие</emphasis>
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">false</emphasis>)&#32;{
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27">drawCircle</link>(page,&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first,
+00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second,
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link>.<link linkend="_structzgt_1a158a8320351f554c1aa14cf6436b505f">center_hole_diameter</link>&#32;/&#32;2.0f);
+00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00054 
+00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Индексы&#32;не&#32;изменяются&#32;(исправить!!!)</emphasis>
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">false</emphasis>){
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;xy,&#32;yz,&#32;radius;
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;2;&#32;++i)&#32;{
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xy&#32;=&#32;<link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link>.<link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link>[i&#32;*&#32;3];
+00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;yz&#32;=&#32;<link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link>.<link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link>[i&#32;*&#32;3&#32;+&#32;1];
+00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;yz&#32;=&#32;(yz&#32;&gt;&#32;0)&#32;?&#32;-yz&#32;:&#32;abs(yz);
+00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;radius&#32;=&#32;<link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link>.<link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link>[i&#32;*&#32;3&#32;+&#32;2]&#32;/&#32;2.0f;
+00063 
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27">drawCircle</link>(page,&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].first&#32;+&#32;xy,
+00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;1].second&#32;+&#32;yz,
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;radius);
+00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00069 
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e">generate_Marks</link>(blank);
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673">drawMainLines</link>(page,&#32;blank);
+00072 
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52">drawDigitIndices</link>(page,&#32;blank);
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb">drawAdditionalTicks</link>(page,&#32;blank);
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>.clear();
+00076 
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e">generate_Marks</link>(blank);
+00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673">drawMainLines</link>(page,&#32;blank);
+00079 
+00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52">drawDigitIndices</link>(page,&#32;blank);
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb">drawAdditionalTicks</link>(page,&#32;blank);
+00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>.clear();
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(page_list&#32;==&#32;1){
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;filename+=&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;+&#32;std::to_string(page_list&#32;+&#32;1)&#32;+&#32;<emphasis role="stringliteral">&quot;)&quot;</emphasis>;
+00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_SaveToFile(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>,&#32;(filename&#32;+&#32;<emphasis role="stringliteral">&quot;.pdf&quot;</emphasis>).c_str());
+00088 &#32;&#32;&#32;&#32;}
+00089 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_ab38c3850e484ba597ae3be5dbac1f5b2_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_ab38c3850e484ba597ae3be5dbac1f5b2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94"/><section>
+    <title>initializeData()</title>
+<indexterm><primary>initializeData</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>initializeData</secondary></indexterm>
+<para><computeroutput>void RenderPDF::initializeData (<link linkend="_structcfm">cfm</link> cfm_data, <link linkend="_structzgt">zgt</link> zgt_data, const std::vector&lt; <link linkend="_structtbl">tbl</link> &gt; &amp; tbl_data, <link linkend="_structnbr">nbr</link> nbr_data, <link linkend="_structpoint">point</link> point_data, std::filesystem::path fontPath)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Инициализирует данные. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>cfm_data</entry><entry>
+<para>Данные для cfm. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>zgt_data</entry><entry>
+<para>Данные для zgt. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tbl_data</entry><entry>
+<para>Данные для tbl. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nbr_data</entry><entry>
+<para>Данные для nbr. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>point_data</entry><entry>
+<para>Данные для точки. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fontPath</entry><entry>
+<para>Путь к файлу шрифта. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8cpp_source">RenderPDF.cpp</link> строка <link linkend="__render_p_d_f_8cpp_source_1l00067">67</link></para>
+<programlisting linenumbering="unnumbered">00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00068 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>&#32;=&#32;std::move(cfm_data);
+00069 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link>&#32;=&#32;std::move(zgt_data);
+00070 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>&#32;=&#32;tbl_data;
+00071 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec">nbr_data_</link>&#32;=&#32;std::move(nbr_data);
+00072 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>&#32;=&#32;std::move(point_data);
+00073 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</link>&#32;=&#32;fontPath;
+00074 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a6ac6011ccf3a8df169125c3d72b93c94_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f"/><section>
+    <title>initializePDF()</title>
+<indexterm><primary>initializePDF</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>initializePDF</secondary></indexterm>
+<para><computeroutput>void RenderPDF::initializePDF ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Инициализирует объект HPDF_Doc для работы с PDF. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>если не удается создать объект PDF. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8cpp_source">RenderPDF.cpp</link> строка <link linkend="__render_p_d_f_8cpp_source_1l00080">80</link></para>
+<programlisting linenumbering="unnumbered">00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00081 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>&#32;=&#32;HPDF_New(<emphasis role="keyword">nullptr</emphasis>,&#32;<emphasis role="keyword">nullptr</emphasis>);
+00082 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>){
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Не&#32;удалось&#32;создать&#32;PDF&#32;документ.&quot;</emphasis>);
+00084 &#32;&#32;&#32;&#32;}
+00085 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_aaaeb1e6ddb96e6404cdfd22ad557fe6f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0"/><section>
+    <title>loadFont()</title>
+<indexterm><primary>loadFont</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>loadFont</secondary></indexterm>
+<para><computeroutput>HPDF_Font RenderPDF::loadFont (const std::string &amp; fontPath)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Загружает шрифт из указанного файла. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>fontPath</entry><entry>
+<para>Путь к файлу шрифта. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Возвращает объект HPDF_Font. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>если не удается загрузить шрифт. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8cpp_source">RenderPDF.cpp</link> строка <link linkend="__render_p_d_f_8cpp_source_1l00019">19</link></para>
+<programlisting linenumbering="unnumbered">00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00020 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;font_name&#32;=&#32;HPDF_LoadTTFontFromFile(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>,&#32;fontPath.c_str(),&#32;HPDF_TRUE);
+00021 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;font&#32;=&#32;HPDF_GetFont(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>,&#32;font_name,&#32;<emphasis role="stringliteral">&quot;CP1251&quot;</emphasis>);
+00022 
+00023 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!font){
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Не&#32;удалось&#32;загрузить&#32;шрифт.&quot;</emphasis>);
+00025 &#32;&#32;&#32;&#32;}
+00026 
+00027 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;font;
+00028 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_ac3ba6c62b21e04dbe57cedf12b3f06c0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3"/><section>
+    <title>populatePointTbl()</title>
+<indexterm><primary>populatePointTbl</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>populatePointTbl</secondary></indexterm>
+<para><computeroutput>void RenderPDF::populatePointTbl ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Заполняет point_tbl данными из tbl_data_. </para>
+</para>
+
+<para>Эта функция используется для копирования данных о позициях из tbl_data_ в point_tbl. </para>
+<para>
+См. определение в файле <link linkend="__processor_8cpp_source">Processor.cpp</link> строка <link linkend="__processor_8cpp_source_1l00039">39</link></para>
+<programlisting linenumbering="unnumbered">00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00040 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">auto</emphasis>&#32;i&#32;:&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>){
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>.push_back(i.position);
+00042 &#32;&#32;&#32;&#32;}
+00043 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a1b6a4f2724661a30f767d37d2bf041b3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36"/><section>
+    <title>setFontSize()</title>
+<indexterm><primary>setFontSize</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>setFontSize</secondary></indexterm>
+<para><computeroutput>void RenderPDF::setFontSize (HPDF_Page page, double size)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Устанавливает размер шрифта и размер страницы PDF. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>page</entry><entry>
+<para>Страница PDF, для которой нужно установить размер шрифта и размеры страницы. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>Размер шрифта для установки. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_draw_8cpp_source">draw.cpp</link> строка <link linkend="_draw_8cpp_source_1l00010">10</link></para>
+<programlisting linenumbering="unnumbered">00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00011 &#32;&#32;&#32;&#32;HPDF_Page_SetFontAndSize(page,&#32;<link linkend="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781">font_</link>,&#32;size);
+00012 &#32;&#32;&#32;&#32;HPDF_Page_SetHeight(page,&#32;420);
+00013 &#32;&#32;&#32;&#32;HPDF_Page_SetWidth(page,&#32;297);
+00014 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_a0c2cb9d669fedf5910e7be20e7bb4b36_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f"/><section>
+    <title>sortTblData()</title>
+<indexterm><primary>sortTblData</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>sortTblData</secondary></indexterm>
+<para><computeroutput>void RenderPDF::sortTblData ( )<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Сортирует данные в tbl_data_ по положению элементов. </para>
+</para>
+
+<para>Эта функция использует стандартную функцию сортировки из библиотеки алгоритмов STL и лямбда-функцию для сравнения положения элементов. </para>
+<para>
+См. определение в файле <link linkend="__processor_8cpp_source">Processor.cpp</link> строка <link linkend="__processor_8cpp_source_1l00025">25</link></para>
+<programlisting linenumbering="unnumbered">00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00026 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;compare_position&#32;=&#32;[](<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structtbl">tbl</link>&amp;&#32;a,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structtbl">tbl</link>&amp;&#32;b)&#32;{
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;a.<link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">position</link>&#32;&lt;&#32;b.position;
+00028 &#32;&#32;&#32;&#32;};
+00029 
+00030 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Сортировка&#32;вектора&#32;tbl_data_&#32;с&#32;использованием&#32;функции&#32;сравнения</emphasis>
+00031 &#32;&#32;&#32;&#32;std::sort(<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>.begin(),&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>.end(),&#32;compare_position);
+00032 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_render_p_d_f_ae8716d07394557fb0434e419be24d04f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d"/><section>
+    <title>cfm_data_</title>
+<indexterm><primary>cfm_data_</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>cfm_data_</secondary></indexterm>
+<para><computeroutput><link linkend="_structcfm">cfm</link> RenderPDF::cfm_data_<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Данные типа cfm </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00068">68</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781"/><section>
+    <title>font_</title>
+<indexterm><primary>font_</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>font_</secondary></indexterm>
+<para><computeroutput>HPDF_Font RenderPDF::font_<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Шрифт PDF </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00066">66</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4"/><section>
+    <title>fontPath_</title>
+<indexterm><primary>fontPath_</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>fontPath_</secondary></indexterm>
+<para><computeroutput>std::filesystem::path RenderPDF::fontPath_<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Путь к файлу шрифта </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00063">63</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1aa5d08b1fd3f72c78879fea437d978fdb"/><section>
+    <title>margitText</title>
+<indexterm><primary>margitText</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>margitText</secondary></indexterm>
+<para><computeroutput>double RenderPDF::margitText = 1<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Отступ для текста </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00061">61</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff"/><section>
+    <title>marks</title>
+<indexterm><primary>marks</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>marks</secondary></indexterm>
+<para><computeroutput>std::vector&lt;double&gt; RenderPDF::marks<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Метки </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00074">74</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec"/><section>
+    <title>nbr_data_</title>
+<indexterm><primary>nbr_data_</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>nbr_data_</secondary></indexterm>
+<para><computeroutput><link linkend="_structnbr">nbr</link> RenderPDF::nbr_data_<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Данные типа nbr </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00070">70</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489"/><section>
+    <title>new_page</title>
+<indexterm><primary>new_page</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>new_page</secondary></indexterm>
+<para><computeroutput>bool RenderPDF::new_page = false<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Флаг новой страницы </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00062">62</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb"/><section>
+    <title>pdf_</title>
+<indexterm><primary>pdf_</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>pdf_</secondary></indexterm>
+<para><computeroutput>HPDF_Doc RenderPDF::pdf_<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Документ PDF </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00065">65</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1adda47ac0eef121635099a286e784f610"/><section>
+    <title>PI</title>
+<indexterm><primary>PI</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>PI</secondary></indexterm>
+<para><computeroutput>const double RenderPDF::PI = 3.14159265358979323846<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Значение числа Пи </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00060">60</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431"/><section>
+    <title>point_data_</title>
+<indexterm><primary>point_data_</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>point_data_</secondary></indexterm>
+<para><computeroutput><link linkend="_structpoint">point</link> RenderPDF::point_data_<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Данные типа point </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00071">71</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58"/><section>
+    <title>point_tbl</title>
+<indexterm><primary>point_tbl</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>point_tbl</secondary></indexterm>
+<para><computeroutput>std::vector&lt;size_t&gt; RenderPDF::point_tbl<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Таблица точек </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00073">73</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c"/><section>
+    <title>tbl_data_</title>
+<indexterm><primary>tbl_data_</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>tbl_data_</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_structtbl">tbl</link>&gt; RenderPDF::tbl_data_<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Вектор данных типа tbl </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00072">72</link></para>
+</section>
+<anchor xml:id="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2"/><section>
+    <title>zgt_data_</title>
+<indexterm><primary>zgt_data_</primary><secondary>RenderPDF</secondary></indexterm>
+<indexterm><primary>RenderPDF</primary><secondary>zgt_data_</secondary></indexterm>
+<para><computeroutput><link linkend="_structzgt">zgt</link> RenderPDF::zgt_data_<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>Данные типа zgt </para>
+<para>
+См. определение в файле <link linkend="__render_p_d_f_8h_source">RenderPDF.h</link> строка <link linkend="__render_p_d_f_8h_source_1l00069">69</link></para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+<link linkend="__render_p_d_f_8h">RenderPDF.h</link><link linkend="_digit_8cpp">digit.cpp</link><link linkend="_draw_8cpp">draw.cpp</link><link linkend="__line_8cpp">Line.cpp</link><link linkend="__print_8cpp">Print.cpp</link><link linkend="__processor_8cpp">Processor.cpp</link><link linkend="__render_p_d_f_8cpp">RenderPDF.cpp</link></section>
+</section>

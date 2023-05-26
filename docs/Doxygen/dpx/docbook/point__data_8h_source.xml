@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_point__data_8h_source" xml:lang="ru">
+<title>point_data.h</title>
+<indexterm><primary>point_data.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_point__data_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANK_POINT_DATA_H</emphasis>
+<anchor xml:id="_point__data_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANK_POINT_DATA_H</emphasis>
+<anchor xml:id="_point__data_8h_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&quot;iostream&quot;</emphasis>
+<anchor xml:id="_point__data_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+<anchor xml:id="_point__data_8h_source_1l00010"/><link linkend="_structpoint">00010</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_structpoint">point</link>&#32;{
+<anchor xml:id="_point__data_8h_source_1l00011"/><link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">00011</link> &#32;&#32;&#32;&#32;std::vector&lt;std::pair&lt;double,&#32;double&gt;&gt;&#32;<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>;
+<anchor xml:id="_point__data_8h_source_1l00015"/><link linkend="_structpoint_1a0b248ae2a8dab47a95f68ffb03f33ede">00015</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_structpoint_1a0b248ae2a8dab47a95f68ffb03f33ede">display</link>(){
+<anchor xml:id="_point__data_8h_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;coord&#32;:&#32;<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>)&#32;{
+<anchor xml:id="_point__data_8h_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;coord.first&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;coord.second&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_point__data_8h_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_point__data_8h_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_point__data_8h_source_1l00020"/>00020 };
+<anchor xml:id="_point__data_8h_source_1l00021"/>00021 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//BLANK_POINT_DATA_H</emphasis>
+</programlisting></section>

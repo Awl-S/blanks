@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_tbl_8h_source" xml:lang="ru">
+<title>tbl.h</title>
+<indexterm><primary>tbl.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_tbl_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANK_TBL_H</emphasis>
+<anchor xml:id="_tbl_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANK_TBL_H</emphasis>
+<anchor xml:id="_tbl_8h_source_1l00003"/>00003 
+<anchor xml:id="_tbl_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+<anchor xml:id="_tbl_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+<anchor xml:id="_tbl_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+<anchor xml:id="_tbl_8h_source_1l00007"/>00007 
+<anchor xml:id="_tbl_8h_source_1l00015"/><link linkend="_structtbl">00015</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_structtbl">tbl</link>&#32;{
+<anchor xml:id="_tbl_8h_source_1l00016"/><link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">00016</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">position</link>;
+<anchor xml:id="_tbl_8h_source_1l00017"/><link linkend="_structtbl_1ac995e4da6d437a046c2074f9dc33b833">00017</link> &#32;&#32;&#32;&#32;std::string&#32;<link linkend="_structtbl_1ac995e4da6d437a046c2074f9dc33b833">model</link>;
+<anchor xml:id="_tbl_8h_source_1l00018"/><link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">00018</link> &#32;&#32;&#32;&#32;std::vector&lt;std::vector&lt;double&gt;&gt;&#32;<link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">measurements</link>;
+<anchor xml:id="_tbl_8h_source_1l00019"/>00019 
+<anchor xml:id="_tbl_8h_source_1l00023"/><link linkend="_structtbl_1a1656f3d8341995db3e9711ecf583cc94">00023</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_structtbl_1a1656f3d8341995db3e9711ecf583cc94">display</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+<anchor xml:id="_tbl_8h_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Position:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">position</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_tbl_8h_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Model:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structtbl_1ac995e4da6d437a046c2074f9dc33b833">model</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_tbl_8h_source_1l00026"/>00026 
+<anchor xml:id="_tbl_8h_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Measurements:\n&quot;</emphasis>;
+<anchor xml:id="_tbl_8h_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;row&#32;:&#32;<link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">measurements</link>)&#32;{
+<anchor xml:id="_tbl_8h_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;value&#32;:&#32;row)&#32;{
+<anchor xml:id="_tbl_8h_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;value&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+<anchor xml:id="_tbl_8h_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_tbl_8h_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+<anchor xml:id="_tbl_8h_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_tbl_8h_source_1l00034"/>00034 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_tbl_8h_source_1l00035"/>00035 };
+<anchor xml:id="_tbl_8h_source_1l00036"/>00036 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//BLANK_TBL_H</emphasis>
+</programlisting></section>

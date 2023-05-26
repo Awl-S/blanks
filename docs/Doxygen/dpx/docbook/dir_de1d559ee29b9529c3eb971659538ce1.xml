@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_de1d559ee29b9529c3eb971659538ce1" xml:lang="ru">
+<title>Содержание директории 3.25.2</title>
+<indexterm><primary>Содержание директории 3.25.2</primary></indexterm>
+Директория графа зависимостей 3.25.2:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_de1d559ee29b9529c3eb971659538ce1_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Директории    </title>
+        <itemizedlist>
+            <listitem><para>директория <link linkend="_dir_fecfe773f908b91c373e1f72e381ab2e">CompilerIdC</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_67a1ef42729cc10b4e506d0937c5be5e">CompilerIdCXX</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

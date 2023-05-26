@@ -1,0 +1,5 @@
+<map id="RenderPDF::initializePDF" name="RenderPDF::initializePDF">
+<area shape="rect" id="Node000001" title="Инициализирует объект HPDF_Doc для работы с PDF." alt="" coords="217,5,386,32"/>
+<area shape="rect" id="Node000002" href="$class_render_p_d_f.html#af0e199f862cb39e5600325bd2c69600f" title="Конструктор класса RenderPDF." alt="" coords="5,5,169,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,21,169,21,169,16,202,16"/>
+</map>

@@ -26,8 +26,8 @@ EncodingConverter::EncodingConverter(std::string inputDir, const std::string& ou
  * Задает расширения файлов, которые следует преобразовывать.
  */
 void EncodingConverter::loadSettings(){
-    sourceEncoding = "UTF-8";
-    targetEncoding = "WINDOWS-1251";
+    sourceEncoding = "WINDOWS-1251";
+    targetEncoding = "UTF-8";
 
     // Создаем массив итераторов на строки, которые нужно добавить
     std::string extensions[] = { ".tbl", ".нбр", ".згт", ".cfm" };

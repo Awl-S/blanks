@@ -1,0 +1,95 @@
+\doxysection{Структура point}
+\hypertarget{structpoint}{}\label{structpoint}\index{point@{point}}
+
+
+Структура для хранения координат точек.  
+
+
+
+
+{\ttfamily \#include \"{}point\+\_\+data.\+h\"{}}
+
+
+
+Граф связей класса point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{structpoint__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structpoint_a0b248ae2a8dab47a95f68ffb03f33ede}{display}} ()
+\begin{DoxyCompactList}\small\item\em Выводит координаты точек в стандартный вывод. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::pair$<$ double, double $>$ $>$ \mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура для хранения координат точек. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em coordinates} & Вектор пар, представляющих координаты. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{point__data_8h_source}{point\+\_\+data.\+h}} строка \mbox{\hyperlink{point__data_8h_source_l00010}{10}}
+
+
+
+\doxysubsection{Методы}
+\Hypertarget{structpoint_a0b248ae2a8dab47a95f68ffb03f33ede}\label{structpoint_a0b248ae2a8dab47a95f68ffb03f33ede} 
+\index{point@{point}!display@{display}}
+\index{display@{display}!point@{point}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void point\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит координаты точек в стандартный вывод. 
+
+
+
+См. определение в файле \mbox{\hyperlink{point__data_8h_source}{point\+\_\+data.\+h}} строка \mbox{\hyperlink{point__data_8h_source_l00015}{15}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ coord\ :\ \mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}})\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ coord.first\ <<\ \textcolor{stringliteral}{"{};\ "{}}\ <<\ coord.second\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{structpoint_a0b248ae2a8dab47a95f68ffb03f33ede_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{structpoint_a6917d518caab116551a862eba2717bec}\label{structpoint_a6917d518caab116551a862eba2717bec} 
+\index{point@{point}!coordinates@{coordinates}}
+\index{coordinates@{coordinates}!point@{point}}
+\doxysubsubsection{\texorpdfstring{coordinates}{coordinates}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$double, double$>$ $>$ point\+::coordinates}
+
+
+
+См. определение в файле \mbox{\hyperlink{point__data_8h_source}{point\+\_\+data.\+h}} строка \mbox{\hyperlink{point__data_8h_source_l00011}{11}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{point__data_8h}{point\+\_\+data.\+h}}\end{DoxyCompactItemize}

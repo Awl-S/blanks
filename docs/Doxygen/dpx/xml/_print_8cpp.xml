@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="_print_8cpp" kind="file" language="C++">
+    <compoundname>Print.cpp</compoundname>
+    <includes refid="_render_p_d_f_8h" local="yes">../../include/RenderPDF/RenderPDF.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>../../include/RenderPDF/RenderPDF.h</label>
+        <link refid="_render_p_d_f_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../struct/cfm.h</label>
+        <link refid="cfm_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../struct/nbr.h</label>
+        <link refid="nbr_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../struct/point_data.h</label>
+        <link refid="point__data_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../struct/tbl.h</label>
+        <link refid="tbl_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../struct/zgt.h</label>
+        <link refid="zgt_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Print.cpp</label>
+        <link refid="_print_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>array</label>
+      </node>
+      <node id="6">
+        <label>cmath</label>
+      </node>
+      <node id="5">
+        <label>filesystem</label>
+      </node>
+      <node id="4">
+        <label>hpdf.h</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../../include/RenderPDF/RenderPDF.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" kindref="member">RenderPDF::generatePDF</ref>(std::string<sp/>&amp;filename)<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page<sp/>page;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size_point_tbl<sp/>=<sp/><ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>.size();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blank<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>totalPage<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489" kindref="member">new_page</ref>){</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_point_tbl/=2;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>totalPage<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>page_list<sp/>=<sp/>0;<sp/>page_list<sp/>&lt;<sp/>totalPage;<sp/>++page_list)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(page_list<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref><sp/>=<sp/>HPDF_New(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781" kindref="member">font_</ref><sp/>=<sp/><ref refid="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" kindref="member">loadFont</ref>(<ref refid="class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4" kindref="member">fontPath_</ref>.string());</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_point_tbl<sp/>=<sp/><ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>.size();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277" kindref="member">createA3Page</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>page<sp/>=<sp/>HPDF_GetCurrentPage(<ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(;<sp/>blank<sp/>&lt;<sp/>size_point_tbl;<sp/>blank++)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_Page_SetLineWidth(page,<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[1]);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//test<sp/>Удалить<sp/>в<sp/>конце,<sp/>не<sp/>рисуется</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" kindref="member">drawCircle</ref>(page,<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second,<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" kindref="member">diameter</ref><sp/>/<sp/>2.0f);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>отрисовка<sp/>круга</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" kindref="member">drawCircle</ref>(page,<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second,<sp/><ref refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" kindref="member">zgt_data_</ref>.<ref refid="structzgt_1ab347a1a6d59fde2e507a7035e65e2544" kindref="member">diameter</ref><sp/>/<sp/>2.0f);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Центральный<sp/>отверстие</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" kindref="member">drawCircle</ref>(page,<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" kindref="member">zgt_data_</ref>.<ref refid="structzgt_1a158a8320351f554c1aa14cf6436b505f" kindref="member">center_hole_diameter</ref><sp/>/<sp/>2.0f);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Индексы<sp/>не<sp/>изменяются<sp/>(исправить!!!)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(</highlight><highlight class="keyword">false</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xy,<sp/>yz,<sp/>radius;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>2;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xy<sp/>=<sp/><ref refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" kindref="member">zgt_data_</ref>.<ref refid="structzgt_1afa245cc963981088182fcad61a544bb4" kindref="member">mounting_holes</ref>[i<sp/>*<sp/>3];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yz<sp/>=<sp/><ref refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" kindref="member">zgt_data_</ref>.<ref refid="structzgt_1afa245cc963981088182fcad61a544bb4" kindref="member">mounting_holes</ref>[i<sp/>*<sp/>3<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yz<sp/>=<sp/>(yz<sp/>&gt;<sp/>0)<sp/>?<sp/>-yz<sp/>:<sp/>abs(yz);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radius<sp/>=<sp/><ref refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" kindref="member">zgt_data_</ref>.<ref refid="structzgt_1afa245cc963981088182fcad61a544bb4" kindref="member">mounting_holes</ref>[i<sp/>*<sp/>3<sp/>+<sp/>2]<sp/>/<sp/>2.0f;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" kindref="member">drawCircle</ref>(page,<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+<sp/>xy,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+<sp/>yz,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>radius);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" kindref="member">generate_Marks</ref>(blank);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" kindref="member">drawMainLines</ref>(page,<sp/>blank);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" kindref="member">drawDigitIndices</ref>(page,<sp/>blank);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" kindref="member">drawAdditionalTicks</ref>(page,<sp/>blank);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>.clear();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" kindref="member">generate_Marks</ref>(blank);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" kindref="member">drawMainLines</ref>(page,<sp/>blank);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" kindref="member">drawDigitIndices</ref>(page,<sp/>blank);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" kindref="member">drawAdditionalTicks</ref>(page,<sp/>blank);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>.clear();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(page_list<sp/>==<sp/>1){</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename+=<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(page_list<sp/>+<sp/>1)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_SaveToFile(<ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref>,<sp/>(filename<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.pdf&quot;</highlight><highlight class="normal">).c_str());</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Print.cpp"/>
+  </compounddef>
+</doxygen>

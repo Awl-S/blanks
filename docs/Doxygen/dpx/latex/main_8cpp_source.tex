@@ -1,0 +1,141 @@
+\doxysection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\mbox{\hyperlink{main_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_encoding_converter_8h}{include/Converting/EncodingConverter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_line_8h}{include/CommandLine/CommandLine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cfm_8h}{include/struct/cfm.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{zgt_8h}{include/struct/zgt.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{text_reader_8h}{include/Reader/textReader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_generated_8h}{include/Generated/Generated.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_render_p_d_f_8h}{include/RenderPDF/RenderPDF.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_plug_8h}{include/Parser/Plug.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}\mbox{\hyperlink{main_8cpp_ab97d7330981023823ad0d4017ddbec3b}{00011}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8cpp_ab97d7330981023823ad0d4017ddbec3b}{print\_duration}}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ start)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{auto}\ stop\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{auto}\ duration\_microseconds\ =\ std::chrono::duration\_cast<std::chrono::microseconds>(stop\ -\/\ start);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{auto}\ duration\_milliseconds\ =\ std::chrono::duration\_cast<std::chrono::milliseconds>(stop\ -\/\ start);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Время\ выполнения:\ "{}}\ <<\ duration\_microseconds.count()\ <<\ \textcolor{stringliteral}{"{}\ microseconds"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Время\ выполнения:\ "{}}\ <<\ duration\_milliseconds.count()\ <<\ \textcolor{stringliteral}{"{}\ milliseconds"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}\mbox{\hyperlink{main_8cpp_a17fe4a740253ee0f9a2dbe3821cb02b4}{00019}}\ std::filesystem::path\ \mbox{\hyperlink{main_8cpp_a17fe4a740253ee0f9a2dbe3821cb02b4}{find\_file\_by\_name}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ directory,\ std::string\&\ model\_name,\ \textcolor{keyword}{const}\ std::string\&\ extension)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ std::filesystem::recursive\_directory\_iterator(directory))\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entry.is\_regular\_file())\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ file\_name\ =\ entry.path().filename().string();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ file\_extension\ =\ entry.path().extension().string();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (file\_name\ ==\ model\_name\ +\ file\_extension\ \&\&\ file\_extension\ ==\ extension)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::filesystem::path\ path\_str\ =\ entry.path();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::replace(path\_str.string().begin(),\ path\_str.string().end(),\ '\(\backslash\)\(\backslash\)',\ '/');}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path\_str;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}File\ not\ found:\ "{}}\ +\ model\_name);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}\mbox{\hyperlink{main_8cpp_a333b5413e0cb25ebfc2919e897c49e0c}{00034}}\ std::string\ \mbox{\hyperlink{main_8cpp_a333b5413e0cb25ebfc2919e897c49e0c}{getCurrentDateTime}}()\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ std::time\_t\ currentTime\ =\ std::time(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \ \ std::tm*\ localTime\ =\ std::localtime(\&currentTime);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{char}\ dateTimeString[20];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ std::strftime(dateTimeString,\ \textcolor{keyword}{sizeof}(dateTimeString),\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\_\%H-\/\%M-\/\%S"{}},\ localTime);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(dateTimeString);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}\mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00044}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ setlocale(LC\_ALL,\ \textcolor{stringliteral}{"{}ru\_RU.UTF-\/8"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line}{CommandLine}}\ cmd(argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ command\_type\ =\ cmd.\mbox{\hyperlink{class_command_line_aa17cd3db7ef897f09cb04bd2acbfabd6}{get\_command\_type}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ args\ =\ cmd.\mbox{\hyperlink{class_command_line_a58060c2f8b6032c5d1feab576b642125}{get\_args}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(command\_type\ ==\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26}{CommandLine::CommandType::GEN}})\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_generated}{Generated}}\ gen;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ gen.\mbox{\hyperlink{class_generated_a83bc49c8c5facc46a56afe4f1af0d01a}{generateJsonFile}}(\textcolor{stringliteral}{"{}setting.json"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(command\_type\ ==\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3}{CommandLine::CommandType::UNKNOWN}})\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8cpp_ab97d7330981023823ad0d4017ddbec3b}{print\_duration}}(start);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Неизвестная\ команда\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(command\_type\ ==\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2}{CommandLine::CommandType::CONVERT}})\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(args.size()\ ==\ 1)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_converter}{EncodingConverter}}\ converter(args[0]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ converter.\mbox{\hyperlink{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3}{convert}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (args.size()\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_converter}{EncodingConverter}}\ converter(args[0],\ args[1]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ converter.\mbox{\hyperlink{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3}{convert}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Неверное\ количество\ аргументов."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b}{CommandLine::CommandType::PRINT}}\ ==\ command\_type)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ config\_parser\ =\ \mbox{\hyperlink{namespaceparser_a6a1b9a41dcebf3bc40e63bcb26a93f64}{parser::create}}(args[0]);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ debug\ =\ config\_parser-\/>getInteger(\textcolor{stringliteral}{"{}debug"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tbl\_directory\ =\ config\_parser-\/>getFilePath(\textcolor{stringliteral}{"{}tbl"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ tbl\_files\ =\ config\_parser-\/>getFileList(\textcolor{stringliteral}{"{}tbl"{}},\ \textcolor{stringliteral}{"{}scale"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tbl>\ tbl\_data;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ tbl\_file\ :\ tbl\_files)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Чтение\ TBL:\(\backslash\)t"{}}\ <<\ tbl\_file\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtbl}{tbl}}\ temp\_tbl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtext_reader}{textReader}}(tbl\_file).\mbox{\hyperlink{classtext_reader_ac9b23d5e5a58431fb114f221098a2640}{read\_tbl}}(temp\_tbl);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tbl\_data.push\_back(temp\_tbl);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(debug)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp\_tbl.\mbox{\hyperlink{structtbl_a1656f3d8341995db3e9711ecf583cc94}{display}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cfm\_file\ =\ config\_parser-\/>getFilePath(\textcolor{stringliteral}{"{}cfm"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cfm\_file\_path\ =\ \mbox{\hyperlink{main_8cpp_a17fe4a740253ee0f9a2dbe3821cb02b4}{find\_file\_by\_name}}(cfm\_file,\ tbl\_data[0].model,\ \textcolor{stringliteral}{"{}.cfm"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Чтение\ CFM:\(\backslash\)t"{}}\ <<\ cfm\_file\_path\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcfm}{cfm}}\ cfm\_data;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtext_reader}{textReader}}(cfm\_file\_path).\mbox{\hyperlink{classtext_reader_a5cd4eeebf53787a1434d037c54993071}{read\_cfm}}(cfm\_data);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(debug)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cfm\_data.\mbox{\hyperlink{structcfm_a34655b4bfca15e5fb6afeedcf05c1289}{display}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ point\_file\ =\ config\_parser-\/>getFilePath(\textcolor{stringliteral}{"{}point"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ point\_file\_path\ =\ \mbox{\hyperlink{main_8cpp_a17fe4a740253ee0f9a2dbe3821cb02b4}{find\_file\_by\_name}}(point\_file,\ tbl\_data[0].model,\ \textcolor{stringliteral}{"{}.point"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Чтение\ набора\ точек:\(\backslash\)t"{}}\ <<\ point\_file\_path\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpoint}{point}}\ point\_data;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtext_reader}{textReader}}(point\_file\_path).\mbox{\hyperlink{classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5}{read\_point}}(point\_data);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(debug)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ point\_data.\mbox{\hyperlink{structpoint_a0b248ae2a8dab47a95f68ffb03f33ede}{display}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ zgt\_file\ =\ config\_parser-\/>getFilePath(\textcolor{stringliteral}{"{}zgt"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ zgt\_file\_path\ =\ \mbox{\hyperlink{main_8cpp_a17fe4a740253ee0f9a2dbe3821cb02b4}{find\_file\_by\_name}}(zgt\_file,\ cfm\_data.\mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{blank}},\ \textcolor{stringliteral}{"{}.згт"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Чтение\ заготовок:\(\backslash\)t"{}}\ <<\ zgt\_file\_path\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structzgt}{zgt}}\ zgt\_data;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtext_reader}{textReader}}(zgt\_file\_path).\mbox{\hyperlink{classtext_reader_af98fb017c822ba0f17c58a1dda32a787}{read\_zgt}}(zgt\_data);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(debug)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zgt\_data.\mbox{\hyperlink{structzgt_a54f8b1de8e8e339540ddddd0e7503ac2}{display}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Чтение\ наборов\ изображений:\(\backslash\)t"{}\ <<\ nbr\_file\_path\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ nbr\_file\ =\ config\_parser-\/>getFilePath(\textcolor{stringliteral}{"{}nbr"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//auto\ nbr\_file\_path\ =\ find\_file\_by\_name(zgt\_file,\ cfm\_data.blank,\ "{}.нбр"{});}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structnbr}{nbr}}\ nbr\_data;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//textReader(nbr\_file\_path).read\_nbr(nbr\_data);}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(debug\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f}{RenderPDF}}\ pdf(cfm\_data,\ zgt\_data,\ tbl\_data,\ nbr\_data,\ point\_data,\ config\_parser-\/>getFilePath(\textcolor{stringliteral}{"{}fontPath"{}}));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ filename\ =\ \mbox{\hyperlink{main_8cpp_a333b5413e0cb25ebfc2919e897c49e0c}{getCurrentDateTime}}()\ +\ \textcolor{stringliteral}{"{}("{}}\ +\ cfm\_data.\mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{blank}}\ +\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ pdf.\mbox{\hyperlink{class_render_p_d_f_ab38c3850e484ba597ae3be5dbac1f5b2}{generatePDF}}(filename);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00135}00135\ \ \ \ \ \mbox{\hyperlink{main_8cpp_ab97d7330981023823ad0d4017ddbec3b}{print\_duration}}(start);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00136}00136\ \}}
+
+\end{DoxyCode}

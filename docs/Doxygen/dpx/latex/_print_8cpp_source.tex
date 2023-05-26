@@ -1,0 +1,86 @@
+\doxysection{Print.\+cpp}
+\hypertarget{_print_8cpp_source}{}\label{_print_8cpp_source}\index{Print.cpp@{Print.cpp}}
+\mbox{\hyperlink{_print_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/RenderPDF/RenderPDF.h"{}}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00012}\mbox{\hyperlink{class_render_p_d_f_ab38c3850e484ba597ae3be5dbac1f5b2}{00012}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_ab38c3850e484ba597ae3be5dbac1f5b2}{RenderPDF::generatePDF}}(std::string\ \&filename)\ \{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00014}00014\ \ \ \ \ HPDF\_Page\ page;}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\_point\_tbl\ =\ \mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}.size();}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{int}\ blank\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{int}\ totalPage\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_render_p_d_f_aa8780af3344ed124f9ad0f4189344489}{new\_page}})\{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ size\_point\_tbl/=2;}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ totalPage\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ page\_list\ =\ 0;\ page\_list\ <\ totalPage;\ ++page\_list)\ \{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(page\_list\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}}\ =\ HPDF\_New(\textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a501db80f3bb869b9b3cff1722b040781}{font\_}}\ =\ \mbox{\hyperlink{class_render_p_d_f_ac3ba6c62b21e04dbe57cedf12b3f06c0}{loadFont}}(\mbox{\hyperlink{class_render_p_d_f_a36b057897ad1e0b0ff20fd7c97107bc4}{fontPath\_}}.string());}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ size\_point\_tbl\ =\ \mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}.size();}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a22fa693e95126bb362fe324470ba2277}{createA3Page}}();}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ page\ =\ HPDF\_GetCurrentPage(\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}});}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ blank\ <\ size\_point\_tbl;\ blank++)\ \{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ HPDF\_Page\_SetLineWidth(page,\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[1]);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//test\ Удалить\ в\ конце,\ не\ рисуется}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a50a4d487307986751eb5087f25961c27}{drawCircle}}(page,\ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ 1].first,}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ 1].second,\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}}\ /\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ отрисовка\ круга}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a50a4d487307986751eb5087f25961c27}{drawCircle}}(page,\ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ 1].first,}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ 1].second,\ \mbox{\hyperlink{class_render_p_d_f_a88ea75db7b69bd6540445e3bf67febe2}{zgt\_data\_}}.\mbox{\hyperlink{structzgt_ab347a1a6d59fde2e507a7035e65e2544}{diameter}}\ /\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Центральный\ отверстие}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a50a4d487307986751eb5087f25961c27}{drawCircle}}(page,\ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ 1].first,}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ 1].second,}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a88ea75db7b69bd6540445e3bf67febe2}{zgt\_data\_}}.\mbox{\hyperlink{structzgt_a158a8320351f554c1aa14cf6436b505f}{center\_hole\_diameter}}\ /\ 2.0f);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Индексы\ не\ изменяются\ (исправить!!!)}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keyword}{false})\{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xy,\ yz,\ radius;}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 2;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xy\ =\ \mbox{\hyperlink{class_render_p_d_f_a88ea75db7b69bd6540445e3bf67febe2}{zgt\_data\_}}.\mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\_holes}}[i\ *\ 3];}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yz\ =\ \mbox{\hyperlink{class_render_p_d_f_a88ea75db7b69bd6540445e3bf67febe2}{zgt\_data\_}}.\mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\_holes}}[i\ *\ 3\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yz\ =\ (yz\ >\ 0)\ ?\ -\/yz\ :\ abs(yz);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius\ =\ \mbox{\hyperlink{class_render_p_d_f_a88ea75db7b69bd6540445e3bf67febe2}{zgt\_data\_}}.\mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\_holes}}[i\ *\ 3\ +\ 2]\ /\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a50a4d487307986751eb5087f25961c27}{drawCircle}}(page,\ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ 1].first\ +\ xy,}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}}.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}[\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}}[blank]\ -\/\ 1].second\ +\ yz,}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a3f2e7a6479a84eaecbe8a07b17aaeb5e}{generate\_Marks}}(blank);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a518d3eb66cbcdb313c218dc8028c9673}{drawMainLines}}(page,\ blank);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_abaccfd0526f13c8d8c5d9f74ceb31f52}{drawDigitIndices}}(page,\ blank);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_acbc9c679d623723340171bd56c5575cb}{drawAdditionalTicks}}(page,\ blank);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a922299c1a62d014f6a7afcaeddddf0ff}{marks}}.clear();}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a3f2e7a6479a84eaecbe8a07b17aaeb5e}{generate\_Marks}}(blank);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a518d3eb66cbcdb313c218dc8028c9673}{drawMainLines}}(page,\ blank);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_abaccfd0526f13c8d8c5d9f74ceb31f52}{drawDigitIndices}}(page,\ blank);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_acbc9c679d623723340171bd56c5575cb}{drawAdditionalTicks}}(page,\ blank);}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a922299c1a62d014f6a7afcaeddddf0ff}{marks}}.clear();}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(page\_list\ ==\ 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ filename+=\ \textcolor{stringliteral}{"{}("{}}\ +\ std::to\_string(page\_list\ +\ 1)\ +\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ HPDF\_SaveToFile(\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}},\ (filename\ +\ \textcolor{stringliteral}{"{}.pdf"{}}).c\_str());}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_print_8cpp_source_l00089}00089\ \}}
+
+\end{DoxyCode}

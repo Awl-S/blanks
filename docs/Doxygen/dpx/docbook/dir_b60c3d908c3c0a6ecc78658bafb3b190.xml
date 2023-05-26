@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_b60c3d908c3c0a6ecc78658bafb3b190" xml:lang="ru">
+<title>Содержание директории CMakeFiles</title>
+<indexterm><primary>Содержание директории CMakeFiles</primary></indexterm>
+Директория графа зависимостей CMakeFiles:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_b60c3d908c3c0a6ecc78658bafb3b190_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Директории    </title>
+        <itemizedlist>
+            <listitem><para>директория <link linkend="_dir_ec2616c7498dbf38ed425a3908c8b33a">3.25.2</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_json_8cpp_source" xml:lang="ru">
+<title>json.cpp</title>
+<indexterm><primary>json.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_json_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&lt;fstream&gt;</emphasis>
+<anchor xml:id="_json_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+<anchor xml:id="_json_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&quot;../../include/Parser/json.h&quot;</emphasis>
+<anchor xml:id="_json_8cpp_source_1l00004"/>00004 
+<anchor xml:id="_json_8cpp_source_1l00013"/><link linkend="_classjson_1a335a17f634ae297aa36dbc40855dd8da">00013</link> std::vector&lt;std::filesystem::path&gt;&#32;<link linkend="_classjson_1a335a17f634ae297aa36dbc40855dd8da">json::getFileList</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;key,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;search)&#32;{
+<anchor xml:id="_json_8cpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;std::vector&lt;std::filesystem::path&gt;&#32;files;
+<anchor xml:id="_json_8cpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;std::filesystem::path&#32;directory&#32;=&#32;<link linkend="_classjson_1a760a6ea6469d17e611ccf23921753d20">getFilePath</link>(key);
+<anchor xml:id="_json_8cpp_source_1l00016"/>00016 
+<anchor xml:id="_json_8cpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(std::filesystem::exists(directory))&#32;{
+<anchor xml:id="_json_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;entry&#32;:&#32;std::filesystem::recursive_directory_iterator(directory))&#32;{
+<anchor xml:id="_json_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(entry.is_regular_file()&#32;&amp;&amp;&#32;entry.path().filename().string().find(search)&#32;!=&#32;std::string::npos)&#32;{
+<anchor xml:id="_json_8cpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;files.push_back(entry.path());
+<anchor xml:id="_json_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::cout&#32;&lt;&lt;&#32;entry.path().string()&#32;&lt;&lt;&#32;&quot;\t&quot;&#32;&lt;&lt;&#32;entry.path()&#32;&lt;&lt;&#32;std::endl;</emphasis>
+<anchor xml:id="_json_8cpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_json_8cpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_json_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_json_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Обработка&#32;ошибки</emphasis>
+<anchor xml:id="_json_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Directory&#32;does&#32;not&#32;exist&#32;or&#32;is&#32;not&#32;accessible:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;directory&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_json_8cpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_json_8cpp_source_1l00028"/>00028 
+<anchor xml:id="_json_8cpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;files;
+<anchor xml:id="_json_8cpp_source_1l00030"/>00030 }
+<anchor xml:id="_json_8cpp_source_1l00031"/>00031 
+<anchor xml:id="_json_8cpp_source_1l00041"/><link linkend="_classjson_1a760a6ea6469d17e611ccf23921753d20">00041</link> std::filesystem::path&#32;<link linkend="_classjson_1a760a6ea6469d17e611ccf23921753d20">json::getFilePath</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;key)&#32;{
+<anchor xml:id="_json_8cpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>.contains(key))&#32;{
+<anchor xml:id="_json_8cpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Configuration&#32;file&#32;does&#32;not&#32;contain&#32;key:&#32;&quot;</emphasis>&#32;+&#32;key);
+<anchor xml:id="_json_8cpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_json_8cpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::filesystem::u8path(<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>[key].get&lt;std::string&gt;());
+<anchor xml:id="_json_8cpp_source_1l00046"/>00046 }
+<anchor xml:id="_json_8cpp_source_1l00047"/>00047 
+<anchor xml:id="_json_8cpp_source_1l00058"/><link linkend="_classjson_1a3f5e7618318c6e39387a917589aa3d38">00058</link> <emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="_classjson_1a3f5e7618318c6e39387a917589aa3d38">json::getInteger</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;key)&#32;{
+<anchor xml:id="_json_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>.contains(key))&#32;{
+<anchor xml:id="_json_8cpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Configuration&#32;file&#32;does&#32;not&#32;contain&#32;key:&#32;&quot;</emphasis>&#32;+&#32;key);
+<anchor xml:id="_json_8cpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_json_8cpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>[key];
+<anchor xml:id="_json_8cpp_source_1l00063"/>00063 }
+<anchor xml:id="_json_8cpp_source_1l00074"/><link linkend="_classjson_1a4630c59c2653fc787d1059a1a1e905cb">00074</link> <link linkend="_classjson_1a4630c59c2653fc787d1059a1a1e905cb">json::json</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;config_file_path)&#32;{
+<anchor xml:id="_json_8cpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;std::ifstream&#32;config_file(config_file_path);
+<anchor xml:id="_json_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!config_file.is_open())&#32;{
+<anchor xml:id="_json_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Cannot&#32;open&#32;configuration&#32;file:&#32;&quot;</emphasis>&#32;+&#32;config_file_path);
+<anchor xml:id="_json_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_json_8cpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;config_file&#32;&gt;&gt;&#32;<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>;
+<anchor xml:id="_json_8cpp_source_1l00080"/>00080 }
+<anchor xml:id="_json_8cpp_source_1l00081"/>00081 
+<anchor xml:id="_json_8cpp_source_1l00082"/><link linkend="_classjson_1a7d5c22a97d49085310994af222c28f8c">00082</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classjson_1a7d5c22a97d49085310994af222c28f8c">json::display</link>()&#32;{
+<anchor xml:id="_json_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;[key,&#32;value]&#32;:&#32;<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>.items())&#32;{
+<anchor xml:id="_json_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;key&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;value&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_json_8cpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_json_8cpp_source_1l00086"/>00086 }
+<anchor xml:id="_json_8cpp_source_1l00087"/>00087 
+<anchor xml:id="_json_8cpp_source_1l00088"/>00088 
+<anchor xml:id="_json_8cpp_source_1l00089"/>00089 
+<anchor xml:id="_json_8cpp_source_1l00090"/>00090 
+<anchor xml:id="_json_8cpp_source_1l00091"/>00091 
+<anchor xml:id="_json_8cpp_source_1l00092"/>00092 
+<anchor xml:id="_json_8cpp_source_1l00093"/>00093 
+<anchor xml:id="_json_8cpp_source_1l00094"/>00094 
+<anchor xml:id="_json_8cpp_source_1l00095"/>00095 
+<anchor xml:id="_json_8cpp_source_1l00096"/>00096 
+</programlisting></section>

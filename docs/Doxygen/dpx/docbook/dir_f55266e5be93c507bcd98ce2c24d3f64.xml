@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_f55266e5be93c507bcd98ce2c24d3f64" xml:lang="ru">
+<title>Содержание директории RenderPDF</title>
+<indexterm><primary>Содержание директории RenderPDF</primary></indexterm>
+Директория графа зависимостей RenderPDF:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_f55266e5be93c507bcd98ce2c24d3f64_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="_digit_8cpp">digit.cpp</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="_draw_8cpp">draw.cpp</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="__line_8cpp">Line.cpp</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="__print_8cpp">Print.cpp</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="__processor_8cpp">Processor.cpp</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="__render_p_d_f_8cpp">RenderPDF.cpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

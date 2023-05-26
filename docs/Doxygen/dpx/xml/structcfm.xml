@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="structcfm" kind="struct" language="C++" prot="public">
+    <compoundname>cfm</compoundname>
+    <includes refid="cfm_8h" local="yes">cfm.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcfm_1a7a658677e62202d59ef8a14da194d65b" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string cfm::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <qualifiedname>cfm::header</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Заголовок </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="17" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="17" bodyend="-1"/>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1a6400105680203ffabfa9860662530647" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string cfm::blank</definition>
+        <argsstring></argsstring>
+        <name>blank</name>
+        <qualifiedname>cfm::blank</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>модель </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="18" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1ad4cec00bcb67870e82af90e5d3676161" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; cfm::marks</definition>
+        <argsstring></argsstring>
+        <name>marks</name>
+        <qualifiedname>cfm::marks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Метки </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="19" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1a87d9d5335c694603bf6686851879879a" compoundref="draw_8cpp" startline="65" endline="70">RenderPDF::formatText</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6" prot="public" static="no" mutable="no">
+        <type>std::array&lt; int, 2 &gt;</type>
+        <definition>std::array&lt;int, 2&gt; cfm::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <qualifiedname>cfm::format</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Формат </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="20" column="16" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1a87d9d5335c694603bf6686851879879a" compoundref="draw_8cpp" startline="65" endline="70">RenderPDF::formatText</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cfm::diameter</definition>
+        <argsstring></argsstring>
+        <name>diameter</name>
+        <qualifiedname>cfm::diameter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Диаметр </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="21" column="9" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" compoundref="draw_8cpp" startline="80" endline="86">RenderPDF::calculateXCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" compoundref="draw_8cpp" startline="95" endline="101">RenderPDF::calculateYCoordinate</referencedby>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">RenderPDF::drawAdditionalTicks</referencedby>
+        <referencedby refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">RenderPDF::drawMainLines</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">RenderPDF::generatePDF</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1ac4b86bca5f71ce33c545d435fd2027ae" prot="public" static="no" mutable="no">
+        <type>std::array&lt; double, 2 &gt;</type>
+        <definition>std::array&lt;double, 2&gt; cfm::small_tick</definition>
+        <argsstring></argsstring>
+        <name>small_tick</name>
+        <qualifiedname>cfm::small_tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Малый делитель </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="22" column="16" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">RenderPDF::drawAdditionalTicks</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72" prot="public" static="no" mutable="no">
+        <type>std::array&lt; double, 2 &gt;</type>
+        <definition>std::array&lt;double, 2&gt; cfm::big_tick</definition>
+        <argsstring></argsstring>
+        <name>big_tick</name>
+        <qualifiedname>cfm::big_tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Большой делитель </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="23" column="16" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">RenderPDF::drawAdditionalTicks</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1a8fe3ba9b353d58719364384fc2132825" prot="public" static="no" mutable="no">
+        <type>std::array&lt; double, 4 &gt;</type>
+        <definition>std::array&lt;double, 4&gt; cfm::digital_tick</definition>
+        <argsstring></argsstring>
+        <name>digital_tick</name>
+        <qualifiedname>cfm::digital_tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Цифровой делитель </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="24" column="16" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" compoundref="draw_8cpp" startline="80" endline="86">RenderPDF::calculateXCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" compoundref="draw_8cpp" startline="95" endline="101">RenderPDF::calculateYCoordinate</referencedby>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">RenderPDF::drawAdditionalTicks</referencedby>
+        <referencedby refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">RenderPDF::drawMainLines</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">RenderPDF::generatePDF</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1af1376357880c15d011d9c96fd485714e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cfm::digit_height</definition>
+        <argsstring></argsstring>
+        <name>digit_height</name>
+        <qualifiedname>cfm::digit_height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Высота цифр </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="25" column="9" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0" compoundref="_render_p_d_f_8cpp" startline="92" endline="94">RenderPDF::adjustFontSize</referencedby>
+        <referencedby refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" compoundref="draw_8cpp" startline="95" endline="101">RenderPDF::calculateYCoordinate</referencedby>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">RenderPDF::drawDigitIndices</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cfm::label_height</definition>
+        <argsstring></argsstring>
+        <name>label_height</name>
+        <qualifiedname>cfm::label_height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Высота меток </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="26" column="9" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string cfm::tick_mask</definition>
+        <argsstring></argsstring>
+        <name>tick_mask</name>
+        <qualifiedname>cfm::tick_mask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Маска делителей </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="27" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" compoundref="cfm_8h" startline="35" endline="59">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">RenderPDF::drawAdditionalTicks</referencedby>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void cfm::display</definition>
+        <argsstring>() const</argsstring>
+        <name>display</name>
+        <qualifiedname>cfm::display</qualifiedname>
+        <briefdescription>
+<para>Выводит содержимое структуры cfm на консоль. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Функция <ref refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" kindref="member">display()</ref> выводит значения каждого поля структуры cfm на консоль. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="35" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="35" bodyend="59"/>
+        <references refid="structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72" compoundref="cfm_8h" startline="23">big_tick</references>
+        <references refid="structcfm_1a6400105680203ffabfa9860662530647" compoundref="cfm_8h" startline="18">blank</references>
+        <references refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" compoundref="cfm_8h" startline="21">diameter</references>
+        <references refid="structcfm_1af1376357880c15d011d9c96fd485714e" compoundref="cfm_8h" startline="25">digit_height</references>
+        <references refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" compoundref="cfm_8h" startline="24">digital_tick</references>
+        <references refid="structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6" compoundref="cfm_8h" startline="20">format</references>
+        <references refid="structcfm_1a7a658677e62202d59ef8a14da194d65b" compoundref="cfm_8h" startline="17">header</references>
+        <references refid="structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060" compoundref="cfm_8h" startline="26">label_height</references>
+        <references refid="structcfm_1ad4cec00bcb67870e82af90e5d3676161" compoundref="cfm_8h" startline="19">marks</references>
+        <references refid="structcfm_1ac4b86bca5f71ce33c545d435fd2027ae" compoundref="cfm_8h" startline="22">small_tick</references>
+        <references refid="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" compoundref="cfm_8h" startline="27">tick_mask</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Структура для хранения данных типа cfm. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Структура cfm содержит поля для хранения различных данных типа cfm, которые представляют параметры для отображения графика. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>std::array&lt; double, 2 &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::array&lt; double, 4 &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::array&lt; int, 2 &gt;</label>
+      </node>
+      <node id="1">
+        <label>cfm</label>
+        <link refid="structcfm"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>blank</edgelabel>
+          <edgelabel>header</edgelabel>
+          <edgelabel>tick_mask</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>marks</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>format</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>big_tick</edgelabel>
+          <edgelabel>small_tick</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>digital_tick</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; double &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" line="16" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/cfm.h" bodystart="16" bodyend="60"/>
+    <listofallmembers>
+      <member refid="structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72" prot="public" virt="non-virtual"><scope>cfm</scope><name>big_tick</name></member>
+      <member refid="structcfm_1a6400105680203ffabfa9860662530647" prot="public" virt="non-virtual"><scope>cfm</scope><name>blank</name></member>
+      <member refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" prot="public" virt="non-virtual"><scope>cfm</scope><name>diameter</name></member>
+      <member refid="structcfm_1af1376357880c15d011d9c96fd485714e" prot="public" virt="non-virtual"><scope>cfm</scope><name>digit_height</name></member>
+      <member refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" prot="public" virt="non-virtual"><scope>cfm</scope><name>digital_tick</name></member>
+      <member refid="structcfm_1a34655b4bfca15e5fb6afeedcf05c1289" prot="public" virt="non-virtual"><scope>cfm</scope><name>display</name></member>
+      <member refid="structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6" prot="public" virt="non-virtual"><scope>cfm</scope><name>format</name></member>
+      <member refid="structcfm_1a7a658677e62202d59ef8a14da194d65b" prot="public" virt="non-virtual"><scope>cfm</scope><name>header</name></member>
+      <member refid="structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060" prot="public" virt="non-virtual"><scope>cfm</scope><name>label_height</name></member>
+      <member refid="structcfm_1ad4cec00bcb67870e82af90e5d3676161" prot="public" virt="non-virtual"><scope>cfm</scope><name>marks</name></member>
+      <member refid="structcfm_1ac4b86bca5f71ce33c545d435fd2027ae" prot="public" virt="non-virtual"><scope>cfm</scope><name>small_tick</name></member>
+      <member refid="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" prot="public" virt="non-virtual"><scope>cfm</scope><name>tick_mask</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

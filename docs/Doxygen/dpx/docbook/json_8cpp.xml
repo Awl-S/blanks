@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_json_8cpp" xml:lang="ru">
+<title>Файл json.cpp</title>
+<indexterm><primary>json.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;fstream&gt;<?linebreak?>#include &lt;iostream&gt;<?linebreak?>#include &quot;../../include/Parser/json.h&quot;<?linebreak?></programlisting>Граф включаемых заголовочных файлов для json.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="json_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>

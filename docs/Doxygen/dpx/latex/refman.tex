@@ -1,0 +1,309 @@
+  % Handle batch mode
+  % to overcome problems with too many open files
+  \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
+  \pdfminorversion=7
+  % Set document class depending on configuration
+  \documentclass[twoside]{book}
+  %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+  \usepackage{ifthen}
+  \ifx\requestedLaTeXdate\undefined
+    \usepackage{array}
+  \else
+    \usepackage{array}[=2016-10-06]
+  \fi
+  %%
+  % Packages required by doxygen
+  \makeatletter
+  \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
+  % suppress package identification of infwarerr as it contains the word "warning"
+  \let\@@protected@wlog\protected@wlog
+  \def\protected@wlog#1{\wlog{package info suppressed}}
+  \RequirePackage{infwarerr}
+  \let\protected@wlog\@@protected@wlog
+  \makeatother
+  \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
+  \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
+  \usepackage{doxygen}
+  \usepackage{graphicx}
+  \usepackage[utf8]{inputenc}
+  \usepackage{makeidx}
+  \PassOptionsToPackage{warn}{textcomp}
+  \usepackage{textcomp}
+  \usepackage[nointegrals]{wasysym}
+  \usepackage{ifxetex}
+  % NLS support packages
+  \usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+  % Define default fonts
+  % Font selection
+  \usepackage[T1]{fontenc}
+  % set main and monospaced font
+  \usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+  \doxyallsectionsfont{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \renewcommand{\DoxyLabelFont}{%
+    \fontseries{bc}\selectfont%
+    \color{darkgray}%
+  }
+  \newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+   % Arguments of doxygenemoji:
+   % 1) ':<text>:' form of the emoji, already LaTeX-escaped
+   % 2) file with the name of the emoji without the .png extension
+   % in case image exist use this otherwise use the ':<text>:' form
+   \newcommand{\doxygenemoji}[2]{%
+     \IfFileExists{./#2.png}{\raisebox{-0.1em}{\includegraphics[height=0.9em]{./#2.png}}}{#1}%
+   }
+  % Page & text layout
+  \usepackage{geometry}
+  \geometry{%
+    a4paper,%
+    top=2.5cm,%
+    bottom=2.5cm,%
+    left=2.5cm,%
+    right=2.5cm%
+  }
+  \usepackage{changepage}
+  % Allow a bit of overflow to go unnoticed by other means
+  \tolerance=750
+  \hfuzz=15pt
+  \hbadness=750
+  \setlength{\emergencystretch}{15pt}
+  \setlength{\parindent}{0cm}
+  \newcommand{\doxynormalparskip}{\setlength{\parskip}{3ex plus 2ex minus 2ex}}
+  \newcommand{\doxytocparskip}{\setlength{\parskip}{1ex plus 0ex minus 0ex}}
+  \doxynormalparskip
+  % Redefine paragraph/subparagraph environments, using sectsty fonts
+  \makeatletter
+  \renewcommand{\paragraph}{%
+    \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@parafont%
+    }%
+  }
+  \renewcommand{\subparagraph}{%
+    \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+      \normalfont\normalsize\bfseries\SS@subparafont%
+    }%
+  }
+  \makeatother
+  \makeatletter
+  \newcommand\hrulefilll{\leavevmode\leaders\hrule\hskip 0pt plus 1filll\kern\z@}
+  \makeatother
+  % Headers & footers
+  \usepackage{fancyhdr}
+  \pagestyle{fancyplain}
+  \renewcommand{\footrulewidth}{0.4pt}
+  \fancypagestyle{fancyplain}{
+    \fancyhf{}
+    \fancyhead[LE, RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\rightmark}
+    \fancyhead[RE]{\bfseries\leftmark}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Создано системой Doxygen }
+  }
+  \fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Создано системой Doxygen }
+    \renewcommand{\headrulewidth}{0pt}
+  }
+  \pagestyle{fancyplain}
+  \renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{}%
+  }
+  \renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}%
+  }
+  % ToC, LoF, LoT, bibliography, and index
+  % Indices & bibliography
+  \usepackage{natbib}
+  \usepackage[titles]{tocloft}
+  \setcounter{tocdepth}{3}
+  \setcounter{secnumdepth}{5}
+  % creating indexes
+  \makeindex
+  \usepackage{newunicodechar}
+  \makeatletter
+    \def\doxynewunicodechar#1#2{%
+    \@tempswafalse
+    \edef\nuc@tempa{\detokenize{#1}}%
+    \if\relax\nuc@tempa\relax
+      \nuc@emptyargerr
+    \else
+      \edef\@tempb{\expandafter\@car\nuc@tempa\@nil}%
+      \nuc@check
+      \if@tempswa
+        \@namedef{u8:\nuc@tempa}{#2}%
+      \fi
+    \fi
+  }
+  \makeatother
+  \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \doxynewunicodechar{²}{${}^{2}$}% Superscript two
+  \doxynewunicodechar{³}{${}^{3}$}% Superscript three
+  % Hyperlinks
+    % Hyperlinks (required, but should be loaded last)
+    \ifpdf
+      \usepackage[pdftex,pagebackref=true]{hyperref}
+    \else
+      \ifxetex
+        \usepackage[pagebackref=true]{hyperref}
+      \else
+        \usepackage[ps2pdf,pagebackref=true]{hyperref}
+      \fi
+    \fi
+    \hypersetup{%
+      colorlinks=true,%
+      linkcolor=blue,%
+      citecolor=blue,%
+      unicode,%
+      pdftitle={Blanks},%
+      pdfsubject={}%
+    }
+  % Custom commands used by the header
+  % Custom commands
+  \newcommand{\clearemptydoublepage}{%
+    \newpage{\pagestyle{empty}\cleardoublepage}%
+  }
+  % caption style definition
+  \usepackage{caption}
+  \captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+  % in page table of contents
+  \IfFormatAtLeastTF{2023/05/01}{\usepackage[deeplevels]{etoc}}{\usepackage[deeplevels]{etoc_doxygen}}
+  \etocsettocstyle{\doxytocparskip}{\doxynormalparskip}
+  \etocsetlevel{subsubsubsection}{4}
+  \etocsetlevel{subsubsubsubsection}{5}
+  \etocsetlevel{subsubsubsubsubsection}{6}
+  \etocsetlevel{subsubsubsubsubsubsection}{7}
+  \etocsetlevel{paragraph}{8}
+  \etocsetlevel{subparagraph}{9}
+  % prevent numbers overlap the titles in toc
+  \renewcommand{\numberline}[1]{#1~}
+% End of preamble, now comes the document contents
+%===== C O N T E N T S =====
+\begin{document}
+  \raggedbottom
+  % Titlepage & ToC
+    % To avoid duplicate page anchors due to reuse of same numbers for
+    % the index (be it as roman numbers)
+    \hypersetup{pageanchor=false,
+                bookmarksnumbered=true,
+                pdfencoding=unicode
+               }
+  \pagenumbering{alph}
+  \begin{titlepage}
+  \vspace*{7cm}
+  \begin{center}%
+  {\Large Blanks}\\
+  \vspace*{1cm}
+  {\large Создано системой Doxygen 1.9.7}\\
+  \end{center}
+  \end{titlepage}
+  \clearemptydoublepage
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearemptydoublepage
+  \pagenumbering{arabic}
+  % re-enable anchors again
+  \hypersetup{pageanchor=true}
+%--- Begin generated contents ---
+\chapter{Алфавитный указатель пространств имен}
+\input{namespaces}
+\chapter{Иерархический список классов}
+\input{hierarchy}
+\chapter{Алфавитный указатель классов}
+\input{annotated}
+\chapter{Список файлов}
+\input{files}
+\chapter{Пространства имен}
+\input{namespaceparser}
+\chapter{Классы}
+\input{structcfm}
+\input{class_command_line}
+\input{class_encoding_converter}
+\input{class_file_reader}
+\input{class_generated}
+\input{classjson}
+\input{structnbr}
+\input{class_parser_configuration}
+\input{structpoint}
+\input{class_render_p_d_f}
+\input{structtbl}
+\input{classtext_reader}
+\input{structzgt}
+\chapter{Файлы}
+\input{cmake-build-debug_2_c_make_files_23_825_82_2_compiler_id_c_2_c_make_c_compiler_id_8c}
+\input{cmake-build-debug_2_c_make_files_23_825_82_2_compiler_id_c_2_c_make_c_compiler_id_8c_source}
+\input{cmake-build-minsizerel_2_c_make_files_23_825_82_2_compiler_id_c_2_c_make_c_compiler_id_8c}
+\input{cmake-build-minsizerel_2_c_make_files_23_825_82_2_compiler_id_c_2_c_make_c_compiler_id_8c_source}
+\input{cmake-build-debug_2_c_make_files_23_825_82_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp}
+\input{cmake-build-debug_2_c_make_files_23_825_82_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_source}
+\input{cmake-build-minsizerel_2_c_make_files_23_825_82_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp}
+\input{cmake-build-minsizerel_2_c_make_files_23_825_82_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_source}
+\input{_command_line_8h}
+\input{_command_line_8h_source}
+\input{_encoding_converter_8h}
+\input{_encoding_converter_8h_source}
+\input{_generated_8h}
+\input{_generated_8h_source}
+\input{json_8h}
+\input{json_8h_source}
+\input{_parser_configuration_8h}
+\input{_parser_configuration_8h_source}
+\input{_plug_8h}
+\input{_plug_8h_source}
+\input{_file_reader_8h}
+\input{_file_reader_8h_source}
+\input{text_reader_8h}
+\input{text_reader_8h_source}
+\input{_render_p_d_f_8h}
+\input{_render_p_d_f_8h_source}
+\input{cfm_8h}
+\input{cfm_8h_source}
+\input{nbr_8h}
+\input{nbr_8h_source}
+\input{point__data_8h}
+\input{point__data_8h_source}
+\input{tbl_8h}
+\input{tbl_8h_source}
+\input{zgt_8h}
+\input{zgt_8h_source}
+\input{main_8cpp}
+\input{main_8cpp_source}
+\input{_command_line_8cpp}
+\input{_command_line_8cpp_source}
+\input{_encoding_converter_8cpp}
+\input{_encoding_converter_8cpp_source}
+\input{_generated_8cpp}
+\input{_generated_8cpp_source}
+\input{json_8cpp}
+\input{json_8cpp_source}
+\input{_parser_configuration_8cpp}
+\input{_parser_configuration_8cpp_source}
+\input{_file_reader_8cpp}
+\input{_file_reader_8cpp_source}
+\input{text_reader_8cpp}
+\input{text_reader_8cpp_source}
+\input{digit_8cpp}
+\input{digit_8cpp_source}
+\input{draw_8cpp}
+\input{draw_8cpp_source}
+\input{_line_8cpp}
+\input{_line_8cpp_source}
+\input{_print_8cpp}
+\input{_print_8cpp_source}
+\input{_processor_8cpp}
+\input{_processor_8cpp_source}
+\input{_render_p_d_f_8cpp}
+\input{_render_p_d_f_8cpp_source}
+%--- End generated contents ---
+% Index
+  \backmatter
+  \newpage
+  \phantomsection
+  \clearemptydoublepage
+  \addcontentsline{toc}{chapter}{\indexname}
+  \printindex
+% Required for some languages (in combination with latexdocumentpre from the header)
+\end{document}

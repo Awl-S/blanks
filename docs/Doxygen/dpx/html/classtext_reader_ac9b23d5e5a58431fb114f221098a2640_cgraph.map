@@ -1,0 +1,5 @@
+<map id="textReader::read_tbl" name="textReader::read_tbl">
+<area shape="rect" id="Node000001" title="Читает данные типа tbl из файла." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="Node000002" href="$class_file_reader.html#a8e183bdc265152f0309184debb4af6a3" title="Читает строку из файла и удаляет ведущие и завершающие пробелы." alt="" coords="192,5,366,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,16,177,16,177,21,144,21"/>
+</map>

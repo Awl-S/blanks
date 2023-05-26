@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="classjson" kind="class" language="C++" prot="public">
+    <compoundname>json</compoundname>
+    <basecompoundref refid="class_parser_configuration" prot="public" virt="non-virtual">ParserConfiguration</basecompoundref>
+    <includes refid="json_8h" local="yes">json.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classjson_1a39265872195766ea0181f7c7ca0e2e6c" prot="private" static="no" mutable="no">
+        <type>nlohmann::json</type>
+        <definition>nlohmann::json json::config_json</definition>
+        <argsstring></argsstring>
+        <name>config_json</name>
+        <qualifiedname>json::config_json</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" line="26" column="20" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classjson_1a7d5c22a97d49085310994af222c28f8c" compoundref="json_8cpp" startline="82" endline="86">display</referencedby>
+        <referencedby refid="classjson_1a760a6ea6469d17e611ccf23921753d20" compoundref="json_8cpp" startline="41" endline="46">getFilePath</referencedby>
+        <referencedby refid="classjson_1a3f5e7618318c6e39387a917589aa3d38" compoundref="json_8cpp" startline="58" endline="63">getInteger</referencedby>
+        <referencedby refid="classjson_1a4630c59c2653fc787d1059a1a1e905cb" compoundref="json_8cpp" startline="74" endline="80">json</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classjson_1a7d5c22a97d49085310994af222c28f8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void json::display</definition>
+        <argsstring>() override</argsstring>
+        <name>display</name>
+        <qualifiedname>json::display</qualifiedname>
+        <reimplements refid="class_parser_configuration_1af35d73849ce2faf5cf19196a662fc19a">display</reimplements>
+        <briefdescription>
+<para>Отображает информацию из конфигурационного файла. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод отображает информацию из конфигурационного файла, используемого классом. Данный метод может быть переопределен в производных классах. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" line="15" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Parser/json.cpp" bodystart="82" bodyend="86"/>
+        <references refid="classjson_1a39265872195766ea0181f7c7ca0e2e6c" compoundref="json_8h" startline="26">config_json</references>
+      </memberdef>
+      <memberdef kind="function" id="classjson_1a4630c59c2653fc787d1059a1a1e905cb" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>json::json</definition>
+        <argsstring>(const std::string &amp;config_file_path)</argsstring>
+        <name>json</name>
+        <qualifiedname>json::json</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>config_file_path</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает целочисленное значение, соответствующее заданному ключу. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ключ для получения целочисленного значения. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Целочисленное значение, соответствующее заданному ключу. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Если ключ отсутствует в конфигурации.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Функция возвращает целочисленное значение, соответствующее заданному ключу key, извлекая его из объекта config_json. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" line="17" column="14" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Parser/json.cpp" bodystart="74" bodyend="80"/>
+        <references refid="classjson_1a39265872195766ea0181f7c7ca0e2e6c" compoundref="json_8h" startline="26">config_json</references>
+      </memberdef>
+      <memberdef kind="function" id="classjson_1a760a6ea6469d17e611ccf23921753d20" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path json::getFilePath</definition>
+        <argsstring>(const std::string &amp;key) override</argsstring>
+        <name>getFilePath</name>
+        <qualifiedname>json::getFilePath</qualifiedname>
+        <reimplements refid="class_parser_configuration_1ab44f9c6fed060b33544224ddeb473e59">getFilePath</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает список файлов, соответствующих заданному ключу и поисковому запросу. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ключ для получения пути к директории. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>search</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Поисковый запрос для фильтрации файлов. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Список файлов, удовлетворяющих условиям поиска.</para>
+</simplesect>
+Функция возвращает список файлов, найденных в директории, определенной ключом key. Файлы фильтруются с помощью поискового запроса search. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" line="19" column="27" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Parser/json.cpp" bodystart="41" bodyend="46"/>
+        <references refid="classjson_1a39265872195766ea0181f7c7ca0e2e6c" compoundref="json_8h" startline="26">config_json</references>
+        <referencedby refid="classjson_1a335a17f634ae297aa36dbc40855dd8da" compoundref="json_8cpp" startline="13" endline="30">getFileList</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classjson_1a335a17f634ae297aa36dbc40855dd8da" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::vector&lt; std::filesystem::path &gt;</type>
+        <definition>std::vector&lt; std::filesystem::path &gt; json::getFileList</definition>
+        <argsstring>(const std::string &amp;key, const std::string &amp;search) override</argsstring>
+        <name>getFileList</name>
+        <qualifiedname>json::getFileList</qualifiedname>
+        <reimplements refid="class_parser_configuration_1a70fcdbc2a2a83b1dabaecf576d1cff71">getFileList</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>search</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор класса json. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config_file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к файлу конфигурации. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Если не удалось открыть файл конфигурации.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Конструктор открывает файл конфигурации и загружает его содержимое в объект config_json. Если файл конфигурации не будет найден, выбрасывается исключение std::runtime_error. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" line="21" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Parser/json.cpp" bodystart="13" bodyend="30"/>
+        <references refid="classjson_1a760a6ea6469d17e611ccf23921753d20" compoundref="json_8cpp" startline="41" endline="46">getFilePath</references>
+      </memberdef>
+      <memberdef kind="function" id="classjson_1a3f5e7618318c6e39387a917589aa3d38" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long long</type>
+        <definition>long long json::getInteger</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getInteger</name>
+        <qualifiedname>json::getInteger</qualifiedname>
+        <reimplements refid="class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580">getInteger</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Возвращает путь к файлу, соответствующий заданному ключу. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ключ для получения пути к файлу. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Путь к файлу, соответствующий заданному ключу. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Если ключ отсутствует в конфигурации.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Функция возвращает путь к файлу, соответствующий заданному ключу key, извлекая его из объекта config_json. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" line="23" column="15" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Parser/json.cpp" bodystart="58" bodyend="63"/>
+        <references refid="classjson_1a39265872195766ea0181f7c7ca0e2e6c" compoundref="json_8h" startline="26">config_json</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс для работы с JSON-конфигурацией. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Класс json предоставляет функциональность для чтения и обработки JSON-конфигурационных файлов. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ParserConfiguration</label>
+        <link refid="class_parser_configuration"/>
+      </node>
+      <node id="1">
+        <label>json</label>
+        <link refid="classjson"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ParserConfiguration</label>
+        <link refid="class_parser_configuration"/>
+      </node>
+      <node id="1">
+        <label>json</label>
+        <link refid="classjson"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" line="13" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Parser/json.h" bodystart="13" bodyend="27"/>
+    <listofallmembers>
+      <member refid="classjson_1a39265872195766ea0181f7c7ca0e2e6c" prot="private" virt="non-virtual"><scope>json</scope><name>config_json</name></member>
+      <member refid="classjson_1a7d5c22a97d49085310994af222c28f8c" prot="public" virt="virtual"><scope>json</scope><name>display</name></member>
+      <member refid="classjson_1a335a17f634ae297aa36dbc40855dd8da" prot="public" virt="virtual"><scope>json</scope><name>getFileList</name></member>
+      <member refid="classjson_1a760a6ea6469d17e611ccf23921753d20" prot="public" virt="virtual"><scope>json</scope><name>getFilePath</name></member>
+      <member refid="classjson_1a3f5e7618318c6e39387a917589aa3d38" prot="public" virt="virtual"><scope>json</scope><name>getInteger</name></member>
+      <member refid="classjson_1a4630c59c2653fc787d1059a1a1e905cb" prot="public" virt="non-virtual"><scope>json</scope><name>json</name></member>
+      <member refid="class_parser_configuration_1a11a307d9f31f64bffdb881abf94e66b5" prot="public" virt="virtual"><scope>json</scope><name>~ParserConfiguration</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

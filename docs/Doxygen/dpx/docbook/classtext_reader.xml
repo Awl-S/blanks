@@ -1,0 +1,712 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classtext_reader" xml:lang="ru">
+<title>Класс textReader</title>
+<indexterm><primary>textReader</primary></indexterm>
+<para>
+
+<para>Класс для чтения текстового файла. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;textReader.h&quot;</computeroutput>
+</para>
+Граф наследования:textReader:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classtext_reader__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф связей класса textReader:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classtext_reader__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classtext_reader_1a8b98efd0fd952fd929ea441f26bc69ba">textReader</link> (const std::filesystem::path &amp;file_path)</para>
+
+<para>Конструктор класса <link linkend="_classtext_reader">textReader</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classtext_reader_1ad25e94320aa8adce9de68445d963b570">read_nbr</link> (<link linkend="_structnbr">nbr</link> &amp;data)</para>
+
+<para>Читает данные типа nbr из файла. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5">read_point</link> (<link linkend="_structpoint">point</link> &amp;data)</para>
+
+<para>Читает данные типа point из файла. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classtext_reader_1ac9b23d5e5a58431fb114f221098a2640">read_tbl</link> (<link linkend="_structtbl">tbl</link> &amp;data)</para>
+
+<para>Читает данные типа tbl из файла. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classtext_reader_1a5cd4eeebf53787a1434d037c54993071">read_cfm</link> (<link linkend="_structcfm">cfm</link> &amp;data)</para>
+
+<para>Читает данные типа cfm из файла. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classtext_reader_1af98fb017c822ba0f17c58a1dda32a787">read_zgt</link> (<link linkend="_structzgt">zgt</link> &amp;data)</para>
+
+<para>Читает данные типа zgt из файла. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Открытые члены унаследованные от <link linkend="_class_file_reader">FileReader</link>        <itemizedlist>
+            <listitem><para><link linkend="_class_file_reader_1a1dae37584804731f11c9c932219d8282">FileReader</link> (std::filesystem::path file_path)</para>
+
+<para>Конструктор класса <link linkend="_class_file_reader">FileReader</link>. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Дополнительные унаследованные члены    </title>
+Защищенные статические члены унаследованные от <link linkend="_class_file_reader">FileReader</link>        <itemizedlist>
+            <listitem><para>static std::string <link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">readLineString</link> (std::ifstream &amp;file)</para>
+
+<para>Читает строку из файла и удаляет ведущие и завершающие пробелы. </para>
+</listitem>
+            <listitem><para>static std::string <link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link> (const std::string &amp;s)</para>
+
+<para>Удаляет ведущие и завершающие пробелы из строки. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Защищенные данные унаследованные от <link linkend="_class_file_reader">FileReader</link>        <itemizedlist>
+            <listitem><para>std::filesystem::path <link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Подробное описание</title>
+
+<para>Класс для чтения текстового файла. </para>
+
+
+
+<para>Класс <link linkend="_classtext_reader">textReader</link> наследуется от класса <link linkend="_class_file_reader">FileReader</link> и предоставляет функциональность чтения различных типов данных из текстового файла. </para>
+<para>
+См. определение в файле <link linkend="_text_reader_8h_source">textReader.h</link> строка <link linkend="_text_reader_8h_source_1l00018">18</link></para>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_classtext_reader_1a8b98efd0fd952fd929ea441f26bc69ba"/><section>
+    <title>textReader()</title>
+<indexterm><primary>textReader</primary><secondary>textReader</secondary></indexterm>
+<indexterm><primary>textReader</primary><secondary>textReader</secondary></indexterm>
+<para><computeroutput>textReader::textReader (const std::filesystem::path &amp; file_path)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Конструктор класса <link linkend="_classtext_reader">textReader</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file_path</entry><entry>
+<para>Путь к файлу для чтения.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Конструктор инициализирует объект <link linkend="_classtext_reader">textReader</link> с указанным путем к файлу file_path и вызывает конструктор базового класса <link linkend="_class_file_reader">FileReader</link>. </para>
+<para>
+См. определение в файле <link linkend="_text_reader_8h_source">textReader.h</link> строка <link linkend="_text_reader_8h_source_1l00027">27</link></para>
+<programlisting linenumbering="unnumbered">00027 :&#32;<link linkend="_class_file_reader">FileReader</link>(file_path)&#32;{}
+</programlisting></section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_classtext_reader_1a5cd4eeebf53787a1434d037c54993071"/><section>
+    <title>read_cfm()</title>
+<indexterm><primary>read_cfm</primary><secondary>textReader</secondary></indexterm>
+<indexterm><primary>textReader</primary><secondary>read_cfm</secondary></indexterm>
+<para><computeroutput>void textReader::read_cfm (<link linkend="_structcfm">cfm</link> &amp; data)</computeroutput></para><para>
+
+<para>Читает данные типа cfm из файла. </para>
+</para>
+
+<para>Читает данные из файла в формате CFM.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>Ссылка на объект типа cfm для сохранения прочитанных данных.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Функция <link linkend="_classtext_reader_1a5cd4eeebf53787a1434d037c54993071">read_cfm()</link> читает данные типа cfm из файла и сохраняет их в объекте data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>ссылка на структуру cfm, в которую будут записаны данные из файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>в случае ошибки открытия файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_text_reader_8cpp_source">textReader.cpp</link> строка <link linkend="_text_reader_8cpp_source_1l00011">11</link></para>
+<programlisting linenumbering="unnumbered">00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00012 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+00013 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+00015 &#32;&#32;&#32;&#32;}
+00016 
+00017 &#32;&#32;&#32;&#32;std::string&#32;line;
+00018 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;count&#32;=&#32;1;
+00019 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(std::getline(file,&#32;line))&#32;{
+00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;1)&#32;{
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structcfm_1a7a658677e62202d59ef8a14da194d65b">header</link>&#32;=&#32;<link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link>(line);
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;3)&#32;{
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structcfm_1a6400105680203ffabfa9860662530647">blank</link>&#32;=&#32;<link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link>(line);
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;6)&#32;{
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream&#32;iss(line);
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;temp;
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(iss&#32;&gt;&gt;&#32;temp)&#32;{
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structcfm_1ad4cec00bcb67870e82af90e5d3676161">marks</link>.push_back(temp);
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;8)&#32;{
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link>[1];
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;10)&#32;{
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>;
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;12)&#32;{
+00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae">small_tick</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae">small_tick</link>[1];
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;14)&#32;{
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72">big_tick</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72">big_tick</link>[1];
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;16)&#32;{
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[1]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[3];
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;18)&#32;{
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060">label_height</link>;
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;20)&#32;{
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2">tick_mask</link>&#32;=&#32;<link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link>(line);
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count++;
+00046 &#32;&#32;&#32;&#32;}
+00047 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classtext_reader_a5cd4eeebf53787a1434d037c54993071_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classtext_reader_a5cd4eeebf53787a1434d037c54993071_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classtext_reader_1ad25e94320aa8adce9de68445d963b570"/><section>
+    <title>read_nbr()</title>
+<indexterm><primary>read_nbr</primary><secondary>textReader</secondary></indexterm>
+<indexterm><primary>textReader</primary><secondary>read_nbr</secondary></indexterm>
+<para><computeroutput>void textReader::read_nbr (<link linkend="_structnbr">nbr</link> &amp; data)</computeroutput></para><para>
+
+<para>Читает данные типа nbr из файла. </para>
+</para>
+
+<para>Читает данные из файла в формате NBR.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>Ссылка на объект типа nbr для сохранения прочитанных данных.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Функция <link linkend="_classtext_reader_1ad25e94320aa8adce9de68445d963b570">read_nbr()</link> читает данные типа nbr из файла и сохраняет их в объекте data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>ссылка на структуру nbr, в которую будут записаны данные из файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>в случае ошибки открытия файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_text_reader_8cpp_source">textReader.cpp</link> строка <link linkend="_text_reader_8cpp_source_1l00163">163</link></para>
+<programlisting linenumbering="unnumbered">00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00164 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+00165 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+00167 &#32;&#32;&#32;&#32;}
+00168 
+00169 &#32;&#32;&#32;&#32;std::string&#32;line;
+00170 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;line_number&#32;=&#32;1;
+00171 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(std::getline(file,&#32;line))&#32;{
+00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structnbr_1a54d820aea6c166beb70523a0694dc669">icon</link>.insert(std::make_pair(line_number,&#32;line));
+00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line_number++;
+00174 &#32;&#32;&#32;&#32;}
+00175 }
+</programlisting></section>
+<anchor xml:id="_classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5"/><section>
+    <title>read_point()</title>
+<indexterm><primary>read_point</primary><secondary>textReader</secondary></indexterm>
+<indexterm><primary>textReader</primary><secondary>read_point</secondary></indexterm>
+<para><computeroutput>void textReader::read_point (<link linkend="_structpoint">point</link> &amp; data)</computeroutput></para><para>
+
+<para>Читает данные типа point из файла. </para>
+</para>
+
+<para>Читает данные из файла в формате точки</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>Ссылка на объект типа point для сохранения прочитанных данных.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Функция <link linkend="_classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5">read_point()</link> читает данные типа point из файла и сохраняет их в объекте data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>ссылка на структуру point, в которую будут записаны данные из файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>в случае ошибки открытия файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_text_reader_8cpp_source">textReader.cpp</link> строка <link linkend="_text_reader_8cpp_source_1l00145">145</link></para>
+<programlisting linenumbering="unnumbered">00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00146 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+00147 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+00149 &#32;&#32;&#32;&#32;}
+00150 
+00151 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;x,&#32;y;
+00152 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(file&#32;&gt;&gt;&#32;x&#32;&gt;&gt;&#32;y)&#32;{
+00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>.emplace_back(x,&#32;y);
+00154 &#32;&#32;&#32;&#32;}
+00155 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classtext_reader_1ac9b23d5e5a58431fb114f221098a2640"/><section>
+    <title>read_tbl()</title>
+<indexterm><primary>read_tbl</primary><secondary>textReader</secondary></indexterm>
+<indexterm><primary>textReader</primary><secondary>read_tbl</secondary></indexterm>
+<para><computeroutput>void textReader::read_tbl (<link linkend="_structtbl">tbl</link> &amp; data)</computeroutput></para><para>
+
+<para>Читает данные типа tbl из файла. </para>
+</para>
+
+<para>Читает данные из файла в формате TBL.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>Ссылка на объект типа tbl для сохранения прочитанных данных.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Функция <link linkend="_classtext_reader_1ac9b23d5e5a58431fb114f221098a2640">read_tbl()</link> читает данные типа tbl из файла и сохраняет их в объекте data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>ссылка на структуру tbl, в которую будут записаны данные из файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>в случае ошибки открытия файла или если не удается извлечь число из имени файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_text_reader_8cpp_source">textReader.cpp</link> строка <link linkend="_text_reader_8cpp_source_1l00095">95</link></para>
+<programlisting linenumbering="unnumbered">00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00096 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+00097 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+00099 &#32;&#32;&#32;&#32;}
+00100 
+00101 &#32;&#32;&#32;&#32;std::string&#32;file_name&#32;=&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.filename().string();
+00102 
+00103 &#32;&#32;&#32;&#32;std::string&#32;prefix&#32;=&#32;<emphasis role="stringliteral">&quot;scale&quot;</emphasis>;
+00104 &#32;&#32;&#32;&#32;std::string&#32;suffix&#32;=&#32;<emphasis role="stringliteral">&quot;.tbl&quot;</emphasis>;
+00105 
+00106 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;start&#32;=&#32;file_name.find(prefix);
+00107 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;end&#32;=&#32;file_name.find(suffix);
+00108 
+00109 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(start&#32;==&#32;std::string::npos&#32;||&#32;end&#32;==&#32;std::string::npos&#32;||&#32;start&#32;&gt;=&#32;end)&#32;{
+00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Could&#32;not&#32;extract&#32;number&#32;from&#32;file&#32;name&quot;</emphasis>);
+00111 &#32;&#32;&#32;&#32;}
+00112 
+00113 &#32;&#32;&#32;&#32;start&#32;+=&#32;prefix.length();
+00114 &#32;&#32;&#32;&#32;std::string&#32;number_str&#32;=&#32;file_name.substr(start,&#32;end&#32;-&#32;start);
+00115 
+00116 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">position</link>&#32;=&#32;std::stoi(number_str);
+00118 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::invalid_argument&amp;&#32;e)&#32;{
+00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Invalid&#32;number&#32;in&#32;file&#32;name:&#32;&quot;</emphasis>&#32;+&#32;number_str);
+00120 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::out_of_range&amp;&#32;e)&#32;{
+00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Number&#32;in&#32;file&#32;name&#32;is&#32;out&#32;of&#32;range:&#32;&quot;</emphasis>&#32;+&#32;number_str);
+00122 &#32;&#32;&#32;&#32;}
+00123 
+00124 &#32;&#32;&#32;&#32;std::string&#32;line;
+00125 &#32;&#32;&#32;&#32;<link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">readLineString</link>(file);
+00126 &#32;&#32;&#32;&#32;data.<link linkend="_structtbl_1ac995e4da6d437a046c2074f9dc33b833">model</link>&#32;=&#32;<link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">readLineString</link>(file);
+00127 
+00128 &#32;&#32;&#32;&#32;data.<link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">measurements</link>.reserve(20);
+00129 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(std::getline(file,&#32;line))&#32;{
+00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;temp;
+00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;col2;
+00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;col3;
+00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(std::istringstream(line)&#32;&gt;&gt;&#32;temp&#32;&gt;&gt;&#32;col2&#32;&gt;&gt;&#32;col3)&#32;{
+00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">measurements</link>.push_back({col2,&#32;col3});
+00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00136 &#32;&#32;&#32;&#32;}
+00137 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classtext_reader_ac9b23d5e5a58431fb114f221098a2640_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classtext_reader_ac9b23d5e5a58431fb114f221098a2640_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classtext_reader_1af98fb017c822ba0f17c58a1dda32a787"/><section>
+    <title>read_zgt()</title>
+<indexterm><primary>read_zgt</primary><secondary>textReader</secondary></indexterm>
+<indexterm><primary>textReader</primary><secondary>read_zgt</secondary></indexterm>
+<para><computeroutput>void textReader::read_zgt (<link linkend="_structzgt">zgt</link> &amp; data)</computeroutput></para><para>
+
+<para>Читает данные типа zgt из файла. </para>
+</para>
+
+<para>Читает данные из файла в формате ZGT.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>Ссылка на объект типа zgt для сохранения прочитанных данных.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Функция <link linkend="_classtext_reader_1af98fb017c822ba0f17c58a1dda32a787">read_zgt()</link> читает данные типа zgt из файла и сохраняет их в объекте data.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>ссылка на структуру zgt, в которую будут записаны данные из файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>в случае ошибки открытия файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_text_reader_8cpp_source">textReader.cpp</link> строка <link linkend="_text_reader_8cpp_source_1l00055">55</link></para>
+<programlisting linenumbering="unnumbered">00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00056 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+00057 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+00059 &#32;&#32;&#32;&#32;}
+00060 
+00061 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;count&#32;=&#32;1;
+00062 &#32;&#32;&#32;&#32;std::string&#32;line;
+00063 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(std::getline(file,&#32;line))&#32;{
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;2)&#32;{
+00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544">diameter</link>;
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;4)&#32;{
+00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1a158a8320351f554c1aa14cf6436b505f">center_hole_diameter</link>;
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;6)&#32;{
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream&#32;iss(line);
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;temp;
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(iss&#32;&gt;&gt;&#32;temp)&#32;{
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link>.push_back(temp);
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;8)&#32;{
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream&#32;iss(line);
+00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;temp;
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(iss&#32;&gt;&gt;&#32;temp)&#32;{
+00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structzgt_1a9ca1baeee9e45b33b39efc727f206e34">marker_position</link>.push_back(temp);
+00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;10)&#32;{
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>[1];
+00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;12)&#32;{
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[1]&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[2];
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count++;
+00086 &#32;&#32;&#32;&#32;}
+00087 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classtext_reader_af98fb017c822ba0f17c58a1dda32a787_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+<link linkend="_text_reader_8h">textReader.h</link><link linkend="_text_reader_8cpp">textReader.cpp</link></section>
+</section>

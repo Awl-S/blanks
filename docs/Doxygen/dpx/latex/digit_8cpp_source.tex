@@ -1,0 +1,32 @@
+\doxysection{digit.\+cpp}
+\hypertarget{digit_8cpp_source}{}\label{digit_8cpp_source}\index{digit.cpp@{digit.cpp}}
+\mbox{\hyperlink{digit_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/RenderPDF/RenderPDF.h"{}}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00009}\mbox{\hyperlink{class_render_p_d_f_abaccfd0526f13c8d8c5d9f74ceb31f52}{00009}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_abaccfd0526f13c8d8c5d9f74ceb31f52}{RenderPDF::drawDigitIndices}}(HPDF\_Page\ page,\ \textcolor{keywordtype}{size\_t}\ blank)\ \{}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ Установка\ размера\ шрифта\ для\ индексов}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_a0c2cb9d669fedf5910e7be20e7bb4b36}{setFontSize}}(page,\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}}.\mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\_height}});}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//\ Цикл\ по\ всем\ меткам}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_render_p_d_f_a922299c1a62d014f6a7afcaeddddf0ff}{marks}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Вычисление\ угла\ для\ каждой\ метки}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ HPDF\_REAL\ angle\ =\ 4.71239\ -\/\ \mbox{\hyperlink{class_render_p_d_f_a922299c1a62d014f6a7afcaeddddf0ff}{marks}}[i];}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Форматирование\ текста\ метки}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ text\ =\ \mbox{\hyperlink{class_render_p_d_f_a87d9d5335c694603bf6686851879879a}{formatText}}(i);}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Вычисление\ ширины\ текста\ метки}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ textWidth\ =\ HPDF\_Page\_TextWidth(page,\ text.c\_str());}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Вычисление\ координат\ x\ и\ y\ для\ текста\ метки}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ HPDF\_REAL\ x\ =\ \mbox{\hyperlink{class_render_p_d_f_a98e9f7f26365660413fb541ecd7dc92f}{calculateXCoordinate}}(angle,\ textWidth,\ blank);}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ HPDF\_REAL\ y\ =\ \mbox{\hyperlink{class_render_p_d_f_a7931b27233f110635d4c15fd83508a3b}{calculateYCoordinate}}(angle,\ blank);}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Рисование\ текста\ метки\ на\ странице}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_af00237dc614fc46323aead1daae13a15}{drawText}}(page,\ text,\ x,\ y);}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{digit_8cpp_source_l00032}00032\ }
+
+\end{DoxyCode}

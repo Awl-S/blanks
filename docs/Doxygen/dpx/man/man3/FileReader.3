@@ -1,0 +1,153 @@
+.TH "FileReader" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FileReader \- Класс для чтения файла\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'FileReader\&.h'\fP
+.PP
+Производные классы:\fBtextReader\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBFileReader\fP (std::filesystem::path file_path)"
+.br
+.RI "Конструктор класса \fBFileReader\fP\&. "
+.in -1c
+.SS "Защищенные статические члены"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBreadLineString\fP (std::ifstream &file)"
+.br
+.RI "Читает строку из файла и удаляет ведущие и завершающие пробелы\&. "
+.ti -1c
+.RI "static std::string \fBtrim\fP (const std::string &s)"
+.br
+.RI "Удаляет ведущие и завершающие пробелы из строки\&. "
+.in -1c
+.SS "Защищенные данные"
+
+.in +1c
+.ti -1c
+.RI "std::filesystem::path \fBfile_path_\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс для чтения файла\&. 
+
+Класс \fBFileReader\fP предоставляет функциональность для чтения файлов и обработки строк\&. 
+.PP
+См\&. определение в файле \fBFileReader\&.h\fP строка \fB15\fP
+.SH "Конструктор(ы)"
+.PP 
+.SS "FileReader::FileReader (std::filesystem::path file_path)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Конструктор класса \fBFileReader\fP\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIfile_path\fP Путь к файлу для чтения\&.
+.RE
+.PP
+Конструктор инициализирует объект \fBFileReader\fP с указанным путем к файлу file_path\&. 
+.PP
+См\&. определение в файле \fBFileReader\&.h\fP строка \fB23\fP.PP
+.nf
+23 : file_path_(std::move(file_path)) {}
+.fi
+
+.SH "Методы"
+.PP 
+.SS "std::string FileReader::readLineString (std::ifstream & file)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Читает строку из файла и удаляет ведущие и завершающие пробелы\&. Читает строку из файла, удаляет ведущие и завершающие пробелы\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIfile\fP Файловый поток для чтения строки\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Прочитанная строка без ведущих и завершающих пробелов\&.
+.RE
+.PP
+Функция \fBreadLineString()\fP читает строку из указанного файлового потока file\&. Затем удаляются ведущие и завершающие пробелы из строки\&. Результат возвращается в виде новой строки\&. 
+.PP
+См\&. определение в файле \fBFileReader\&.cpp\fP строка \fB33\fP.PP
+.nf
+33                                                       {
+34     std::string line;
+35     if (std::getline(file, line))
+36     {
+37         // Remove any leading/trailing whitespace
+38         line\&.erase(0, line\&.find_first_not_of(" \\t\\r\\n"));
+39         line\&.erase(line\&.find_last_not_of(" \\t\\r\\n") + 1);
+40     }
+41     return line;
+42 }
+.fi
+
+.SS "std::string FileReader::trim (const std::string & s)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Удаляет ведущие и завершающие пробелы из строки\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIs\fP Исходная строка\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Строка без ведущих и завершающих пробелов\&.
+.RE
+.PP
+Функция \fBtrim()\fP удаляет ведущие и завершающие пробелы из строки s\&. Результат возвращается в виде новой строки\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIs\fP Исходная строка\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+Строка без ведущих и завершающих пробелов\&.
+.RE
+.PP
+Функция \fBtrim()\fP удаляет ведущие и завершающие пробелы из строки s\&. Также удаляются любые символы, которые являются пробельными или имеют значение кода больше 255\&. Результат возвращается в виде новой строки\&. 
+.PP
+См\&. определение в файле \fBFileReader\&.cpp\fP строка \fB12\fP.PP
+.nf
+12                                              {
+13     auto start = s\&.begin();
+14     while (start != s\&.end() && (static_cast<unsigned char>(*start) > 255 || std::isspace(static_cast<unsigned char>(*start)))) {
+15         start++;
+16     }
+17     auto end = s\&.end();
+18     while (end != start && (static_cast<unsigned char>(*(end \- 1)) > 255 || std::isspace(static_cast<unsigned char>(*(end \- 1))))) {
+19         end\-\-;
+20     }
+21     return std::string(start, end);
+22 }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "std::filesystem::path FileReader::file_path_\fC [protected]\fP"
+Путь к файлу 
+.PP
+См\&. определение в файле \fBFileReader\&.h\fP строка \fB26\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

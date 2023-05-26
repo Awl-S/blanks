@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="dir_de1d559ee29b9529c3eb971659538ce1" kind="dir">
+    <compoundname>3.25.2</compoundname>
+    <innerdir refid="dir_fecfe773f908b91c373e1f72e381ab2e">CompilerIdC</innerdir>
+    <innerdir refid="dir_67a1ef42729cc10b4e506d0937c5be5e">CompilerIdCXX</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-debug/CMakeFiles/3.25.2/"/>
+  </compounddef>
+</doxygen>

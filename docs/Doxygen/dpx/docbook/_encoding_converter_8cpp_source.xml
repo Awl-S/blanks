@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__encoding_converter_8cpp_source" xml:lang="ru">
+<title>EncodingConverter.cpp</title>
+<indexterm><primary>EncodingConverter.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="__encoding_converter_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../../include/converting/EncodingConverter.h&quot;</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;iostream&quot;</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;utility&gt;</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&quot;iconv.h&quot;</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&quot;filesystem&quot;</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&quot;fstream&quot;</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00007"/>00007 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00017"/><link linkend="_class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62">00017</link> <link linkend="_class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62">EncodingConverter::EncodingConverter</link>(std::string&#32;inputDir,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;outputDir)
+<anchor xml:id="__encoding_converter_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;inputDirectory(std::move(inputDir)),&#32;outputDirectory(outputDir),&#32;useTempDirectory(outputDir.empty())&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4">loadSettings</link>(),&#32;<link linkend="_class_encoding_converter_1a560484bdcdc929771c7d42877cab9643">filesConverted</link>&#32;=&#32;0,&#32;<link linkend="_class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b">filesProcessed</link>&#32;=&#32;0;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00020"/>00020 }
+<anchor xml:id="__encoding_converter_8cpp_source_1l00021"/>00021 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00028"/><link linkend="_class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4">00028</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4">EncodingConverter::loadSettings</link>(){
+<anchor xml:id="__encoding_converter_8cpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f">sourceEncoding</link>&#32;=&#32;<emphasis role="stringliteral">&quot;WINDOWS-1251&quot;</emphasis>;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7">targetEncoding</link>&#32;=&#32;<emphasis role="stringliteral">&quot;UTF-8&quot;</emphasis>;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00031"/>00031 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Создаем&#32;массив&#32;итераторов&#32;на&#32;строки,&#32;которые&#32;нужно&#32;добавить</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;std::string&#32;extensions[]&#32;=&#32;{&#32;<emphasis role="stringliteral">&quot;.tbl&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;.нбр&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;.згт&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;.cfm&quot;</emphasis>&#32;};
+<anchor xml:id="__encoding_converter_8cpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;numExtensions&#32;=&#32;<emphasis role="keyword">sizeof</emphasis>(extensions)&#32;/&#32;<emphasis role="keyword">sizeof</emphasis>(extensions[0]);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00035"/>00035 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Используем&#32;конструктор&#32;std::vector,&#32;принимающий&#32;два&#32;итератора</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.insert(<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.end(),&#32;extensions,&#32;extensions&#32;+&#32;numExtensions);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00038"/>00038 }
+<anchor xml:id="__encoding_converter_8cpp_source_1l00039"/>00039 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00046"/><link linkend="_class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3">00046</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3">EncodingConverter::convert</link>()&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;std::filesystem::path&#32;inputPath(<link linkend="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e">inputDirectory</link>);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1ab066b92f365f593c44d6825071463e08">convertDirectory</link>(inputPath);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0">printStats</link>();
+<anchor xml:id="__encoding_converter_8cpp_source_1l00050"/>00050 }
+<anchor xml:id="__encoding_converter_8cpp_source_1l00051"/>00051 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00061"/><link linkend="_class_encoding_converter_1ab066b92f365f593c44d6825071463e08">00061</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_encoding_converter_1ab066b92f365f593c44d6825071463e08">EncodingConverter::convertDirectory</link>(<emphasis role="keyword">const</emphasis>&#32;std::filesystem::path&amp;&#32;dir)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;entry&#32;:&#32;std::filesystem::recursive_directory_iterator(dir))&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(entry.is_regular_file())&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b">filesProcessed</link>++;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::path&#32;relativePath&#32;=&#32;std::filesystem::relative(entry,&#32;<link linkend="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e">inputDirectory</link>);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::path&#32;outputPath&#32;=&#32;<link linkend="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02">useTempDirectory</link>&#32;?&#32;std::filesystem::temp_directory_path()&#32;/&#32;relativePath&#32;:&#32;<link linkend="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4">outputDirectory</link>&#32;/&#32;relativePath;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00067"/>00067 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(std::find(<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.begin(),&#32;<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.end(),&#32;entry.path().extension())&#32;!=&#32;<link linkend="_class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89">fileExtensions</link>.end())&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a460858eb34940271be93a5aa08452a66">convertFile</link>(entry.path());
+<anchor xml:id="__encoding_converter_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4">outputDirectory</link>.empty())&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Если&#32;файл&#32;имеет&#32;другое&#32;расширение&#32;и&#32;outputDirectory&#32;указана,&#32;копируем&#32;его</emphasis>
+<anchor xml:id="__encoding_converter_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::create_directories(outputPath.parent_path());
+<anchor xml:id="__encoding_converter_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::copy_file(entry,&#32;outputPath,&#32;std::filesystem::copy_options::overwrite_existing);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00077"/>00077 }
+<anchor xml:id="__encoding_converter_8cpp_source_1l00078"/>00078 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00090"/><link linkend="_class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf">00090</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf">EncodingConverter::iconvConvert</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;input,&#32;std::string&amp;&#32;output,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;fromCharset,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;toCharset)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;iconv_t&#32;cd&#32;=&#32;iconv_open(toCharset.c_str(),&#32;fromCharset.c_str());
+<anchor xml:id="__encoding_converter_8cpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(cd&#32;==&#32;(iconv_t)-1)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;perror(<emphasis role="stringliteral">&quot;iconv_open&quot;</emphasis>);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00096"/>00096 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;std::vector&lt;char&gt;&#32;inBuf(input.begin(),&#32;input.end());
+<anchor xml:id="__encoding_converter_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;inLeft&#32;=&#32;inBuf.size();
+<anchor xml:id="__encoding_converter_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;outLeft&#32;=&#32;inLeft&#32;*&#32;4;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;std::vector&lt;char&gt;&#32;outBuf(outLeft);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00101"/>00101 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;inPtr&#32;=&#32;inBuf.data();
+<anchor xml:id="__encoding_converter_8cpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;outPtr&#32;=&#32;outBuf.data();
+<anchor xml:id="__encoding_converter_8cpp_source_1l00104"/>00104 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(inLeft&#32;&gt;&#32;0)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;result&#32;=&#32;iconv(cd,&#32;&amp;inPtr,&#32;&amp;inLeft,&#32;&amp;outPtr,&#32;&amp;outLeft);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(result&#32;==&#32;(<emphasis role="keywordtype">size_t</emphasis>)-1)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iconv_close(cd);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00112"/>00112 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;iconv_close(cd);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;outBuf.resize(outBuf.size()&#32;-&#32;outLeft);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00115"/>00115 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;output.assign(outBuf.begin(),&#32;outBuf.end());
+<anchor xml:id="__encoding_converter_8cpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00118"/>00118 }
+<anchor xml:id="__encoding_converter_8cpp_source_1l00119"/>00119 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00128"/><link linkend="_class_encoding_converter_1a460858eb34940271be93a5aa08452a66">00128</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_encoding_converter_1a460858eb34940271be93a5aa08452a66">EncodingConverter::convertFile</link>(<emphasis role="keyword">const</emphasis>&#32;std::filesystem::path&amp;&#32;filepath)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;filepath&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;std::ifstream&#32;inFile(filepath,&#32;std::ios::binary);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;std::string&#32;content((std::istreambuf_iterator&lt;char&gt;(inFile)),&#32;std::istreambuf_iterator&lt;char&gt;());
+<anchor xml:id="__encoding_converter_8cpp_source_1l00132"/>00132 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;std::filesystem::path&#32;relativePath&#32;=&#32;std::filesystem::relative(filepath,&#32;<link linkend="_class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e">inputDirectory</link>);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;std::filesystem::path&#32;outputPath&#32;=&#32;<link linkend="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02">useTempDirectory</link>&#32;?&#32;std::filesystem::temp_directory_path()&#32;/&#32;relativePath&#32;:&#32;<link linkend="_class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4">outputDirectory</link>&#32;/&#32;relativePath;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;std::filesystem::create_directories(outputPath.parent_path());
+<anchor xml:id="__encoding_converter_8cpp_source_1l00136"/>00136 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00137"/>00137 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7">is_utf8</link>(content))&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00138"/>00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;utf8Content;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf">iconvConvert</link>(content,&#32;utf8Content,&#32;<link linkend="_class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f">sourceEncoding</link>,&#32;<link linkend="_class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7">targetEncoding</link>))&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;content&#32;=&#32;utf8Content;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter_1a560484bdcdc929771c7d42877cab9643">filesConverted</link>++;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00143"/>00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cerr&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Error&#32;Converting&#32;file&#32;&apos;&quot;</emphasis>&#32;&lt;&lt;&#32;filepath&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&apos;:&#32;Invalid&#32;or&#32;incomplete&#32;multibyte&#32;or&#32;wide&#32;character&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00145"/>00145 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00146"/>00146 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00147"/>00147 &#32;&#32;&#32;&#32;std::ofstream&#32;outFile(outputPath,&#32;std::ios::binary);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00148"/>00148 &#32;&#32;&#32;&#32;outFile.write(content.data(),&#32;content.size());
+<anchor xml:id="__encoding_converter_8cpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;outFile.close();
+<anchor xml:id="__encoding_converter_8cpp_source_1l00150"/>00150 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02">useTempDirectory</link>)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00152"/>00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::copy(outputPath,&#32;filepath,&#32;std::filesystem::copy_options::overwrite_existing);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::remove(outputPath);
+<anchor xml:id="__encoding_converter_8cpp_source_1l00154"/>00154 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00155"/>00155 }
+<anchor xml:id="__encoding_converter_8cpp_source_1l00156"/>00156 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00162"/><link linkend="_class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0">00162</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0">EncodingConverter::printStats</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00163"/>00163 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Files&#32;processed:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b">filesProcessed</link>&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00164"/>00164 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Files&#32;converted:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_class_encoding_converter_1a560484bdcdc929771c7d42877cab9643">filesConverted</link>&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00165"/>00165 }
+<anchor xml:id="__encoding_converter_8cpp_source_1l00166"/>00166 
+<anchor xml:id="__encoding_converter_8cpp_source_1l00176"/><link linkend="_class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7">00176</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7">EncodingConverter::is_utf8</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;str)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;length&#32;=&#32;str.size();
+<anchor xml:id="__encoding_converter_8cpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">size_t</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;length;&#32;)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((str[i]&#32;&amp;&#32;0x80)&#32;==&#32;0)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00180"/>00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;1;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;((str[i]&#32;&amp;&#32;0xE0)&#32;==&#32;0xC0&#32;&amp;&amp;&#32;i&#32;+&#32;1&#32;&lt;&#32;length&#32;&amp;&amp;&#32;(str[i&#32;+&#32;1]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00182"/>00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;2;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;((str[i]&#32;&amp;&#32;0xF0)&#32;==&#32;0xE0&#32;&amp;&amp;&#32;i&#32;+&#32;2&#32;&lt;&#32;length&#32;&amp;&amp;&#32;(str[i&#32;+&#32;1]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80&#32;&amp;&amp;&#32;(str[i&#32;+&#32;2]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00184"/>00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;3;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00185"/>00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;((str[i]&#32;&amp;&#32;0xF8)&#32;==&#32;0xF0&#32;&amp;&amp;&#32;i&#32;+&#32;3&#32;&lt;&#32;length&#32;&amp;&amp;&#32;(str[i&#32;+&#32;1]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80&#32;&amp;&amp;&#32;(str[i&#32;+&#32;2]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80&#32;&amp;&amp;&#32;(str[i&#32;+&#32;3]&#32;&amp;&#32;0xC0)&#32;==&#32;0x80)&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00186"/>00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;i&#32;+=&#32;4;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00187"/>00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__encoding_converter_8cpp_source_1l00188"/>00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00189"/>00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__encoding_converter_8cpp_source_1l00191"/>00191 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="__encoding_converter_8cpp_source_1l00192"/>00192 }
+</programlisting></section>

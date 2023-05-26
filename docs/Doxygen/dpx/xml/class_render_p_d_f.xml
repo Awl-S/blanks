@@ -1,0 +1,1405 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="class_render_p_d_f" kind="class" language="C++" prot="public">
+    <compoundname>RenderPDF</compoundname>
+    <includes refid="_render_p_d_f_8h" local="yes">RenderPDF.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_render_p_d_f_1adda47ac0eef121635099a286e784f610" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double RenderPDF::PI</definition>
+        <argsstring></argsstring>
+        <name>PI</name>
+        <qualifiedname>RenderPDF::PI</qualifiedname>
+        <initializer>= 3.14159265358979323846</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Значение числа Пи </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="60" column="18" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" compoundref="_line_8cpp" startline="10" endline="44">generate_Marks</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1aa5d08b1fd3f72c78879fea437d978fdb" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RenderPDF::margitText</definition>
+        <argsstring></argsstring>
+        <name>margitText</name>
+        <qualifiedname>RenderPDF::margitText</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Отступ для текста </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="61" column="12" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RenderPDF::new_page</definition>
+        <argsstring></argsstring>
+        <name>new_page</name>
+        <qualifiedname>RenderPDF::new_page</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Флаг новой страницы </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="62" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4" prot="private" static="no" mutable="no">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path RenderPDF::fontPath_</definition>
+        <argsstring></argsstring>
+        <name>fontPath_</name>
+        <qualifiedname>RenderPDF::fontPath_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Путь к файлу шрифта </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="63" column="27" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" compoundref="_render_p_d_f_8cpp" startline="67" endline="74">initializeData</referencedby>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" prot="private" static="no" mutable="no">
+        <type>HPDF_Doc</type>
+        <definition>HPDF_Doc RenderPDF::pdf_</definition>
+        <argsstring></argsstring>
+        <name>pdf_</name>
+        <qualifiedname>RenderPDF::pdf_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Документ PDF </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="65" column="14" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277" compoundref="_render_p_d_f_8cpp" startline="7" endline="10">createA3Page</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" compoundref="_render_p_d_f_8cpp" startline="19" endline="28">loadFont</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7" compoundref="_render_p_d_f_8cpp" startline="35" endline="39">~RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781" prot="private" static="no" mutable="no">
+        <type>HPDF_Font</type>
+        <definition>HPDF_Font RenderPDF::font_</definition>
+        <argsstring></argsstring>
+        <name>font_</name>
+        <qualifiedname>RenderPDF::font_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Шрифт PDF </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="66" column="15" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36" compoundref="draw_8cpp" startline="10" endline="14">setFontSize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" prot="private" static="no" mutable="no">
+        <type><ref refid="structcfm" kindref="compound">cfm</ref></type>
+        <definition>cfm RenderPDF::cfm_data_</definition>
+        <argsstring></argsstring>
+        <name>cfm_data_</name>
+        <qualifiedname>RenderPDF::cfm_data_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Данные типа cfm </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="68" column="9" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0" compoundref="_render_p_d_f_8cpp" startline="92" endline="94">adjustFontSize</referencedby>
+        <referencedby refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" compoundref="draw_8cpp" startline="80" endline="86">calculateXCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" compoundref="draw_8cpp" startline="95" endline="101">calculateYCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">drawAdditionalTicks</referencedby>
+        <referencedby refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">drawDigitIndices</referencedby>
+        <referencedby refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">drawMainLines</referencedby>
+        <referencedby refid="class_render_p_d_f_1a87d9d5335c694603bf6686851879879a" compoundref="draw_8cpp" startline="65" endline="70">formatText</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" compoundref="_render_p_d_f_8cpp" startline="67" endline="74">initializeData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" prot="private" static="no" mutable="no">
+        <type><ref refid="structzgt" kindref="compound">zgt</ref></type>
+        <definition>zgt RenderPDF::zgt_data_</definition>
+        <argsstring></argsstring>
+        <name>zgt_data_</name>
+        <qualifiedname>RenderPDF::zgt_data_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Данные типа zgt </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="69" column="9" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" compoundref="_render_p_d_f_8cpp" startline="67" endline="74">initializeData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec" prot="private" static="no" mutable="no">
+        <type><ref refid="structnbr" kindref="compound">nbr</ref></type>
+        <definition>nbr RenderPDF::nbr_data_</definition>
+        <argsstring></argsstring>
+        <name>nbr_data_</name>
+        <qualifiedname>RenderPDF::nbr_data_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Данные типа nbr </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="70" column="9" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" compoundref="_render_p_d_f_8cpp" startline="67" endline="74">initializeData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" prot="private" static="no" mutable="no">
+        <type><ref refid="structpoint" kindref="compound">point</ref></type>
+        <definition>point RenderPDF::point_data_</definition>
+        <argsstring></argsstring>
+        <name>point_data_</name>
+        <qualifiedname>RenderPDF::point_data_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Данные типа point </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="71" column="11" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="71" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" compoundref="draw_8cpp" startline="80" endline="86">calculateXCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" compoundref="draw_8cpp" startline="95" endline="101">calculateYCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087" compoundref="_processor_8cpp" startline="8" endline="17">checkForNewPage</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">drawAdditionalTicks</referencedby>
+        <referencedby refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">drawMainLines</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" compoundref="_render_p_d_f_8cpp" startline="67" endline="74">initializeData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structtbl" kindref="compound">tbl</ref> &gt;</type>
+        <definition>std::vector&lt;tbl&gt; RenderPDF::tbl_data_</definition>
+        <argsstring></argsstring>
+        <name>tbl_data_</name>
+        <qualifiedname>RenderPDF::tbl_data_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Вектор данных типа tbl </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="72" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="72" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" compoundref="_line_8cpp" startline="10" endline="44">generate_Marks</referencedby>
+        <referencedby refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" compoundref="_render_p_d_f_8cpp" startline="67" endline="74">initializeData</referencedby>
+        <referencedby refid="class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3" compoundref="_processor_8cpp" startline="39" endline="43">populatePointTbl</referencedby>
+        <referencedby refid="class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f" compoundref="_processor_8cpp" startline="25" endline="32">sortTblData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; size_t &gt;</type>
+        <definition>std::vector&lt;size_t&gt; RenderPDF::point_tbl</definition>
+        <argsstring></argsstring>
+        <name>point_tbl</name>
+        <qualifiedname>RenderPDF::point_tbl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Таблица точек </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="73" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" compoundref="draw_8cpp" startline="80" endline="86">calculateXCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" compoundref="draw_8cpp" startline="95" endline="101">calculateYCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">drawAdditionalTicks</referencedby>
+        <referencedby refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">drawMainLines</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3" compoundref="_processor_8cpp" startline="39" endline="43">populatePointTbl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; RenderPDF::marks</definition>
+        <argsstring></argsstring>
+        <name>marks</name>
+        <qualifiedname>RenderPDF::marks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Метки </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="74" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="74" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">drawAdditionalTicks</referencedby>
+        <referencedby refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">drawDigitIndices</referencedby>
+        <referencedby refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">drawMainLines</referencedby>
+        <referencedby refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" compoundref="_line_8cpp" startline="10" endline="44">generate_Marks</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HPDF_Font</type>
+        <definition>HPDF_Font RenderPDF::loadFont</definition>
+        <argsstring>(const std::string &amp;fontPath)</argsstring>
+        <name>loadFont</name>
+        <qualifiedname>RenderPDF::loadFont</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fontPath</declname>
+        </param>
+        <briefdescription>
+<para>Загружает шрифт из указанного файла. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fontPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к файлу шрифта. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Возвращает объект HPDF_Font. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>если не удается загрузить шрифт. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="22" column="15" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/RenderPDF.cpp" bodystart="19" bodyend="28"/>
+        <references refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" compoundref="_render_p_d_f_8h" startline="65">pdf_</references>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::sortTblData</definition>
+        <argsstring>()</argsstring>
+        <name>sortTblData</name>
+        <qualifiedname>RenderPDF::sortTblData</qualifiedname>
+        <briefdescription>
+<para>Сортирует данные в tbl_data_ по положению элементов. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Эта функция использует стандартную функцию сортировки из библиотеки алгоритмов STL и лямбда-функцию для сравнения положения элементов. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="23" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Processor.cpp" bodystart="25" bodyend="32"/>
+        <references refid="structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8" compoundref="tbl_8h" startline="16">tbl::position</references>
+        <references refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" compoundref="_render_p_d_f_8h" startline="72">tbl_data_</references>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::populatePointTbl</definition>
+        <argsstring>()</argsstring>
+        <name>populatePointTbl</name>
+        <qualifiedname>RenderPDF::populatePointTbl</qualifiedname>
+        <briefdescription>
+<para>Заполняет point_tbl данными из tbl_data_. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Эта функция используется для копирования данных о позициях из tbl_data_ в point_tbl. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="24" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Processor.cpp" bodystart="39" bodyend="43"/>
+        <references refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" compoundref="_render_p_d_f_8h" startline="73">point_tbl</references>
+        <references refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" compoundref="_render_p_d_f_8h" startline="72">tbl_data_</references>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RenderPDF::checkForNewPage</definition>
+        <argsstring>()</argsstring>
+        <name>checkForNewPage</name>
+        <qualifiedname>RenderPDF::checkForNewPage</qualifiedname>
+        <briefdescription>
+<para>Проверяет наличие дубликатов координат в point_data_. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Возвращает true, если есть дубликаты координат, указывающие на необходимость новой страницы, иначе false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="25" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Processor.cpp" bodystart="8" bodyend="17"/>
+        <references refid="structpoint_1a6917d518caab116551a862eba2717bec" compoundref="point__data_8h" startline="11">point::coordinates</references>
+        <references refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" compoundref="_render_p_d_f_8h" startline="71">point_data_</references>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::createA3Page</definition>
+        <argsstring>()</argsstring>
+        <name>createA3Page</name>
+        <qualifiedname>RenderPDF::createA3Page</qualifiedname>
+        <briefdescription>
+<para>Создает новую страницу формата A3. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="27" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/RenderPDF.cpp" bodystart="7" bodyend="10"/>
+        <references refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" compoundref="_render_p_d_f_8h" startline="65">pdf_</references>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::setFontSize</definition>
+        <argsstring>(HPDF_Page page, double size)</argsstring>
+        <name>setFontSize</name>
+        <qualifiedname>RenderPDF::setFontSize</qualifiedname>
+        <param>
+          <type>HPDF_Page</type>
+          <declname>page</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Устанавливает размер шрифта и размер страницы PDF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Страница PDF, для которой нужно установить размер шрифта и размеры страницы. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Размер шрифта для установки. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="29" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/draw.cpp" bodystart="10" bodyend="14"/>
+        <references refid="class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781" compoundref="_render_p_d_f_8h" startline="66">font_</references>
+        <referencedby refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">drawDigitIndices</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::generate_Marks</definition>
+        <argsstring>(size_t blank)</argsstring>
+        <name>generate_Marks</name>
+        <qualifiedname>RenderPDF::generate_Marks</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>blank</declname>
+        </param>
+        <briefdescription>
+<para>Генерирует маркеры на основе измерений из данных таблицы. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>blank</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Индекс строки в таблице данных, из которой следует сгенерировать маркеры. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="35" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Line.cpp" bodystart="10" bodyend="44"/>
+        <references refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" compoundref="_render_p_d_f_8h" startline="74">marks</references>
+        <references refid="class_render_p_d_f_1adda47ac0eef121635099a286e784f610" compoundref="_render_p_d_f_8h" startline="60">PI</references>
+        <references refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" compoundref="_render_p_d_f_8h" startline="72">tbl_data_</references>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::drawDigitIndices</definition>
+        <argsstring>(HPDF_Page page, size_t blank)</argsstring>
+        <name>drawDigitIndices</name>
+        <qualifiedname>RenderPDF::drawDigitIndices</qualifiedname>
+        <param>
+          <type>HPDF_Page</type>
+          <declname>page</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>blank</declname>
+        </param>
+        <briefdescription>
+<para>Рисует индексы (цифры) на PDF странице. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Страница PDF, на которую будут нарисованы индексы. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blank</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Размер пустого пространства на странице. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="37" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/digit.cpp" bodystart="9" bodyend="31"/>
+        <references refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" compoundref="draw_8cpp" startline="80" endline="86">calculateXCoordinate</references>
+        <references refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" compoundref="draw_8cpp" startline="95" endline="101">calculateYCoordinate</references>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="structcfm_1af1376357880c15d011d9c96fd485714e" compoundref="cfm_8h" startline="25">cfm::digit_height</references>
+        <references refid="class_render_p_d_f_1af00237dc614fc46323aead1daae13a15" compoundref="draw_8cpp" startline="52" endline="57">drawText</references>
+        <references refid="class_render_p_d_f_1a87d9d5335c694603bf6686851879879a" compoundref="draw_8cpp" startline="65" endline="70">formatText</references>
+        <references refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" compoundref="_render_p_d_f_8h" startline="74">marks</references>
+        <references refid="class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36" compoundref="draw_8cpp" startline="10" endline="14">setFontSize</references>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::drawMainLines</definition>
+        <argsstring>(HPDF_Page page, size_t blank)</argsstring>
+        <name>drawMainLines</name>
+        <qualifiedname>RenderPDF::drawMainLines</qualifiedname>
+        <param>
+          <type>HPDF_Page</type>
+          <declname>page</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>blank</declname>
+        </param>
+        <briefdescription>
+<para>Рисует основные линии на странице PDF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Страница PDF, на которой будут нарисованы основные линии. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blank</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Индекс строки в таблице данных, на основе которой следует рисовать линии. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="39" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Line.cpp" bodystart="52" bodyend="116"/>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="structpoint_1a6917d518caab116551a862eba2717bec" compoundref="point__data_8h" startline="11">point::coordinates</references>
+        <references refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" compoundref="cfm_8h" startline="21">cfm::diameter</references>
+        <references refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" compoundref="cfm_8h" startline="24">cfm::digital_tick</references>
+        <references refid="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" compoundref="draw_8cpp" startline="38" endline="42">draw_line</references>
+        <references refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" compoundref="_render_p_d_f_8h" startline="74">marks</references>
+        <references refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" compoundref="_render_p_d_f_8h" startline="71">point_data_</references>
+        <references refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" compoundref="_render_p_d_f_8h" startline="73">point_tbl</references>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::drawAdditionalTicks</definition>
+        <argsstring>(HPDF_Page page, size_t blank)</argsstring>
+        <name>drawAdditionalTicks</name>
+        <qualifiedname>RenderPDF::drawAdditionalTicks</qualifiedname>
+        <param>
+          <type>HPDF_Page</type>
+          <declname>page</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>blank</declname>
+        </param>
+        <briefdescription>
+<para>Рисует дополнительные отметки на странице PDF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Страница PDF, на которой будут нарисованы дополнительные отметки. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blank</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Индекс строки в таблице данных, на основе которой следует рисовать отметки. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="41" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Line.cpp" bodystart="125" bodyend="156"/>
+        <references refid="structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72" compoundref="cfm_8h" startline="23">cfm::big_tick</references>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="structpoint_1a6917d518caab116551a862eba2717bec" compoundref="point__data_8h" startline="11">point::coordinates</references>
+        <references refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" compoundref="cfm_8h" startline="21">cfm::diameter</references>
+        <references refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" compoundref="cfm_8h" startline="24">cfm::digital_tick</references>
+        <references refid="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" compoundref="draw_8cpp" startline="38" endline="42">draw_line</references>
+        <references refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" compoundref="_render_p_d_f_8h" startline="74">marks</references>
+        <references refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" compoundref="_render_p_d_f_8h" startline="71">point_data_</references>
+        <references refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" compoundref="_render_p_d_f_8h" startline="73">point_tbl</references>
+        <references refid="structcfm_1ac4b86bca5f71ce33c545d435fd2027ae" compoundref="cfm_8h" startline="22">cfm::small_tick</references>
+        <references refid="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" compoundref="cfm_8h" startline="27">cfm::tick_mask</references>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::initializeData</definition>
+        <argsstring>(cfm cfm_data, zgt zgt_data, const std::vector&lt; tbl &gt; &amp;tbl_data, nbr nbr_data, point point_data, std::filesystem::path fontPath)</argsstring>
+        <name>initializeData</name>
+        <qualifiedname>RenderPDF::initializeData</qualifiedname>
+        <param>
+          <type><ref refid="structcfm" kindref="compound">cfm</ref></type>
+          <declname>cfm_data</declname>
+        </param>
+        <param>
+          <type><ref refid="structzgt" kindref="compound">zgt</ref></type>
+          <declname>zgt_data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="structtbl" kindref="compound">tbl</ref> &gt; &amp;</type>
+          <declname>tbl_data</declname>
+        </param>
+        <param>
+          <type><ref refid="structnbr" kindref="compound">nbr</ref></type>
+          <declname>nbr_data</declname>
+        </param>
+        <param>
+          <type><ref refid="structpoint" kindref="compound">point</ref></type>
+          <declname>point_data</declname>
+        </param>
+        <param>
+          <type>std::filesystem::path</type>
+          <declname>fontPath</declname>
+        </param>
+        <briefdescription>
+<para>Инициализирует данные. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cfm_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Данные для cfm. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zgt_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Данные для zgt. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tbl_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Данные для tbl. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nbr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Данные для nbr. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>point_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Данные для точки. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fontPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к файлу шрифта. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="43" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/RenderPDF.cpp" bodystart="67" bodyend="74"/>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4" compoundref="_render_p_d_f_8h" startline="63">fontPath_</references>
+        <references refid="class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec" compoundref="_render_p_d_f_8h" startline="70">nbr_data_</references>
+        <references refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" compoundref="_render_p_d_f_8h" startline="71">point_data_</references>
+        <references refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" compoundref="_render_p_d_f_8h" startline="72">tbl_data_</references>
+        <references refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" compoundref="_render_p_d_f_8h" startline="69">zgt_data_</references>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::initializePDF</definition>
+        <argsstring>()</argsstring>
+        <name>initializePDF</name>
+        <qualifiedname>RenderPDF::initializePDF</qualifiedname>
+        <briefdescription>
+<para>Инициализирует объект HPDF_Doc для работы с PDF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>если не удается создать объект PDF. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="44" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/RenderPDF.cpp" bodystart="80" bodyend="85"/>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::adjustFontSize</definition>
+        <argsstring>()</argsstring>
+        <name>adjustFontSize</name>
+        <qualifiedname>RenderPDF::adjustFontSize</qualifiedname>
+        <briefdescription>
+<para>Подгоняет размер шрифта. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Использует коэффициент поправки размера для шрифта GOST_B. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="45" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/RenderPDF.cpp" bodystart="92" bodyend="94"/>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="structcfm_1af1376357880c15d011d9c96fd485714e" compoundref="cfm_8h" startline="25">cfm::digit_height</references>
+        <referencedby refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" compoundref="_render_p_d_f_8cpp" startline="47" endline="55">RenderPDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HPDF_REAL</type>
+        <definition>HPDF_REAL RenderPDF::calculateYCoordinate</definition>
+        <argsstring>(HPDF_REAL angle, size_t blank)</argsstring>
+        <name>calculateYCoordinate</name>
+        <qualifiedname>RenderPDF::calculateYCoordinate</qualifiedname>
+        <param>
+          <type>HPDF_REAL</type>
+          <declname>angle</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>blank</declname>
+        </param>
+        <briefdescription>
+<para>Вычисляет координату Y для текста маркера. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Угол маркера. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blank</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Размер пустого пространства на странице. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Координата Y для текста маркера. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="47" column="15" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/draw.cpp" bodystart="95" bodyend="101"/>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="structpoint_1a6917d518caab116551a862eba2717bec" compoundref="point__data_8h" startline="11">point::coordinates</references>
+        <references refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" compoundref="cfm_8h" startline="21">cfm::diameter</references>
+        <references refid="structcfm_1af1376357880c15d011d9c96fd485714e" compoundref="cfm_8h" startline="25">cfm::digit_height</references>
+        <references refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" compoundref="cfm_8h" startline="24">cfm::digital_tick</references>
+        <references refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" compoundref="_render_p_d_f_8h" startline="71">point_data_</references>
+        <references refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" compoundref="_render_p_d_f_8h" startline="73">point_tbl</references>
+        <referencedby refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">drawDigitIndices</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HPDF_REAL</type>
+        <definition>HPDF_REAL RenderPDF::calculateXCoordinate</definition>
+        <argsstring>(HPDF_REAL angle, double textWidth, size_t blank)</argsstring>
+        <name>calculateXCoordinate</name>
+        <qualifiedname>RenderPDF::calculateXCoordinate</qualifiedname>
+        <param>
+          <type>HPDF_REAL</type>
+          <declname>angle</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>textWidth</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>blank</declname>
+        </param>
+        <briefdescription>
+<para>Вычисляет координату X для текста маркера. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Угол маркера. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>textWidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ширина текста маркера. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blank</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Размер пустого пространства на странице. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Координата X для текста маркера. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="48" column="15" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/draw.cpp" bodystart="80" bodyend="86"/>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="structpoint_1a6917d518caab116551a862eba2717bec" compoundref="point__data_8h" startline="11">point::coordinates</references>
+        <references refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" compoundref="cfm_8h" startline="21">cfm::diameter</references>
+        <references refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" compoundref="cfm_8h" startline="24">cfm::digital_tick</references>
+        <references refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" compoundref="_render_p_d_f_8h" startline="71">point_data_</references>
+        <references refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" compoundref="_render_p_d_f_8h" startline="73">point_tbl</references>
+        <referencedby refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">drawDigitIndices</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1a87d9d5335c694603bf6686851879879a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string RenderPDF::formatText</definition>
+        <argsstring>(int i)</argsstring>
+        <name>formatText</name>
+        <qualifiedname>RenderPDF::formatText</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Форматирует текст с использованием заданной точности. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Индекс маркера, текст для которого нужно отформатировать. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Отформатированный текст. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="49" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/draw.cpp" bodystart="65" bodyend="70"/>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6" compoundref="cfm_8h" startline="20">cfm::format</references>
+        <references refid="structcfm_1ad4cec00bcb67870e82af90e5d3676161" compoundref="cfm_8h" startline="19">cfm::marks</references>
+        <referencedby refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">drawDigitIndices</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1af00237dc614fc46323aead1daae13a15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::drawText</definition>
+        <argsstring>(HPDF_Page page, const std::string &amp;text, HPDF_REAL x, HPDF_REAL y)</argsstring>
+        <name>drawText</name>
+        <qualifiedname>RenderPDF::drawText</qualifiedname>
+        <param>
+          <type>HPDF_Page</type>
+          <declname>page</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>HPDF_REAL</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>HPDF_REAL</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Рисует текст на странице PDF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Страница PDF, на которой будет нарисован текст. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Текст для вывода на страницу. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Координата X, где будет нарисован текст. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Координата Y, где будет нарисован текст. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="50" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/draw.cpp" bodystart="52" bodyend="57"/>
+        <referencedby refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">drawDigitIndices</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::drawCircle</definition>
+        <argsstring>(HPDF_Page page, double x, double y, double radius)</argsstring>
+        <name>drawCircle</name>
+        <qualifiedname>RenderPDF::drawCircle</qualifiedname>
+        <param>
+          <type>HPDF_Page</type>
+          <declname>page</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+<para>Рисует круг на странице PDF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Страница PDF, на которой будет нарисован круг. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Координата X центра круга. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Координата Y центра круга. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Радиус круга. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="31" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/draw.cpp" bodystart="24" bodyend="27"/>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">generatePDF</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::draw_line</definition>
+        <argsstring>(HPDF_Page page, HPDF_REAL x1, HPDF_REAL y1, HPDF_REAL x2, HPDF_REAL y2)</argsstring>
+        <name>draw_line</name>
+        <qualifiedname>RenderPDF::draw_line</qualifiedname>
+        <param>
+          <type>HPDF_Page</type>
+          <declname>page</declname>
+        </param>
+        <param>
+          <type>HPDF_REAL</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>HPDF_REAL</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>HPDF_REAL</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>HPDF_REAL</type>
+          <declname>y2</declname>
+        </param>
+        <briefdescription>
+<para>Рисует линию на странице PDF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>page</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Страница PDF, на которой будет нарисована линия. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Координата X начала линии. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Координата Y начала линии. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Координата X конца линии. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Координата Y конца линии. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="33" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/draw.cpp" bodystart="38" bodyend="42"/>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">drawAdditionalTicks</referencedby>
+        <referencedby refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">drawMainLines</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RenderPDF::generatePDF</definition>
+        <argsstring>(std::string &amp;filename)</argsstring>
+        <name>generatePDF</name>
+        <qualifiedname>RenderPDF::generatePDF</qualifiedname>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Создает PDF-документ, используя графические элементы, определенные в других методах класса. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ссылка на строку, содержащую имя будущего файла PDF. Если будет создано несколько страниц, то функция модифицирует эту строку, добавляя номер каждой страницы.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Она создает страницы формата A3 и на каждой странице рисует набор элементов, таких как основные линии, индексы и дополнительные отметки, для каждого элемента в таблице точек (<computeroutput>point_tbl</computeroutput>). Генерация этих элементов осуществляется с помощью функций <computeroutput>generate_Marks</computeroutput>, <computeroutput>drawMainLines</computeroutput>, <computeroutput>drawDigitIndices</computeroutput> и <computeroutput>drawAdditionalTicks</computeroutput>. Эти функции используют данные из других членов класса, таких как <computeroutput>cfm_data_</computeroutput> и <computeroutput>zgt_data_</computeroutput>. В конце, документ сохраняется в файл с указанным именем. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="53" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Print.cpp" bodystart="12" bodyend="89"/>
+        <references refid="structzgt_1a158a8320351f554c1aa14cf6436b505f" compoundref="zgt_8h" startline="17">zgt::center_hole_diameter</references>
+        <references refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" compoundref="_render_p_d_f_8h" startline="68">cfm_data_</references>
+        <references refid="structpoint_1a6917d518caab116551a862eba2717bec" compoundref="point__data_8h" startline="11">point::coordinates</references>
+        <references refid="class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277" compoundref="_render_p_d_f_8cpp" startline="7" endline="10">createA3Page</references>
+        <references refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" compoundref="cfm_8h" startline="21">cfm::diameter</references>
+        <references refid="structzgt_1ab347a1a6d59fde2e507a7035e65e2544" compoundref="zgt_8h" startline="16">zgt::diameter</references>
+        <references refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" compoundref="cfm_8h" startline="24">cfm::digital_tick</references>
+        <references refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">drawAdditionalTicks</references>
+        <references refid="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" compoundref="draw_8cpp" startline="24" endline="27">drawCircle</references>
+        <references refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" compoundref="digit_8cpp" startline="9" endline="31">drawDigitIndices</references>
+        <references refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">drawMainLines</references>
+        <references refid="class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781" compoundref="_render_p_d_f_8h" startline="66">font_</references>
+        <references refid="class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4" compoundref="_render_p_d_f_8h" startline="63">fontPath_</references>
+        <references refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" compoundref="_line_8cpp" startline="10" endline="44">generate_Marks</references>
+        <references refid="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" compoundref="_render_p_d_f_8cpp" startline="19" endline="28">loadFont</references>
+        <references refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" compoundref="_render_p_d_f_8h" startline="74">marks</references>
+        <references refid="structzgt_1afa245cc963981088182fcad61a544bb4" compoundref="zgt_8h" startline="18">zgt::mounting_holes</references>
+        <references refid="class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489" compoundref="_render_p_d_f_8h" startline="62">new_page</references>
+        <references refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" compoundref="_render_p_d_f_8h" startline="65">pdf_</references>
+        <references refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" compoundref="_render_p_d_f_8h" startline="71">point_data_</references>
+        <references refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" compoundref="_render_p_d_f_8h" startline="73">point_tbl</references>
+        <references refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" compoundref="_render_p_d_f_8h" startline="69">zgt_data_</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RenderPDF::RenderPDF</definition>
+        <argsstring>(cfm cfm_data, zgt zgt_data, const std::vector&lt; tbl &gt; &amp;tbl_data, nbr nbr_data, point point_data, std::filesystem::path fontPath)</argsstring>
+        <name>RenderPDF</name>
+        <qualifiedname>RenderPDF::RenderPDF</qualifiedname>
+        <param>
+          <type><ref refid="structcfm" kindref="compound">cfm</ref></type>
+          <declname>cfm_data</declname>
+        </param>
+        <param>
+          <type><ref refid="structzgt" kindref="compound">zgt</ref></type>
+          <declname>zgt_data</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="structtbl" kindref="compound">tbl</ref> &gt; &amp;</type>
+          <declname>tbl_data</declname>
+        </param>
+        <param>
+          <type><ref refid="structnbr" kindref="compound">nbr</ref></type>
+          <declname>nbr_data</declname>
+        </param>
+        <param>
+          <type><ref refid="structpoint" kindref="compound">point</ref></type>
+          <declname>point_data</declname>
+        </param>
+        <param>
+          <type>std::filesystem::path</type>
+          <declname>fontPath</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор класса <ref refid="class_render_p_d_f" kindref="compound">RenderPDF</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Инициализирует данные, создает объект PDF, подгоняет размер шрифта, загружает шрифт, сортирует данные таблицы и заполняет таблицу точек. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="55" column="5" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/RenderPDF.cpp" bodystart="47" bodyend="55"/>
+        <references refid="class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0" compoundref="_render_p_d_f_8cpp" startline="92" endline="94">adjustFontSize</references>
+        <references refid="class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087" compoundref="_processor_8cpp" startline="8" endline="17">checkForNewPage</references>
+        <references refid="class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781" compoundref="_render_p_d_f_8h" startline="66">font_</references>
+        <references refid="class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4" compoundref="_render_p_d_f_8h" startline="63">fontPath_</references>
+        <references refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" compoundref="_render_p_d_f_8cpp" startline="67" endline="74">initializeData</references>
+        <references refid="class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f" compoundref="_render_p_d_f_8cpp" startline="80" endline="85">initializePDF</references>
+        <references refid="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" compoundref="_render_p_d_f_8cpp" startline="19" endline="28">loadFont</references>
+        <references refid="class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489" compoundref="_render_p_d_f_8h" startline="62">new_page</references>
+        <references refid="class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3" compoundref="_processor_8cpp" startline="39" endline="43">populatePointTbl</references>
+        <references refid="class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f" compoundref="_processor_8cpp" startline="25" endline="32">sortTblData</references>
+      </memberdef>
+      <memberdef kind="function" id="class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RenderPDF::~RenderPDF</definition>
+        <argsstring>()</argsstring>
+        <name>~RenderPDF</name>
+        <qualifiedname>RenderPDF::~RenderPDF</qualifiedname>
+        <briefdescription>
+<para>Деструктор класса <ref refid="class_render_p_d_f" kindref="compound">RenderPDF</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Освобождает ресурсы, связанные с объектом HPDF_Doc. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="57" column="5" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/RenderPDF.cpp" bodystart="35" bodyend="39"/>
+        <references refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" compoundref="_render_p_d_f_8h" startline="65">pdf_</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс для генерации PDF-файла. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Класс <ref refid="class_render_p_d_f" kindref="compound">RenderPDF</ref> предоставляет функциональность для создания и рендеринга PDF-файлов. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>RenderPDF</label>
+        <link refid="class_render_p_d_f"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>cfm_data_</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>zgt_data_</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>nbr_data_</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>point_data_</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>tbl_data_</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>point_tbl</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>marks</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::array&lt; double, 2 &gt;</label>
+      </node>
+      <node id="10">
+        <label>std::array&lt; double, 3 &gt;</label>
+      </node>
+      <node id="8">
+        <label>std::array&lt; double, 4 &gt;</label>
+      </node>
+      <node id="6">
+        <label>std::array&lt; int, 2 &gt;</label>
+      </node>
+      <node id="2">
+        <label>cfm</label>
+        <link refid="structcfm"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>blank</edgelabel>
+          <edgelabel>header</edgelabel>
+          <edgelabel>tick_mask</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>marks</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>format</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>big_tick</edgelabel>
+          <edgelabel>small_tick</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>digital_tick</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::map&lt; size_t, std::string &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>nbr</label>
+        <link refid="structnbr"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>icon</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>point</label>
+        <link refid="structpoint"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>coordinates</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>tbl</label>
+        <link refid="structtbl"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>measurements</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; double &gt;</label>
+      </node>
+      <node id="18">
+        <label>std::vector&lt; size_t &gt;</label>
+      </node>
+      <node id="14">
+        <label>std::vector&lt; std::pair&lt; double, double &gt; &gt;</label>
+      </node>
+      <node id="17">
+        <label>std::vector&lt; std::vector&lt; double &gt; &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>std::vector&lt; tbl &gt;</label>
+        <childnode refid="16" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>zgt</label>
+        <link refid="structzgt"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>marker_position</edgelabel>
+          <edgelabel>mounting_holes</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>font_serial_number</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>stop_position</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" line="20" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/RenderPDF.h" bodystart="20" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>adjustFontSize</name></member>
+      <member refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>calculateXCoordinate</name></member>
+      <member refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>calculateYCoordinate</name></member>
+      <member refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>cfm_data_</name></member>
+      <member refid="class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>checkForNewPage</name></member>
+      <member refid="class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>createA3Page</name></member>
+      <member refid="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>draw_line</name></member>
+      <member refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>drawAdditionalTicks</name></member>
+      <member refid="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>drawCircle</name></member>
+      <member refid="class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>drawDigitIndices</name></member>
+      <member refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>drawMainLines</name></member>
+      <member refid="class_render_p_d_f_1af00237dc614fc46323aead1daae13a15" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>drawText</name></member>
+      <member refid="class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>font_</name></member>
+      <member refid="class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>fontPath_</name></member>
+      <member refid="class_render_p_d_f_1a87d9d5335c694603bf6686851879879a" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>formatText</name></member>
+      <member refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>generate_Marks</name></member>
+      <member refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" prot="public" virt="non-virtual"><scope>RenderPDF</scope><name>generatePDF</name></member>
+      <member refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>initializeData</name></member>
+      <member refid="class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>initializePDF</name></member>
+      <member refid="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>loadFont</name></member>
+      <member refid="class_render_p_d_f_1aa5d08b1fd3f72c78879fea437d978fdb" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>margitText</name></member>
+      <member refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>marks</name></member>
+      <member refid="class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>nbr_data_</name></member>
+      <member refid="class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>new_page</name></member>
+      <member refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>pdf_</name></member>
+      <member refid="class_render_p_d_f_1adda47ac0eef121635099a286e784f610" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>PI</name></member>
+      <member refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>point_data_</name></member>
+      <member refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>point_tbl</name></member>
+      <member refid="class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>populatePointTbl</name></member>
+      <member refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" prot="public" virt="non-virtual"><scope>RenderPDF</scope><name>RenderPDF</name></member>
+      <member refid="class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>setFontSize</name></member>
+      <member refid="class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>sortTblData</name></member>
+      <member refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>tbl_data_</name></member>
+      <member refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" prot="private" virt="non-virtual"><scope>RenderPDF</scope><name>zgt_data_</name></member>
+      <member refid="class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7" prot="public" virt="non-virtual"><scope>RenderPDF</scope><name>~RenderPDF</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

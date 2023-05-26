@@ -1,0 +1,194 @@
+\doxysection{Класс File\+Reader}
+\hypertarget{class_file_reader}{}\label{class_file_reader}\index{FileReader@{FileReader}}
+
+
+Класс для чтения файла.  
+
+
+
+
+{\ttfamily \#include \"{}File\+Reader.\+h\"{}}
+
+
+
+Граф наследования\+:File\+Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_file_reader__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_file_reader_a1dae37584804731f11c9c932219d8282}{File\+Reader}} (std\+::filesystem\+::path file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \doxylink{class_file_reader}{File\+Reader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{read\+Line\+String}} (std\+::ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Читает строку из файла и удаляет ведущие и завершающие пробелы. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Удаляет ведущие и завершающие пробелы из строки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::filesystem\+::path \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\+\_\+path\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для чтения файла. 
+
+Класс \doxylink{class_file_reader}{File\+Reader} предоставляет функциональность для чтения файлов и обработки строк. 
+
+См. определение в файле \mbox{\hyperlink{_file_reader_8h_source}{File\+Reader.\+h}} строка \mbox{\hyperlink{_file_reader_8h_source_l00015}{15}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{class_file_reader_a1dae37584804731f11c9c932219d8282}\label{class_file_reader_a1dae37584804731f11c9c932219d8282} 
+\index{FileReader@{FileReader}!FileReader@{FileReader}}
+\index{FileReader@{FileReader}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{FileReader()}{FileReader()}}
+{\footnotesize\ttfamily File\+Reader\+::\+File\+Reader (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Конструктор класса \doxylink{class_file_reader}{File\+Reader}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+path} & Путь к файлу для чтения.\\
+\hline
+\end{DoxyParams}
+Конструктор инициализирует объект \doxylink{class_file_reader}{File\+Reader} с указанным путем к файлу file\+\_\+path. 
+
+См. определение в файле \mbox{\hyperlink{_file_reader_8h_source}{File\+Reader.\+h}} строка \mbox{\hyperlink{_file_reader_8h_source_l00023}{23}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ :\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}(std::move(file\_path))\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Методы}
+\Hypertarget{class_file_reader_a8e183bdc265152f0309184debb4af6a3}\label{class_file_reader_a8e183bdc265152f0309184debb4af6a3} 
+\index{FileReader@{FileReader}!readLineString@{readLineString}}
+\index{readLineString@{readLineString}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{readLineString()}{readLineString()}}
+{\footnotesize\ttfamily std\+::string File\+Reader\+::read\+Line\+String (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Читает строку из файла и удаляет ведущие и завершающие пробелы. 
+
+Читает строку из файла, удаляет ведущие и завершающие пробелы.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file} & Файловый поток для чтения строки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Прочитанная строка без ведущих и завершающих пробелов.
+\end{DoxyReturn}
+Функция \doxylink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{read\+Line\+String()} читает строку из указанного файлового потока file. Затем удаляются ведущие и завершающие пробелы из строки. Результат возвращается в виде новой строки. 
+
+См. определение в файле \mbox{\hyperlink{_file_reader_8cpp_source}{File\+Reader.\+cpp}} строка \mbox{\hyperlink{_file_reader_8cpp_source_l00033}{33}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::getline(file,\ line))}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ any\ leading/trailing\ whitespace}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ line.erase(0,\ line.find\_first\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}));}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ line.erase(line.find\_last\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)r\(\backslash\)n"{}})\ +\ 1);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ line;}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a8e183bdc265152f0309184debb4af6a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}\label{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22} 
+\index{FileReader@{FileReader}!trim@{trim}}
+\index{trim@{trim}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily std\+::string File\+Reader\+::trim (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Удаляет ведущие и завершающие пробелы из строки. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em s} & Исходная строка. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка без ведущих и завершающих пробелов.
+\end{DoxyReturn}
+Функция \doxylink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim()} удаляет ведущие и завершающие пробелы из строки s. Результат возвращается в виде новой строки.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em s} & Исходная строка. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Строка без ведущих и завершающих пробелов.
+\end{DoxyReturn}
+Функция \doxylink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim()} удаляет ведущие и завершающие пробелы из строки s. Также удаляются любые символы, которые являются пробельными или имеют значение кода больше 255. Результат возвращается в виде новой строки. 
+
+См. определение в файле \mbox{\hyperlink{_file_reader_8cpp_source}{File\+Reader.\+cpp}} строка \mbox{\hyperlink{_file_reader_8cpp_source_l00012}{12}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ s.begin();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{while}\ (start\ !=\ s.end()\ \&\&\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*start)\ >\ 255\ ||\ std::isspace(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*start))))\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ start++;}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ s.end();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{while}\ (end\ !=\ start\ \&\&\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*(end\ -\/\ 1))\ >\ 255\ ||\ std::isspace(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*(end\ -\/\ 1)))))\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ end-\/-\/;}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(start,\ end);}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}\label{class_file_reader_acf2bd283059c0de739f8f2350ce9d658} 
+\index{FileReader@{FileReader}!file\_path\_@{file\_path\_}}
+\index{file\_path\_@{file\_path\_}!FileReader@{FileReader}}
+\doxysubsubsection{\texorpdfstring{file\_path\_}{file\_path\_}}
+{\footnotesize\ttfamily std\+::filesystem\+::path File\+Reader\+::file\+\_\+path\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+Путь к файлу 
+
+См. определение в файле \mbox{\hyperlink{_file_reader_8h_source}{File\+Reader.\+h}} строка \mbox{\hyperlink{_file_reader_8h_source_l00026}{26}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_file_reader_8h}{File\+Reader.\+h}}\item 
+\mbox{\hyperlink{_file_reader_8cpp}{File\+Reader.\+cpp}}\end{DoxyCompactItemize}

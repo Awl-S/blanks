@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classjson" xml:lang="ru">
+<title>Класс json</title>
+<indexterm><primary>json</primary></indexterm>
+<para>
+
+<para>Класс для работы с JSON-конфигурацией. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;json.h&quot;</computeroutput>
+</para>
+Граф наследования:json:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classjson__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф связей класса json:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classjson__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classjson_1a7d5c22a97d49085310994af222c28f8c">display</link> () override</para>
+
+<para>Отображает информацию из конфигурационного файла. </para>
+</listitem>
+            <listitem><para><link linkend="_classjson_1a4630c59c2653fc787d1059a1a1e905cb">json</link> (const std::string &amp;config_file_path)</para>
+
+<para>Возвращает целочисленное значение, соответствующее заданному ключу. </para>
+</listitem>
+            <listitem><para>std::filesystem::path <link linkend="_classjson_1a760a6ea6469d17e611ccf23921753d20">getFilePath</link> (const std::string &amp;key) override</para>
+
+<para>Возвращает список файлов, соответствующих заданному ключу и поисковому запросу. </para>
+</listitem>
+            <listitem><para>std::vector&lt; std::filesystem::path &gt; <link linkend="_classjson_1a335a17f634ae297aa36dbc40855dd8da">getFileList</link> (const std::string &amp;key, const std::string &amp;search) override</para>
+
+<para>Конструктор класса json. </para>
+</listitem>
+            <listitem><para>long long <link linkend="_classjson_1a3f5e7618318c6e39387a917589aa3d38">getInteger</link> (const std::string &amp;key)</para>
+
+<para>Возвращает путь к файлу, соответствующий заданному ключу. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Открытые члены унаследованные от <link linkend="_class_parser_configuration">ParserConfiguration</link>        <itemizedlist>
+            <listitem><para>virtual <link linkend="_class_parser_configuration_1a11a307d9f31f64bffdb881abf94e66b5">~ParserConfiguration</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual std::filesystem::path <link linkend="_class_parser_configuration_1ab44f9c6fed060b33544224ddeb473e59">getFilePath</link> (const std::string &amp;key)=0</para>
+
+<para>Возвращает путь к файлу на основе указанного ключа. </para>
+</listitem>
+            <listitem><para>virtual std::vector&lt; std::filesystem::path &gt; <link linkend="_class_parser_configuration_1a70fcdbc2a2a83b1dabaecf576d1cff71">getFileList</link> (const std::string &amp;key, const std::string &amp;search)=0</para>
+
+<para>Возвращает список файлов на основе указанного ключа и поискового запроса. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_parser_configuration_1af35d73849ce2faf5cf19196a662fc19a">display</link> ()=0</para>
+
+<para>Отображает информацию из конфигурационного файла. </para>
+</listitem>
+            <listitem><para>virtual long long <link linkend="_class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580">getInteger</link> (const std::string &amp;key)</para>
+
+<para>Создает экземпляр класса ConfigParser на основе пути к конфигурационному файлу. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Закрытые данные    </title>
+        <itemizedlist>
+            <listitem><para>nlohmann::json <link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Класс для работы с JSON-конфигурацией. </para>
+
+
+
+<para>Класс json предоставляет функциональность для чтения и обработки JSON-конфигурационных файлов. </para>
+<para>
+См. определение в файле <link linkend="_json_8h_source">json.h</link> строка <link linkend="_json_8h_source_1l00013">13</link></para>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_classjson_1a4630c59c2653fc787d1059a1a1e905cb"/><section>
+    <title>json()</title>
+<indexterm><primary>json</primary><secondary>json</secondary></indexterm>
+<indexterm><primary>json</primary><secondary>json</secondary></indexterm>
+<para><computeroutput>json::json (const std::string &amp; config_file_path)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Возвращает целочисленное значение, соответствующее заданному ключу. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>Ключ для получения целочисленного значения. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Целочисленное значение, соответствующее заданному ключу. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>Если ключ отсутствует в конфигурации.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Функция возвращает целочисленное значение, соответствующее заданному ключу key, извлекая его из объекта config_json. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error. </para>
+<para>
+См. определение в файле <link linkend="_json_8cpp_source">json.cpp</link> строка <link linkend="_json_8cpp_source_1l00074">74</link></para>
+<programlisting linenumbering="unnumbered">00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00075 &#32;&#32;&#32;&#32;std::ifstream&#32;config_file(config_file_path);
+00076 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!config_file.is_open())&#32;{
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Cannot&#32;open&#32;configuration&#32;file:&#32;&quot;</emphasis>&#32;+&#32;config_file_path);
+00078 &#32;&#32;&#32;&#32;}
+00079 &#32;&#32;&#32;&#32;config_file&#32;&gt;&gt;&#32;<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>;
+00080 }
+</programlisting></section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_classjson_1a7d5c22a97d49085310994af222c28f8c"/><section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>json</secondary></indexterm>
+<indexterm><primary>json</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>void json::display ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Отображает информацию из конфигурационного файла. </para>
+</para>
+
+<para>Метод отображает информацию из конфигурационного файла, используемого классом. Данный метод может быть переопределен в производных классах. </para>
+<para>
+Замещает <link linkend="_class_parser_configuration_1af35d73849ce2faf5cf19196a662fc19a">ParserConfiguration</link>.</para>
+<para>
+См. определение в файле <link linkend="_json_8cpp_source">json.cpp</link> строка <link linkend="_json_8cpp_source_1l00082">82</link></para>
+<programlisting linenumbering="unnumbered">00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00083 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;[key,&#32;value]&#32;:&#32;<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>.items())&#32;{
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;key&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;value&#32;&lt;&lt;&#32;std::endl;
+00085 &#32;&#32;&#32;&#32;}
+00086 }
+</programlisting></section>
+<anchor xml:id="_classjson_1a335a17f634ae297aa36dbc40855dd8da"/><section>
+    <title>getFileList()</title>
+<indexterm><primary>getFileList</primary><secondary>json</secondary></indexterm>
+<indexterm><primary>json</primary><secondary>getFileList</secondary></indexterm>
+<para><computeroutput>std::vector&lt; std::filesystem::path &gt; json::getFileList (const std::string &amp; key, const std::string &amp; search)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Конструктор класса json. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>config_file_path</entry><entry>
+<para>Путь к файлу конфигурации. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>Если не удалось открыть файл конфигурации.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Конструктор открывает файл конфигурации и загружает его содержимое в объект config_json. Если файл конфигурации не будет найден, выбрасывается исключение std::runtime_error. </para>
+<para>
+Замещает <link linkend="_class_parser_configuration_1a70fcdbc2a2a83b1dabaecf576d1cff71">ParserConfiguration</link>.</para>
+<para>
+См. определение в файле <link linkend="_json_8cpp_source">json.cpp</link> строка <link linkend="_json_8cpp_source_1l00013">13</link></para>
+<programlisting linenumbering="unnumbered">00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00014 &#32;&#32;&#32;&#32;std::vector&lt;std::filesystem::path&gt;&#32;files;
+00015 &#32;&#32;&#32;&#32;std::filesystem::path&#32;directory&#32;=&#32;<link linkend="_classjson_1a760a6ea6469d17e611ccf23921753d20">getFilePath</link>(key);
+00016 
+00017 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(std::filesystem::exists(directory))&#32;{
+00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;entry&#32;:&#32;std::filesystem::recursive_directory_iterator(directory))&#32;{
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(entry.is_regular_file()&#32;&amp;&amp;&#32;entry.path().filename().string().find(search)&#32;!=&#32;std::string::npos)&#32;{
+00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;files.push_back(entry.path());
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::cout&#32;&lt;&lt;&#32;entry.path().string()&#32;&lt;&lt;&#32;&quot;\t&quot;&#32;&lt;&lt;&#32;entry.path()&#32;&lt;&lt;&#32;std::endl;</emphasis>
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00024 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Обработка&#32;ошибки</emphasis>
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Directory&#32;does&#32;not&#32;exist&#32;or&#32;is&#32;not&#32;accessible:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;directory&#32;&lt;&lt;&#32;std::endl;
+00027 &#32;&#32;&#32;&#32;}
+00028 
+00029 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;files;
+00030 }
+</programlisting>Граф вызовов:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classjson_a335a17f634ae297aa36dbc40855dd8da_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classjson_1a760a6ea6469d17e611ccf23921753d20"/><section>
+    <title>getFilePath()</title>
+<indexterm><primary>getFilePath</primary><secondary>json</secondary></indexterm>
+<indexterm><primary>json</primary><secondary>getFilePath</secondary></indexterm>
+<para><computeroutput>std::filesystem::path json::getFilePath (const std::string &amp; key)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Возвращает список файлов, соответствующих заданному ключу и поисковому запросу. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>Ключ для получения пути к директории. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>search</entry><entry>
+<para>Поисковый запрос для фильтрации файлов. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Список файлов, удовлетворяющих условиям поиска.</para>
+</formalpara>
+Функция возвращает список файлов, найденных в директории, определенной ключом key. Файлы фильтруются с помощью поискового запроса search. </para>
+<para>
+Замещает <link linkend="_class_parser_configuration_1ab44f9c6fed060b33544224ddeb473e59">ParserConfiguration</link>.</para>
+<para>
+См. определение в файле <link linkend="_json_8cpp_source">json.cpp</link> строка <link linkend="_json_8cpp_source_1l00041">41</link></para>
+<programlisting linenumbering="unnumbered">00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00042 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>.contains(key))&#32;{
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Configuration&#32;file&#32;does&#32;not&#32;contain&#32;key:&#32;&quot;</emphasis>&#32;+&#32;key);
+00044 &#32;&#32;&#32;&#32;}
+00045 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::filesystem::u8path(<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>[key].get&lt;std::string&gt;());
+00046 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classjson_a760a6ea6469d17e611ccf23921753d20_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_classjson_1a3f5e7618318c6e39387a917589aa3d38"/><section>
+    <title>getInteger()</title>
+<indexterm><primary>getInteger</primary><secondary>json</secondary></indexterm>
+<indexterm><primary>json</primary><secondary>getInteger</secondary></indexterm>
+<para><computeroutput>long long json::getInteger (const std::string &amp; key)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Возвращает путь к файлу, соответствующий заданному ключу. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>Ключ для получения пути к файлу. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Путь к файлу, соответствующий заданному ключу. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>Если ключ отсутствует в конфигурации.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Функция возвращает путь к файлу, соответствующий заданному ключу key, извлекая его из объекта config_json. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error. </para>
+<para>
+Переопределяет метод предка <link linkend="_class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580">ParserConfiguration</link>.</para>
+<para>
+См. определение в файле <link linkend="_json_8cpp_source">json.cpp</link> строка <link linkend="_json_8cpp_source_1l00058">58</link></para>
+<programlisting linenumbering="unnumbered">00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00059 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>.contains(key))&#32;{
+00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Configuration&#32;file&#32;does&#32;not&#32;contain&#32;key:&#32;&quot;</emphasis>&#32;+&#32;key);
+00061 &#32;&#32;&#32;&#32;}
+00062 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_classjson_1a39265872195766ea0181f7c7ca0e2e6c">config_json</link>[key];
+00063 }
+</programlisting></section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_classjson_1a39265872195766ea0181f7c7ca0e2e6c"/><section>
+    <title>config_json</title>
+<indexterm><primary>config_json</primary><secondary>json</secondary></indexterm>
+<indexterm><primary>json</primary><secondary>config_json</secondary></indexterm>
+<para><computeroutput>nlohmann::json json::config_json<computeroutput>[private]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_json_8h_source">json.h</link> строка <link linkend="_json_8h_source_1l00026">26</link></para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+<link linkend="_json_8h">json.h</link><link linkend="_json_8cpp">json.cpp</link></section>
+</section>

@@ -1,0 +1,42 @@
+\doxysection{Command\+Line.\+cpp}
+\hypertarget{_command_line_8cpp_source}{}\label{_command_line_8cpp_source}\index{CommandLine.cpp@{CommandLine.cpp}}
+\mbox{\hyperlink{_command_line_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/CommandLine/CommandLine.h"{}}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00015}\mbox{\hyperlink{class_command_line_a1aa9581e68b84a283af934ccb8aeef3b}{00015}}\ \mbox{\hyperlink{class_command_line_a1aa9581e68b84a283af934ccb8aeef3b}{CommandLine::CommandLine}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3}{CommandType::UNKNOWN}};}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00021}00021\ \ \ \ \ std::string\ command(argv[1]);}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}convert"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2}{CommandType::CONVERT}};}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}print"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b}{CommandType::PRINT}};}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}gen"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26}{CommandType::GEN}};}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3}{CommandType::UNKNOWN}};}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 2;\ i\ <\ argc;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_a0b7436a3732b1fc19cfdd3dd48b09fca}{args}}.emplace\_back(argv[i]);}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00047}\mbox{\hyperlink{class_command_line_aa17cd3db7ef897f09cb04bd2acbfabd6}{00047}}\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941}{CommandLine::CommandType}}\ \mbox{\hyperlink{class_command_line_aa17cd3db7ef897f09cb04bd2acbfabd6}{CommandLine::get\_command\_type}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}};}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00058}\mbox{\hyperlink{class_command_line_a58060c2f8b6032c5d1feab576b642125}{00058}}\ std::vector<std::string>\ \mbox{\hyperlink{class_command_line_a58060c2f8b6032c5d1feab576b642125}{CommandLine::get\_args}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_command_line_a0b7436a3732b1fc19cfdd3dd48b09fca}{args}};}
+\DoxyCodeLine{\Hypertarget{_command_line_8cpp_source_l00060}00060\ \}}
+
+\end{DoxyCode}

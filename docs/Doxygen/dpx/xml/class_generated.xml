@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="class_generated" kind="class" language="C++" prot="public">
+    <compoundname>Generated</compoundname>
+    <includes refid="_generated_8h" local="yes">Generated.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_generated_1a83bc49c8c5facc46a56afe4f1af0d01a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Generated::generateJsonFile</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>generateJsonFile</name>
+        <qualifiedname>Generated::generateJsonFile</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Генерирует JSON-файл с заданным именем. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Имя файла для сохранения JSON.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Функция генерирует JSON-файл, содержащий информацию о директориях, тексте справки и имени файла PDF. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Generated/Generated.h" line="13" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Generated/Generated.cpp" bodystart="10" bodyend="30"/>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс, содержащий функцию для генерации JSON-файла. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Generated/Generated.h" line="11" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Generated/Generated.h" bodystart="11" bodyend="14"/>
+    <listofallmembers>
+      <member refid="class_generated_1a83bc49c8c5facc46a56afe4f1af0d01a" prot="public" virt="non-virtual"><scope>Generated</scope><name>generateJsonFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

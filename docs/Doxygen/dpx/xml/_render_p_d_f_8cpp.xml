@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="_render_p_d_f_8cpp" kind="file" language="C++">
+    <compoundname>RenderPDF.cpp</compoundname>
+    <includes local="no">stdexcept</includes>
+    <includes refid="_render_p_d_f_8h" local="yes">../../include/RenderPDF/RenderPDF.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>../../include/RenderPDF/RenderPDF.h</label>
+        <link refid="_render_p_d_f_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../struct/cfm.h</label>
+        <link refid="cfm_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../struct/nbr.h</label>
+        <link refid="nbr_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../struct/point_data.h</label>
+        <link refid="point__data_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>../struct/tbl.h</label>
+        <link refid="tbl_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../struct/zgt.h</label>
+        <link refid="zgt_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RenderPDF.cpp</label>
+        <link refid="_render_p_d_f_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>array</label>
+      </node>
+      <node id="7">
+        <label>cmath</label>
+      </node>
+      <node id="6">
+        <label>filesystem</label>
+      </node>
+      <node id="5">
+        <label>hpdf.h</label>
+      </node>
+      <node id="11">
+        <label>iostream</label>
+      </node>
+      <node id="14">
+        <label>map</label>
+      </node>
+      <node id="2">
+        <label>stdexcept</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../include/RenderPDF/RenderPDF.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277" kindref="member">RenderPDF::createA3Page</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page<sp/>page<sp/>=<sp/>HPDF_AddPage(<ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref>);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_SetSize(page,<sp/>HPDF_PAGE_SIZE_A3,<sp/>HPDF_PAGE_PORTRAIT);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" refkind="member"><highlight class="normal">HPDF_Font<sp/><ref refid="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" kindref="member">RenderPDF::loadFont</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>fontPath)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>font_name<sp/>=<sp/>HPDF_LoadTTFontFromFile(<ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref>,<sp/>fontPath.c_str(),<sp/>HPDF_TRUE);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>font<sp/>=<sp/>HPDF_GetFont(<ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref>,<sp/>font_name,<sp/></highlight><highlight class="stringliteral">&quot;CP1251&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!font){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Не<sp/>удалось<sp/>загрузить<sp/>шрифт.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>font;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7" refkind="member"><highlight class="normal"><ref refid="class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7" kindref="member">RenderPDF::~RenderPDF</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_Free(<ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" refkind="member"><highlight class="normal"><ref refid="class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f" kindref="member">RenderPDF::RenderPDF</ref>(<ref refid="structcfm" kindref="compound">cfm</ref><sp/>cfm_data,<sp/><ref refid="structzgt" kindref="compound">zgt</ref><sp/>zgt_data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;tbl&gt;<sp/>&amp;tbl_data,<sp/><ref refid="structnbr" kindref="compound">nbr</ref><sp/>nbr_data,<sp/><ref refid="structpoint" kindref="compound">point</ref><sp/>point_data,<sp/>std::filesystem::path<sp/>fontPath)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" kindref="member">initializeData</ref>(std::move(cfm_data),<sp/>std::move(zgt_data),<sp/>tbl_data,<sp/>std::move(nbr_data),<sp/>std::move(point_data),<sp/>fontPath);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f" kindref="member">initializePDF</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0" kindref="member">adjustFontSize</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781" kindref="member">font_</ref><sp/>=<sp/><ref refid="class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0" kindref="member">loadFont</ref>(<ref refid="class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4" kindref="member">fontPath_</ref>.string());</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f" kindref="member">sortTblData</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3" kindref="member">populatePointTbl</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489" kindref="member">new_page</ref><sp/>=<sp/><ref refid="class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087" kindref="member">checkForNewPage</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94" kindref="member">RenderPDF::initializeData</ref>(<ref refid="structcfm" kindref="compound">cfm</ref><sp/>cfm_data,<sp/><ref refid="structzgt" kindref="compound">zgt</ref><sp/>zgt_data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;tbl&gt;<sp/>&amp;tbl_data,<sp/><ref refid="structnbr" kindref="compound">nbr</ref><sp/>nbr_data,<sp/><ref refid="structpoint" kindref="compound">point</ref><sp/>point_data,<sp/>std::filesystem::path<sp/>fontPath)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref><sp/>=<sp/>std::move(cfm_data);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2" kindref="member">zgt_data_</ref><sp/>=<sp/>std::move(zgt_data);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" kindref="member">tbl_data_</ref><sp/>=<sp/>tbl_data;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec" kindref="member">nbr_data_</ref><sp/>=<sp/>std::move(nbr_data);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref><sp/>=<sp/>std::move(point_data);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4" kindref="member">fontPath_</ref><sp/>=<sp/>fontPath;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f" kindref="member">RenderPDF::initializePDF</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref><sp/>=<sp/>HPDF_New(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb" kindref="member">pdf_</ref>){</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Не<sp/>удалось<sp/>создать<sp/>PDF<sp/>документ.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0" kindref="member">RenderPDF::adjustFontSize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1af1376357880c15d011d9c96fd485714e" kindref="member">digit_height</ref>*=1.090248;<sp/></highlight><highlight class="comment">//коэффициент<sp/>поправки<sp/>размера<sp/>для<sp/>шрифта<sp/>GOST_B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/RenderPDF.cpp"/>
+  </compounddef>
+</doxygen>

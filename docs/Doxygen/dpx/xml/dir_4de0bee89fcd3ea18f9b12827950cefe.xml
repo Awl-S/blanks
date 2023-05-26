@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="dir_4de0bee89fcd3ea18f9b12827950cefe" kind="dir">
+    <compoundname>Reader</compoundname>
+    <innerfile refid="_file_reader_8cpp">FileReader.cpp</innerfile>
+    <innerfile refid="text_reader_8cpp">textReader.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Reader/"/>
+  </compounddef>
+</doxygen>

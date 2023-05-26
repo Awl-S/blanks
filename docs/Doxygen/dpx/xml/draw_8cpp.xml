@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="draw_8cpp" kind="file" language="C++">
+    <compoundname>draw.cpp</compoundname>
+    <includes refid="_render_p_d_f_8h" local="yes">../../include/RenderPDF/RenderPDF.h</includes>
+    <includes local="no">cmath</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>../../include/RenderPDF/RenderPDF.h</label>
+        <link refid="_render_p_d_f_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../struct/cfm.h</label>
+        <link refid="cfm_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../struct/nbr.h</label>
+        <link refid="nbr_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../struct/point_data.h</label>
+        <link refid="point__data_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../struct/tbl.h</label>
+        <link refid="tbl_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../struct/zgt.h</label>
+        <link refid="zgt_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>draw.cpp</label>
+        <link refid="draw_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>array</label>
+      </node>
+      <node id="6">
+        <label>cmath</label>
+      </node>
+      <node id="5">
+        <label>filesystem</label>
+      </node>
+      <node id="4">
+        <label>hpdf.h</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../../include/RenderPDF/RenderPDF.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36" kindref="member">RenderPDF::setFontSize</ref>(HPDF_Page<sp/>page,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>size)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_SetFontAndSize(page,<sp/><ref refid="class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781" kindref="member">font_</ref>,<sp/>size);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_SetHeight(page,<sp/>420);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_SetWidth(page,<sp/>297);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1a50a4d487307986751eb5087f25961c27" kindref="member">RenderPDF::drawCircle</ref>(HPDF_Page<sp/>page,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>radius)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_Circle(page,<sp/>x,<sp/>y,<sp/>radius);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_Stroke(page);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" kindref="member">RenderPDF::draw_line</ref>(HPDF_Page<sp/>page,<sp/>HPDF_REAL<sp/>x1,<sp/>HPDF_REAL<sp/>y1,<sp/>HPDF_REAL<sp/>x2,<sp/>HPDF_REAL<sp/>y2)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_MoveTo(page,<sp/>x1,<sp/>y1);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_LineTo(page,<sp/>x2,<sp/>y2);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_Stroke(page);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="class_render_p_d_f_1af00237dc614fc46323aead1daae13a15" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1af00237dc614fc46323aead1daae13a15" kindref="member">RenderPDF::drawText</ref>(HPDF_Page<sp/>page,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>text,<sp/>HPDF_REAL<sp/>x,<sp/>HPDF_REAL<sp/>y)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_BeginText(page);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_MoveTextPos(page,<sp/>x,<sp/>y);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_ShowText(page,<sp/>text.c_str());</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_Page_EndText(page);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="class_render_p_d_f_1a87d9d5335c694603bf6686851879879a" refkind="member"><highlight class="normal">std::string<sp/><ref refid="class_render_p_d_f_1a87d9d5335c694603bf6686851879879a" kindref="member">RenderPDF::formatText</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>ss.precision(<ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6" kindref="member">format</ref>[1]);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/>std::fixed<sp/>&lt;&lt;<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1ad4cec00bcb67870e82af90e5d3676161" kindref="member">marks</ref>[i];</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" refkind="member"><highlight class="normal">HPDF_REAL<sp/><ref refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" kindref="member">RenderPDF::calculateXCoordinate</ref>(HPDF_REAL<sp/>angle,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>textWidth,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>blank)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>marginText<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>radius<sp/>=<sp/>(<ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" kindref="member">diameter</ref><sp/>/<sp/>2.0)<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0]<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_REAL<sp/>x<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>marginText].first<sp/>+</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0]-1)<sp/>*<sp/>cos(angle)<sp/>-<sp/>textWidth<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" refkind="member"><highlight class="normal">HPDF_REAL<sp/><ref refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" kindref="member">RenderPDF::calculateYCoordinate</ref>(HPDF_REAL<sp/>angle,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>blank)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>marginText<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>radius<sp/>=<sp/>(<ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" kindref="member">diameter</ref><sp/>/<sp/>2.0)<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0]<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>HPDF_REAL<sp/>y<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>marginText].second<sp/>+</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0]-1)<sp/>*<sp/>sin(angle)<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1af1376357880c15d011d9c96fd485714e" kindref="member">digit_height</ref><sp/>/<sp/>2.5<sp/>+<sp/>0.5;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/draw.cpp"/>
+  </compounddef>
+</doxygen>

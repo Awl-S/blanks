@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtbl" xml:lang="ru">
+<title>Структура tbl</title>
+<indexterm><primary>tbl</primary></indexterm>
+<para>
+
+<para>Структура для хранения данных таблицы. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;tbl.h&quot;</computeroutput>
+</para>
+Граф связей класса tbl:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structtbl__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_structtbl_1a1656f3d8341995db3e9711ecf583cc94">display</link> () const</para>
+
+<para>Выводит данные таблицы в стандартный вывод. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Открытые атрибуты    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">position</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_structtbl_1ac995e4da6d437a046c2074f9dc33b833">model</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; std::vector&lt; double &gt; &gt; <link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">measurements</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Структура для хранения данных таблицы. </para>
+
+
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>position</entry><entry>
+<para>Позиция в таблице. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>model</entry><entry>
+<para>Модель из таблицы. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>measurements</entry><entry>
+<para>Измерения, связанные с таблицей. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+См. определение в файле <link linkend="_tbl_8h_source">tbl.h</link> строка <link linkend="_tbl_8h_source_1l00015">15</link></para>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_structtbl_1a1656f3d8341995db3e9711ecf583cc94"/><section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>tbl</secondary></indexterm>
+<indexterm><primary>tbl</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>void tbl::display ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Выводит данные таблицы в стандартный вывод. </para>
+</para>
+<para>
+См. определение в файле <link linkend="_tbl_8h_source">tbl.h</link> строка <link linkend="_tbl_8h_source_1l00023">23</link></para>
+<programlisting linenumbering="unnumbered">00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Position:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">position</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Model:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structtbl_1ac995e4da6d437a046c2074f9dc33b833">model</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00026 
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Measurements:\n&quot;</emphasis>;
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;row&#32;:&#32;<link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">measurements</link>)&#32;{
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;value&#32;:&#32;row)&#32;{
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;value&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00034 &#32;&#32;&#32;&#32;}
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structtbl_a1656f3d8341995db3e9711ecf583cc94_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334"/><section>
+    <title>measurements</title>
+<indexterm><primary>measurements</primary><secondary>tbl</secondary></indexterm>
+<indexterm><primary>tbl</primary><secondary>measurements</secondary></indexterm>
+<para><computeroutput>std::vector&lt;std::vector&lt;double&gt; &gt; tbl::measurements</computeroutput></para><para>
+См. определение в файле <link linkend="_tbl_8h_source">tbl.h</link> строка <link linkend="_tbl_8h_source_1l00018">18</link></para>
+</section>
+<anchor xml:id="_structtbl_1ac995e4da6d437a046c2074f9dc33b833"/><section>
+    <title>model</title>
+<indexterm><primary>model</primary><secondary>tbl</secondary></indexterm>
+<indexterm><primary>tbl</primary><secondary>model</secondary></indexterm>
+<para><computeroutput>std::string tbl::model</computeroutput></para><para>
+См. определение в файле <link linkend="_tbl_8h_source">tbl.h</link> строка <link linkend="_tbl_8h_source_1l00017">17</link></para>
+</section>
+<anchor xml:id="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8"/><section>
+    <title>position</title>
+<indexterm><primary>position</primary><secondary>tbl</secondary></indexterm>
+<indexterm><primary>tbl</primary><secondary>position</secondary></indexterm>
+<para><computeroutput>int tbl::position</computeroutput></para><para>
+См. определение в файле <link linkend="_tbl_8h_source">tbl.h</link> строка <link linkend="_tbl_8h_source_1l00016">16</link></para>
+</section>
+<para>
+Объявления и описания членов структуры находятся в файле:</para>
+<link linkend="_tbl_8h">tbl.h</link></section>
+</section>

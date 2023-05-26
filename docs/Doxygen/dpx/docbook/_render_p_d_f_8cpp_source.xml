@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_p_d_f_8cpp_source" xml:lang="ru">
+<title>RenderPDF.cpp</title>
+<indexterm><primary>RenderPDF.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="__render_p_d_f_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;../../include/RenderPDF/RenderPDF.h&quot;</emphasis>
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00003"/>00003 
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00007"/><link linkend="_class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277">00007</link> &#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a22fa693e95126bb362fe324470ba2277">RenderPDF::createA3Page</link>()&#32;{
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00008"/>00008 &#32;&#32;&#32;&#32;HPDF_Page&#32;page&#32;=&#32;HPDF_AddPage(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00009"/>00009 &#32;&#32;&#32;&#32;HPDF_Page_SetSize(page,&#32;HPDF_PAGE_SIZE_A3,&#32;HPDF_PAGE_PORTRAIT);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00010"/>00010 }
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00011"/>00011 
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00019"/><link linkend="_class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0">00019</link> HPDF_Font&#32;<link linkend="_class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0">RenderPDF::loadFont</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;fontPath)&#32;{
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;font_name&#32;=&#32;HPDF_LoadTTFontFromFile(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>,&#32;fontPath.c_str(),&#32;HPDF_TRUE);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;font&#32;=&#32;HPDF_GetFont(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>,&#32;font_name,&#32;<emphasis role="stringliteral">&quot;CP1251&quot;</emphasis>);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00022"/>00022 
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!font){
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Не&#32;удалось&#32;загрузить&#32;шрифт.&quot;</emphasis>);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00026"/>00026 
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;font;
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00028"/>00028 }
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00029"/>00029 
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00035"/><link linkend="_class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7">00035</link> <link linkend="_class_render_p_d_f_1ab1e1309fbda18c7ebd8aa9b75a1f69d7">RenderPDF::~RenderPDF</link>()&#32;{
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>)&#32;{
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_Free(<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00039"/>00039 }
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00040"/>00040 
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00047"/><link linkend="_class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f">00047</link> <link linkend="_class_render_p_d_f_1af0e199f862cb39e5600325bd2c69600f">RenderPDF::RenderPDF</link>(<link linkend="_structcfm">cfm</link>&#32;cfm_data,&#32;<link linkend="_structzgt">zgt</link>&#32;zgt_data,&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;tbl&gt;&#32;&amp;tbl_data,&#32;<link linkend="_structnbr">nbr</link>&#32;nbr_data,&#32;<link linkend="_structpoint">point</link>&#32;point_data,&#32;std::filesystem::path&#32;fontPath)&#32;{
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94">initializeData</link>(std::move(cfm_data),&#32;std::move(zgt_data),&#32;tbl_data,&#32;std::move(nbr_data),&#32;std::move(point_data),&#32;fontPath);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f">initializePDF</link>();
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0">adjustFontSize</link>();
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781">font_</link>&#32;=&#32;<link linkend="_class_render_p_d_f_1ac3ba6c62b21e04dbe57cedf12b3f06c0">loadFont</link>(<link linkend="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</link>.string());
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f">sortTblData</link>();
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a1b6a4f2724661a30f767d37d2bf041b3">populatePointTbl</link>();
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1aa8780af3344ed124f9ad0f4189344489">new_page</link>&#32;=&#32;<link linkend="_class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087">checkForNewPage</link>();
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00055"/>00055 }
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00056"/>00056 
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00067"/><link linkend="_class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94">00067</link> &#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a6ac6011ccf3a8df169125c3d72b93c94">RenderPDF::initializeData</link>(<link linkend="_structcfm">cfm</link>&#32;cfm_data,&#32;<link linkend="_structzgt">zgt</link>&#32;zgt_data,&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;tbl&gt;&#32;&amp;tbl_data,&#32;<link linkend="_structnbr">nbr</link>&#32;nbr_data,&#32;<link linkend="_structpoint">point</link>&#32;point_data,&#32;std::filesystem::path&#32;fontPath)&#32;{
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>&#32;=&#32;std::move(cfm_data);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</link>&#32;=&#32;std::move(zgt_data);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c">tbl_data_</link>&#32;=&#32;tbl_data;
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a10939476ae873b9782a7af7e363bb9ec">nbr_data_</link>&#32;=&#32;std::move(nbr_data);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>&#32;=&#32;std::move(point_data);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</link>&#32;=&#32;fontPath;
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00074"/>00074 }
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00075"/>00075 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1aaaeb1e6ddb96e6404cdfd22ad557fe6f">RenderPDF::initializePDF</link>()&#32;{
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>&#32;=&#32;HPDF_New(<emphasis role="keyword">nullptr</emphasis>,&#32;<emphasis role="keyword">nullptr</emphasis>);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!<link linkend="_class_render_p_d_f_1a0b894cccbec97da627a095dde9f054eb">pdf_</link>){
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Не&#32;удалось&#32;создать&#32;PDF&#32;документ.&quot;</emphasis>);
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00085"/>00085 }
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00086"/>00086 
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00092"/><link linkend="_class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0">00092</link> &#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a9c8b019dbb7873ad236e5b15c52fd4f0">RenderPDF::adjustFontSize</link>()&#32;{
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>*=1.090248;&#32;<emphasis role="comment">//коэффициент&#32;поправки&#32;размера&#32;для&#32;шрифта&#32;GOST_B</emphasis>
+<anchor xml:id="__render_p_d_f_8cpp_source_1l00094"/>00094 }
+</programlisting></section>

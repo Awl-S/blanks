@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__file_reader_8cpp_source" xml:lang="ru">
+<title>FileReader.cpp</title>
+<indexterm><primary>FileReader.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="__file_reader_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../../include/Reader/FileReader.h&quot;</emphasis>
+<anchor xml:id="__file_reader_8cpp_source_1l00002"/>00002 
+<anchor xml:id="__file_reader_8cpp_source_1l00012"/><link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">00012</link> std::string&#32;<link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">FileReader::trim</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;s)&#32;{
+<anchor xml:id="__file_reader_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;start&#32;=&#32;s.begin();
+<anchor xml:id="__file_reader_8cpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(start&#32;!=&#32;s.end()&#32;&amp;&amp;&#32;(<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis><emphasis role="keyword">&gt;</emphasis>(*start)&#32;&gt;&#32;255&#32;||&#32;std::isspace(<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis><emphasis role="keyword">&gt;</emphasis>(*start))))&#32;{
+<anchor xml:id="__file_reader_8cpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;start++;
+<anchor xml:id="__file_reader_8cpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__file_reader_8cpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;end&#32;=&#32;s.end();
+<anchor xml:id="__file_reader_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(end&#32;!=&#32;start&#32;&amp;&amp;&#32;(<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis><emphasis role="keyword">&gt;</emphasis>(*(end&#32;-&#32;1))&#32;&gt;&#32;255&#32;||&#32;std::isspace(<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis><emphasis role="keyword">&gt;</emphasis>(*(end&#32;-&#32;1)))))&#32;{
+<anchor xml:id="__file_reader_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;end--;
+<anchor xml:id="__file_reader_8cpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__file_reader_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::string(start,&#32;end);
+<anchor xml:id="__file_reader_8cpp_source_1l00022"/>00022 }
+<anchor xml:id="__file_reader_8cpp_source_1l00023"/>00023 
+<anchor xml:id="__file_reader_8cpp_source_1l00033"/><link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">00033</link> std::string&#32;<link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">FileReader::readLineString</link>(std::ifstream&#32;&amp;file)&#32;{
+<anchor xml:id="__file_reader_8cpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;std::string&#32;line;
+<anchor xml:id="__file_reader_8cpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(std::getline(file,&#32;line))
+<anchor xml:id="__file_reader_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__file_reader_8cpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Remove&#32;any&#32;leading/trailing&#32;whitespace</emphasis>
+<anchor xml:id="__file_reader_8cpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line.erase(0,&#32;line.find_first_not_of(<emphasis role="stringliteral">&quot;&#32;\t\r\n&quot;</emphasis>));
+<anchor xml:id="__file_reader_8cpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line.erase(line.find_last_not_of(<emphasis role="stringliteral">&quot;&#32;\t\r\n&quot;</emphasis>)&#32;+&#32;1);
+<anchor xml:id="__file_reader_8cpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__file_reader_8cpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;line;
+<anchor xml:id="__file_reader_8cpp_source_1l00042"/>00042 }
+</programlisting></section>

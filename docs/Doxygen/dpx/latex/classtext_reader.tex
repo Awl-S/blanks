@@ -1,0 +1,471 @@
+\doxysection{Класс text\+Reader}
+\hypertarget{classtext_reader}{}\label{classtext_reader}\index{textReader@{textReader}}
+
+
+Класс для чтения текстового файла.  
+
+
+
+
+{\ttfamily \#include \"{}text\+Reader.\+h\"{}}
+
+
+
+Граф наследования\+:text\+Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classtext_reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Граф связей класса text\+Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classtext_reader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtext_reader_a8b98efd0fd952fd929ea441f26bc69ba}{text\+Reader}} (const std\+::filesystem\+::path \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \doxylink{classtext_reader}{text\+Reader}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtext_reader_ad25e94320aa8adce9de68445d963b570}{read\+\_\+nbr}} (\mbox{\hyperlink{structnbr}{nbr}} \&data)
+\begin{DoxyCompactList}\small\item\em Читает данные типа nbr из файла. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5}{read\+\_\+point}} (\mbox{\hyperlink{structpoint}{point}} \&data)
+\begin{DoxyCompactList}\small\item\em Читает данные типа point из файла. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtext_reader_ac9b23d5e5a58431fb114f221098a2640}{read\+\_\+tbl}} (\mbox{\hyperlink{structtbl}{tbl}} \&data)
+\begin{DoxyCompactList}\small\item\em Читает данные типа tbl из файла. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtext_reader_a5cd4eeebf53787a1434d037c54993071}{read\+\_\+cfm}} (\mbox{\hyperlink{structcfm}{cfm}} \&data)
+\begin{DoxyCompactList}\small\item\em Читает данные типа cfm из файла. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtext_reader_af98fb017c822ba0f17c58a1dda32a787}{read\+\_\+zgt}} (\mbox{\hyperlink{structzgt}{zgt}} \&data)
+\begin{DoxyCompactList}\small\item\em Читает данные типа zgt из файла. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые члены унаследованные от \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_file_reader_a1dae37584804731f11c9c932219d8282}{File\+Reader}} (std\+::filesystem\+::path file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \doxylink{class_file_reader}{File\+Reader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Дополнительные унаследованные члены}
+\doxysubsection*{Защищенные статические члены унаследованные от \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{read\+Line\+String}} (std\+::ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Читает строку из файла и удаляет ведущие и завершающие пробелы. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Удаляет ведущие и завершающие пробелы из строки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{class_file_reader}{File\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::filesystem\+::path \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\+\_\+path\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для чтения текстового файла. 
+
+Класс \doxylink{classtext_reader}{text\+Reader} наследуется от класса \doxylink{class_file_reader}{File\+Reader} и предоставляет функциональность чтения различных типов данных из текстового файла. 
+
+См. определение в файле \mbox{\hyperlink{text_reader_8h_source}{text\+Reader.\+h}} строка \mbox{\hyperlink{text_reader_8h_source_l00018}{18}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classtext_reader_a8b98efd0fd952fd929ea441f26bc69ba}\label{classtext_reader_a8b98efd0fd952fd929ea441f26bc69ba} 
+\index{textReader@{textReader}!textReader@{textReader}}
+\index{textReader@{textReader}!textReader@{textReader}}
+\doxysubsubsection{\texorpdfstring{textReader()}{textReader()}}
+{\footnotesize\ttfamily text\+Reader\+::text\+Reader (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Конструктор класса \doxylink{classtext_reader}{text\+Reader}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file\+\_\+path} & Путь к файлу для чтения.\\
+\hline
+\end{DoxyParams}
+Конструктор инициализирует объект \doxylink{classtext_reader}{text\+Reader} с указанным путем к файлу file\+\_\+path и вызывает конструктор базового класса \doxylink{class_file_reader}{File\+Reader}. 
+
+См. определение в файле \mbox{\hyperlink{text_reader_8h_source}{text\+Reader.\+h}} строка \mbox{\hyperlink{text_reader_8h_source_l00027}{27}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ :\ \mbox{\hyperlink{class_file_reader}{FileReader}}(file\_path)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Методы}
+\Hypertarget{classtext_reader_a5cd4eeebf53787a1434d037c54993071}\label{classtext_reader_a5cd4eeebf53787a1434d037c54993071} 
+\index{textReader@{textReader}!read\_cfm@{read\_cfm}}
+\index{read\_cfm@{read\_cfm}!textReader@{textReader}}
+\doxysubsubsection{\texorpdfstring{read\_cfm()}{read\_cfm()}}
+{\footnotesize\ttfamily void text\+Reader\+::read\+\_\+cfm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcfm}{cfm}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Читает данные типа cfm из файла. 
+
+Читает данные из файла в формате CFM.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Ссылка на объект типа cfm для сохранения прочитанных данных.\\
+\hline
+\end{DoxyParams}
+Функция \doxylink{classtext_reader_a5cd4eeebf53787a1434d037c54993071}{read\+\_\+cfm()} читает данные типа cfm из файла и сохраняет их в объекте data.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & ссылка на структуру cfm, в которую будут записаны данные из файла \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & в случае ошибки открытия файла \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{text_reader_8cpp_source}{text\+Reader.\+cpp}} строка \mbox{\hyperlink{text_reader_8cpp_source_l00011}{11}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ 1;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ ==\ 1)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structcfm_a7a658677e62202d59ef8a14da194d65b}{header}}\ =\ \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim}}(line);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 3)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{blank}}\ =\ \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim}}(line);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 6)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ temp)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structcfm_ad4cec00bcb67870e82af90e5d3676161}{marks}}.push\_back(temp);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 8)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[0]\ >>\ data.\mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[1];}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 10)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 12)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}}[0]\ >>\ data.\mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}}[1];}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 14)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}}[0]\ >>\ data.\mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}}[1];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 16)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[0]\ >>\ data.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[1]\ >>\ data.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[2]\ >>\ data.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[3];}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 18)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\_height}}\ >>\ data.\mbox{\hyperlink{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060}{label\_height}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 20)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2}{tick\_mask}}\ =\ \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim}}(line);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classtext_reader_a5cd4eeebf53787a1434d037c54993071_cgraph}
+\end{center}
+\end{figure}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classtext_reader_a5cd4eeebf53787a1434d037c54993071_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classtext_reader_ad25e94320aa8adce9de68445d963b570}\label{classtext_reader_ad25e94320aa8adce9de68445d963b570} 
+\index{textReader@{textReader}!read\_nbr@{read\_nbr}}
+\index{read\_nbr@{read\_nbr}!textReader@{textReader}}
+\doxysubsubsection{\texorpdfstring{read\_nbr()}{read\_nbr()}}
+{\footnotesize\ttfamily void text\+Reader\+::read\+\_\+nbr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnbr}{nbr}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Читает данные типа nbr из файла. 
+
+Читает данные из файла в формате NBR.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Ссылка на объект типа nbr для сохранения прочитанных данных.\\
+\hline
+\end{DoxyParams}
+Функция \doxylink{classtext_reader_ad25e94320aa8adce9de68445d963b570}{read\+\_\+nbr()} читает данные типа nbr из файла и сохраняет их в объекте data.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & ссылка на структуру nbr, в которую будут записаны данные из файла \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & в случае ошибки открытия файла \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{text_reader_8cpp_source}{text\+Reader.\+cpp}} строка \mbox{\hyperlink{text_reader_8cpp_source_l00163}{163}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ line\_number\ =\ 1;}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structnbr_a54d820aea6c166beb70523a0694dc669}{icon}}.insert(std::make\_pair(line\_number,\ line));}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ line\_number++;}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5}\label{classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5} 
+\index{textReader@{textReader}!read\_point@{read\_point}}
+\index{read\_point@{read\_point}!textReader@{textReader}}
+\doxysubsubsection{\texorpdfstring{read\_point()}{read\_point()}}
+{\footnotesize\ttfamily void text\+Reader\+::read\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpoint}{point}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Читает данные типа point из файла. 
+
+Читает данные из файла в формате точки
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Ссылка на объект типа point для сохранения прочитанных данных.\\
+\hline
+\end{DoxyParams}
+Функция \doxylink{classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5}{read\+\_\+point()} читает данные типа point из файла и сохраняет их в объекте data.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & ссылка на структуру point, в которую будут записаны данные из файла \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & в случае ошибки открытия файла \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{text_reader_8cpp_source}{text\+Reader.\+cpp}} строка \mbox{\hyperlink{text_reader_8cpp_source_l00145}{145}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{double}\ x,\ y;}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{while}\ (file\ >>\ x\ >>\ y)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}.emplace\_back(x,\ y);}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classtext_reader_ac9b23d5e5a58431fb114f221098a2640}\label{classtext_reader_ac9b23d5e5a58431fb114f221098a2640} 
+\index{textReader@{textReader}!read\_tbl@{read\_tbl}}
+\index{read\_tbl@{read\_tbl}!textReader@{textReader}}
+\doxysubsubsection{\texorpdfstring{read\_tbl()}{read\_tbl()}}
+{\footnotesize\ttfamily void text\+Reader\+::read\+\_\+tbl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtbl}{tbl}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Читает данные типа tbl из файла. 
+
+Читает данные из файла в формате TBL.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Ссылка на объект типа tbl для сохранения прочитанных данных.\\
+\hline
+\end{DoxyParams}
+Функция \doxylink{classtext_reader_ac9b23d5e5a58431fb114f221098a2640}{read\+\_\+tbl()} читает данные типа tbl из файла и сохраняет их в объекте data.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & ссылка на структуру tbl, в которую будут записаны данные из файла \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & в случае ошибки открытия файла или если не удается извлечь число из имени файла \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{text_reader_8cpp_source}{text\+Reader.\+cpp}} строка \mbox{\hyperlink{text_reader_8cpp_source_l00095}{95}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ std::string\ file\_name\ =\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.filename().string();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ std::string\ prefix\ =\ \textcolor{stringliteral}{"{}scale"{}};}
+\DoxyCodeLine{00104\ \ \ \ \ std::string\ suffix\ =\ \textcolor{stringliteral}{"{}.tbl"{}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ file\_name.find(prefix);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ file\_name.find(suffix);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (start\ ==\ std::string::npos\ ||\ end\ ==\ std::string::npos\ ||\ start\ >=\ end)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Could\ not\ extract\ number\ from\ file\ name"{}});}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ start\ +=\ prefix.length();}
+\DoxyCodeLine{00114\ \ \ \ \ std::string\ number\_str\ =\ file\_name.substr(start,\ end\ -\/\ start);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8}{position}}\ =\ std::stoi(number\_str);}
+\DoxyCodeLine{00118\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Invalid\ number\ in\ file\ name:\ "{}}\ +\ number\_str);}
+\DoxyCodeLine{00120\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::out\_of\_range\&\ e)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Number\ in\ file\ name\ is\ out\ of\ range:\ "{}}\ +\ number\_str);}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{readLineString}}(file);}
+\DoxyCodeLine{00126\ \ \ \ \ data.\mbox{\hyperlink{structtbl_ac995e4da6d437a046c2074f9dc33b833}{model}}\ =\ \mbox{\hyperlink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{readLineString}}(file);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ data.\mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{measurements}}.reserve(20);}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ col2;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ col3;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::istringstream(line)\ >>\ temp\ >>\ col2\ >>\ col3)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{measurements}}.push\_back(\{col2,\ col3\});}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+Граф вызовов\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtext_reader_ac9b23d5e5a58431fb114f221098a2640_cgraph}
+\end{center}
+\end{figure}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{classtext_reader_ac9b23d5e5a58431fb114f221098a2640_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classtext_reader_af98fb017c822ba0f17c58a1dda32a787}\label{classtext_reader_af98fb017c822ba0f17c58a1dda32a787} 
+\index{textReader@{textReader}!read\_zgt@{read\_zgt}}
+\index{read\_zgt@{read\_zgt}!textReader@{textReader}}
+\doxysubsubsection{\texorpdfstring{read\_zgt()}{read\_zgt()}}
+{\footnotesize\ttfamily void text\+Reader\+::read\+\_\+zgt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structzgt}{zgt}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Читает данные типа zgt из файла. 
+
+Читает данные из файла в формате ZGT.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Ссылка на объект типа zgt для сохранения прочитанных данных.\\
+\hline
+\end{DoxyParams}
+Функция \doxylink{classtext_reader_af98fb017c822ba0f17c58a1dda32a787}{read\+\_\+zgt()} читает данные типа zgt из файла и сохраняет их в объекте data.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & ссылка на структуру zgt, в которую будут записаны данные из файла \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & в случае ошибки открытия файла \\
+\hline
+\end{DoxyExceptions}
+
+
+См. определение в файле \mbox{\hyperlink{text_reader_8cpp_source}{text\+Reader.\+cpp}} строка \mbox{\hyperlink{text_reader_8cpp_source_l00055}{55}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ 1;}
+\DoxyCodeLine{00062\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ ==\ 2)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structzgt_ab347a1a6d59fde2e507a7035e65e2544}{diameter}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 4)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structzgt_a158a8320351f554c1aa14cf6436b505f}{center\_hole\_diameter}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 6)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ temp)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\_holes}}.push\_back(temp);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 8)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ temp)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structzgt_a9ca1baeee9e45b33b39efc727f206e34}{marker\_position}}.push\_back(temp);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 10)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}[0]\ >>\ data.\mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}[1];}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 12)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[0]\ >>\ data.\mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[1]\ >>\ data.\mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[2];}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classtext_reader_af98fb017c822ba0f17c58a1dda32a787_icgraph}
+\end{center}
+\end{figure}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{text_reader_8h}{text\+Reader.\+h}}\item 
+\mbox{\hyperlink{text_reader_8cpp}{text\+Reader.\+cpp}}\end{DoxyCompactItemize}

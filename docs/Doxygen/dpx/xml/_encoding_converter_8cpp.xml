@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="_encoding_converter_8cpp" kind="file" language="C++">
+    <compoundname>EncodingConverter.cpp</compoundname>
+    <includes refid="_encoding_converter_8h" local="yes">../../include/converting/EncodingConverter.h</includes>
+    <includes local="yes">iostream</includes>
+    <includes local="no">utility</includes>
+    <includes local="yes">iconv.h</includes>
+    <includes local="yes">filesystem</includes>
+    <includes local="yes">fstream</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>../../include/converting/EncodingConverter.h</label>
+        <link refid="_encoding_converter_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EncodingConverter.cpp</label>
+        <link refid="_encoding_converter_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>filesystem</label>
+      </node>
+      <node id="9">
+        <label>fstream</label>
+      </node>
+      <node id="8">
+        <label>iconv.h</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>utility</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../../include/converting/EncodingConverter.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;iostream&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;iconv.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;filesystem&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fstream&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62" refkind="member"><highlight class="normal"><ref refid="class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62" kindref="member">EncodingConverter::EncodingConverter</ref>(std::string<sp/>inputDir,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>outputDir)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>inputDirectory(std::move(inputDir)),<sp/>outputDirectory(outputDir),<sp/>useTempDirectory(outputDir.empty())<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" kindref="member">loadSettings</ref>(),<sp/><ref refid="class_encoding_converter_1a560484bdcdc929771c7d42877cab9643" kindref="member">filesConverted</ref><sp/>=<sp/>0,<sp/><ref refid="class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b" kindref="member">filesProcessed</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" kindref="member">EncodingConverter::loadSettings</ref>(){</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f" kindref="member">sourceEncoding</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;WINDOWS-1251&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7" kindref="member">targetEncoding</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;UTF-8&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Создаем<sp/>массив<sp/>итераторов<sp/>на<sp/>строки,<sp/>которые<sp/>нужно<sp/>добавить</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>extensions[]<sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;.tbl&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.нбр&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.згт&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.cfm&quot;</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>numExtensions<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(extensions)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(extensions[0]);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Используем<sp/>конструктор<sp/>std::vector,<sp/>принимающий<sp/>два<sp/>итератора</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" kindref="member">fileExtensions</ref>.insert(<ref refid="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" kindref="member">fileExtensions</ref>.end(),<sp/>extensions,<sp/>extensions<sp/>+<sp/>numExtensions);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" kindref="member">EncodingConverter::convert</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::path<sp/>inputPath(<ref refid="class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e" kindref="member">inputDirectory</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" kindref="member">convertDirectory</ref>(inputPath);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0" kindref="member">printStats</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" kindref="member">EncodingConverter::convertDirectory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::filesystem::path&amp;<sp/>dir)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>entry<sp/>:<sp/>std::filesystem::recursive_directory_iterator(dir))<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(entry.is_regular_file())<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b" kindref="member">filesProcessed</ref>++;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::path<sp/>relativePath<sp/>=<sp/>std::filesystem::relative(entry,<sp/><ref refid="class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e" kindref="member">inputDirectory</ref>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::path<sp/>outputPath<sp/>=<sp/><ref refid="class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02" kindref="member">useTempDirectory</ref><sp/>?<sp/>std::filesystem::temp_directory_path()<sp/>/<sp/>relativePath<sp/>:<sp/><ref refid="class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4" kindref="member">outputDirectory</ref><sp/>/<sp/>relativePath;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::find(<ref refid="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" kindref="member">fileExtensions</ref>.begin(),<sp/><ref refid="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" kindref="member">fileExtensions</ref>.end(),<sp/>entry.path().extension())<sp/>!=<sp/><ref refid="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" kindref="member">fileExtensions</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" kindref="member">convertFile</ref>(entry.path());</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4" kindref="member">outputDirectory</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Если<sp/>файл<sp/>имеет<sp/>другое<sp/>расширение<sp/>и<sp/>outputDirectory<sp/>указана,<sp/>копируем<sp/>его</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::create_directories(outputPath.parent_path());</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::copy_file(entry,<sp/>outputPath,<sp/>std::filesystem::copy_options::overwrite_existing);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf" kindref="member">EncodingConverter::iconvConvert</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>input,<sp/>std::string&amp;<sp/>output,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>fromCharset,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>toCharset)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>iconv_t<sp/>cd<sp/>=<sp/>iconv_open(toCharset.c_str(),<sp/>fromCharset.c_str());</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cd<sp/>==<sp/>(iconv_t)-1)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;iconv_open&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;char&gt;<sp/>inBuf(input.begin(),<sp/>input.end());</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>inLeft<sp/>=<sp/>inBuf.size();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>outLeft<sp/>=<sp/>inLeft<sp/>*<sp/>4;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;char&gt;<sp/>outBuf(outLeft);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>inPtr<sp/>=<sp/>inBuf.data();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>outPtr<sp/>=<sp/>outBuf.data();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(inLeft<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>iconv(cd,<sp/>&amp;inPtr,<sp/>&amp;inLeft,<sp/>&amp;outPtr,<sp/>&amp;outLeft);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>==<sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">)-1)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iconv_close(cd);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>iconv_close(cd);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>outBuf.resize(outBuf.size()<sp/>-<sp/>outLeft);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>output.assign(outBuf.begin(),<sp/>outBuf.end());</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" kindref="member">EncodingConverter::convertFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::filesystem::path&amp;<sp/>filepath)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>filepath<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>inFile(filepath,<sp/>std::ios::binary);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>content((std::istreambuf_iterator&lt;char&gt;(inFile)),<sp/>std::istreambuf_iterator&lt;char&gt;());</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::path<sp/>relativePath<sp/>=<sp/>std::filesystem::relative(filepath,<sp/><ref refid="class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e" kindref="member">inputDirectory</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::path<sp/>outputPath<sp/>=<sp/><ref refid="class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02" kindref="member">useTempDirectory</ref><sp/>?<sp/>std::filesystem::temp_directory_path()<sp/>/<sp/>relativePath<sp/>:<sp/><ref refid="class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4" kindref="member">outputDirectory</ref><sp/>/<sp/>relativePath;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::create_directories(outputPath.parent_path());</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7" kindref="member">is_utf8</ref>(content))<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>utf8Content;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf" kindref="member">iconvConvert</ref>(content,<sp/>utf8Content,<sp/><ref refid="class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f" kindref="member">sourceEncoding</ref>,<sp/><ref refid="class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7" kindref="member">targetEncoding</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>content<sp/>=<sp/>utf8Content;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_encoding_converter_1a560484bdcdc929771c7d42877cab9643" kindref="member">filesConverted</ref>++;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>Converting<sp/>file<sp/>&apos;&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>filepath<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&apos;:<sp/>Invalid<sp/>or<sp/>incomplete<sp/>multibyte<sp/>or<sp/>wide<sp/>character&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ofstream<sp/>outFile(outputPath,<sp/>std::ios::binary);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>outFile.write(content.data(),<sp/>content.size());</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>outFile.close();</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02" kindref="member">useTempDirectory</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::copy(outputPath,<sp/>filepath,<sp/>std::filesystem::copy_options::overwrite_existing);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::filesystem::remove(outputPath);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0" kindref="member">EncodingConverter::printStats</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Files<sp/>processed:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b" kindref="member">filesProcessed</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Files<sp/>converted:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="class_encoding_converter_1a560484bdcdc929771c7d42877cab9643" kindref="member">filesConverted</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7" kindref="member">EncodingConverter::is_utf8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;str)<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>length<sp/>=<sp/>str.size();</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>length;<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((str[i]<sp/>&amp;<sp/>0x80)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((str[i]<sp/>&amp;<sp/>0xE0)<sp/>==<sp/>0xC0<sp/>&amp;&amp;<sp/>i<sp/>+<sp/>1<sp/>&lt;<sp/>length<sp/>&amp;&amp;<sp/>(str[i<sp/>+<sp/>1]<sp/>&amp;<sp/>0xC0)<sp/>==<sp/>0x80)<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>2;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((str[i]<sp/>&amp;<sp/>0xF0)<sp/>==<sp/>0xE0<sp/>&amp;&amp;<sp/>i<sp/>+<sp/>2<sp/>&lt;<sp/>length<sp/>&amp;&amp;<sp/>(str[i<sp/>+<sp/>1]<sp/>&amp;<sp/>0xC0)<sp/>==<sp/>0x80<sp/>&amp;&amp;<sp/>(str[i<sp/>+<sp/>2]<sp/>&amp;<sp/>0xC0)<sp/>==<sp/>0x80)<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>3;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((str[i]<sp/>&amp;<sp/>0xF8)<sp/>==<sp/>0xF0<sp/>&amp;&amp;<sp/>i<sp/>+<sp/>3<sp/>&lt;<sp/>length<sp/>&amp;&amp;<sp/>(str[i<sp/>+<sp/>1]<sp/>&amp;<sp/>0xC0)<sp/>==<sp/>0x80<sp/>&amp;&amp;<sp/>(str[i<sp/>+<sp/>2]<sp/>&amp;<sp/>0xC0)<sp/>==<sp/>0x80<sp/>&amp;&amp;<sp/>(str[i<sp/>+<sp/>3]<sp/>&amp;<sp/>0xC0)<sp/>==<sp/>0x80)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>4;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp"/>
+  </compounddef>
+</doxygen>

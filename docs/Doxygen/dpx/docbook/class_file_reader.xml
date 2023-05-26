@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_file_reader" xml:lang="ru">
+<title>Класс FileReader</title>
+<indexterm><primary>FileReader</primary></indexterm>
+<para>
+
+<para>Класс для чтения файла. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;FileReader.h&quot;</computeroutput>
+</para>
+Граф наследования:FileReader:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_file_reader__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_file_reader_1a1dae37584804731f11c9c932219d8282">FileReader</link> (std::filesystem::path file_path)</para>
+
+<para>Конструктор класса <link linkend="_class_file_reader">FileReader</link>. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Защищенные статические члены    </title>
+        <itemizedlist>
+            <listitem><para>static std::string <link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">readLineString</link> (std::ifstream &amp;file)</para>
+
+<para>Читает строку из файла и удаляет ведущие и завершающие пробелы. </para>
+</listitem>
+            <listitem><para>static std::string <link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link> (const std::string &amp;s)</para>
+
+<para>Удаляет ведущие и завершающие пробелы из строки. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Защищенные данные    </title>
+        <itemizedlist>
+            <listitem><para>std::filesystem::path <link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Класс для чтения файла. </para>
+
+
+
+<para>Класс <link linkend="_class_file_reader">FileReader</link> предоставляет функциональность для чтения файлов и обработки строк. </para>
+<para>
+См. определение в файле <link linkend="__file_reader_8h_source">FileReader.h</link> строка <link linkend="__file_reader_8h_source_1l00015">15</link></para>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_class_file_reader_1a1dae37584804731f11c9c932219d8282"/><section>
+    <title>FileReader()</title>
+<indexterm><primary>FileReader</primary><secondary>FileReader</secondary></indexterm>
+<indexterm><primary>FileReader</primary><secondary>FileReader</secondary></indexterm>
+<para><computeroutput>FileReader::FileReader (std::filesystem::path file_path)<computeroutput>[inline]</computeroutput>, <computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Конструктор класса <link linkend="_class_file_reader">FileReader</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file_path</entry><entry>
+<para>Путь к файлу для чтения.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Конструктор инициализирует объект <link linkend="_class_file_reader">FileReader</link> с указанным путем к файлу file_path. </para>
+<para>
+См. определение в файле <link linkend="__file_reader_8h_source">FileReader.h</link> строка <link linkend="__file_reader_8h_source_1l00023">23</link></para>
+<programlisting linenumbering="unnumbered">00023 :&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>(std::move(file_path))&#32;{}
+</programlisting></section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3"/><section>
+    <title>readLineString()</title>
+<indexterm><primary>readLineString</primary><secondary>FileReader</secondary></indexterm>
+<indexterm><primary>FileReader</primary><secondary>readLineString</secondary></indexterm>
+<para><computeroutput>std::string FileReader::readLineString (std::ifstream &amp; file)<computeroutput>[static]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Читает строку из файла и удаляет ведущие и завершающие пробелы. </para>
+</para>
+
+<para>Читает строку из файла, удаляет ведущие и завершающие пробелы.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file</entry><entry>
+<para>Файловый поток для чтения строки. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Прочитанная строка без ведущих и завершающих пробелов.</para>
+</formalpara>
+Функция <link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">readLineString()</link> читает строку из указанного файлового потока file. Затем удаляются ведущие и завершающие пробелы из строки. Результат возвращается в виде новой строки. </para>
+<para>
+См. определение в файле <link linkend="__file_reader_8cpp_source">FileReader.cpp</link> строка <link linkend="__file_reader_8cpp_source_1l00033">33</link></para>
+<programlisting linenumbering="unnumbered">00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00034 &#32;&#32;&#32;&#32;std::string&#32;line;
+00035 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(std::getline(file,&#32;line))
+00036 &#32;&#32;&#32;&#32;{
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Remove&#32;any&#32;leading/trailing&#32;whitespace</emphasis>
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line.erase(0,&#32;line.find_first_not_of(<emphasis role="stringliteral">&quot;&#32;\t\r\n&quot;</emphasis>));
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line.erase(line.find_last_not_of(<emphasis role="stringliteral">&quot;&#32;\t\r\n&quot;</emphasis>)&#32;+&#32;1);
+00040 &#32;&#32;&#32;&#32;}
+00041 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;line;
+00042 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_file_reader_a8e183bdc265152f0309184debb4af6a3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22"/><section>
+    <title>trim()</title>
+<indexterm><primary>trim</primary><secondary>FileReader</secondary></indexterm>
+<indexterm><primary>FileReader</primary><secondary>trim</secondary></indexterm>
+<para><computeroutput>std::string FileReader::trim (const std::string &amp; s)<computeroutput>[static]</computeroutput>, <computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Удаляет ведущие и завершающие пробелы из строки. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para>Исходная строка. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Строка без ведущих и завершающих пробелов.</para>
+</formalpara>
+Функция <link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim()</link> удаляет ведущие и завершающие пробелы из строки s. Результат возвращается в виде новой строки.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para>Исходная строка. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Строка без ведущих и завершающих пробелов.</para>
+</formalpara>
+Функция <link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim()</link> удаляет ведущие и завершающие пробелы из строки s. Также удаляются любые символы, которые являются пробельными или имеют значение кода больше 255. Результат возвращается в виде новой строки. </para>
+<para>
+См. определение в файле <link linkend="__file_reader_8cpp_source">FileReader.cpp</link> строка <link linkend="__file_reader_8cpp_source_1l00012">12</link></para>
+<programlisting linenumbering="unnumbered">00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00013 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;start&#32;=&#32;s.begin();
+00014 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(start&#32;!=&#32;s.end()&#32;&amp;&amp;&#32;(<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis><emphasis role="keyword">&gt;</emphasis>(*start)&#32;&gt;&#32;255&#32;||&#32;std::isspace(<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis><emphasis role="keyword">&gt;</emphasis>(*start))))&#32;{
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;start++;
+00016 &#32;&#32;&#32;&#32;}
+00017 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;end&#32;=&#32;s.end();
+00018 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(end&#32;!=&#32;start&#32;&amp;&amp;&#32;(<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis><emphasis role="keyword">&gt;</emphasis>(*(end&#32;-&#32;1))&#32;&gt;&#32;255&#32;||&#32;std::isspace(<emphasis role="keyword">static_cast&lt;</emphasis><emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis><emphasis role="keyword">&gt;</emphasis>(*(end&#32;-&#32;1)))))&#32;{
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;end--;
+00020 &#32;&#32;&#32;&#32;}
+00021 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::string(start,&#32;end);
+00022 }
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658"/><section>
+    <title>file_path_</title>
+<indexterm><primary>file_path_</primary><secondary>FileReader</secondary></indexterm>
+<indexterm><primary>FileReader</primary><secondary>file_path_</secondary></indexterm>
+<para><computeroutput>std::filesystem::path FileReader::file_path_<computeroutput>[protected]</computeroutput></computeroutput></para>
+<para>Путь к файлу </para>
+<para>
+См. определение в файле <link linkend="__file_reader_8h_source">FileReader.h</link> строка <link linkend="__file_reader_8h_source_1l00026">26</link></para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+<link linkend="__file_reader_8h">FileReader.h</link><link linkend="__file_reader_8cpp">FileReader.cpp</link></section>
+</section>

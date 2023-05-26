@@ -1,0 +1,78 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,493,55,520"/>
+<area shape="rect" id="Node000002" href="$class_encoding_converter.html#ae79126a88077fe4ac04a5cd09edf72d3" title="Конвертирует файлы в директории." alt="" coords="147,72,285,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="29,493,35,417,47,307,68,198,83,155,101,125,115,112,132,104,134,108,118,117,105,128,88,157,73,200,52,308,40,418,35,493"/>
+<area shape="rect" id="Node000008" href="$namespaceparser.html#a6a1b9a41dcebf3bc40e63bcb26a93f64" title=" " alt="" coords="165,139,267,165"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="30,493,36,426,50,331,71,237,84,201,101,175,124,160,150,151,152,157,126,165,105,179,89,203,76,239,55,332,42,426,35,493"/>
+<area shape="rect" id="Node000009" href="$structpoint.html#a0b248ae2a8dab47a95f68ffb03f33ede" title="Выводит координаты точек в стандартный вывод." alt="" coords="167,189,265,216"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="30,492,53,355,74,277,86,247,101,226,124,211,151,202,153,207,127,215,105,230,91,249,79,279,58,356,36,493"/>
+<area shape="rect" id="Node000010" href="$structcfm.html#a34655b4bfca15e5fb6afeedcf05c1289" title="Выводит содержимое структуры cfm на консоль." alt="" coords="170,240,262,267"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="29,493,31,451,41,392,62,330,79,302,101,277,126,261,155,253,156,258,129,266,104,281,83,305,67,333,46,394,36,451,34,493"/>
+<area shape="rect" id="Node000011" href="$structtbl.html#a1656f3d8341995db3e9711ecf583cc94" title="Выводит данные таблицы в стандартный вывод." alt="" coords="174,291,258,317"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="30,493,35,459,47,414,68,367,83,346,101,327,128,311,158,304,160,309,130,316,104,331,87,349,73,370,52,416,41,460,35,494"/>
+<area shape="rect" id="Node000012" href="$structzgt.html#a54f8b1de8e8e339540ddddd0e7503ac2" title="Выводит содержимое структуры zgt на консоль." alt="" coords="172,341,260,368"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="33,492,55,436,75,405,101,378,128,364,156,356,158,361,130,369,104,382,79,408,60,439,38,494"/>
+<area shape="rect" id="Node000013" href="$main_8cpp.html#a17fe4a740253ee0f9a2dbe3821cb02b4" title=" " alt="" coords="154,392,278,419"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="38,491,64,459,81,443,101,428,139,413,141,418,104,433,85,447,68,463,42,495"/>
+<area shape="rect" id="Node000014" href="$class_generated.html#a83bc49c8c5facc46a56afe4f1af0d01a" title="Генерирует JSON&#45;файл с заданным именем." alt="" coords="122,443,310,469"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="54,495,102,479,132,471,133,476,103,484,56,500"/>
+<area shape="rect" id="Node000015" href="$class_render_p_d_f.html#ab38c3850e484ba597ae3be5dbac1f5b2" title="Создает PDF&#45;документ, используя графические элементы, определенные в других методах класса." alt="" coords="130,493,302,520"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="55,504,115,504,115,509,55,509"/>
+<area shape="rect" id="Node000029" href="$class_command_line.html#a58060c2f8b6032c5d1feab576b642125" title="Получить аргументы команды." alt="" coords="135,544,297,571"/>
+<area shape="poly" id="edge29_Node000001_Node000029" title=" " alt="" coords="56,513,103,529,133,537,132,543,102,535,54,518"/>
+<area shape="rect" id="Node000030" href="$class_command_line.html#aa17cd3db7ef897f09cb04bd2acbfabd6" title="Получить тип команды." alt="" coords="103,595,329,621"/>
+<area shape="poly" id="edge30_Node000001_Node000030" title=" " alt="" coords="42,519,68,550,85,567,104,580,116,586,113,591,101,585,81,571,64,554,38,522"/>
+<area shape="rect" id="Node000031" href="$main_8cpp.html#a333b5413e0cb25ebfc2919e897c49e0c" title=" " alt="" coords="148,645,284,672"/>
+<area shape="poly" id="edge31_Node000001_Node000031" title=" " alt="" coords="38,520,60,575,79,605,104,631,135,646,132,651,101,635,75,609,55,577,33,522"/>
+<area shape="rect" id="Node000032" href="$main_8cpp.html#ab97d7330981023823ad0d4017ddbec3b" title=" " alt="" coords="166,696,266,723"/>
+<area shape="poly" id="edge32_Node000001_Node000032" title=" " alt="" coords="35,520,41,553,52,597,73,643,87,664,104,682,127,695,152,703,151,708,125,700,101,686,83,667,68,646,47,599,35,554,30,521"/>
+<area shape="rect" id="Node000033" href="$classtext_reader.html#a5cd4eeebf53787a1434d037c54993071" title="Читает данные типа cfm из файла." alt="" coords="143,747,289,773"/>
+<area shape="poly" id="edge33_Node000001_Node000033" title=" " alt="" coords="34,520,36,562,46,620,67,681,83,709,104,733,131,749,128,753,101,737,79,712,62,683,41,621,31,563,29,521"/>
+<area shape="rect" id="Node000035" href="$classtext_reader.html#a9f261ea0ff26bf191afd61212c0a79e5" title="Читает данные типа point из файла." alt="" coords="140,797,292,824"/>
+<area shape="poly" id="edge35_Node000001_Node000035" title=" " alt="" coords="36,520,58,657,79,734,91,764,105,783,128,799,125,803,101,787,86,766,74,736,53,658,30,521"/>
+<area shape="rect" id="Node000036" href="$classtext_reader.html#ac9b23d5e5a58431fb114f221098a2640" title="Читает данные типа tbl из файла." alt="" coords="147,848,285,875"/>
+<area shape="poly" id="edge36_Node000001_Node000036" title=" " alt="" coords="35,520,42,587,55,682,76,774,89,810,105,834,118,844,134,852,131,857,115,849,101,838,84,813,71,776,50,683,36,587,30,521"/>
+<area shape="rect" id="Node000038" href="$classtext_reader.html#af98fb017c822ba0f17c58a1dda32a787" title="Читает данные типа zgt из файла." alt="" coords="145,899,287,925"/>
+<area shape="poly" id="edge38_Node000001_Node000038" title=" " alt="" coords="35,520,40,596,52,706,73,815,87,857,105,885,132,902,129,907,101,889,82,859,67,816,46,707,34,596,29,521"/>
+<area shape="rect" id="Node000003" href="$class_encoding_converter.html#ab066b92f365f593c44d6825071463e08" title="Конвертирует файлы в указанной директории и её поддиректориях." alt="" coords="404,39,541,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,82,388,68,389,73,285,87"/>
+<area shape="rect" id="Node000007" href="$class_encoding_converter.html#a6a4a2d610029ac2c890fb0265626ebd0" title="Выводит статистику по конвертированным файлам." alt="" coords="404,105,541,148"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="285,100,389,113,388,119,285,105"/>
+<area shape="rect" id="Node000004" href="$class_encoding_converter.html#a460858eb34940271be93a5aa08452a66" title="Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл." alt="" coords="656,39,794,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="541,57,641,57,641,63,541,63"/>
+<area shape="rect" id="Node000005" href="$class_encoding_converter.html#ac7f6cefb08a76f5fa3696ee18beb8faf" title="Конвертирует строку из одной кодировки в другую с помощью iconv." alt="" coords="883,5,1020,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="794,47,867,36,868,42,794,53"/>
+<area shape="rect" id="Node000006" href="$class_encoding_converter.html#a9b72ba808c4b0c7087f63fd0c3b8a5d7" title="Проверяет, является ли строка в кодировке UTF&#45;8." alt="" coords="883,72,1020,115"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="794,67,868,78,867,84,794,73"/>
+<area shape="rect" id="Node000016" href="$class_render_p_d_f.html#a22fa693e95126bb362fe324470ba2277" title="Создает новую страницу формата A3." alt="" coords="383,325,561,352"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="301,494,327,479,339,466,346,452,351,423,355,392,362,377,375,362,380,358,384,362,379,366,367,380,360,394,356,423,351,454,344,469,331,483,304,499"/>
+<area shape="rect" id="Node000017" href="$class_render_p_d_f.html#acbc9c679d623723340171bd56c5575cb" title="Рисует дополнительные отметки на странице PDF." alt="" coords="382,376,562,419"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="301,491,328,479,342,467,351,455,360,442,375,429,384,423,387,428,379,433,364,445,356,458,346,471,330,484,303,495"/>
+<area shape="rect" id="Node000019" href="$class_render_p_d_f.html#a50a4d487307986751eb5087f25961c27" title="Рисует круг на странице PDF." alt="" coords="394,443,550,469"/>
+<area shape="poly" id="edge18_Node000015_Node000019" title=" " alt="" coords="287,490,386,470,388,475,288,495"/>
+<area shape="rect" id="Node000020" href="$class_render_p_d_f.html#abaccfd0526f13c8d8c5d9f74ceb31f52" title="Рисует индексы (цифры) на PDF странице." alt="" coords="377,544,567,571"/>
+<area shape="poly" id="edge19_Node000015_Node000020" title=" " alt="" coords="288,518,388,538,386,543,287,523"/>
+<area shape="rect" id="Node000026" href="$class_render_p_d_f.html#a518d3eb66cbcdb313c218dc8028c9673" title="Рисует основные линии на странице PDF." alt="" coords="381,493,563,520"/>
+<area shape="poly" id="edge25_Node000015_Node000026" title=" " alt="" coords="302,504,366,504,366,509,302,509"/>
+<area shape="rect" id="Node000027" href="$class_render_p_d_f.html#a3f2e7a6479a84eaecbe8a07b17aaeb5e" title="Генерирует маркеры на основе измерений из данных таблицы." alt="" coords="399,595,545,637"/>
+<area shape="poly" id="edge27_Node000015_Node000027" title=" " alt="" coords="303,518,330,530,346,542,356,555,364,568,379,581,387,585,384,590,375,585,360,572,351,558,342,546,328,534,301,523"/>
+<area shape="rect" id="Node000028" href="$class_render_p_d_f.html#ac3ba6c62b21e04dbe57cedf12b3f06c0" title="Загружает шрифт из указанного файла." alt="" coords="399,661,545,688"/>
+<area shape="poly" id="edge28_Node000015_Node000028" title=" " alt="" coords="304,514,331,530,344,544,351,560,356,590,360,620,367,634,379,647,387,654,384,658,375,651,362,637,355,621,351,591,346,561,339,547,327,534,301,519"/>
+<area shape="rect" id="Node000018" href="$class_render_p_d_f.html#ae17f88d413daf207f1b93fc43a8fd679" title="Рисует линию на странице PDF." alt="" coords="650,388,800,415"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="563,396,635,397,635,403,563,401"/>
+<area shape="rect" id="Node000021" href="$class_render_p_d_f.html#a98e9f7f26365660413fb541ecd7dc92f" title="Вычисляет координату X для текста маркера." alt="" coords="616,443,834,469"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="541,541,566,530,580,518,589,505,598,492,614,479,627,473,629,477,617,484,602,495,593,508,584,521,569,534,544,546"/>
+<area shape="rect" id="Node000022" href="$class_render_p_d_f.html#a7931b27233f110635d4c15fd83508a3b" title="Вычисляет координату Y для текста маркера." alt="" coords="615,493,835,520"/>
+<area shape="poly" id="edge21_Node000020_Node000022" title=" " alt="" coords="542,541,640,521,641,526,543,546"/>
+<area shape="rect" id="Node000023" href="$class_render_p_d_f.html#af00237dc614fc46323aead1daae13a15" title="Рисует текст на странице PDF." alt="" coords="651,544,799,571"/>
+<area shape="poly" id="edge22_Node000020_Node000023" title=" " alt="" coords="568,555,636,555,636,560,568,560"/>
+<area shape="rect" id="Node000024" href="$class_render_p_d_f.html#a87d9d5335c694603bf6686851879879a" title="Форматирует текст с использованием заданной точности." alt="" coords="646,595,804,621"/>
+<area shape="poly" id="edge23_Node000020_Node000024" title=" " alt="" coords="543,569,641,589,640,594,542,574"/>
+<area shape="rect" id="Node000025" href="$class_render_p_d_f.html#a0c2cb9d669fedf5910e7be20e7bb4b36" title="Устанавливает размер шрифта и размер страницы PDF." alt="" coords="642,645,808,672"/>
+<area shape="poly" id="edge24_Node000020_Node000025" title=" " alt="" coords="544,569,569,580,584,593,593,607,602,619,617,631,629,637,627,642,614,636,598,623,589,610,580,597,566,585,541,574"/>
+<area shape="poly" id="edge26_Node000026_Node000018" title=" " alt="" coords="541,490,566,479,580,467,589,454,598,441,614,428,636,418,638,423,617,433,602,445,594,458,584,471,569,484,544,495"/>
+<area shape="rect" id="Node000034" href="$class_file_reader.html#a8b67d54f19fd8f228f337ba75ea29e22" title="Удаляет ведущие и завершающие пробелы из строки." alt="" coords="416,747,529,773"/>
+<area shape="poly" id="edge34_Node000033_Node000034" title=" " alt="" coords="289,757,401,757,401,763,289,763"/>
+<area shape="rect" id="Node000037" href="$class_file_reader.html#a8e183bdc265152f0309184debb4af6a3" title="Читает строку из файла и удаляет ведущие и завершающие пробелы." alt="" coords="385,848,559,875"/>
+<area shape="poly" id="edge37_Node000036_Node000037" title=" " alt="" coords="285,859,370,859,370,864,285,864"/>
+</map>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Blanks: Исходный файл textReader.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Blanks
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('text_reader_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">textReader.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="text_reader_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BLANKS_TEXTREADER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BLANKS_TEXTREADER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;regex&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_file_reader_8h.html">FileReader.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../struct/nbr.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../struct/point_data.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../struct/tbl.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../struct/cfm.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../struct/zgt.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classtext_reader.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classtext_reader.html">textReader</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_file_reader.html">FileReader</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classtext_reader.html#a8b98efd0fd952fd929ea441f26bc69ba">   27</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classtext_reader.html#a8b98efd0fd952fd929ea441f26bc69ba">textReader</a>(<span class="keyword">const</span> std::filesystem::path&amp; file_path) : <a class="code hl_class" href="class_file_reader.html">FileReader</a>(file_path) {}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtext_reader.html#ad25e94320aa8adce9de68445d963b570">read_nbr</a>(<a class="code hl_struct" href="structnbr.html">nbr</a>&amp; data);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtext_reader.html#a9f261ea0ff26bf191afd61212c0a79e5">read_point</a>(<a class="code hl_struct" href="structpoint.html">point</a>&amp; data);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtext_reader.html#ac9b23d5e5a58431fb114f221098a2640">read_tbl</a>(<a class="code hl_struct" href="structtbl.html">tbl</a>&amp; data);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtext_reader.html#a5cd4eeebf53787a1434d037c54993071">read_cfm</a>(<a class="code hl_struct" href="structcfm.html">cfm</a>&amp; data);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtext_reader.html#af98fb017c822ba0f17c58a1dda32a787">read_zgt</a>(<a class="code hl_struct" href="structzgt.html">zgt</a>&amp; data);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">//BLANKS_TEXTREADER_H</span></div>
+<div class="ttc" id="a_file_reader_8h_html"><div class="ttname"><a href="_file_reader_8h.html">FileReader.h</a></div></div>
+<div class="ttc" id="aclass_file_reader_html"><div class="ttname"><a href="class_file_reader.html">FileReader</a></div><div class="ttdoc">Класс для чтения файла.</div><div class="ttdef"><b>Definition</b> <a href="_file_reader_8h_source.html#l00015">FileReader.h:15</a></div></div>
+<div class="ttc" id="aclasstext_reader_html"><div class="ttname"><a href="classtext_reader.html">textReader</a></div><div class="ttdoc">Класс для чтения текстового файла.</div><div class="ttdef"><b>Definition</b> <a href="text_reader_8h_source.html#l00018">textReader.h:18</a></div></div>
+<div class="ttc" id="aclasstext_reader_html_a5cd4eeebf53787a1434d037c54993071"><div class="ttname"><a href="classtext_reader.html#a5cd4eeebf53787a1434d037c54993071">textReader::read_cfm</a></div><div class="ttdeci">void read_cfm(cfm &amp;data)</div><div class="ttdoc">Читает данные типа cfm из файла.</div><div class="ttdef"><b>Definition</b> <a href="text_reader_8cpp_source.html#l00011">textReader.cpp:11</a></div></div>
+<div class="ttc" id="aclasstext_reader_html_a8b98efd0fd952fd929ea441f26bc69ba"><div class="ttname"><a href="classtext_reader.html#a8b98efd0fd952fd929ea441f26bc69ba">textReader::textReader</a></div><div class="ttdeci">textReader(const std::filesystem::path &amp;file_path)</div><div class="ttdoc">Конструктор класса textReader.</div><div class="ttdef"><b>Definition</b> <a href="text_reader_8h_source.html#l00027">textReader.h:27</a></div></div>
+<div class="ttc" id="aclasstext_reader_html_a9f261ea0ff26bf191afd61212c0a79e5"><div class="ttname"><a href="classtext_reader.html#a9f261ea0ff26bf191afd61212c0a79e5">textReader::read_point</a></div><div class="ttdeci">void read_point(point &amp;data)</div><div class="ttdoc">Читает данные типа point из файла.</div><div class="ttdef"><b>Definition</b> <a href="text_reader_8cpp_source.html#l00145">textReader.cpp:145</a></div></div>
+<div class="ttc" id="aclasstext_reader_html_ac9b23d5e5a58431fb114f221098a2640"><div class="ttname"><a href="classtext_reader.html#ac9b23d5e5a58431fb114f221098a2640">textReader::read_tbl</a></div><div class="ttdeci">void read_tbl(tbl &amp;data)</div><div class="ttdoc">Читает данные типа tbl из файла.</div><div class="ttdef"><b>Definition</b> <a href="text_reader_8cpp_source.html#l00095">textReader.cpp:95</a></div></div>
+<div class="ttc" id="aclasstext_reader_html_ad25e94320aa8adce9de68445d963b570"><div class="ttname"><a href="classtext_reader.html#ad25e94320aa8adce9de68445d963b570">textReader::read_nbr</a></div><div class="ttdeci">void read_nbr(nbr &amp;data)</div><div class="ttdoc">Читает данные типа nbr из файла.</div><div class="ttdef"><b>Definition</b> <a href="text_reader_8cpp_source.html#l00163">textReader.cpp:163</a></div></div>
+<div class="ttc" id="aclasstext_reader_html_af98fb017c822ba0f17c58a1dda32a787"><div class="ttname"><a href="classtext_reader.html#af98fb017c822ba0f17c58a1dda32a787">textReader::read_zgt</a></div><div class="ttdeci">void read_zgt(zgt &amp;data)</div><div class="ttdoc">Читает данные типа zgt из файла.</div><div class="ttdef"><b>Definition</b> <a href="text_reader_8cpp_source.html#l00055">textReader.cpp:55</a></div></div>
+<div class="ttc" id="astructcfm_html"><div class="ttname"><a href="structcfm.html">cfm</a></div><div class="ttdoc">Структура для хранения данных типа cfm.</div><div class="ttdef"><b>Definition</b> <a href="cfm_8h_source.html#l00016">cfm.h:16</a></div></div>
+<div class="ttc" id="astructnbr_html"><div class="ttname"><a href="structnbr.html">nbr</a></div><div class="ttdoc">Структура для хранения данных типа nbr.</div><div class="ttdef"><b>Definition</b> <a href="nbr_8h_source.html#l00014">nbr.h:14</a></div></div>
+<div class="ttc" id="astructpoint_html"><div class="ttname"><a href="structpoint.html">point</a></div><div class="ttdoc">Структура для хранения координат точек.</div><div class="ttdef"><b>Definition</b> <a href="point__data_8h_source.html#l00010">point_data.h:10</a></div></div>
+<div class="ttc" id="astructtbl_html"><div class="ttname"><a href="structtbl.html">tbl</a></div><div class="ttdoc">Структура для хранения данных таблицы.</div><div class="ttdef"><b>Definition</b> <a href="tbl_8h_source.html#l00015">tbl.h:15</a></div></div>
+<div class="ttc" id="astructzgt_html"><div class="ttname"><a href="structzgt.html">zgt</a></div><div class="ttdoc">Структура для хранения данных типа zgt.</div><div class="ttdef"><b>Definition</b> <a href="zgt_8h_source.html#l00015">zgt.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6616e9343255ee54ae6d093b3d69d88c.html">Reader</a></li><li class="navelem"><a class="el" href="text_reader_8h.html">textReader.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

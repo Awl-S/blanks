@@ -1,0 +1,151 @@
+\doxysection{text\+Reader.\+cpp}
+\hypertarget{text_reader_8cpp_source}{}\label{text_reader_8cpp_source}\index{textReader.cpp@{textReader.cpp}}
+\mbox{\hyperlink{text_reader_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/Reader/textReader.h"{}}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00011}\mbox{\hyperlink{classtext_reader_a5cd4eeebf53787a1434d037c54993071}{00011}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_reader_a5cd4eeebf53787a1434d037c54993071}{textReader::read\_cfm}}(\mbox{\hyperlink{structcfm}{cfm}}\ \&data)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00012}00012\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00017}00017\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structcfm_a7a658677e62202d59ef8a14da194d65b}{header}}\ =\ \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim}}(line);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structcfm_a6400105680203ffabfa9860662530647}{blank}}\ =\ \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim}}(line);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 6)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ temp)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structcfm_ad4cec00bcb67870e82af90e5d3676161}{marks}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 8)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[0]\ >>\ data.\mbox{\hyperlink{structcfm_aa85fd3ad8be60f46a501cfd7e4c70ed6}{format}}[1];}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_aed942bb5ac73f26bb0d48bbeb9ec7a85}{diameter}};}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 12)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}}[0]\ >>\ data.\mbox{\hyperlink{structcfm_ac4b86bca5f71ce33c545d435fd2027ae}{small\_tick}}[1];}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 14)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}}[0]\ >>\ data.\mbox{\hyperlink{structcfm_a0d8b3917577bf50c3a2ded2e2f6e4f72}{big\_tick}}[1];}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 16)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[0]\ >>\ data.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[1]\ >>\ data.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[2]\ >>\ data.\mbox{\hyperlink{structcfm_a8fe3ba9b353d58719364384fc2132825}{digital\_tick}}[3];}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 18)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structcfm_af1376357880c15d011d9c96fd485714e}{digit\_height}}\ >>\ data.\mbox{\hyperlink{structcfm_a5aff8d8c9140a81fe9c4c186f7aaf060}{label\_height}};}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 20)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structcfm_ab7a2a2c7e4295dbc7dde267a66c1aab2}{tick\_mask}}\ =\ \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{trim}}(line);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00055}\mbox{\hyperlink{classtext_reader_af98fb017c822ba0f17c58a1dda32a787}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_reader_af98fb017c822ba0f17c58a1dda32a787}{textReader::read\_zgt}}(\mbox{\hyperlink{structzgt}{zgt}}\ \&data)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00056}00056\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00062}00062\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structzgt_ab347a1a6d59fde2e507a7035e65e2544}{diameter}};}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structzgt_a158a8320351f554c1aa14cf6436b505f}{center\_hole\_diameter}};}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 6)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ temp)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\_holes}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 8)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ temp)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structzgt_a9ca1baeee9e45b33b39efc727f206e34}{marker\_position}}.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}[0]\ >>\ data.\mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}[1];}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (count\ ==\ 12)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream(line)\ >>\ data.\mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[0]\ >>\ data.\mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[1]\ >>\ data.\mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[2];}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00095}\mbox{\hyperlink{classtext_reader_ac9b23d5e5a58431fb114f221098a2640}{00095}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_reader_ac9b23d5e5a58431fb114f221098a2640}{textReader::read\_tbl}}(\mbox{\hyperlink{structtbl}{tbl}}\ \&data)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00096}00096\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00101}00101\ \ \ \ \ std::string\ file\_name\ =\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.filename().string();}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00103}00103\ \ \ \ \ std::string\ prefix\ =\ \textcolor{stringliteral}{"{}scale"{}};}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00104}00104\ \ \ \ \ std::string\ suffix\ =\ \textcolor{stringliteral}{"{}.tbl"{}};}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ file\_name.find(prefix);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ file\_name.find(suffix);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (start\ ==\ std::string::npos\ ||\ end\ ==\ std::string::npos\ ||\ start\ >=\ end)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Could\ not\ extract\ number\ from\ file\ name"{}});}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00113}00113\ \ \ \ \ start\ +=\ prefix.length();}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00114}00114\ \ \ \ \ std::string\ number\_str\ =\ file\_name.substr(start,\ end\ -\/\ start);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8}{position}}\ =\ std::stoi(number\_str);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00118}00118\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Invalid\ number\ in\ file\ name:\ "{}}\ +\ number\_str);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00120}00120\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::out\_of\_range\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Number\ in\ file\ name\ is\ out\ of\ range:\ "{}}\ +\ number\_str);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00122}00122\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00124}00124\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{readLineString}}(file);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00126}00126\ \ \ \ \ data.\mbox{\hyperlink{structtbl_ac995e4da6d437a046c2074f9dc33b833}{model}}\ =\ \mbox{\hyperlink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{readLineString}}(file);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00128}00128\ \ \ \ \ data.\mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{measurements}}.reserve(20);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ temp;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ col2;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ col3;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::istringstream(line)\ >>\ temp\ >>\ col2\ >>\ col3)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{measurements}}.push\_back(\{col2,\ col3\});}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00137}00137\ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00145}\mbox{\hyperlink{classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5}{00145}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_reader_a9f261ea0ff26bf191afd61212c0a79e5}{textReader::read\_point}}(\mbox{\hyperlink{structpoint}{point}}\ \&data)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00146}00146\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00147}00147\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordtype}{double}\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{while}\ (file\ >>\ x\ >>\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structpoint_a6917d518caab116551a862eba2717bec}{coordinates}}.emplace\_back(x,\ y);}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00155}00155\ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00163}\mbox{\hyperlink{classtext_reader_ad25e94320aa8adce9de68445d963b570}{00163}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtext_reader_ad25e94320aa8adce9de68445d963b570}{textReader::read\_nbr}}(\mbox{\hyperlink{structnbr}{nbr}}\ \&data)\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00164}00164\ \ \ \ \ std::ifstream\ file(\mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}});}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ "{}}\ +\ \mbox{\hyperlink{class_file_reader_acf2bd283059c0de739f8f2350ce9d658}{file\_path\_}}.string());}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00169}00169\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ line\_number\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structnbr_a54d820aea6c166beb70523a0694dc669}{icon}}.insert(std::make\_pair(line\_number,\ line));}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ line\_number++;}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00174}00174\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{text_reader_8cpp_source_l00175}00175\ \}}
+
+\end{DoxyCode}

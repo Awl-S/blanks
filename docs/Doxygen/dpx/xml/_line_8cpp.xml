@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="_line_8cpp" kind="file" language="C++">
+    <compoundname>Line.cpp</compoundname>
+    <includes local="no">cmath</includes>
+    <includes refid="_render_p_d_f_8h" local="yes">../../include/RenderPDF/RenderPDF.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>../../include/RenderPDF/RenderPDF.h</label>
+        <link refid="_render_p_d_f_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../struct/cfm.h</label>
+        <link refid="cfm_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../struct/nbr.h</label>
+        <link refid="nbr_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../struct/point_data.h</label>
+        <link refid="point__data_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../struct/tbl.h</label>
+        <link refid="tbl_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../struct/zgt.h</label>
+        <link refid="zgt_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Line.cpp</label>
+        <link refid="_line_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>array</label>
+      </node>
+      <node id="2">
+        <label>cmath</label>
+      </node>
+      <node id="6">
+        <label>filesystem</label>
+      </node>
+      <node id="5">
+        <label>hpdf.h</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../include/RenderPDF/RenderPDF.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1a3f2e7a6479a84eaecbe8a07b17aaeb5e" kindref="member">RenderPDF::generate_Marks</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>blank)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size<sp/>=<sp/><ref refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" kindref="member">tbl_data_</ref>[blank].measurements.size();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>a0<sp/>=<sp/>(<ref refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" kindref="member">tbl_data_</ref>[blank].measurements[0][0]<sp/>+<sp/><ref refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" kindref="member">tbl_data_</ref>[blank].measurements[0][1])<sp/>/<sp/>2.0;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>an<sp/>=</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" kindref="member">tbl_data_</ref>[blank].measurements[size<sp/>-<sp/>1][0]<sp/>+<sp/><ref refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" kindref="member">tbl_data_</ref>[blank].measurements[size<sp/>-<sp/>1][1])<sp/>/<sp/>2.0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>aDelta<sp/>=<sp/>(an<sp/>-<sp/>a0)<sp/>/<sp/>size;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>asred<sp/>=<sp/>(<ref refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" kindref="member">tbl_data_</ref>[blank].measurements[i][0]<sp/>+<sp/><ref refid="class_render_p_d_f_1a2b011efd97045da1e9ccdab286d35d8c" kindref="member">tbl_data_</ref>[blank].measurements[i][1])<sp/>/<sp/>2.0;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>.push_back(asred<sp/>+<sp/>aDelta);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>angles_deg(<ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>.size());</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Конвертация<sp/>углов<sp/>из<sp/>радиан<sp/>в<sp/>градусы</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angles_deg[i]<sp/>=<sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>[i]<sp/>*<sp/>(180.0<sp/>/<sp/><ref refid="class_render_p_d_f_1adda47ac0eef121635099a286e784f610" kindref="member">PI</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>a0_deg<sp/>=<sp/>angles_deg.front();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>an_deg<sp/>=<sp/>angles_deg.back();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Вычисление<sp/>добавочного<sp/>угла<sp/>\Delta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>delta<sp/>=<sp/>(360.0<sp/>-<sp/>an_deg<sp/>-<sp/>a0_deg)<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Пересчет<sp/>углов<sp/>с<sp/>использованием<sp/>\Delta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>new_angles_deg(angles_deg.size());</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>angles_deg.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_angles_deg[i]<sp/>=<sp/>angles_deg[i]<sp/>+<sp/>delta;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Конвертация<sp/>углов<sp/>обратно<sp/>в<sp/>радианы</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>new_angles_deg.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>[i]<sp/>=<sp/>new_angles_deg[i]<sp/>*<sp/>(<ref refid="class_render_p_d_f_1adda47ac0eef121635099a286e784f610" kindref="member">PI</ref><sp/>/<sp/>180.0);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" kindref="member">RenderPDF::drawMainLines</ref>(HPDF_Page<sp/>page,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>blank)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Рисуем<sp/>линии<sp/>главные</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>radius<sp/>=<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" kindref="member">diameter</ref><sp/>/<sp/>2.0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle:<sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angle<sp/>=<sp/>4.71239<sp/>-<sp/>angle;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sinAngle<sp/>=<sp/>sin(angle);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cosAngle<sp/>=<sp/>cos(angle);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_REAL<sp/>x1,<sp/>x2,<sp/>y1,<sp/>y2;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0])<sp/>*<sp/>cosAngle;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0])<sp/>*<sp/>sinAngle;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>0)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>Если<sp/>это<sp/>первая<sp/>итерация,<sp/>сместить<sp/>верхнюю<sp/>линию<sp/>на<sp/>90<sp/>градусов</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>shift_angle<sp/>=<sp/>angle<sp/>+<sp/>1.5708;<sp/></highlight><highlight class="comment">//<sp/>Смещение<sp/>на<sp/>90<sp/>градусов<sp/>вправо</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>center_offset<sp/>=<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[2]<sp/>/<sp/>2;<sp/></highlight><highlight class="comment">//<sp/>Размер<sp/>центра</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0])<sp/>*<sp/>cosAngle;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0])<sp/>*<sp/>sinAngle;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1<sp/>-=<sp/>center_offset<sp/>*<sp/>cos(shift_angle);<sp/></highlight><highlight class="comment">//<sp/>Смещение<sp/>x<sp/>координаты</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1<sp/>-=<sp/>center_offset<sp/>*<sp/>sin(shift_angle);<sp/></highlight><highlight class="comment">//<sp/>Смещение<sp/>y<sp/>координаты</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x2<sp/>=<sp/>x1<sp/>+<sp/>(<ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0]<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[2])<sp/>*</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cos(shift_angle);<sp/></highlight><highlight class="comment">//<sp/>Правая<sp/>часть<sp/>линии</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y2<sp/>=<sp/>y1<sp/>+<sp/>(<ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0]<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[2])<sp/>*</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sin(shift_angle);<sp/></highlight><highlight class="comment">//<sp/>Правая<sp/>часть<sp/>линии</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x2<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[2])<sp/>*<sp/>cosAngle;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y2<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[2])<sp/>*<sp/>sinAngle;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Верняя<sp/>линия</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_Page_SetLineWidth(page,<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[3]);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" kindref="member">draw_line</ref>(page,<sp/>x2,<sp/>y2,<sp/>x1,<sp/>y1);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Нижняя<sp/>линия</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x1<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+<sp/>radius<sp/>*<sp/>cos(angle);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y1<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+<sp/>radius<sp/>*<sp/>sin(angle);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x2<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[2])<sp/>*<sp/>cosAngle;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y2<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[2])<sp/>*<sp/>sinAngle;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x2<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0])<sp/>*<sp/>cosAngle;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y2<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(radius<sp/>-<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0])<sp/>*<sp/>sinAngle;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_Page_SetLineWidth(page,<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[1]);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" kindref="member">draw_line</ref>(page,<sp/>x2,<sp/>y2,<sp/>x1,<sp/>y1);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" kindref="member">RenderPDF::drawAdditionalTicks</ref>(HPDF_Page<sp/>page,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>blank)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>radius<sp/>=<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" kindref="member">diameter</ref><sp/>/<sp/>2.0f;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size_tick_mask<sp/>=<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" kindref="member">tick_mask</ref>.size()<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>.size()<sp/>-<sp/>1;<sp/>k++)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle1<sp/>=<sp/>4.71239<sp/>-<sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>[k];</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle2<sp/>=<sp/>4.71239<sp/>-<sp/><ref refid="class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff" kindref="member">marks</ref>[k<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle_diff<sp/>=<sp/>(angle2<sp/>-<sp/>angle1)<sp/>/<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(size_tick_mask);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1;<sp/>j<sp/>&lt;=<sp/>size_tick_mask;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle<sp/>=<sp/>angle1<sp/>+<sp/>j<sp/>*<sp/>angle_diff;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_REAL<sp/>x1<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+<sp/>radius<sp/>*<sp/>cos(angle);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_REAL<sp/>y1<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+<sp/>radius<sp/>*<sp/>sin(angle);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_REAL<sp/>x2,<sp/>y2;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HPDF_REAL<sp/>height_line;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" kindref="member">tick_mask</ref>[j]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height_line<sp/>=<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1ac4b86bca5f71ce33c545d435fd2027ae" kindref="member">small_tick</ref>[0];</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" kindref="member">tick_mask</ref>[j]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;2&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height_line<sp/>=<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72" kindref="member">big_tick</ref>[0];</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" kindref="member">tick_mask</ref>[j]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;3&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>height_line<sp/>=<sp/><ref refid="class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d" kindref="member">cfm_data_</ref>.<ref refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" kindref="member">digital_tick</ref>[0];</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x2<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].first<sp/>+<sp/>(radius<sp/>-<sp/>height_line)<sp/>*<sp/>cos(angle);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y2<sp/>=<sp/><ref refid="class_render_p_d_f_1afa788735693ee164252a3af3c83bc431" kindref="member">point_data_</ref>.<ref refid="structpoint_1a6917d518caab116551a862eba2717bec" kindref="member">coordinates</ref>[<ref refid="class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58" kindref="member">point_tbl</ref>[blank]<sp/>-<sp/>1].second<sp/>+<sp/>(radius<sp/>-<sp/>height_line)<sp/>*<sp/>sin(angle);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679" kindref="member">draw_line</ref>(page,<sp/>x1,<sp/>y1,<sp/>x2,<sp/>y2);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/RenderPDF/Line.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<map id="RenderPDF::drawDigitIndices" name="RenderPDF::drawDigitIndices">
+<area shape="rect" id="Node000001" title="Рисует индексы (цифры) на PDF странице." alt="" coords="5,107,196,133"/>
+<area shape="rect" id="Node000002" href="$class_render_p_d_f.html#a98e9f7f26365660413fb541ecd7dc92f" title="Вычисляет координату X для текста маркера." alt="" coords="245,5,462,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,104,176,73,243,42,266,34,267,39,245,46,178,77,125,108"/>
+<area shape="rect" id="Node000003" href="$class_render_p_d_f.html#a7931b27233f110635d4c15fd83508a3b" title="Вычисляет координату Y для текста маркера." alt="" coords="244,56,463,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,103,268,84,269,89,171,109"/>
+<area shape="rect" id="Node000004" href="$class_render_p_d_f.html#af00237dc614fc46323aead1daae13a15" title="Рисует текст на странице PDF." alt="" coords="279,107,428,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,117,264,117,264,123,196,123"/>
+<area shape="rect" id="Node000005" href="$class_render_p_d_f.html#a87d9d5335c694603bf6686851879879a" title="Форматирует текст с использованием заданной точности." alt="" coords="275,157,432,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="171,131,269,151,268,156,170,137"/>
+<area shape="rect" id="Node000006" href="$class_render_p_d_f.html#a0c2cb9d669fedf5910e7be20e7bb4b36" title="Устанавливает размер шрифта и размер страницы PDF." alt="" coords="270,208,437,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="125,132,178,163,245,194,267,201,266,206,243,198,176,167,122,136"/>
+</map>

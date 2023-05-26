@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structcfm" xml:lang="ru">
+<title>Структура cfm</title>
+<indexterm><primary>cfm</primary></indexterm>
+<para>
+
+<para>Структура для хранения данных типа cfm. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;cfm.h&quot;</computeroutput>
+</para>
+Граф связей класса cfm:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structcfm__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_structcfm_1a34655b4bfca15e5fb6afeedcf05c1289">display</link> () const</para>
+
+<para>Выводит содержимое структуры cfm на консоль. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Открытые атрибуты    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_structcfm_1a7a658677e62202d59ef8a14da194d65b">header</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_structcfm_1a6400105680203ffabfa9860662530647">blank</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; double &gt; <link linkend="_structcfm_1ad4cec00bcb67870e82af90e5d3676161">marks</link></para>
+</listitem>
+            <listitem><para>std::array&lt; int, 2 &gt; <link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link></para>
+</listitem>
+            <listitem><para>std::array&lt; double, 2 &gt; <link linkend="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae">small_tick</link></para>
+</listitem>
+            <listitem><para>std::array&lt; double, 2 &gt; <link linkend="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72">big_tick</link></para>
+</listitem>
+            <listitem><para>std::array&lt; double, 4 &gt; <link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060">label_height</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2">tick_mask</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Структура для хранения данных типа cfm. </para>
+
+
+
+<para>Структура cfm содержит поля для хранения различных данных типа cfm, которые представляют параметры для отображения графика. </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00016">16</link></para>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_structcfm_1a34655b4bfca15e5fb6afeedcf05c1289"/><section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>void cfm::display ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Выводит содержимое структуры cfm на консоль. </para>
+</para>
+
+<para>Функция <link linkend="_structcfm_1a34655b4bfca15e5fb6afeedcf05c1289">display()</link> выводит значения каждого поля структуры cfm на консоль. </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00035">35</link></para>
+<programlisting linenumbering="unnumbered">00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Header:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a7a658677e62202d59ef8a14da194d65b">header</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Blank:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a6400105680203ffabfa9860662530647">blank</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00038 
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Marks:&#32;&quot;</emphasis>;
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&#32;val&#32;:&#32;<link linkend="_structcfm_1ad4cec00bcb67870e82af90e5d3676161">marks</link>)
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;val&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00043 
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Format:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link>[0]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link>[1]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00045 
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Diameter:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00047 
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Small&#32;Tick:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae">small_tick</link>[0]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae">small_tick</link>[1]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00049 
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Big&#32;Tick:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72">big_tick</link>[0]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72">big_tick</link>[1]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00051 
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Digital&#32;Tick:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[1]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[3]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00053 
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Digit&#32;Height:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00055 
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Label&#32;Height:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060">label_height</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00057 
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Tick&#32;Mask:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2">tick_mask</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00059 &#32;&#32;&#32;&#32;}
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structcfm_a34655b4bfca15e5fb6afeedcf05c1289_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72"/><section>
+    <title>big_tick</title>
+<indexterm><primary>big_tick</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>big_tick</secondary></indexterm>
+<para><computeroutput>std::array&lt;double, 2&gt; cfm::big_tick</computeroutput></para>
+<para>Большой делитель </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00023">23</link></para>
+</section>
+<anchor xml:id="_structcfm_1a6400105680203ffabfa9860662530647"/><section>
+    <title>blank</title>
+<indexterm><primary>blank</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>blank</secondary></indexterm>
+<para><computeroutput>std::string cfm::blank</computeroutput></para>
+<para>модель </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00018">18</link></para>
+</section>
+<anchor xml:id="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85"/><section>
+    <title>diameter</title>
+<indexterm><primary>diameter</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>diameter</secondary></indexterm>
+<para><computeroutput>int cfm::diameter</computeroutput></para>
+<para>Диаметр </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00021">21</link></para>
+</section>
+<anchor xml:id="_structcfm_1af1376357880c15d011d9c96fd485714e"/><section>
+    <title>digit_height</title>
+<indexterm><primary>digit_height</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>digit_height</secondary></indexterm>
+<para><computeroutput>int cfm::digit_height</computeroutput></para>
+<para>Высота цифр </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00025">25</link></para>
+</section>
+<anchor xml:id="_structcfm_1a8fe3ba9b353d58719364384fc2132825"/><section>
+    <title>digital_tick</title>
+<indexterm><primary>digital_tick</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>digital_tick</secondary></indexterm>
+<para><computeroutput>std::array&lt;double, 4&gt; cfm::digital_tick</computeroutput></para>
+<para>Цифровой делитель </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00024">24</link></para>
+</section>
+<anchor xml:id="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6"/><section>
+    <title>format</title>
+<indexterm><primary>format</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>format</secondary></indexterm>
+<para><computeroutput>std::array&lt;int, 2&gt; cfm::format</computeroutput></para>
+<para>Формат </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00020">20</link></para>
+</section>
+<anchor xml:id="_structcfm_1a7a658677e62202d59ef8a14da194d65b"/><section>
+    <title>header</title>
+<indexterm><primary>header</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>header</secondary></indexterm>
+<para><computeroutput>std::string cfm::header</computeroutput></para>
+<para>Заголовок </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00017">17</link></para>
+</section>
+<anchor xml:id="_structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060"/><section>
+    <title>label_height</title>
+<indexterm><primary>label_height</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>label_height</secondary></indexterm>
+<para><computeroutput>int cfm::label_height</computeroutput></para>
+<para>Высота меток </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00026">26</link></para>
+</section>
+<anchor xml:id="_structcfm_1ad4cec00bcb67870e82af90e5d3676161"/><section>
+    <title>marks</title>
+<indexterm><primary>marks</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>marks</secondary></indexterm>
+<para><computeroutput>std::vector&lt;double&gt; cfm::marks</computeroutput></para>
+<para>Метки </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00019">19</link></para>
+</section>
+<anchor xml:id="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae"/><section>
+    <title>small_tick</title>
+<indexterm><primary>small_tick</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>small_tick</secondary></indexterm>
+<para><computeroutput>std::array&lt;double, 2&gt; cfm::small_tick</computeroutput></para>
+<para>Малый делитель </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00022">22</link></para>
+</section>
+<anchor xml:id="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2"/><section>
+    <title>tick_mask</title>
+<indexterm><primary>tick_mask</primary><secondary>cfm</secondary></indexterm>
+<indexterm><primary>cfm</primary><secondary>tick_mask</secondary></indexterm>
+<para><computeroutput>std::string cfm::tick_mask</computeroutput></para>
+<para>Маска делителей </para>
+<para>
+См. определение в файле <link linkend="_cfm_8h_source">cfm.h</link> строка <link linkend="_cfm_8h_source_1l00027">27</link></para>
+</section>
+<para>
+Объявления и описания членов структуры находятся в файле:</para>
+<link linkend="_cfm_8h">cfm.h</link></section>
+</section>

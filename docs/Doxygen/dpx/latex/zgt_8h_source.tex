@@ -1,0 +1,40 @@
+\doxysection{zgt.\+h}
+\hypertarget{zgt_8h_source}{}\label{zgt_8h_source}\index{zgt.h@{zgt.h}}
+\mbox{\hyperlink{zgt_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BLANK\_ZGT\_H}}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BLANK\_ZGT\_H}}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00015}\mbox{\hyperlink{structzgt}{00015}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structzgt}{zgt}}\{}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00016}\mbox{\hyperlink{structzgt_ab347a1a6d59fde2e507a7035e65e2544}{00016}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structzgt_ab347a1a6d59fde2e507a7035e65e2544}{diameter}};\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00017}\mbox{\hyperlink{structzgt_a158a8320351f554c1aa14cf6436b505f}{00017}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structzgt_a158a8320351f554c1aa14cf6436b505f}{center\_hole\_diameter}};\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00018}\mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{00018}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\_holes}};\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00019}\mbox{\hyperlink{structzgt_a9ca1baeee9e45b33b39efc727f206e34}{00019}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{structzgt_a9ca1baeee9e45b33b39efc727f206e34}{marker\_position}};\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00020}\mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{00020}}\ \ \ \ \ std::array<double,\ 2>\ \mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}\{\};\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00021}\mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{00021}}\ \ \ \ \ std::array<double,\ 3>\ \mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}\{\};\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00030}\mbox{\hyperlink{structzgt_a54f8b1de8e8e339540ddddd0e7503ac2}{00030}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structzgt_a54f8b1de8e8e339540ddddd0e7503ac2}{display}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Diameter:\ "{}}\ <<\ \mbox{\hyperlink{structzgt_ab347a1a6d59fde2e507a7035e65e2544}{diameter}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Center\ Hole\ Diameter:\ "{}}\ <<\ \mbox{\hyperlink{structzgt_a158a8320351f554c1aa14cf6436b505f}{center\_hole\_diameter}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Mounting\ Holes:\ "{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ \mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\_holes}})}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ val\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Marker\ Position:\ "{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ \mbox{\hyperlink{structzgt_a9ca1baeee9e45b33b39efc727f206e34}{marker\_position}})}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ val\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Font\ Serial\ Number:\ "{}}\ <<\ \mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Stop\ Position:\ "{}}\ <<\ \mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[1]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[2]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00048}00048\ \};}
+\DoxyCodeLine{\Hypertarget{zgt_8h_source_l00049}00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLANK\_ZGT\_H}}
+
+\end{DoxyCode}

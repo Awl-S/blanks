@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Blanks: Исходный файл ParserConfiguration.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Blanks
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_parser_configuration_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ParserConfiguration.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_parser_configuration_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BLANKS_PARSERCONFIGURATION_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BLANKS_PARSERCONFIGURATION_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_parser_configuration.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_parser_configuration.html">ParserConfiguration</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_parser_configuration.html#a11a307d9f31f64bffdb881abf94e66b5">   18</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_parser_configuration.html#a11a307d9f31f64bffdb881abf94e66b5">~ParserConfiguration</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_parser_configuration.html#ab44f9c6fed060b33544224ddeb473e59">   28</a></span>    <span class="keyword">virtual</span> std::filesystem::path <a class="code hl_function" href="class_parser_configuration.html#ab44f9c6fed060b33544224ddeb473e59">getFilePath</a>(<span class="keyword">const</span> std::string&amp; key) = 0;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_parser_configuration.html#a70fcdbc2a2a83b1dabaecf576d1cff71">   39</a></span>    <span class="keyword">virtual</span> std::vector&lt;std::filesystem::path&gt; <a class="code hl_function" href="class_parser_configuration.html#a70fcdbc2a2a83b1dabaecf576d1cff71">getFileList</a>(<span class="keyword">const</span> std::string&amp; key, <span class="keyword">const</span> std::string&amp; search) = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_parser_configuration.html#af35d73849ce2faf5cf19196a662fc19a">   47</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_parser_configuration.html#af35d73849ce2faf5cf19196a662fc19a">display</a>() = 0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">    static std::unique_ptr&lt;ParserConfiguration&gt; create(const std::string&amp; config_file_path);</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_parser_configuration.html#a542aa87ab4a21ce9d52d388456ab8580">   83</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_function" href="class_parser_configuration.html#a542aa87ab4a21ce9d52d388456ab8580">getInteger</a>(<span class="keyword">const</span> std::string &amp;key);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#endif </span><span class="comment">//BLANKS_PARSERCONFIGURATION_H</span></div>
+<div class="ttc" id="aclass_parser_configuration_html"><div class="ttname"><a href="class_parser_configuration.html">ParserConfiguration</a></div><div class="ttdoc">Класс для создания объекта конфигурации парсера.</div><div class="ttdef"><b>Definition</b> <a href="_parser_configuration_8h_source.html#l00016">ParserConfiguration.h:16</a></div></div>
+<div class="ttc" id="aclass_parser_configuration_html_a11a307d9f31f64bffdb881abf94e66b5"><div class="ttname"><a href="class_parser_configuration.html#a11a307d9f31f64bffdb881abf94e66b5">ParserConfiguration::~ParserConfiguration</a></div><div class="ttdeci">virtual ~ParserConfiguration()=default</div></div>
+<div class="ttc" id="aclass_parser_configuration_html_a542aa87ab4a21ce9d52d388456ab8580"><div class="ttname"><a href="class_parser_configuration.html#a542aa87ab4a21ce9d52d388456ab8580">ParserConfiguration::getInteger</a></div><div class="ttdeci">virtual long long getInteger(const std::string &amp;key)</div><div class="ttdoc">Создает экземпляр класса ConfigParser на основе пути к конфигурационному файлу.</div></div>
+<div class="ttc" id="aclass_parser_configuration_html_a70fcdbc2a2a83b1dabaecf576d1cff71"><div class="ttname"><a href="class_parser_configuration.html#a70fcdbc2a2a83b1dabaecf576d1cff71">ParserConfiguration::getFileList</a></div><div class="ttdeci">virtual std::vector&lt; std::filesystem::path &gt; getFileList(const std::string &amp;key, const std::string &amp;search)=0</div><div class="ttdoc">Возвращает список файлов на основе указанного ключа и поискового запроса.</div></div>
+<div class="ttc" id="aclass_parser_configuration_html_ab44f9c6fed060b33544224ddeb473e59"><div class="ttname"><a href="class_parser_configuration.html#ab44f9c6fed060b33544224ddeb473e59">ParserConfiguration::getFilePath</a></div><div class="ttdeci">virtual std::filesystem::path getFilePath(const std::string &amp;key)=0</div><div class="ttdoc">Возвращает путь к файлу на основе указанного ключа.</div></div>
+<div class="ttc" id="aclass_parser_configuration_html_af35d73849ce2faf5cf19196a662fc19a"><div class="ttname"><a href="class_parser_configuration.html#af35d73849ce2faf5cf19196a662fc19a">ParserConfiguration::display</a></div><div class="ttdeci">virtual void display()=0</div><div class="ttdoc">Отображает информацию из конфигурационного файла.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_3c6f26092d098408ec1d4e19068637e3.html">Parser</a></li><li class="navelem"><a class="el" href="_parser_configuration_8h.html">ParserConfiguration.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -9,7 +9,7 @@
  * Генерация этих элементов осуществляется с помощью функций `generate_Marks`, `drawMainLines`, `drawDigitIndices` и `drawAdditionalTicks`. Эти функции используют данные из других членов класса, таких как `cfm_data_` и `zgt_data_`.
  * В конце, документ сохраняется в файл с указанным именем.
  */
-void RenderPDF::generatePDF(std::string &filename) {
+void RenderPDF::generatePDF(std::string &filename, std::vector<std::string> args) {
 
     HPDF_Page page;
     size_t size_point_tbl = point_tbl.size();
@@ -40,20 +40,20 @@ void RenderPDF::generatePDF(std::string &filename) {
             }
 
             // отрисовка круга
-            if (false) {
+            if (args[0] == "true") {
                 drawCircle(page, point_data_.coordinates[point_tbl[blank] - 1].first,
                            point_data_.coordinates[point_tbl[blank] - 1].second, zgt_data_.diameter / 2.0f);
             }
 
             //Центральный отверстие
-            if (false) {
+            if (args[1] == "true") {
                 drawCircle(page, point_data_.coordinates[point_tbl[blank] - 1].first,
                            point_data_.coordinates[point_tbl[blank] - 1].second,
                            zgt_data_.center_hole_diameter / 2.0f);
             }
 
-            // Индексы не изменяются (исправить!!!)
-            if(false){
+            // Индексы не изменяются
+            if(args[2] == "true"){
                 double xy, yz, radius;
                 for (int i = 0; i < 2; ++i) {
                     xy = zgt_data_.mounting_holes[i * 3];

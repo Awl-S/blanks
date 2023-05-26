@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_text_reader_8cpp_source" xml:lang="ru">
+<title>textReader.cpp</title>
+<indexterm><primary>textReader.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_text_reader_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../../include/Reader/textReader.h&quot;</emphasis>
+<anchor xml:id="_text_reader_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+<anchor xml:id="_text_reader_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;regex&gt;</emphasis>
+<anchor xml:id="_text_reader_8cpp_source_1l00004"/>00004 
+<anchor xml:id="_text_reader_8cpp_source_1l00011"/><link linkend="_classtext_reader_1a5cd4eeebf53787a1434d037c54993071">00011</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1a5cd4eeebf53787a1434d037c54993071">textReader::read_cfm</link>(<link linkend="_structcfm">cfm</link>&#32;&amp;data)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+<anchor xml:id="_text_reader_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+<anchor xml:id="_text_reader_8cpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00016"/>00016 
+<anchor xml:id="_text_reader_8cpp_source_1l00017"/>00017 &#32;&#32;&#32;&#32;std::string&#32;line;
+<anchor xml:id="_text_reader_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;count&#32;=&#32;1;
+<anchor xml:id="_text_reader_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(std::getline(file,&#32;line))&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;1)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structcfm_1a7a658677e62202d59ef8a14da194d65b">header</link>&#32;=&#32;<link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link>(line);
+<anchor xml:id="_text_reader_8cpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;3)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structcfm_1a6400105680203ffabfa9860662530647">blank</link>&#32;=&#32;<link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link>(line);
+<anchor xml:id="_text_reader_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;6)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream&#32;iss(line);
+<anchor xml:id="_text_reader_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;temp;
+<anchor xml:id="_text_reader_8cpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(iss&#32;&gt;&gt;&#32;temp)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structcfm_1ad4cec00bcb67870e82af90e5d3676161">marks</link>.push_back(temp);
+<anchor xml:id="_text_reader_8cpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;8)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link>[1];
+<anchor xml:id="_text_reader_8cpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;10)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>;
+<anchor xml:id="_text_reader_8cpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;12)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae">small_tick</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1ac4b86bca5f71ce33c545d435fd2027ae">small_tick</link>[1];
+<anchor xml:id="_text_reader_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;14)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72">big_tick</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72">big_tick</link>[1];
+<anchor xml:id="_text_reader_8cpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;16)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[1]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[2]&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[3];
+<anchor xml:id="_text_reader_8cpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;18)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>&#32;&gt;&gt;&#32;data.<link linkend="_structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060">label_height</link>;
+<anchor xml:id="_text_reader_8cpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;20)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2">tick_mask</link>&#32;=&#32;<link linkend="_class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22">trim</link>(line);
+<anchor xml:id="_text_reader_8cpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count++;
+<anchor xml:id="_text_reader_8cpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00047"/>00047 }
+<anchor xml:id="_text_reader_8cpp_source_1l00048"/>00048 
+<anchor xml:id="_text_reader_8cpp_source_1l00055"/><link linkend="_classtext_reader_1af98fb017c822ba0f17c58a1dda32a787">00055</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1af98fb017c822ba0f17c58a1dda32a787">textReader::read_zgt</link>(<link linkend="_structzgt">zgt</link>&#32;&amp;data)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+<anchor xml:id="_text_reader_8cpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+<anchor xml:id="_text_reader_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00060"/>00060 
+<anchor xml:id="_text_reader_8cpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;count&#32;=&#32;1;
+<anchor xml:id="_text_reader_8cpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;std::string&#32;line;
+<anchor xml:id="_text_reader_8cpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(std::getline(file,&#32;line))&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;2)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544">diameter</link>;
+<anchor xml:id="_text_reader_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;4)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1a158a8320351f554c1aa14cf6436b505f">center_hole_diameter</link>;
+<anchor xml:id="_text_reader_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;6)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream&#32;iss(line);
+<anchor xml:id="_text_reader_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;temp;
+<anchor xml:id="_text_reader_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(iss&#32;&gt;&gt;&#32;temp)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link>.push_back(temp);
+<anchor xml:id="_text_reader_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;8)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream&#32;iss(line);
+<anchor xml:id="_text_reader_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;temp;
+<anchor xml:id="_text_reader_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(iss&#32;&gt;&gt;&#32;temp)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structzgt_1a9ca1baeee9e45b33b39efc727f206e34">marker_position</link>.push_back(temp);
+<anchor xml:id="_text_reader_8cpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;10)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>[1];
+<anchor xml:id="_text_reader_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(count&#32;==&#32;12)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::istringstream(line)&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[0]&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[1]&#32;&gt;&gt;&#32;data.<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[2];
+<anchor xml:id="_text_reader_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count++;
+<anchor xml:id="_text_reader_8cpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00087"/>00087 }
+<anchor xml:id="_text_reader_8cpp_source_1l00088"/>00088 
+<anchor xml:id="_text_reader_8cpp_source_1l00095"/><link linkend="_classtext_reader_1ac9b23d5e5a58431fb114f221098a2640">00095</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1ac9b23d5e5a58431fb114f221098a2640">textReader::read_tbl</link>(<link linkend="_structtbl">tbl</link>&#32;&amp;data)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+<anchor xml:id="_text_reader_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+<anchor xml:id="_text_reader_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00100"/>00100 
+<anchor xml:id="_text_reader_8cpp_source_1l00101"/>00101 &#32;&#32;&#32;&#32;std::string&#32;file_name&#32;=&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.filename().string();
+<anchor xml:id="_text_reader_8cpp_source_1l00102"/>00102 
+<anchor xml:id="_text_reader_8cpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;std::string&#32;prefix&#32;=&#32;<emphasis role="stringliteral">&quot;scale&quot;</emphasis>;
+<anchor xml:id="_text_reader_8cpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;std::string&#32;suffix&#32;=&#32;<emphasis role="stringliteral">&quot;.tbl&quot;</emphasis>;
+<anchor xml:id="_text_reader_8cpp_source_1l00105"/>00105 
+<anchor xml:id="_text_reader_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;start&#32;=&#32;file_name.find(prefix);
+<anchor xml:id="_text_reader_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;end&#32;=&#32;file_name.find(suffix);
+<anchor xml:id="_text_reader_8cpp_source_1l00108"/>00108 
+<anchor xml:id="_text_reader_8cpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(start&#32;==&#32;std::string::npos&#32;||&#32;end&#32;==&#32;std::string::npos&#32;||&#32;start&#32;&gt;=&#32;end)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Could&#32;not&#32;extract&#32;number&#32;from&#32;file&#32;name&quot;</emphasis>);
+<anchor xml:id="_text_reader_8cpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00112"/>00112 
+<anchor xml:id="_text_reader_8cpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;start&#32;+=&#32;prefix.length();
+<anchor xml:id="_text_reader_8cpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;std::string&#32;number_str&#32;=&#32;file_name.substr(start,&#32;end&#32;-&#32;start);
+<anchor xml:id="_text_reader_8cpp_source_1l00115"/>00115 
+<anchor xml:id="_text_reader_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8">position</link>&#32;=&#32;std::stoi(number_str);
+<anchor xml:id="_text_reader_8cpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::invalid_argument&amp;&#32;e)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Invalid&#32;number&#32;in&#32;file&#32;name:&#32;&quot;</emphasis>&#32;+&#32;number_str);
+<anchor xml:id="_text_reader_8cpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;std::out_of_range&amp;&#32;e)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Number&#32;in&#32;file&#32;name&#32;is&#32;out&#32;of&#32;range:&#32;&quot;</emphasis>&#32;+&#32;number_str);
+<anchor xml:id="_text_reader_8cpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00123"/>00123 
+<anchor xml:id="_text_reader_8cpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;std::string&#32;line;
+<anchor xml:id="_text_reader_8cpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;<link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">readLineString</link>(file);
+<anchor xml:id="_text_reader_8cpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;data.<link linkend="_structtbl_1ac995e4da6d437a046c2074f9dc33b833">model</link>&#32;=&#32;<link linkend="_class_file_reader_1a8e183bdc265152f0309184debb4af6a3">readLineString</link>(file);
+<anchor xml:id="_text_reader_8cpp_source_1l00127"/>00127 
+<anchor xml:id="_text_reader_8cpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;data.<link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">measurements</link>.reserve(20);
+<anchor xml:id="_text_reader_8cpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(std::getline(file,&#32;line))&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;temp;
+<anchor xml:id="_text_reader_8cpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;col2;
+<anchor xml:id="_text_reader_8cpp_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;col3;
+<anchor xml:id="_text_reader_8cpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(std::istringstream(line)&#32;&gt;&gt;&#32;temp&#32;&gt;&gt;&#32;col2&#32;&gt;&gt;&#32;col3)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structtbl_1a2c40d6d0a86d9981eb8852fe90431334">measurements</link>.push_back({col2,&#32;col3});
+<anchor xml:id="_text_reader_8cpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00136"/>00136 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00137"/>00137 }
+<anchor xml:id="_text_reader_8cpp_source_1l00138"/>00138 
+<anchor xml:id="_text_reader_8cpp_source_1l00145"/><link linkend="_classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5">00145</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5">textReader::read_point</link>(<link linkend="_structpoint">point</link>&#32;&amp;data)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+<anchor xml:id="_text_reader_8cpp_source_1l00147"/>00147 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00148"/>00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+<anchor xml:id="_text_reader_8cpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00150"/>00150 
+<anchor xml:id="_text_reader_8cpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;x,&#32;y;
+<anchor xml:id="_text_reader_8cpp_source_1l00152"/>00152 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(file&#32;&gt;&gt;&#32;x&#32;&gt;&gt;&#32;y)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>.emplace_back(x,&#32;y);
+<anchor xml:id="_text_reader_8cpp_source_1l00154"/>00154 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00155"/>00155 }
+<anchor xml:id="_text_reader_8cpp_source_1l00156"/>00156 
+<anchor xml:id="_text_reader_8cpp_source_1l00163"/><link linkend="_classtext_reader_1ad25e94320aa8adce9de68445d963b570">00163</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classtext_reader_1ad25e94320aa8adce9de68445d963b570">textReader::read_nbr</link>(<link linkend="_structnbr">nbr</link>&#32;&amp;data)&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00164"/>00164 &#32;&#32;&#32;&#32;std::ifstream&#32;file(<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>);
+<anchor xml:id="_text_reader_8cpp_source_1l00165"/>00165 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!file.is_open())&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;Failed&#32;to&#32;open&#32;file:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="_class_file_reader_1acf2bd283059c0de739f8f2350ce9d658">file_path_</link>.string());
+<anchor xml:id="_text_reader_8cpp_source_1l00167"/>00167 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00168"/>00168 
+<anchor xml:id="_text_reader_8cpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;std::string&#32;line;
+<anchor xml:id="_text_reader_8cpp_source_1l00170"/>00170 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;line_number&#32;=&#32;1;
+<anchor xml:id="_text_reader_8cpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(std::getline(file,&#32;line))&#32;{
+<anchor xml:id="_text_reader_8cpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.<link linkend="_structnbr_1a54d820aea6c166beb70523a0694dc669">icon</link>.insert(std::make_pair(line_number,&#32;line));
+<anchor xml:id="_text_reader_8cpp_source_1l00173"/>00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;line_number++;
+<anchor xml:id="_text_reader_8cpp_source_1l00174"/>00174 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_text_reader_8cpp_source_1l00175"/>00175 }
+</programlisting></section>

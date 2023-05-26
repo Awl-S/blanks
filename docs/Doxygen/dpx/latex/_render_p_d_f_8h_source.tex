@@ -1,0 +1,74 @@
+\doxysection{Render\+PDF.\+h}
+\hypertarget{_render_p_d_f_8h_source}{}\label{_render_p_d_f_8h_source}\index{RenderPDF.h@{RenderPDF.h}}
+\mbox{\hyperlink{_render_p_d_f_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BLANKS\_RENDERPDF\_H}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BLANKS\_RENDERPDF\_H}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <hpdf.h>}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}../struct/cfm.h"{}}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}../struct/zgt.h"{}}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}../struct/nbr.h"{}}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}../struct/point\_data.h"{}}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}../struct/tbl.h"{}}}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00020}\mbox{\hyperlink{class_render_p_d_f}{00020}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_render_p_d_f}{RenderPDF}}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00022}00022\ \ \ \ \ HPDF\_Font\ \mbox{\hyperlink{class_render_p_d_f_ac3ba6c62b21e04dbe57cedf12b3f06c0}{loadFont}}(\textcolor{keyword}{const}\ std::string\&\ fontPath);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_ae8716d07394557fb0434e419be24d04f}{sortTblData}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a1b6a4f2724661a30f767d37d2bf041b3}{populatePointTbl}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_render_p_d_f_ae7ea70ad51e168a5c255de4ea54db087}{checkForNewPage}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a22fa693e95126bb362fe324470ba2277}{createA3Page}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a0c2cb9d669fedf5910e7be20e7bb4b36}{setFontSize}}(HPDF\_Page\ page,\ \textcolor{keywordtype}{double}\ size);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a50a4d487307986751eb5087f25961c27}{drawCircle}}(HPDF\_Page\ page,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ radius);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_ae17f88d413daf207f1b93fc43a8fd679}{draw\_line}}(HPDF\_Page\ page,\ HPDF\_REAL\ x1,\ HPDF\_REAL\ y1,\ HPDF\_REAL\ x2,\ HPDF\_REAL\ y2);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a3f2e7a6479a84eaecbe8a07b17aaeb5e}{generate\_Marks}}(\textcolor{keywordtype}{size\_t}\ blank);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_abaccfd0526f13c8d8c5d9f74ceb31f52}{drawDigitIndices}}(HPDF\_Page\ page,\ \textcolor{keywordtype}{size\_t}\ blank);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a518d3eb66cbcdb313c218dc8028c9673}{drawMainLines}}(HPDF\_Page\ page,\ \textcolor{keywordtype}{size\_t}\ blank);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_acbc9c679d623723340171bd56c5575cb}{drawAdditionalTicks}}(HPDF\_Page\ page,\ \textcolor{keywordtype}{size\_t}\ blank);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a6ac6011ccf3a8df169125c3d72b93c94}{initializeData}}(\mbox{\hyperlink{structcfm}{cfm}}\ cfm\_data,\ \mbox{\hyperlink{structzgt}{zgt}}\ zgt\_data,\ \textcolor{keyword}{const}\ std::vector<tbl>\ \&tbl\_data,\ \mbox{\hyperlink{structnbr}{nbr}}\ nbr\_data,\ \mbox{\hyperlink{structpoint}{point}}\ point\_data,\ std::filesystem::path\ fontPath);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_aaaeb1e6ddb96e6404cdfd22ad557fe6f}{initializePDF}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_a9c8b019dbb7873ad236e5b15c52fd4f0}{adjustFontSize}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00047}00047\ \ \ \ \ HPDF\_REAL\ \mbox{\hyperlink{class_render_p_d_f_a7931b27233f110635d4c15fd83508a3b}{calculateYCoordinate}}(HPDF\_REAL\ angle,\ \textcolor{keywordtype}{size\_t}\ blank);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00048}00048\ \ \ \ \ HPDF\_REAL\ \mbox{\hyperlink{class_render_p_d_f_a98e9f7f26365660413fb541ecd7dc92f}{calculateXCoordinate}}(HPDF\_REAL\ angle,\ \textcolor{keywordtype}{double}\ textWidth,\ \textcolor{keywordtype}{size\_t}\ blank);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00049}00049\ \ \ \ \ std::string\ \mbox{\hyperlink{class_render_p_d_f_a87d9d5335c694603bf6686851879879a}{formatText}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_af00237dc614fc46323aead1daae13a15}{drawText}}(HPDF\_Page\ page,\ \textcolor{keyword}{const}\ std::string\&\ text,\ HPDF\_REAL\ x,\ HPDF\_REAL\ y);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00052}00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_p_d_f_ab38c3850e484ba597ae3be5dbac1f5b2}{generatePDF}}(std::string\&\ filename);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f}{RenderPDF}}(\mbox{\hyperlink{structcfm}{cfm}}\ cfm\_data,\ \mbox{\hyperlink{structzgt}{zgt}}\ zgt\_data,\ \textcolor{keyword}{const}\ std::vector<tbl>\ \&tbl\_data,\ \mbox{\hyperlink{structnbr}{nbr}}\ nbr\_data,\ \mbox{\hyperlink{structpoint}{point}}\ point\_data,\ std::filesystem::path\ fontPath);}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{class_render_p_d_f_ab1e1309fbda18c7ebd8aa9b75a1f69d7}{\string~RenderPDF}}();}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00059}00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00060}\mbox{\hyperlink{class_render_p_d_f_adda47ac0eef121635099a286e784f610}{00060}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_render_p_d_f_adda47ac0eef121635099a286e784f610}{PI}}\ =\ 3.14159265358979323846;\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00061}\mbox{\hyperlink{class_render_p_d_f_aa5d08b1fd3f72c78879fea437d978fdb}{00061}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_render_p_d_f_aa5d08b1fd3f72c78879fea437d978fdb}{margitText}}\ =\ 1;\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00062}\mbox{\hyperlink{class_render_p_d_f_aa8780af3344ed124f9ad0f4189344489}{00062}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_render_p_d_f_aa8780af3344ed124f9ad0f4189344489}{new\_page}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00063}\mbox{\hyperlink{class_render_p_d_f_a36b057897ad1e0b0ff20fd7c97107bc4}{00063}}\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{class_render_p_d_f_a36b057897ad1e0b0ff20fd7c97107bc4}{fontPath\_}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00065}\mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{00065}}\ \ \ \ \ HPDF\_Doc\ \mbox{\hyperlink{class_render_p_d_f_a0b894cccbec97da627a095dde9f054eb}{pdf\_}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00066}\mbox{\hyperlink{class_render_p_d_f_a501db80f3bb869b9b3cff1722b040781}{00066}}\ \ \ \ \ HPDF\_Font\ \mbox{\hyperlink{class_render_p_d_f_a501db80f3bb869b9b3cff1722b040781}{font\_}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00068}\mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{00068}}\ \ \ \ \ \mbox{\hyperlink{structcfm}{cfm}}\ \mbox{\hyperlink{class_render_p_d_f_a4188a6f45597ad36f520c78b6ef1278d}{cfm\_data\_}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00069}\mbox{\hyperlink{class_render_p_d_f_a88ea75db7b69bd6540445e3bf67febe2}{00069}}\ \ \ \ \ \mbox{\hyperlink{structzgt}{zgt}}\ \mbox{\hyperlink{class_render_p_d_f_a88ea75db7b69bd6540445e3bf67febe2}{zgt\_data\_}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00070}\mbox{\hyperlink{class_render_p_d_f_a10939476ae873b9782a7af7e363bb9ec}{00070}}\ \ \ \ \ \mbox{\hyperlink{structnbr}{nbr}}\ \mbox{\hyperlink{class_render_p_d_f_a10939476ae873b9782a7af7e363bb9ec}{nbr\_data\_}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00071}\mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{00071}}\ \ \ \ \ \mbox{\hyperlink{structpoint}{point}}\ \mbox{\hyperlink{class_render_p_d_f_afa788735693ee164252a3af3c83bc431}{point\_data\_}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00072}\mbox{\hyperlink{class_render_p_d_f_a2b011efd97045da1e9ccdab286d35d8c}{00072}}\ \ \ \ \ std::vector<tbl>\ \mbox{\hyperlink{class_render_p_d_f_a2b011efd97045da1e9ccdab286d35d8c}{tbl\_data\_}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00073}\mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{00073}}\ \ \ \ \ std::vector<size\_t>\ \mbox{\hyperlink{class_render_p_d_f_aedb69be379199827b2a8c80e7901ea58}{point\_tbl}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00074}\mbox{\hyperlink{class_render_p_d_f_a922299c1a62d014f6a7afcaeddddf0ff}{00074}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{class_render_p_d_f_a922299c1a62d014f6a7afcaeddddf0ff}{marks}};\ }
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{_render_p_d_f_8h_source_l00076}00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLANKS\_RENDERPDF\_H}}
+
+\end{DoxyCode}

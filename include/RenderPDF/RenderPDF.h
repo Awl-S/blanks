@@ -50,7 +50,7 @@ class RenderPDF {
     void drawText(HPDF_Page page, const std::string& text, HPDF_REAL x, HPDF_REAL y);
 
 public:
-    void generatePDF(std::string& filename);
+    void generatePDF(std::string& filename, std::vector<std::string> args);
 
     RenderPDF(cfm cfm_data, zgt zgt_data, const std::vector<tbl> &tbl_data, nbr nbr_data, point point_data, std::filesystem::path fontPath);
 

@@ -1,0 +1,5 @@
+<map id="textReader::read_cfm" name="textReader::read_cfm">
+<area shape="rect" id="Node000001" title="Читает данные типа cfm из файла." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="Node000002" href="$class_file_reader.html#a8b67d54f19fd8f228f337ba75ea29e22" title="Удаляет ведущие и завершающие пробелы из строки." alt="" coords="199,5,312,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,16,184,16,184,21,151,21"/>
+</map>

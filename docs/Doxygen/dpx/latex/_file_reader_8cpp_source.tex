@@ -1,0 +1,30 @@
+\doxysection{File\+Reader.\+cpp}
+\hypertarget{_file_reader_8cpp_source}{}\label{_file_reader_8cpp_source}\index{FileReader.cpp@{FileReader.cpp}}
+\mbox{\hyperlink{_file_reader_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/Reader/FileReader.h"{}}}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00012}\mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{00012}}\ std::string\ \mbox{\hyperlink{class_file_reader_a8b67d54f19fd8f228f337ba75ea29e22}{FileReader::trim}}(\textcolor{keyword}{const}\ std::string\ \&s)\ \{}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{auto}\ start\ =\ s.begin();}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{while}\ (start\ !=\ s.end()\ \&\&\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*start)\ >\ 255\ ||\ std::isspace(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*start))))\ \{}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ start++;}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ s.end();}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{while}\ (end\ !=\ start\ \&\&\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*(end\ -\/\ 1))\ >\ 255\ ||\ std::isspace(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(*(end\ -\/\ 1)))))\ \{}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ end-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(start,\ end);}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00033}\mbox{\hyperlink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{00033}}\ std::string\ \mbox{\hyperlink{class_file_reader_a8e183bdc265152f0309184debb4af6a3}{FileReader::readLineString}}(std::ifstream\ \&file)\ \{}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00034}00034\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::getline(file,\ line))}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ any\ leading/trailing\ whitespace}}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ line.erase(0,\ line.find\_first\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)r\(\backslash\)n"{}}));}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ line.erase(line.find\_last\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)r\(\backslash\)n"{}})\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ line;}
+\DoxyCodeLine{\Hypertarget{_file_reader_8cpp_source_l00042}00042\ \}}
+
+\end{DoxyCode}

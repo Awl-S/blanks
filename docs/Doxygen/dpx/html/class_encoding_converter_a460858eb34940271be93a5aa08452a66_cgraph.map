@@ -1,0 +1,7 @@
+<map id="EncodingConverter::convertFile" name="EncodingConverter::convertFile">
+<area shape="rect" id="Node000001" title="Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл." alt="" coords="5,39,143,81"/>
+<area shape="rect" id="Node000002" href="$class_encoding_converter.html#ac7f6cefb08a76f5fa3696ee18beb8faf" title="Конвертирует строку из одной кодировки в другую с помощью iconv." alt="" coords="191,5,328,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,45,175,39,176,44,143,50"/>
+<area shape="rect" id="Node000003" href="$class_encoding_converter.html#a9b72ba808c4b0c7087f63fd0c3b8a5d7" title="Проверяет, является ли строка в кодировке UTF&#45;8." alt="" coords="191,72,328,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,70,176,76,175,81,142,75"/>
+</map>

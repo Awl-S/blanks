@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="class_file_reader" kind="class" language="C++" prot="public">
+    <compoundname>FileReader</compoundname>
+    <derivedcompoundref refid="classtext_reader" prot="public" virt="non-virtual">textReader</derivedcompoundref>
+    <includes refid="_file_reader_8h" local="yes">FileReader.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" prot="protected" static="no" mutable="no">
+        <type>std::filesystem::path</type>
+        <definition>std::filesystem::path FileReader::file_path_</definition>
+        <argsstring></argsstring>
+        <name>file_path_</name>
+        <qualifiedname>FileReader::file_path_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Путь к файлу </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h" line="26" column="27" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+        <referencedby refid="classtext_reader_1ad25e94320aa8adce9de68445d963b570" compoundref="text_reader_8cpp" startline="163" endline="175">textReader::read_nbr</referencedby>
+        <referencedby refid="classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5" compoundref="text_reader_8cpp" startline="145" endline="155">textReader::read_point</referencedby>
+        <referencedby refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" compoundref="text_reader_8cpp" startline="95" endline="137">textReader::read_tbl</referencedby>
+        <referencedby refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" compoundref="text_reader_8cpp" startline="55" endline="87">textReader::read_zgt</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_file_reader_1a1dae37584804731f11c9c932219d8282" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>FileReader::FileReader</definition>
+        <argsstring>(std::filesystem::path file_path)</argsstring>
+        <name>FileReader</name>
+        <qualifiedname>FileReader::FileReader</qualifiedname>
+        <param>
+          <type>std::filesystem::path</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор класса <ref refid="class_file_reader" kindref="compound">FileReader</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к файлу для чтения.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Конструктор инициализирует объект <ref refid="class_file_reader" kindref="compound">FileReader</ref> с указанным путем к файлу file_path. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h" line="23" column="14" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="class_file_reader_1a8e183bdc265152f0309184debb4af6a3" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string FileReader::readLineString</definition>
+        <argsstring>(std::ifstream &amp;file)</argsstring>
+        <name>readLineString</name>
+        <qualifiedname>FileReader::readLineString</qualifiedname>
+        <param>
+          <type>std::ifstream &amp;</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+<para>Читает строку из файла и удаляет ведущие и завершающие пробелы. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Читает строку из файла, удаляет ведущие и завершающие пробелы.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Файловый поток для чтения строки. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Прочитанная строка без ведущих и завершающих пробелов.</para>
+</simplesect>
+Функция <ref refid="class_file_reader_1a8e183bdc265152f0309184debb4af6a3" kindref="member">readLineString()</ref> читает строку из указанного файлового потока file. Затем удаляются ведущие и завершающие пробелы из строки. Результат возвращается в виде новой строки. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h" line="37" column="24" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Reader/FileReader.cpp" bodystart="33" bodyend="42"/>
+        <referencedby refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" compoundref="text_reader_8cpp" startline="95" endline="137">textReader::read_tbl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string FileReader::trim</definition>
+        <argsstring>(const std::string &amp;s)</argsstring>
+        <name>trim</name>
+        <qualifiedname>FileReader::trim</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Удаляет ведущие и завершающие пробелы из строки. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Исходная строка. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Строка без ведущих и завершающих пробелов.</para>
+</simplesect>
+Функция <ref refid="class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22" kindref="member">trim()</ref> удаляет ведущие и завершающие пробелы из строки s. Результат возвращается в виде новой строки.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Исходная строка. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Строка без ведущих и завершающих пробелов.</para>
+</simplesect>
+Функция <ref refid="class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22" kindref="member">trim()</ref> удаляет ведущие и завершающие пробелы из строки s. Также удаляются любые символы, которые являются пробельными или имеют значение кода больше 255. Результат возвращается в виде новой строки. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h" line="47" column="24" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Reader/FileReader.cpp" bodystart="12" bodyend="22"/>
+        <referencedby refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" compoundref="text_reader_8cpp" startline="11" endline="47">textReader::read_cfm</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс для чтения файла. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Класс <ref refid="class_file_reader" kindref="compound">FileReader</ref> предоставляет функциональность для чтения файлов и обработки строк. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>FileReader</label>
+        <link refid="class_file_reader"/>
+      </node>
+      <node id="2">
+        <label>textReader</label>
+        <link refid="classtext_reader"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h" line="15" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/FileReader.h" bodystart="15" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" prot="protected" virt="non-virtual"><scope>FileReader</scope><name>file_path_</name></member>
+      <member refid="class_file_reader_1a1dae37584804731f11c9c932219d8282" prot="public" virt="non-virtual"><scope>FileReader</scope><name>FileReader</name></member>
+      <member refid="class_file_reader_1a8e183bdc265152f0309184debb4af6a3" prot="protected" virt="non-virtual"><scope>FileReader</scope><name>readLineString</name></member>
+      <member refid="class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22" prot="protected" virt="non-virtual"><scope>FileReader</scope><name>trim</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Blanks: Исходный файл Print.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Blanks
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_print_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Print.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_print_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;../../include/RenderPDF/RenderPDF.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_render_p_d_f.html#ab38c3850e484ba597ae3be5dbac1f5b2">   12</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_render_p_d_f.html#ab38c3850e484ba597ae3be5dbac1f5b2">RenderPDF::generatePDF</a>(std::string &amp;filename) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    HPDF_Page page;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">size_t</span> size_point_tbl = <a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>.size();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> blank = 0;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> totalPage = 1;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_render_p_d_f.html#aa8780af3344ed124f9ad0f4189344489">new_page</a>){</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        size_point_tbl/=2;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        totalPage = 2;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> page_list = 0; page_list &lt; totalPage; ++page_list) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span>(page_list == 1) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a> = HPDF_New(<span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <a class="code hl_variable" href="class_render_p_d_f.html#a501db80f3bb869b9b3cff1722b040781">font_</a> = <a class="code hl_function" href="class_render_p_d_f.html#ac3ba6c62b21e04dbe57cedf12b3f06c0">loadFont</a>(<a class="code hl_variable" href="class_render_p_d_f.html#a36b057897ad1e0b0ff20fd7c97107bc4">fontPath_</a>.string());</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            size_point_tbl = <a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>.size();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_function" href="class_render_p_d_f.html#a22fa693e95126bb362fe324470ba2277">createA3Page</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        page = HPDF_GetCurrentPage(<a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">for</span> (; blank &lt; size_point_tbl; blank++) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            HPDF_Page_SetLineWidth(page, <a class="code hl_variable" href="class_render_p_d_f.html#a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</a>.<a class="code hl_variable" href="structcfm.html#a8fe3ba9b353d58719364384fc2132825">digital_tick</a>[1]);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="comment">//test Удалить в конце, не рисуется</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">if</span> (<span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                <a class="code hl_function" href="class_render_p_d_f.html#a50a4d487307986751eb5087f25961c27">drawCircle</a>(page, <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a>.<a class="code hl_variable" href="structpoint.html#a6917d518caab116551a862eba2717bec">coordinates</a>[<a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>[blank] - 1].first,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                           <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a>.<a class="code hl_variable" href="structpoint.html#a6917d518caab116551a862eba2717bec">coordinates</a>[<a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>[blank] - 1].second, <a class="code hl_variable" href="class_render_p_d_f.html#a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</a>.<a class="code hl_variable" href="structcfm.html#aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</a> / 2.0f);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="comment">// отрисовка круга</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">if</span> (<span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <a class="code hl_function" href="class_render_p_d_f.html#a50a4d487307986751eb5087f25961c27">drawCircle</a>(page, <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a>.<a class="code hl_variable" href="structpoint.html#a6917d518caab116551a862eba2717bec">coordinates</a>[<a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>[blank] - 1].first,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                           <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a>.<a class="code hl_variable" href="structpoint.html#a6917d518caab116551a862eba2717bec">coordinates</a>[<a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>[blank] - 1].second, <a class="code hl_variable" href="class_render_p_d_f.html#a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</a>.<a class="code hl_variable" href="structzgt.html#ab347a1a6d59fde2e507a7035e65e2544">diameter</a> / 2.0f);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="comment">//Центральный отверстие</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">if</span> (<span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <a class="code hl_function" href="class_render_p_d_f.html#a50a4d487307986751eb5087f25961c27">drawCircle</a>(page, <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a>.<a class="code hl_variable" href="structpoint.html#a6917d518caab116551a862eba2717bec">coordinates</a>[<a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>[blank] - 1].first,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                           <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a>.<a class="code hl_variable" href="structpoint.html#a6917d518caab116551a862eba2717bec">coordinates</a>[<a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>[blank] - 1].second,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                           <a class="code hl_variable" href="class_render_p_d_f.html#a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</a>.<a class="code hl_variable" href="structzgt.html#a158a8320351f554c1aa14cf6436b505f">center_hole_diameter</a> / 2.0f);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">// Индексы не изменяются (исправить!!!)</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span>(<span class="keyword">false</span>){</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                <span class="keywordtype">double</span> xy, yz, radius;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2; ++i) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    xy = <a class="code hl_variable" href="class_render_p_d_f.html#a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</a>.<a class="code hl_variable" href="structzgt.html#afa245cc963981088182fcad61a544bb4">mounting_holes</a>[i * 3];</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    yz = <a class="code hl_variable" href="class_render_p_d_f.html#a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</a>.<a class="code hl_variable" href="structzgt.html#afa245cc963981088182fcad61a544bb4">mounting_holes</a>[i * 3 + 1];</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    yz = (yz &gt; 0) ? -yz : abs(yz);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    radius = <a class="code hl_variable" href="class_render_p_d_f.html#a88ea75db7b69bd6540445e3bf67febe2">zgt_data_</a>.<a class="code hl_variable" href="structzgt.html#afa245cc963981088182fcad61a544bb4">mounting_holes</a>[i * 3 + 2] / 2.0f;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                    <a class="code hl_function" href="class_render_p_d_f.html#a50a4d487307986751eb5087f25961c27">drawCircle</a>(page, <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a>.<a class="code hl_variable" href="structpoint.html#a6917d518caab116551a862eba2717bec">coordinates</a>[<a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>[blank] - 1].first + xy,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                               <a class="code hl_variable" href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">point_data_</a>.<a class="code hl_variable" href="structpoint.html#a6917d518caab116551a862eba2717bec">coordinates</a>[<a class="code hl_variable" href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">point_tbl</a>[blank] - 1].second + yz,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                               radius);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <a class="code hl_function" href="class_render_p_d_f.html#a3f2e7a6479a84eaecbe8a07b17aaeb5e">generate_Marks</a>(blank);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <a class="code hl_function" href="class_render_p_d_f.html#a518d3eb66cbcdb313c218dc8028c9673">drawMainLines</a>(page, blank);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <a class="code hl_function" href="class_render_p_d_f.html#abaccfd0526f13c8d8c5d9f74ceb31f52">drawDigitIndices</a>(page, blank);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <a class="code hl_function" href="class_render_p_d_f.html#acbc9c679d623723340171bd56c5575cb">drawAdditionalTicks</a>(page, blank);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <a class="code hl_variable" href="class_render_p_d_f.html#a922299c1a62d014f6a7afcaeddddf0ff">marks</a>.clear();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <a class="code hl_function" href="class_render_p_d_f.html#a3f2e7a6479a84eaecbe8a07b17aaeb5e">generate_Marks</a>(blank);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <a class="code hl_function" href="class_render_p_d_f.html#a518d3eb66cbcdb313c218dc8028c9673">drawMainLines</a>(page, blank);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <a class="code hl_function" href="class_render_p_d_f.html#abaccfd0526f13c8d8c5d9f74ceb31f52">drawDigitIndices</a>(page, blank);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_function" href="class_render_p_d_f.html#acbc9c679d623723340171bd56c5575cb">drawAdditionalTicks</a>(page, blank);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <a class="code hl_variable" href="class_render_p_d_f.html#a922299c1a62d014f6a7afcaeddddf0ff">marks</a>.clear();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">if</span>(page_list == 1){</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            filename+= <span class="stringliteral">&quot;(&quot;</span> + std::to_string(page_list + 1) + <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        HPDF_SaveToFile(<a class="code hl_variable" href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">pdf_</a>, (filename + <span class="stringliteral">&quot;.pdf&quot;</span>).c_str());</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="ttc" id="aclass_render_p_d_f_html_a0b894cccbec97da627a095dde9f054eb"><div class="ttname"><a href="class_render_p_d_f.html#a0b894cccbec97da627a095dde9f054eb">RenderPDF::pdf_</a></div><div class="ttdeci">HPDF_Doc pdf_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00065">RenderPDF.h:65</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a22fa693e95126bb362fe324470ba2277"><div class="ttname"><a href="class_render_p_d_f.html#a22fa693e95126bb362fe324470ba2277">RenderPDF::createA3Page</a></div><div class="ttdeci">void createA3Page()</div><div class="ttdoc">Создает новую страницу формата A3.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00007">RenderPDF.cpp:7</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a36b057897ad1e0b0ff20fd7c97107bc4"><div class="ttname"><a href="class_render_p_d_f.html#a36b057897ad1e0b0ff20fd7c97107bc4">RenderPDF::fontPath_</a></div><div class="ttdeci">std::filesystem::path fontPath_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00063">RenderPDF.h:63</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a3f2e7a6479a84eaecbe8a07b17aaeb5e"><div class="ttname"><a href="class_render_p_d_f.html#a3f2e7a6479a84eaecbe8a07b17aaeb5e">RenderPDF::generate_Marks</a></div><div class="ttdeci">void generate_Marks(size_t blank)</div><div class="ttdoc">Генерирует маркеры на основе измерений из данных таблицы.</div><div class="ttdef"><b>Definition</b> <a href="_line_8cpp_source.html#l00010">Line.cpp:10</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a4188a6f45597ad36f520c78b6ef1278d"><div class="ttname"><a href="class_render_p_d_f.html#a4188a6f45597ad36f520c78b6ef1278d">RenderPDF::cfm_data_</a></div><div class="ttdeci">cfm cfm_data_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00068">RenderPDF.h:68</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a501db80f3bb869b9b3cff1722b040781"><div class="ttname"><a href="class_render_p_d_f.html#a501db80f3bb869b9b3cff1722b040781">RenderPDF::font_</a></div><div class="ttdeci">HPDF_Font font_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00066">RenderPDF.h:66</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a50a4d487307986751eb5087f25961c27"><div class="ttname"><a href="class_render_p_d_f.html#a50a4d487307986751eb5087f25961c27">RenderPDF::drawCircle</a></div><div class="ttdeci">static void drawCircle(HPDF_Page page, double x, double y, double radius)</div><div class="ttdoc">Рисует круг на странице PDF.</div><div class="ttdef"><b>Definition</b> <a href="draw_8cpp_source.html#l00024">draw.cpp:24</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a518d3eb66cbcdb313c218dc8028c9673"><div class="ttname"><a href="class_render_p_d_f.html#a518d3eb66cbcdb313c218dc8028c9673">RenderPDF::drawMainLines</a></div><div class="ttdeci">void drawMainLines(HPDF_Page page, size_t blank)</div><div class="ttdoc">Рисует основные линии на странице PDF.</div><div class="ttdef"><b>Definition</b> <a href="_line_8cpp_source.html#l00052">Line.cpp:52</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a88ea75db7b69bd6540445e3bf67febe2"><div class="ttname"><a href="class_render_p_d_f.html#a88ea75db7b69bd6540445e3bf67febe2">RenderPDF::zgt_data_</a></div><div class="ttdeci">zgt zgt_data_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00069">RenderPDF.h:69</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_a922299c1a62d014f6a7afcaeddddf0ff"><div class="ttname"><a href="class_render_p_d_f.html#a922299c1a62d014f6a7afcaeddddf0ff">RenderPDF::marks</a></div><div class="ttdeci">std::vector&lt; double &gt; marks</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00074">RenderPDF.h:74</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_aa8780af3344ed124f9ad0f4189344489"><div class="ttname"><a href="class_render_p_d_f.html#aa8780af3344ed124f9ad0f4189344489">RenderPDF::new_page</a></div><div class="ttdeci">bool new_page</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00062">RenderPDF.h:62</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_ab38c3850e484ba597ae3be5dbac1f5b2"><div class="ttname"><a href="class_render_p_d_f.html#ab38c3850e484ba597ae3be5dbac1f5b2">RenderPDF::generatePDF</a></div><div class="ttdeci">void generatePDF(std::string &amp;filename)</div><div class="ttdoc">Создает PDF-документ, используя графические элементы, определенные в других методах класса.</div><div class="ttdef"><b>Definition</b> <a href="_print_8cpp_source.html#l00012">Print.cpp:12</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_abaccfd0526f13c8d8c5d9f74ceb31f52"><div class="ttname"><a href="class_render_p_d_f.html#abaccfd0526f13c8d8c5d9f74ceb31f52">RenderPDF::drawDigitIndices</a></div><div class="ttdeci">void drawDigitIndices(HPDF_Page page, size_t blank)</div><div class="ttdoc">Рисует индексы (цифры) на PDF странице.</div><div class="ttdef"><b>Definition</b> <a href="digit_8cpp_source.html#l00009">digit.cpp:9</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_ac3ba6c62b21e04dbe57cedf12b3f06c0"><div class="ttname"><a href="class_render_p_d_f.html#ac3ba6c62b21e04dbe57cedf12b3f06c0">RenderPDF::loadFont</a></div><div class="ttdeci">HPDF_Font loadFont(const std::string &amp;fontPath)</div><div class="ttdoc">Загружает шрифт из указанного файла.</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8cpp_source.html#l00019">RenderPDF.cpp:19</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_acbc9c679d623723340171bd56c5575cb"><div class="ttname"><a href="class_render_p_d_f.html#acbc9c679d623723340171bd56c5575cb">RenderPDF::drawAdditionalTicks</a></div><div class="ttdeci">void drawAdditionalTicks(HPDF_Page page, size_t blank)</div><div class="ttdoc">Рисует дополнительные отметки на странице PDF.</div><div class="ttdef"><b>Definition</b> <a href="_line_8cpp_source.html#l00125">Line.cpp:125</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_aedb69be379199827b2a8c80e7901ea58"><div class="ttname"><a href="class_render_p_d_f.html#aedb69be379199827b2a8c80e7901ea58">RenderPDF::point_tbl</a></div><div class="ttdeci">std::vector&lt; size_t &gt; point_tbl</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00073">RenderPDF.h:73</a></div></div>
+<div class="ttc" id="aclass_render_p_d_f_html_afa788735693ee164252a3af3c83bc431"><div class="ttname"><a href="class_render_p_d_f.html#afa788735693ee164252a3af3c83bc431">RenderPDF::point_data_</a></div><div class="ttdeci">point point_data_</div><div class="ttdef"><b>Definition</b> <a href="_render_p_d_f_8h_source.html#l00071">RenderPDF.h:71</a></div></div>
+<div class="ttc" id="astructcfm_html_a8fe3ba9b353d58719364384fc2132825"><div class="ttname"><a href="structcfm.html#a8fe3ba9b353d58719364384fc2132825">cfm::digital_tick</a></div><div class="ttdeci">std::array&lt; double, 4 &gt; digital_tick</div><div class="ttdef"><b>Definition</b> <a href="cfm_8h_source.html#l00024">cfm.h:24</a></div></div>
+<div class="ttc" id="astructcfm_html_aed942bb5ac73f26bb0d48bbeb9ec7a85"><div class="ttname"><a href="structcfm.html#aed942bb5ac73f26bb0d48bbeb9ec7a85">cfm::diameter</a></div><div class="ttdeci">int diameter</div><div class="ttdef"><b>Definition</b> <a href="cfm_8h_source.html#l00021">cfm.h:21</a></div></div>
+<div class="ttc" id="astructpoint_html_a6917d518caab116551a862eba2717bec"><div class="ttname"><a href="structpoint.html#a6917d518caab116551a862eba2717bec">point::coordinates</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; double, double &gt; &gt; coordinates</div><div class="ttdef"><b>Definition</b> <a href="point__data_8h_source.html#l00011">point_data.h:11</a></div></div>
+<div class="ttc" id="astructzgt_html_a158a8320351f554c1aa14cf6436b505f"><div class="ttname"><a href="structzgt.html#a158a8320351f554c1aa14cf6436b505f">zgt::center_hole_diameter</a></div><div class="ttdeci">double center_hole_diameter</div><div class="ttdef"><b>Definition</b> <a href="zgt_8h_source.html#l00017">zgt.h:17</a></div></div>
+<div class="ttc" id="astructzgt_html_ab347a1a6d59fde2e507a7035e65e2544"><div class="ttname"><a href="structzgt.html#ab347a1a6d59fde2e507a7035e65e2544">zgt::diameter</a></div><div class="ttdeci">double diameter</div><div class="ttdef"><b>Definition</b> <a href="zgt_8h_source.html#l00016">zgt.h:16</a></div></div>
+<div class="ttc" id="astructzgt_html_afa245cc963981088182fcad61a544bb4"><div class="ttname"><a href="structzgt.html#afa245cc963981088182fcad61a544bb4">zgt::mounting_holes</a></div><div class="ttdeci">std::vector&lt; double &gt; mounting_holes</div><div class="ttdef"><b>Definition</b> <a href="zgt_8h_source.html#l00018">zgt.h:18</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f55266e5be93c507bcd98ce2c24d3f64.html">RenderPDF</a></li><li class="navelem"><a class="el" href="_print_8cpp.html">Print.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

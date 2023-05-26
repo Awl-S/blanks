@@ -1,0 +1,19 @@
+<map id="Plug.h" name="Plug.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="83,5,141,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,229,59,256"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,33,60,156,42,216,36,214,55,154,104,31"/>
+<area shape="rect" id="Node000003" href="$_parser_configuration_8h.html" title=" " alt="" coords="70,155,215,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,32,140,139,134,141,112,33"/>
+<area shape="rect" id="Node000007" href="$json_8h.html" title=" " alt="" coords="149,80,206,107"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="125,31,158,67,154,71,121,34"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="125,184,65,223,62,219,122,180"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="83,229,138,256"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="140,183,125,217,120,215,135,181"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="162,229,230,256"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="154,180,180,216,176,219,150,183"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="255,229,335,256"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="170,179,256,220,254,225,168,184"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="174,108,157,142,152,140,169,106"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="239,155,369,181"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="201,105,271,145,268,149,198,110"/>
+</map>

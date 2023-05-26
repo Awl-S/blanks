@@ -1,0 +1,25 @@
+# ninja log v5
+90	5721	7067203816456124	CMakeFiles/blanks.dir/src/Converting/EncodingConverter.cpp.obj	96b278e391ada6c3
+9	4629	7067203805650036	CMakeFiles/blanks.dir/src/Reader/FileReader.cpp.obj	ef4935f00c29cb4d
+114	5409	7067203813405981	CMakeFiles/blanks.dir/src/RenderPDF/Processor.cpp.obj	790452a2c09fef1a
+2	7020	7067203829535647	CMakeFiles/blanks.dir/src/Reader/textReader.cpp.obj	273cc4a6c25d4e8b
+355	5611	7067203815407431	CMakeFiles/blanks.dir/src/RenderPDF/Line.cpp.obj	771c4663efea2910
+417	6711	7067203826119268	CMakeFiles/blanks.dir/src/RenderPDF/RenderPDF.cpp.obj	e02375ad56d5f6d4
+5409	10047	7067203859783305	CMakeFiles/blanks.dir/src/RenderPDF/Print.cpp.obj	3804b305254bdfb3
+5612	10256	7067203861519045	CMakeFiles/blanks.dir/src/RenderPDF/draw.cpp.obj	829fa8ca1d137650
+7023	11525	7067203874621268	CMakeFiles/blanks.dir/src/RenderPDF/digit.cpp.obj	1fc977db6e648085
+10	72	7067210939498737	CMakeFiles/blanks.dir/src/Parser/ParserConfiguration.cpp.obj	220d354397194eed
+10257	12045	7067203879852657	CMakeFiles/blanks.dir/src/CommandLine/CommandLine.cpp.obj	54bf4109b4b8bcbc
+5721	14148	7067203900891128	CMakeFiles/blanks.dir/src/Generated/Generated.cpp.obj	ed6f38c4c3bcd4c3
+6	2915	7067211663818582	CMakeFiles/blanks.dir/main.cpp.obj	b4d49c1e2667b3a8
+15	5332	7067210992043589	CMakeFiles/blanks.dir/src/Parser/json.cpp.obj	79401f340e7159a8
+2915	5002	7067211668553657	blanks.exe	b9a48217da892d1d
+5	1225	7067774204773640	build.ninja	5814f43306c11f00
+16	3502	7067774239945331	CMakeFiles/blanks.dir/src/RenderPDF/Line.cpp.obj	771c4663efea2910
+12	3508	7067774240010583	CMakeFiles/blanks.dir/src/RenderPDF/Print.cpp.obj	3804b305254bdfb3
+5	3509	7067774240030605	CMakeFiles/blanks.dir/src/RenderPDF/draw.cpp.obj	829fa8ca1d137650
+20	3512	7067774240105787	CMakeFiles/blanks.dir/src/RenderPDF/Processor.cpp.obj	790452a2c09fef1a
+8	3806	7067774243082147	CMakeFiles/blanks.dir/src/RenderPDF/RenderPDF.cpp.obj	e02375ad56d5f6d4
+3502	5107	7067774256077557	CMakeFiles/blanks.dir/src/RenderPDF/digit.cpp.obj	1fc977db6e648085
+24	5364	7067774258650928	CMakeFiles/blanks.dir/main.cpp.obj	b4d49c1e2667b3a8
+5364	8812	7067774268703964	blanks.exe	a22deba4eceb5f91

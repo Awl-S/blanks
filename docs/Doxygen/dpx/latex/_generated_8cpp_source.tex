@@ -1,0 +1,29 @@
+\doxysection{Generated.\+cpp}
+\hypertarget{_generated_8cpp_source}{}\label{_generated_8cpp_source}\index{Generated.cpp@{Generated.cpp}}
+\mbox{\hyperlink{_generated_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../include/Generated/Generated.h"{}}}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00010}\mbox{\hyperlink{class_generated_a83bc49c8c5facc46a56afe4f1af0d01a}{00010}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generated_a83bc49c8c5facc46a56afe4f1af0d01a}{Generated::generateJsonFile}}(\textcolor{keyword}{const}\ std::string\ \&filename)\ \{}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00011}00011\ \ \ \ \ nlohmann::json\ j;}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//\ Установка\ путей\ к\ различным\ директориям}}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00014}00014\ \ \ \ \ j[\textcolor{stringliteral}{"{}directories"{}}][\textcolor{stringliteral}{"{}tbl"{}}]\ =\ \textcolor{stringliteral}{"{}/path/to/tbl"{}};}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00015}00015\ \ \ \ \ j[\textcolor{stringliteral}{"{}directories"{}}][\textcolor{stringliteral}{"{}cfm"{}}]\ =\ \textcolor{stringliteral}{"{}/path/to/cfm"{}};}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00016}00016\ \ \ \ \ j[\textcolor{stringliteral}{"{}directories"{}}][\textcolor{stringliteral}{"{}zagotovki"{}}]\ =\ \textcolor{stringliteral}{"{}/path/to/zgt"{}};}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00017}00017\ \ \ \ \ j[\textcolor{stringliteral}{"{}directories"{}}][\textcolor{stringliteral}{"{}nabor"{}}]\ =\ \textcolor{stringliteral}{"{}/path/to/наборы"{}};}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00018}00018\ \ \ \ \ j[\textcolor{stringliteral}{"{}directories"{}}][\textcolor{stringliteral}{"{}font"{}}]\ =\ \textcolor{stringliteral}{"{}/path/to/font"{}};}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ Установка\ текста\ справки}}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00021}00021\ \ \ \ \ j[\textcolor{stringliteral}{"{}help"{}}]\ =\ \textcolor{stringliteral}{"{}Текст\ помощи\ здесь..."{}};}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Установка\ имени\ файла\ PDF}}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00024}00024\ \ \ \ \ j[\textcolor{stringliteral}{"{}pdf\_file\_name"{}}]\ =\ \textcolor{stringliteral}{"{}example.pdf"{}};}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ Открытие\ файла\ для\ записи}}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00027}00027\ \ \ \ \ std::ofstream\ o(filename);}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Запись\ JSON-\/объекта\ в\ файл\ с\ отступом\ 4\ пробела\ для\ форматирования}}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00029}00029\ \ \ \ \ o\ <<\ std::setw(4)\ <<\ j\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_generated_8cpp_source_l00030}00030\ \}}
+
+\end{DoxyCode}

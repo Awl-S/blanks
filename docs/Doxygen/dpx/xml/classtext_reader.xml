@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="classtext_reader" kind="class" language="C++" prot="public">
+    <compoundname>textReader</compoundname>
+    <basecompoundref refid="class_file_reader" prot="public" virt="non-virtual">FileReader</basecompoundref>
+    <includes refid="text_reader_8h" local="yes">textReader.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtext_reader_1a8b98efd0fd952fd929ea441f26bc69ba" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>textReader::textReader</definition>
+        <argsstring>(const std::filesystem::path &amp;file_path)</argsstring>
+        <name>textReader</name>
+        <qualifiedname>textReader::textReader</qualifiedname>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>file_path</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор класса <ref refid="classtext_reader" kindref="compound">textReader</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к файлу для чтения.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Конструктор инициализирует объект <ref refid="classtext_reader" kindref="compound">textReader</ref> с указанным путем к файлу file_path и вызывает конструктор базового класса <ref refid="class_file_reader" kindref="compound">FileReader</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" line="27" column="14" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classtext_reader_1ad25e94320aa8adce9de68445d963b570" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void textReader::read_nbr</definition>
+        <argsstring>(nbr &amp;data)</argsstring>
+        <name>read_nbr</name>
+        <qualifiedname>textReader::read_nbr</qualifiedname>
+        <param>
+          <type><ref refid="structnbr" kindref="compound">nbr</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Читает данные типа nbr из файла. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Читает данные из файла в формате NBR.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ссылка на объект типа nbr для сохранения прочитанных данных.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Функция <ref refid="classtext_reader_1ad25e94320aa8adce9de68445d963b570" kindref="member">read_nbr()</ref> читает данные типа nbr из файла и сохраняет их в объекте data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ссылка на структуру nbr, в которую будут записаны данные из файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>в случае ошибки открытия файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" line="35" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Reader/textReader.cpp" bodystart="163" bodyend="175"/>
+        <references refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" compoundref="_file_reader_8h" startline="26">FileReader::file_path_</references>
+        <references refid="structnbr_1a54d820aea6c166beb70523a0694dc669" compoundref="nbr_8h" startline="15">nbr::icon</references>
+      </memberdef>
+      <memberdef kind="function" id="classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void textReader::read_point</definition>
+        <argsstring>(point &amp;data)</argsstring>
+        <name>read_point</name>
+        <qualifiedname>textReader::read_point</qualifiedname>
+        <param>
+          <type><ref refid="structpoint" kindref="compound">point</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Читает данные типа point из файла. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Читает данные из файла в формате точки</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ссылка на объект типа point для сохранения прочитанных данных.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Функция <ref refid="classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5" kindref="member">read_point()</ref> читает данные типа point из файла и сохраняет их в объекте data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ссылка на структуру point, в которую будут записаны данные из файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>в случае ошибки открытия файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" line="43" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Reader/textReader.cpp" bodystart="145" bodyend="155"/>
+        <references refid="structpoint_1a6917d518caab116551a862eba2717bec" compoundref="point__data_8h" startline="11">point::coordinates</references>
+        <references refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" compoundref="_file_reader_8h" startline="26">FileReader::file_path_</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void textReader::read_tbl</definition>
+        <argsstring>(tbl &amp;data)</argsstring>
+        <name>read_tbl</name>
+        <qualifiedname>textReader::read_tbl</qualifiedname>
+        <param>
+          <type><ref refid="structtbl" kindref="compound">tbl</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Читает данные типа tbl из файла. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Читает данные из файла в формате TBL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ссылка на объект типа tbl для сохранения прочитанных данных.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Функция <ref refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" kindref="member">read_tbl()</ref> читает данные типа tbl из файла и сохраняет их в объекте data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ссылка на структуру tbl, в которую будут записаны данные из файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>в случае ошибки открытия файла или если не удается извлечь число из имени файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" line="51" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Reader/textReader.cpp" bodystart="95" bodyend="137"/>
+        <references refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" compoundref="_file_reader_8h" startline="26">FileReader::file_path_</references>
+        <references refid="structtbl_1a2c40d6d0a86d9981eb8852fe90431334" compoundref="tbl_8h" startline="18">tbl::measurements</references>
+        <references refid="structtbl_1ac995e4da6d437a046c2074f9dc33b833" compoundref="tbl_8h" startline="17">tbl::model</references>
+        <references refid="structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8" compoundref="tbl_8h" startline="16">tbl::position</references>
+        <references refid="class_file_reader_1a8e183bdc265152f0309184debb4af6a3" compoundref="_file_reader_8cpp" startline="33" endline="42">FileReader::readLineString</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void textReader::read_cfm</definition>
+        <argsstring>(cfm &amp;data)</argsstring>
+        <name>read_cfm</name>
+        <qualifiedname>textReader::read_cfm</qualifiedname>
+        <param>
+          <type><ref refid="structcfm" kindref="compound">cfm</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Читает данные типа cfm из файла. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Читает данные из файла в формате CFM.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ссылка на объект типа cfm для сохранения прочитанных данных.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Функция <ref refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" kindref="member">read_cfm()</ref> читает данные типа cfm из файла и сохраняет их в объекте data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ссылка на структуру cfm, в которую будут записаны данные из файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>в случае ошибки открытия файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" line="59" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Reader/textReader.cpp" bodystart="11" bodyend="47"/>
+        <references refid="structcfm_1a0d8b3917577bf50c3a2ded2e2f6e4f72" compoundref="cfm_8h" startline="23">cfm::big_tick</references>
+        <references refid="structcfm_1a6400105680203ffabfa9860662530647" compoundref="cfm_8h" startline="18">cfm::blank</references>
+        <references refid="structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85" compoundref="cfm_8h" startline="21">cfm::diameter</references>
+        <references refid="structcfm_1af1376357880c15d011d9c96fd485714e" compoundref="cfm_8h" startline="25">cfm::digit_height</references>
+        <references refid="structcfm_1a8fe3ba9b353d58719364384fc2132825" compoundref="cfm_8h" startline="24">cfm::digital_tick</references>
+        <references refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" compoundref="_file_reader_8h" startline="26">FileReader::file_path_</references>
+        <references refid="structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6" compoundref="cfm_8h" startline="20">cfm::format</references>
+        <references refid="structcfm_1a7a658677e62202d59ef8a14da194d65b" compoundref="cfm_8h" startline="17">cfm::header</references>
+        <references refid="structcfm_1a5aff8d8c9140a81fe9c4c186f7aaf060" compoundref="cfm_8h" startline="26">cfm::label_height</references>
+        <references refid="structcfm_1ad4cec00bcb67870e82af90e5d3676161" compoundref="cfm_8h" startline="19">cfm::marks</references>
+        <references refid="structcfm_1ac4b86bca5f71ce33c545d435fd2027ae" compoundref="cfm_8h" startline="22">cfm::small_tick</references>
+        <references refid="structcfm_1ab7a2a2c7e4295dbc7dde267a66c1aab2" compoundref="cfm_8h" startline="27">cfm::tick_mask</references>
+        <references refid="class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22" compoundref="_file_reader_8cpp" startline="12" endline="22">FileReader::trim</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void textReader::read_zgt</definition>
+        <argsstring>(zgt &amp;data)</argsstring>
+        <name>read_zgt</name>
+        <qualifiedname>textReader::read_zgt</qualifiedname>
+        <param>
+          <type><ref refid="structzgt" kindref="compound">zgt</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Читает данные типа zgt из файла. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Читает данные из файла в формате ZGT.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ссылка на объект типа zgt для сохранения прочитанных данных.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Функция <ref refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" kindref="member">read_zgt()</ref> читает данные типа zgt из файла и сохраняет их в объекте data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ссылка на структуру zgt, в которую будут записаны данные из файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>в случае ошибки открытия файла </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" line="67" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Reader/textReader.cpp" bodystart="55" bodyend="87"/>
+        <references refid="structzgt_1a158a8320351f554c1aa14cf6436b505f" compoundref="zgt_8h" startline="17">zgt::center_hole_diameter</references>
+        <references refid="structzgt_1ab347a1a6d59fde2e507a7035e65e2544" compoundref="zgt_8h" startline="16">zgt::diameter</references>
+        <references refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" compoundref="_file_reader_8h" startline="26">FileReader::file_path_</references>
+        <references refid="structzgt_1a31882abc85ea34cbbc6c41192f3c35b8" compoundref="zgt_8h" startline="20">zgt::font_serial_number</references>
+        <references refid="structzgt_1a9ca1baeee9e45b33b39efc727f206e34" compoundref="zgt_8h" startline="19">zgt::marker_position</references>
+        <references refid="structzgt_1afa245cc963981088182fcad61a544bb4" compoundref="zgt_8h" startline="18">zgt::mounting_holes</references>
+        <references refid="structzgt_1af7851982bb5b4ce441b81c641775837d" compoundref="zgt_8h" startline="21">zgt::stop_position</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс для чтения текстового файла. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Класс <ref refid="classtext_reader" kindref="compound">textReader</ref> наследуется от класса <ref refid="class_file_reader" kindref="compound">FileReader</ref> и предоставляет функциональность чтения различных типов данных из текстового файла. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>FileReader</label>
+        <link refid="class_file_reader"/>
+      </node>
+      <node id="1">
+        <label>textReader</label>
+        <link refid="classtext_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>FileReader</label>
+        <link refid="class_file_reader"/>
+      </node>
+      <node id="1">
+        <label>textReader</label>
+        <link refid="classtext_reader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" line="18" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Reader/textReader.h" bodystart="18" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_file_reader_1acf2bd283059c0de739f8f2350ce9d658" prot="protected" virt="non-virtual"><scope>textReader</scope><name>file_path_</name></member>
+      <member refid="class_file_reader_1a1dae37584804731f11c9c932219d8282" prot="public" virt="non-virtual"><scope>textReader</scope><name>FileReader</name></member>
+      <member refid="classtext_reader_1a5cd4eeebf53787a1434d037c54993071" prot="public" virt="non-virtual"><scope>textReader</scope><name>read_cfm</name></member>
+      <member refid="classtext_reader_1ad25e94320aa8adce9de68445d963b570" prot="public" virt="non-virtual"><scope>textReader</scope><name>read_nbr</name></member>
+      <member refid="classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5" prot="public" virt="non-virtual"><scope>textReader</scope><name>read_point</name></member>
+      <member refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" prot="public" virt="non-virtual"><scope>textReader</scope><name>read_tbl</name></member>
+      <member refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" prot="public" virt="non-virtual"><scope>textReader</scope><name>read_zgt</name></member>
+      <member refid="class_file_reader_1a8e183bdc265152f0309184debb4af6a3" prot="protected" virt="non-virtual"><scope>textReader</scope><name>readLineString</name></member>
+      <member refid="classtext_reader_1a8b98efd0fd952fd929ea441f26bc69ba" prot="public" virt="non-virtual"><scope>textReader</scope><name>textReader</name></member>
+      <member refid="class_file_reader_1a8b67d54f19fd8f228f337ba75ea29e22" prot="protected" virt="non-virtual"><scope>textReader</scope><name>trim</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

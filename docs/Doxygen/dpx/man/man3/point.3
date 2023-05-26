@@ -1,0 +1,66 @@
+.TH "point" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+point \- Структура для хранения координат точек\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'point_data\&.h'\fP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBdisplay\fP ()"
+.br
+.RI "Выводит координаты точек в стандартный вывод\&. "
+.in -1c
+.SS "Открытые атрибуты"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::pair< double, double > > \fBcoordinates\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Структура для хранения координат точек\&. 
+
+
+.PP
+\fBАргументы\fP
+.RS 4
+\fIcoordinates\fP Вектор пар, представляющих координаты\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBpoint_data\&.h\fP строка \fB10\fP
+.SH "Методы"
+.PP 
+.SS "void point::display ()\fC [inline]\fP"
+
+.PP
+Выводит координаты точек в стандартный вывод\&. 
+.PP
+См\&. определение в файле \fBpoint_data\&.h\fP строка \fB15\fP.PP
+.nf
+15                   {
+16         for (const auto& coord : coordinates) {
+17             std::cout << "(" << coord\&.first << "; " << coord\&.second << ")" << std::endl;
+18         }
+19     }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "std::vector<std::pair<double, double> > point::coordinates"
+
+.PP
+См\&. определение в файле \fBpoint_data\&.h\fP строка \fB11\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

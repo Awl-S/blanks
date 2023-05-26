@@ -1,0 +1,67 @@
+.TH "Generated" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Generated \- Класс, содержащий функцию для генерации JSON-файла\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'Generated\&.h'\fP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBgenerateJsonFile\fP (const std::string &filename)"
+.br
+.RI "Генерирует JSON-файл с заданным именем\&. "
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс, содержащий функцию для генерации JSON-файла\&. 
+.PP
+См\&. определение в файле \fBGenerated\&.h\fP строка \fB11\fP
+.SH "Методы"
+.PP 
+.SS "void Generated::generateJsonFile (const std::string & filename)"
+
+.PP
+Генерирует JSON-файл с заданным именем\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIfilename\fP Имя файла для сохранения JSON\&.
+.RE
+.PP
+Функция генерирует JSON-файл, содержащий информацию о директориях, тексте справки и имени файла PDF\&. 
+.PP
+См\&. определение в файле \fBGenerated\&.cpp\fP строка \fB10\fP.PP
+.nf
+10                                                           {
+11     nlohmann::json j;
+12 
+13     // Установка путей к различным директориям
+14     j["directories"]["tbl"] = "/path/to/tbl";
+15     j["directories"]["cfm"] = "/path/to/cfm";
+16     j["directories"]["zagotovki"] = "/path/to/zgt";
+17     j["directories"]["nabor"] = "/path/to/наборы";
+18     j["directories"]["font"] = "/path/to/font";
+19 
+20     // Установка текста справки
+21     j["help"] = "Текст помощи здесь\&.\&.\&.";
+22 
+23     // Установка имени файла PDF
+24     j["pdf_file_name"] = "example\&.pdf";
+25 
+26     // Открытие файла для записи
+27     std::ofstream o(filename);
+28     // Запись JSON\-объекта в файл с отступом 4 пробела для форматирования
+29     o << std::setw(4) << j << std::endl;
+30 }
+.fi
+
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

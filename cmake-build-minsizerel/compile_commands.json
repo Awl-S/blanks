@@ -1,0 +1,67 @@
+[
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\main.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\main.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\main.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\CommandLine\\CommandLine.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\CommandLine\\CommandLine.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\CommandLine\\CommandLine.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\Converting\\EncodingConverter.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Converting\\EncodingConverter.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Converting\\EncodingConverter.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\Reader\\FileReader.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Reader\\FileReader.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Reader\\FileReader.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\Reader\\textReader.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Reader\\textReader.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Reader\\textReader.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\RenderPDF\\RenderPDF.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\RenderPDF.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\RenderPDF.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\RenderPDF\\Line.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\Line.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\Line.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\RenderPDF\\Processor.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\Processor.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\Processor.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\RenderPDF\\draw.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\draw.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\draw.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\RenderPDF\\Print.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\Print.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\Print.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\Parser\\json.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Parser\\json.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Parser\\json.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\Generated\\Generated.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Generated\\Generated.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\Generated\\Generated.cpp"
+},
+{
+  "directory": "C:/Users/stawl/OneDrive/Рабочий стол/blanks/cmake-build-minsizerel",
+  "command": "\"E:\\Program Files\\JetBrains\\CLion 2023.1.1\\bin\\mingw\\bin\\g++.exe\" -isystem C:/vcpkg/installed/x64-windows/include -Os -DNDEBUG -fdiagnostics-color=always -std=gnu++23 -o CMakeFiles\\blanks.dir\\src\\RenderPDF\\digit.cpp.obj -c \"C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\digit.cpp\"",
+  "file": "C:\\Users\\stawl\\OneDrive\\Рабочий стол\\blanks\\src\\RenderPDF\\digit.cpp"
+}
+]

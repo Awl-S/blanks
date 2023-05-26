@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_be6b6bc8933d1b72ef64ada15681fca0" xml:lang="ru">
+<title>Содержание директории Parser</title>
+<indexterm><primary>Содержание директории Parser</primary></indexterm>
+Директория графа зависимостей Parser:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_be6b6bc8933d1b72ef64ada15681fca0_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="_json_8cpp">json.cpp</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="__parser_configuration_8cpp">ParserConfiguration.cpp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

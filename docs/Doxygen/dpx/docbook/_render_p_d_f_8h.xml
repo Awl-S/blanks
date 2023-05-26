@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__render_p_d_f_8h" xml:lang="ru">
+<title>Файл RenderPDF.h</title>
+<indexterm><primary>RenderPDF.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;vector&gt;<?linebreak?>#include &lt;hpdf.h&gt;<?linebreak?>#include &lt;filesystem&gt;<?linebreak?>#include &lt;cmath&gt;<?linebreak?>#include &quot;../struct/cfm.h&quot;<?linebreak?>#include &quot;../struct/zgt.h&quot;<?linebreak?>#include &quot;../struct/nbr.h&quot;<?linebreak?>#include &quot;../struct/point_data.h&quot;<?linebreak?>#include &quot;../struct/tbl.h&quot;<?linebreak?></programlisting>Граф включаемых заголовочных файлов для RenderPDF.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_render_p_d_f_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф файлов, в которые включается этот файл:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_render_p_d_f_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Классы    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_render_p_d_f">RenderPDF</link></para>
+
+<para>Класс для генерации PDF-файла. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

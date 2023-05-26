@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="structpoint" kind="struct" language="C++" prot="public">
+    <compoundname>point</compoundname>
+    <includes refid="point__data_8h" local="yes">point_data.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpoint_1a6917d518caab116551a862eba2717bec" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; double, double &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;double, double&gt; &gt; point::coordinates</definition>
+        <argsstring></argsstring>
+        <name>coordinates</name>
+        <qualifiedname>point::coordinates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/point_data.h" line="11" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/point_data.h" bodystart="11" bodyend="-1"/>
+        <referencedby refid="class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f" compoundref="draw_8cpp" startline="80" endline="86">RenderPDF::calculateXCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b" compoundref="draw_8cpp" startline="95" endline="101">RenderPDF::calculateYCoordinate</referencedby>
+        <referencedby refid="class_render_p_d_f_1ae7ea70ad51e168a5c255de4ea54db087" compoundref="_processor_8cpp" startline="8" endline="17">RenderPDF::checkForNewPage</referencedby>
+        <referencedby refid="structpoint_1a0b248ae2a8dab47a95f68ffb03f33ede" compoundref="point__data_8h" startline="15" endline="19">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1acbc9c679d623723340171bd56c5575cb" compoundref="_line_8cpp" startline="125" endline="156">RenderPDF::drawAdditionalTicks</referencedby>
+        <referencedby refid="class_render_p_d_f_1a518d3eb66cbcdb313c218dc8028c9673" compoundref="_line_8cpp" startline="52" endline="116">RenderPDF::drawMainLines</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">RenderPDF::generatePDF</referencedby>
+        <referencedby refid="classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5" compoundref="text_reader_8cpp" startline="145" endline="155">textReader::read_point</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structpoint_1a0b248ae2a8dab47a95f68ffb03f33ede" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void point::display</definition>
+        <argsstring>()</argsstring>
+        <name>display</name>
+        <qualifiedname>point::display</qualifiedname>
+        <briefdescription>
+<para>Выводит координаты точек в стандартный вывод. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/point_data.h" line="15" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/point_data.h" bodystart="15" bodyend="19"/>
+        <references refid="structpoint_1a6917d518caab116551a862eba2717bec" compoundref="point__data_8h" startline="11">coordinates</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Структура для хранения координат точек. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>coordinates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Вектор пар, представляющих координаты. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>point</label>
+        <link refid="structpoint"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>coordinates</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; std::pair&lt; double, double &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/point_data.h" line="10" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/point_data.h" bodystart="10" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structpoint_1a6917d518caab116551a862eba2717bec" prot="public" virt="non-virtual"><scope>point</scope><name>coordinates</name></member>
+      <member refid="structpoint_1a0b248ae2a8dab47a95f68ffb03f33ede" prot="public" virt="non-virtual"><scope>point</scope><name>display</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

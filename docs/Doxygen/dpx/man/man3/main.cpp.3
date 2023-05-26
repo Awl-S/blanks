@@ -1,0 +1,199 @@
+.TH "main.cpp" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include 'include/Converting/EncodingConverter\&.h'\fP
+.br
+\fC#include 'include/CommandLine/CommandLine\&.h'\fP
+.br
+\fC#include 'include/struct/cfm\&.h'\fP
+.br
+\fC#include 'include/struct/zgt\&.h'\fP
+.br
+\fC#include 'include/Reader/textReader\&.h'\fP
+.br
+\fC#include 'include/Generated/Generated\&.h'\fP
+.br
+\fC#include 'include/RenderPDF/RenderPDF\&.h'\fP
+.br
+\fC#include 'include/Parser/Plug\&.h'\fP
+.br
+
+.SS "Функции"
+
+.in +1c
+.ti -1c
+.RI "void \fBprint_duration\fP (const auto &start)"
+.br
+.ti -1c
+.RI "std::filesystem::path \fBfind_file_by_name\fP (const std::filesystem::path &directory, std::string &model_name, const std::string &extension)"
+.br
+.ti -1c
+.RI "std::string \fBgetCurrentDateTime\fP ()"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SH "Функции"
+.PP 
+.SS "std::filesystem::path find_file_by_name (const std::filesystem::path & directory, std::string & model_name, const std::string & extension)"
+
+.PP
+См\&. определение в файле \fBmain\&.cpp\fP строка \fB19\fP.PP
+.nf
+19                                                                                                                            {
+20     for (const auto& entry : std::filesystem::recursive_directory_iterator(directory)) {
+21         if (entry\&.is_regular_file()) {
+22             const auto& file_name = entry\&.path()\&.filename()\&.string();
+23             const auto& file_extension = entry\&.path()\&.extension()\&.string();
+24             if (file_name == model_name + file_extension && file_extension == extension) {
+25                 std::filesystem::path path_str = entry\&.path();
+26                 //std::replace(path_str\&.string()\&.begin(), path_str\&.string()\&.end(), '\\\\', '/');
+27                 return path_str;
+28             }
+29         }
+30     }
+31     throw std::runtime_error("File not found: " + model_name);
+32 }
+.fi
+
+.SS "std::string getCurrentDateTime ()"
+
+.PP
+См\&. определение в файле \fBmain\&.cpp\fP строка \fB34\fP.PP
+.nf
+34                                {
+35     std::time_t currentTime = std::time(nullptr);
+36     std::tm* localTime = std::localtime(&currentTime);
+37 
+38     char dateTimeString[20];
+39     std::strftime(dateTimeString, sizeof(dateTimeString), "%Y\-%m\-%d_%H\-%M\-%S", localTime);
+40 
+41     return std::string(dateTimeString);
+42 }
+.fi
+
+.SS "int main (int argc, char * argv[])"
+
+.PP
+См\&. определение в файле \fBmain\&.cpp\fP строка \fB44\fP.PP
+.nf
+44                                  {
+45     setlocale(LC_ALL, "ru_RU\&.UTF\-8");
+46     auto start = std::chrono::high_resolution_clock::now();
+47     {
+48         CommandLine cmd(argc, argv);
+49         auto command_type = cmd\&.get_command_type();
+50         auto args = cmd\&.get_args();
+51 
+52         if(command_type == CommandLine::CommandType::GEN){
+53             Generated gen;
+54             gen\&.generateJsonFile("setting\&.json");
+55         }
+56 
+57         if(command_type == CommandLine::CommandType::UNKNOWN){
+58             print_duration(start);
+59             std::cout << "Неизвестная команда\\n";
+60             return \-1;
+61         }
+62 
+63         if(command_type == CommandLine::CommandType::CONVERT){
+64             if(args\&.size() == 1){
+65                 EncodingConverter converter(args[0]);
+66                 converter\&.convert();
+67             } else if (args\&.size() == 2) {
+68                 EncodingConverter converter(args[0], args[1]);
+69                 converter\&.convert();
+70             } else {
+71                 std::cerr << "Неверное количество аргументов\&." << std::endl;
+72                 return 1;
+73             }
+74         }
+75 
+76         if(CommandLine::CommandType::PRINT == command_type){
+77             auto config_parser = parser::create(args[0]);
+78             const auto debug = config_parser\->getInteger("debug");
+79 
+80             auto tbl_directory = config_parser\->getFilePath("tbl");
+81             auto tbl_files = config_parser\->getFileList("tbl", "scale");
+82             std::vector<tbl> tbl_data;
+83             for (auto& tbl_file : tbl_files) {
+84                 std::cout << "Чтение TBL:\\t" << tbl_file << std::endl;
+85                 tbl temp_tbl;
+86                 textReader(tbl_file)\&.read_tbl(temp_tbl);
+87                 tbl_data\&.push_back(temp_tbl);
+88                 if(debug){
+89                     temp_tbl\&.display();
+90                 }
+91             }
+92 
+93             auto cfm_file = config_parser\->getFilePath("cfm");
+94             auto cfm_file_path = find_file_by_name(cfm_file, tbl_data[0]\&.model, "\&.cfm");
+95             std::cout << "Чтение CFM:\\t" << cfm_file_path << std::endl;
+96             cfm cfm_data;
+97             textReader(cfm_file_path)\&.read_cfm(cfm_data);
+98             if(debug){
+99                 cfm_data\&.display();
+100             }
+101 
+102             auto point_file = config_parser\->getFilePath("point");
+103             auto point_file_path = find_file_by_name(point_file, tbl_data[0]\&.model, "\&.point");
+104             std::cout << "Чтение набора точек:\\t" << point_file_path << std::endl;
+105             point point_data;
+106             textReader(point_file_path)\&.read_point(point_data);
+107             if(debug){
+108                 point_data\&.display();
+109             }
+110 
+111             auto zgt_file = config_parser\->getFilePath("zgt");
+112             auto zgt_file_path = find_file_by_name(zgt_file, cfm_data\&.blank, "\&.згт");
+113             std::cout << "Чтение заготовок:\\t" << zgt_file_path << std::endl;
+114             zgt zgt_data;
+115             textReader(zgt_file_path)\&.read_zgt(zgt_data);
+116             if(debug){
+117                 zgt_data\&.display();
+118             }
+119             //std::cout << "Чтение наборов изображений:\\t" << nbr_file_path << std::endl;
+120             auto nbr_file = config_parser\->getFilePath("nbr");
+121             //auto nbr_file_path = find_file_by_name(zgt_file, cfm_data\&.blank, "\&.нбр");
+122             nbr nbr_data;
+123             //textReader(nbr_file_path)\&.read_nbr(nbr_data);
+124             if(debug == 0){
+125             }
+126 
+127             RenderPDF pdf(cfm_data, zgt_data, tbl_data, nbr_data, point_data, config_parser\->getFilePath("fontPath"));
+128             std::string filename = getCurrentDateTime() + "(" + cfm_data\&.blank + ")";
+129             pdf\&.generatePDF(filename);
+130 
+131         }
+132 
+133     }
+134 
+135     print_duration(start);
+136 }
+.fi
+
+.SS "void print_duration (const auto & start)"
+
+.PP
+См\&. определение в файле \fBmain\&.cpp\fP строка \fB11\fP.PP
+.nf
+11                                        {
+12     auto stop = std::chrono::high_resolution_clock::now();
+13     auto duration_microseconds = std::chrono::duration_cast<std::chrono::microseconds>(stop \- start);
+14     auto duration_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(stop \- start);
+15     std::cout << "Время выполнения: " << duration_microseconds\&.count() << " microseconds" << std::endl;
+16     std::cout << "Время выполнения: " << duration_milliseconds\&.count() << " milliseconds" << std::endl;
+17 }
+.fi
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

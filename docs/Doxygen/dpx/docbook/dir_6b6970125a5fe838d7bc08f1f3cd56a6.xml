@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_6b6970125a5fe838d7bc08f1f3cd56a6" xml:lang="ru">
+<title>Содержание директории CommandLine</title>
+<indexterm><primary>Содержание директории CommandLine</primary></indexterm>
+Директория графа зависимостей CommandLine:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_6b6970125a5fe838d7bc08f1f3cd56a6_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="__command_line_8h">CommandLine.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

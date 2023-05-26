@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_parser_configuration" xml:lang="ru">
+<title>Класс ParserConfiguration</title>
+<indexterm><primary>ParserConfiguration</primary></indexterm>
+<para>
+
+<para>Класс для создания объекта конфигурации парсера. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;ParserConfiguration.h&quot;</computeroutput>
+</para>
+Граф наследования:ParserConfiguration:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_parser_configuration__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para>virtual <link linkend="_class_parser_configuration_1a11a307d9f31f64bffdb881abf94e66b5">~ParserConfiguration</link> ()=default</para>
+</listitem>
+            <listitem><para>virtual std::filesystem::path <link linkend="_class_parser_configuration_1ab44f9c6fed060b33544224ddeb473e59">getFilePath</link> (const std::string &amp;key)=0</para>
+
+<para>Возвращает путь к файлу на основе указанного ключа. </para>
+</listitem>
+            <listitem><para>virtual std::vector&lt; std::filesystem::path &gt; <link linkend="_class_parser_configuration_1a70fcdbc2a2a83b1dabaecf576d1cff71">getFileList</link> (const std::string &amp;key, const std::string &amp;search)=0</para>
+
+<para>Возвращает список файлов на основе указанного ключа и поискового запроса. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_parser_configuration_1af35d73849ce2faf5cf19196a662fc19a">display</link> ()=0</para>
+
+<para>Отображает информацию из конфигурационного файла. </para>
+</listitem>
+            <listitem><para>virtual long long <link linkend="_class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580">getInteger</link> (const std::string &amp;key)</para>
+
+<para>Создает экземпляр класса ConfigParser на основе пути к конфигурационному файлу. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Класс для создания объекта конфигурации парсера. </para>
+
+
+
+<para>Класс <link linkend="_class_parser_configuration">ParserConfiguration</link> предоставляет статический метод create() для создания объекта конфигурации парсера. Объект конфигурации может быть создан на основе файла конфигурации формата JSON. </para>
+<para>
+См. определение в файле <link linkend="__parser_configuration_8h_source">ParserConfiguration.h</link> строка <link linkend="__parser_configuration_8h_source_1l00016">16</link></para>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_class_parser_configuration_1a11a307d9f31f64bffdb881abf94e66b5"/><section>
+    <title>~ParserConfiguration()</title>
+<indexterm><primary>~ParserConfiguration</primary><secondary>ParserConfiguration</secondary></indexterm>
+<indexterm><primary>ParserConfiguration</primary><secondary>~ParserConfiguration</secondary></indexterm>
+<para><computeroutput>virtual ParserConfiguration::~ParserConfiguration ( )<computeroutput>[virtual]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_parser_configuration_1af35d73849ce2faf5cf19196a662fc19a"/><section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>ParserConfiguration</secondary></indexterm>
+<indexterm><primary>ParserConfiguration</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>virtual void ParserConfiguration::display ( )<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Отображает информацию из конфигурационного файла. </para>
+</para>
+
+<para>Метод отображает информацию из конфигурационного файла, используемого классом. Данный метод может быть переопределен в производных классах. </para>
+<para>
+Замещается в <link linkend="_classjson_1a7d5c22a97d49085310994af222c28f8c">json</link>.</para>
+</section>
+<anchor xml:id="_class_parser_configuration_1a70fcdbc2a2a83b1dabaecf576d1cff71"/><section>
+    <title>getFileList()</title>
+<indexterm><primary>getFileList</primary><secondary>ParserConfiguration</secondary></indexterm>
+<indexterm><primary>ParserConfiguration</primary><secondary>getFileList</secondary></indexterm>
+<para><computeroutput>virtual std::vector&lt; std::filesystem::path &gt; ParserConfiguration::getFileList (const std::string &amp; key, const std::string &amp; search)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Возвращает список файлов на основе указанного ключа и поискового запроса. </para>
+</para>
+
+<para>Метод возвращает список файлов, связанных с указанным ключом и удовлетворяющих поисковому запросу, из конфигурационного файла.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>Ключ для поиска списка файлов. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>search</entry><entry>
+<para>Поисковый запрос для фильтрации файлов. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Список файлов. </para>
+</formalpara>
+</para>
+<para>
+Замещается в <link linkend="_classjson_1a335a17f634ae297aa36dbc40855dd8da">json</link>.</para>
+</section>
+<anchor xml:id="_class_parser_configuration_1ab44f9c6fed060b33544224ddeb473e59"/><section>
+    <title>getFilePath()</title>
+<indexterm><primary>getFilePath</primary><secondary>ParserConfiguration</secondary></indexterm>
+<indexterm><primary>ParserConfiguration</primary><secondary>getFilePath</secondary></indexterm>
+<para><computeroutput>virtual std::filesystem::path ParserConfiguration::getFilePath (const std::string &amp; key)<computeroutput>[pure virtual]</computeroutput></computeroutput></para><para>
+
+<para>Возвращает путь к файлу на основе указанного ключа. </para>
+</para>
+
+<para>Метод возвращает путь к файлу, связанный с указанным ключом, из конфигурационного файла.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>Ключ для поиска пути к файлу. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Путь к файлу. </para>
+</formalpara>
+</para>
+<para>
+Замещается в <link linkend="_classjson_1a760a6ea6469d17e611ccf23921753d20">json</link>.</para>
+</section>
+<anchor xml:id="_class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580"/><section>
+    <title>getInteger()</title>
+<indexterm><primary>getInteger</primary><secondary>ParserConfiguration</secondary></indexterm>
+<indexterm><primary>ParserConfiguration</primary><secondary>getInteger</secondary></indexterm>
+<para><computeroutput>virtual long long ParserConfiguration::getInteger (const std::string &amp; key)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Создает экземпляр класса ConfigParser на основе пути к конфигурационному файлу. </para>
+</para>
+
+<para>Статический метод create() создает и возвращает экземпляр класса ConfigParser на основе пути к конфигурационному файлу.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>config_file_path</entry><entry>
+<para>Путь к конфигурационному файлу. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Указатель на созданный экземпляр класса ConfigParser.</para>
+</formalpara>
+Создает объект конфигурации парсера на основе указанного файла. 
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>config_file_path</entry><entry>
+<para>Путь к файлу конфигурации. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Указатель на объект конфигурации парсера. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>Если тип файла не поддерживается.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Статический метод create() создает объект конфигурации парсера на основе указанного файла конфигурации. Если файл имеет расширение &quot;.json&quot;, создается объект json, иначе выбрасывается исключение std::runtime_error.</para>
+
+<para>Возвращает целочисленное значение, соответствующее заданному ключу. 
+                <formalpara>
+                    <title>
+Аргументы</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>Ключ для получения целочисленного значения. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Возвращает</title>
+
+<para>Целочисленное значение, соответствующее заданному ключу. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Исключения</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::runtime_error</entry><entry>
+<para>Если ключ отсутствует в конфигурации.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Виртуальная функция <link linkend="_class_parser_configuration_1a542aa87ab4a21ce9d52d388456ab8580">getInteger()</link> возвращает целочисленное значение, соответствующее заданному ключу key. Данная функция должна быть реализована в классах-наследниках. Если ключ отсутствует в конфигурации, выбрасывается исключение std::runtime_error. </para>
+<para>
+Переопределяется в <link linkend="_classjson_1a3f5e7618318c6e39387a917589aa3d38">json</link>.</para>
+</section>
+<para>
+Объявления и описания членов класса находятся в файле:</para>
+<link linkend="__parser_configuration_8h">ParserConfiguration.h</link></section>
+</section>

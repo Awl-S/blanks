@@ -1,0 +1,482 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="class_encoding_converter" kind="class" language="C++" prot="public">
+    <compoundname>EncodingConverter</compoundname>
+    <includes refid="_encoding_converter_8h" local="yes">EncodingConverter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string EncodingConverter::inputDirectory</definition>
+        <argsstring></argsstring>
+        <name>inputDirectory</name>
+        <qualifiedname>EncodingConverter::inputDirectory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="19" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" compoundref="_encoding_converter_8cpp" startline="46" endline="50">convert</referencedby>
+        <referencedby refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" compoundref="_encoding_converter_8cpp" startline="61" endline="77">convertDirectory</referencedby>
+        <referencedby refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string EncodingConverter::outputDirectory</definition>
+        <argsstring></argsstring>
+        <name>outputDirectory</name>
+        <qualifiedname>EncodingConverter::outputDirectory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="20" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" compoundref="_encoding_converter_8cpp" startline="61" endline="77">convertDirectory</referencedby>
+        <referencedby refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EncodingConverter::useTempDirectory</definition>
+        <argsstring></argsstring>
+        <name>useTempDirectory</name>
+        <qualifiedname>EncodingConverter::useTempDirectory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="21" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" compoundref="_encoding_converter_8cpp" startline="61" endline="77">convertDirectory</referencedby>
+        <referencedby refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; EncodingConverter::fileExtensions</definition>
+        <argsstring></argsstring>
+        <name>fileExtensions</name>
+        <qualifiedname>EncodingConverter::fileExtensions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="22" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" compoundref="_encoding_converter_8cpp" startline="61" endline="77">convertDirectory</referencedby>
+        <referencedby refid="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" compoundref="_encoding_converter_8cpp" startline="28" endline="38">loadSettings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string EncodingConverter::sourceEncoding</definition>
+        <argsstring></argsstring>
+        <name>sourceEncoding</name>
+        <qualifiedname>EncodingConverter::sourceEncoding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="23" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</referencedby>
+        <referencedby refid="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" compoundref="_encoding_converter_8cpp" startline="28" endline="38">loadSettings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string EncodingConverter::targetEncoding</definition>
+        <argsstring></argsstring>
+        <name>targetEncoding</name>
+        <qualifiedname>EncodingConverter::targetEncoding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="24" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</referencedby>
+        <referencedby refid="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" compoundref="_encoding_converter_8cpp" startline="28" endline="38">loadSettings</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t EncodingConverter::filesProcessed</definition>
+        <argsstring></argsstring>
+        <name>filesProcessed</name>
+        <qualifiedname>EncodingConverter::filesProcessed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="25" column="12" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" compoundref="_encoding_converter_8cpp" startline="61" endline="77">convertDirectory</referencedby>
+        <referencedby refid="class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62" compoundref="_encoding_converter_8cpp" startline="17" endline="20">EncodingConverter</referencedby>
+        <referencedby refid="class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0" compoundref="_encoding_converter_8cpp" startline="162" endline="165">printStats</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_encoding_converter_1a560484bdcdc929771c7d42877cab9643" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t EncodingConverter::filesConverted</definition>
+        <argsstring></argsstring>
+        <name>filesConverted</name>
+        <qualifiedname>EncodingConverter::filesConverted</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="26" column="12" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</referencedby>
+        <referencedby refid="class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62" compoundref="_encoding_converter_8cpp" startline="17" endline="20">EncodingConverter</referencedby>
+        <referencedby refid="class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0" compoundref="_encoding_converter_8cpp" startline="162" endline="165">printStats</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EncodingConverter::EncodingConverter</definition>
+        <argsstring>(std::string inputDir, const std::string &amp;outputDir=&quot;&quot;)</argsstring>
+        <name>EncodingConverter</name>
+        <qualifiedname>EncodingConverter::EncodingConverter</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>inputDir</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outputDir</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Конструктор объекта <ref refid="class_encoding_converter" kindref="compound">EncodingConverter</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>inputDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Входной каталог. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>outputDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Выходной каталог.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Если outputDir пуст, используется временный каталог. Загружает настройки преобразования кодировки и сбрасывает счетчики файлов. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="16" column="5" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp" bodystart="17" bodyend="20"/>
+        <references refid="class_encoding_converter_1a560484bdcdc929771c7d42877cab9643" compoundref="_encoding_converter_8h" startline="26">filesConverted</references>
+        <references refid="class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b" compoundref="_encoding_converter_8h" startline="25">filesProcessed</references>
+        <references refid="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" compoundref="_encoding_converter_8cpp" startline="28" endline="38">loadSettings</references>
+      </memberdef>
+      <memberdef kind="function" id="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodingConverter::convert</definition>
+        <argsstring>()</argsstring>
+        <name>convert</name>
+        <qualifiedname>EncodingConverter::convert</qualifiedname>
+        <briefdescription>
+<para>Конвертирует файлы в директории. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод конвертирует файлы в указанной директории и выводит статистику по конвертированным файлам. Путь к директории, содержащей исходные файлы, задается в переменной inputDirectory. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="17" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp" bodystart="46" bodyend="50"/>
+        <references refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" compoundref="_encoding_converter_8cpp" startline="61" endline="77">convertDirectory</references>
+        <references refid="class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e" compoundref="_encoding_converter_8h" startline="19">inputDirectory</references>
+        <references refid="class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0" compoundref="_encoding_converter_8cpp" startline="162" endline="165">printStats</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodingConverter::loadSettings</definition>
+        <argsstring>()</argsstring>
+        <name>loadSettings</name>
+        <qualifiedname>EncodingConverter::loadSettings</qualifiedname>
+        <briefdescription>
+<para>Загружает настройки преобразования кодировки. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Устанавливает исходную кодировку в &quot;UTF-8&quot; и целевую кодировку в &quot;WINDOWS-1251&quot;. Задает расширения файлов, которые следует преобразовывать. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="28" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp" bodystart="28" bodyend="38"/>
+        <references refid="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" compoundref="_encoding_converter_8h" startline="22">fileExtensions</references>
+        <references refid="class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f" compoundref="_encoding_converter_8h" startline="23">sourceEncoding</references>
+        <references refid="class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7" compoundref="_encoding_converter_8h" startline="24">targetEncoding</references>
+        <referencedby refid="class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62" compoundref="_encoding_converter_8cpp" startline="17" endline="20">EncodingConverter</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodingConverter::convertDirectory</definition>
+        <argsstring>(const std::filesystem::path &amp;dir)</argsstring>
+        <name>convertDirectory</name>
+        <qualifiedname>EncodingConverter::convertDirectory</qualifiedname>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Конвертирует файлы в указанной директории и её поддиректориях. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод рекурсивно конвертирует все файлы в указанной директории и её поддиректориях. Конвертируемые файлы должны иметь расширения, указанные в списке fileExtensions. Если файл имеет другое расширение и outputDirectory указана, он будет скопирован в указанную выходную директорию.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к директории, в которой нужно выполнить конвертацию файлов. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="29" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp" bodystart="61" bodyend="77"/>
+        <references refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</references>
+        <references refid="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" compoundref="_encoding_converter_8h" startline="22">fileExtensions</references>
+        <references refid="class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b" compoundref="_encoding_converter_8h" startline="25">filesProcessed</references>
+        <references refid="class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e" compoundref="_encoding_converter_8h" startline="19">inputDirectory</references>
+        <references refid="class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4" compoundref="_encoding_converter_8h" startline="20">outputDirectory</references>
+        <references refid="class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02" compoundref="_encoding_converter_8h" startline="21">useTempDirectory</references>
+        <referencedby refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" compoundref="_encoding_converter_8cpp" startline="46" endline="50">convert</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodingConverter::convertFile</definition>
+        <argsstring>(const std::filesystem::path &amp;filepath)</argsstring>
+        <name>convertFile</name>
+        <qualifiedname>EncodingConverter::convertFile</qualifiedname>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод читает содержимое файла с указанным путем, конвертирует его из исходной кодировки в целевую и сохраняет результат в файл. Если включена опция useTempDirectory, то промежуточный файл будет создан во временной директории, а затем скопирован и заменит исходный файл.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Путь к файлу, который нужно конвертировать. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="30" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp" bodystart="128" bodyend="155"/>
+        <references refid="class_encoding_converter_1a560484bdcdc929771c7d42877cab9643" compoundref="_encoding_converter_8h" startline="26">filesConverted</references>
+        <references refid="class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf" compoundref="_encoding_converter_8cpp" startline="90" endline="118">iconvConvert</references>
+        <references refid="class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e" compoundref="_encoding_converter_8h" startline="19">inputDirectory</references>
+        <references refid="class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7" compoundref="_encoding_converter_8cpp" startline="176" endline="192">is_utf8</references>
+        <references refid="class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4" compoundref="_encoding_converter_8h" startline="20">outputDirectory</references>
+        <references refid="class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f" compoundref="_encoding_converter_8h" startline="23">sourceEncoding</references>
+        <references refid="class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7" compoundref="_encoding_converter_8h" startline="24">targetEncoding</references>
+        <references refid="class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02" compoundref="_encoding_converter_8h" startline="21">useTempDirectory</references>
+        <referencedby refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" compoundref="_encoding_converter_8cpp" startline="61" endline="77">convertDirectory</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EncodingConverter::printStats</definition>
+        <argsstring>() const</argsstring>
+        <name>printStats</name>
+        <qualifiedname>EncodingConverter::printStats</qualifiedname>
+        <briefdescription>
+<para>Выводит статистику по конвертированным файлам. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод выводит информацию о количестве обработанных и конвертированных файлов. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="32" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp" bodystart="162" bodyend="165"/>
+        <references refid="class_encoding_converter_1a560484bdcdc929771c7d42877cab9643" compoundref="_encoding_converter_8h" startline="26">filesConverted</references>
+        <references refid="class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b" compoundref="_encoding_converter_8h" startline="25">filesProcessed</references>
+        <referencedby refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" compoundref="_encoding_converter_8cpp" startline="46" endline="50">convert</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EncodingConverter::iconvConvert</definition>
+        <argsstring>(const std::string &amp;input, std::string &amp;output, const std::string &amp;fromCharset, const std::string &amp;toCharset)</argsstring>
+        <name>iconvConvert</name>
+        <qualifiedname>EncodingConverter::iconvConvert</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fromCharset</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>toCharset</declname>
+        </param>
+        <briefdescription>
+<para>Конвертирует строку из одной кодировки в другую с помощью iconv. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод конвертирует строку из одной кодировки в другую с использованием функций iconv.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Входная строка для конвертации. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Строка, в которую будет записан результат конвертации. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fromCharset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Исходная кодировка. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>toCharset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Целевая кодировка. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, если конвертация прошла успешно, иначе false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="31" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp" bodystart="90" bodyend="118"/>
+        <referencedby refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EncodingConverter::is_utf8</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>is_utf8</name>
+        <qualifiedname>EncodingConverter::is_utf8</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Проверяет, является ли строка в кодировке UTF-8. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод проверяет, является ли строка в кодировке UTF-8 путем анализа байтовой последовательности. Возвращает true, если строка является корректной UTF-8 строкой, иначе false.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Строка, которую нужно проверить. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true, если строка является корректной UTF-8 строкой, иначе false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="33" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/EncodingConverter.cpp" bodystart="176" bodyend="192"/>
+        <referencedby refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" compoundref="_encoding_converter_8cpp" startline="128" endline="155">convertFile</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Класс для преобразования кодировки файлов. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Конструктор класса принимает входной и выходной каталоги. Если выходной каталог не указан, используется временный каталог. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>EncodingConverter</label>
+        <link refid="class_encoding_converter"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>inputDirectory</edgelabel>
+          <edgelabel>outputDirectory</edgelabel>
+          <edgelabel>sourceEncoding</edgelabel>
+          <edgelabel>targetEncoding</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>fileExtensions</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" line="14" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/Converting/EncodingConverter.h" bodystart="14" bodyend="34"/>
+    <listofallmembers>
+      <member refid="class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3" prot="public" virt="non-virtual"><scope>EncodingConverter</scope><name>convert</name></member>
+      <member refid="class_encoding_converter_1ab066b92f365f593c44d6825071463e08" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>convertDirectory</name></member>
+      <member refid="class_encoding_converter_1a460858eb34940271be93a5aa08452a66" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>convertFile</name></member>
+      <member refid="class_encoding_converter_1ab3102bc4fcd6c5ebf7768b4d6dbcff62" prot="public" virt="non-virtual"><scope>EncodingConverter</scope><name>EncodingConverter</name></member>
+      <member refid="class_encoding_converter_1a7a697b1dd34f92c0ee0d94ea98966f89" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>fileExtensions</name></member>
+      <member refid="class_encoding_converter_1a560484bdcdc929771c7d42877cab9643" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>filesConverted</name></member>
+      <member refid="class_encoding_converter_1a51031e51d1ab00d24ff3d1912044bf6b" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>filesProcessed</name></member>
+      <member refid="class_encoding_converter_1ac7f6cefb08a76f5fa3696ee18beb8faf" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>iconvConvert</name></member>
+      <member refid="class_encoding_converter_1aeeb826a3fbe68c0e94a9621efef19c9e" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>inputDirectory</name></member>
+      <member refid="class_encoding_converter_1a9b72ba808c4b0c7087f63fd0c3b8a5d7" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>is_utf8</name></member>
+      <member refid="class_encoding_converter_1a327b6fd6e84ab1949e73302fc9e153e4" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>loadSettings</name></member>
+      <member refid="class_encoding_converter_1a7069e0d212765a9eae194b5b6f5edff4" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>outputDirectory</name></member>
+      <member refid="class_encoding_converter_1a6a4a2d610029ac2c890fb0265626ebd0" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>printStats</name></member>
+      <member refid="class_encoding_converter_1a5b25a05020fd9ba0638cf2e21f69369f" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>sourceEncoding</name></member>
+      <member refid="class_encoding_converter_1acbdca252b050fca89d6fda1caef80da7" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>targetEncoding</name></member>
+      <member refid="class_encoding_converter_1ac566af31b8555e40cb8b14cbb21e5f02" prot="private" virt="non-virtual"><scope>EncodingConverter</scope><name>useTempDirectory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

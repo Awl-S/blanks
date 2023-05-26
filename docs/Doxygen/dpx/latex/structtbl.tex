@@ -1,0 +1,130 @@
+\doxysection{Структура tbl}
+\hypertarget{structtbl}{}\label{structtbl}\index{tbl@{tbl}}
+
+
+Структура для хранения данных таблицы.  
+
+
+
+
+{\ttfamily \#include \"{}tbl.\+h\"{}}
+
+
+
+Граф связей класса tbl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{structtbl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structtbl_a1656f3d8341995db3e9711ecf583cc94}{display}} () const
+\begin{DoxyCompactList}\small\item\em Выводит данные таблицы в стандартный вывод. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8}{position}}
+\item 
+std\+::string \mbox{\hyperlink{structtbl_ac995e4da6d437a046c2074f9dc33b833}{model}}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{measurements}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура для хранения данных таблицы. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em position} & Позиция в таблице. \\
+\hline
+{\em model} & Модель из таблицы. \\
+\hline
+{\em measurements} & Измерения, связанные с таблицей. \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{tbl_8h_source}{tbl.\+h}} строка \mbox{\hyperlink{tbl_8h_source_l00015}{15}}
+
+
+
+\doxysubsection{Методы}
+\Hypertarget{structtbl_a1656f3d8341995db3e9711ecf583cc94}\label{structtbl_a1656f3d8341995db3e9711ecf583cc94} 
+\index{tbl@{tbl}!display@{display}}
+\index{display@{display}!tbl@{tbl}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void tbl\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит данные таблицы в стандартный вывод. 
+
+
+
+См. определение в файле \mbox{\hyperlink{tbl_8h_source}{tbl.\+h}} строка \mbox{\hyperlink{tbl_8h_source_l00023}{23}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Position:\ "{}}\ <<\ \mbox{\hyperlink{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8}{position}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Model:\ "{}}\ <<\ \mbox{\hyperlink{structtbl_ac995e4da6d437a046c2074f9dc33b833}{model}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Measurements:\(\backslash\)n"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ row\ :\ \mbox{\hyperlink{structtbl_a2c40d6d0a86d9981eb8852fe90431334}{measurements}})\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ value\ :\ row)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ value\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{structtbl_a1656f3d8341995db3e9711ecf583cc94_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{structtbl_a2c40d6d0a86d9981eb8852fe90431334}\label{structtbl_a2c40d6d0a86d9981eb8852fe90431334} 
+\index{tbl@{tbl}!measurements@{measurements}}
+\index{measurements@{measurements}!tbl@{tbl}}
+\doxysubsubsection{\texorpdfstring{measurements}{measurements}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$double$>$ $>$ tbl\+::measurements}
+
+
+
+См. определение в файле \mbox{\hyperlink{tbl_8h_source}{tbl.\+h}} строка \mbox{\hyperlink{tbl_8h_source_l00018}{18}}
+
+\Hypertarget{structtbl_ac995e4da6d437a046c2074f9dc33b833}\label{structtbl_ac995e4da6d437a046c2074f9dc33b833} 
+\index{tbl@{tbl}!model@{model}}
+\index{model@{model}!tbl@{tbl}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily std\+::string tbl\+::model}
+
+
+
+См. определение в файле \mbox{\hyperlink{tbl_8h_source}{tbl.\+h}} строка \mbox{\hyperlink{tbl_8h_source_l00017}{17}}
+
+\Hypertarget{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8}\label{structtbl_aeb4ff1fbbdb4b42214f4763a8a8e18b8} 
+\index{tbl@{tbl}!position@{position}}
+\index{position@{position}!tbl@{tbl}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily int tbl\+::position}
+
+
+
+См. определение в файле \mbox{\hyperlink{tbl_8h_source}{tbl.\+h}} строка \mbox{\hyperlink{tbl_8h_source_l00016}{16}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tbl_8h}{tbl.\+h}}\end{DoxyCompactItemize}

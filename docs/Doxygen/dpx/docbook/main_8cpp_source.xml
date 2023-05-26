@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8cpp_source" xml:lang="ru">
+<title>main.cpp</title>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_main_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__encoding_converter_8h">include/Converting/EncodingConverter.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__command_line_8h">include/CommandLine/CommandLine.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_cfm_8h">include/struct/cfm.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_zgt_8h">include/struct/zgt.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00006"/>00006 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_text_reader_8h">include/Reader/textReader.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00007"/>00007 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__generated_8h">include/Generated/Generated.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00008"/>00008 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__render_p_d_f_8h">include/RenderPDF/RenderPDF.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00009"/>00009 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__plug_8h">include/Parser/Plug.h</link>&quot;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00010"/>00010 
+<anchor xml:id="_main_8cpp_source_1l00011"/><link linkend="_main_8cpp_1ab97d7330981023823ad0d4017ddbec3b">00011</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8cpp_1ab97d7330981023823ad0d4017ddbec3b">print_duration</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;start)&#32;{
+<anchor xml:id="_main_8cpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;stop&#32;=&#32;std::chrono::high_resolution_clock::now();
+<anchor xml:id="_main_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;duration_microseconds&#32;=&#32;std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(stop&#32;-&#32;start);
+<anchor xml:id="_main_8cpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;duration_milliseconds&#32;=&#32;std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(stop&#32;-&#32;start);
+<anchor xml:id="_main_8cpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Время&#32;выполнения:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;duration_microseconds.count()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;microseconds&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_main_8cpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Время&#32;выполнения:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;duration_milliseconds.count()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;milliseconds&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_main_8cpp_source_1l00017"/>00017 }
+<anchor xml:id="_main_8cpp_source_1l00018"/>00018 
+<anchor xml:id="_main_8cpp_source_1l00019"/><link linkend="_main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4">00019</link> std::filesystem::path&#32;<link linkend="_main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4">find_file_by_name</link>(<emphasis role="keyword">const</emphasis>&#32;std::filesystem::path&amp;&#32;directory,&#32;std::string&amp;&#32;model_name,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;extension)&#32;{
+<anchor xml:id="_main_8cpp_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;entry&#32;:&#32;std::filesystem::recursive_directory_iterator(directory))&#32;{
+<anchor xml:id="_main_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(entry.is_regular_file())&#32;{
+<anchor xml:id="_main_8cpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;file_name&#32;=&#32;entry.path().filename().string();
+<anchor xml:id="_main_8cpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;file_extension&#32;=&#32;entry.path().extension().string();
+<anchor xml:id="_main_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(file_name&#32;==&#32;model_name&#32;+&#32;file_extension&#32;&amp;&amp;&#32;file_extension&#32;==&#32;extension)&#32;{
+<anchor xml:id="_main_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::filesystem::path&#32;path_str&#32;=&#32;entry.path();
+<anchor xml:id="_main_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::replace(path_str.string().begin(),&#32;path_str.string().end(),&#32;&apos;\\&apos;,&#32;&apos;/&apos;);</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00027"/>00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;path_str;
+<anchor xml:id="_main_8cpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::runtime_error(<emphasis role="stringliteral">&quot;File&#32;not&#32;found:&#32;&quot;</emphasis>&#32;+&#32;model_name);
+<anchor xml:id="_main_8cpp_source_1l00032"/>00032 }
+<anchor xml:id="_main_8cpp_source_1l00033"/>00033 
+<anchor xml:id="_main_8cpp_source_1l00034"/><link linkend="_main_8cpp_1a333b5413e0cb25ebfc2919e897c49e0c">00034</link> std::string&#32;<link linkend="_main_8cpp_1a333b5413e0cb25ebfc2919e897c49e0c">getCurrentDateTime</link>()&#32;{
+<anchor xml:id="_main_8cpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;std::time_t&#32;currentTime&#32;=&#32;std::time(<emphasis role="keyword">nullptr</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;std::tm*&#32;localTime&#32;=&#32;std::localtime(&amp;currentTime);
+<anchor xml:id="_main_8cpp_source_1l00037"/>00037 
+<anchor xml:id="_main_8cpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;dateTimeString[20];
+<anchor xml:id="_main_8cpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;std::strftime(dateTimeString,&#32;<emphasis role="keyword">sizeof</emphasis>(dateTimeString),&#32;<emphasis role="stringliteral">&quot;%Y-%m-%d_%H-%M-%S&quot;</emphasis>,&#32;localTime);
+<anchor xml:id="_main_8cpp_source_1l00040"/>00040 
+<anchor xml:id="_main_8cpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::string(dateTimeString);
+<anchor xml:id="_main_8cpp_source_1l00042"/>00042 }
+<anchor xml:id="_main_8cpp_source_1l00043"/>00043 
+<anchor xml:id="_main_8cpp_source_1l00044"/><link linkend="_main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97">00044</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97">main</link>(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*argv[])&#32;{
+<anchor xml:id="_main_8cpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;setlocale(LC_ALL,&#32;<emphasis role="stringliteral">&quot;ru_RU.UTF-8&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;start&#32;=&#32;std::chrono::high_resolution_clock::now();
+<anchor xml:id="_main_8cpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;{
+<anchor xml:id="_main_8cpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line">CommandLine</link>&#32;cmd(argc,&#32;argv);
+<anchor xml:id="_main_8cpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;command_type&#32;=&#32;cmd.<link linkend="_class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6">get_command_type</link>();
+<anchor xml:id="_main_8cpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;args&#32;=&#32;cmd.<link linkend="_class_command_line_1a58060c2f8b6032c5d1feab576b642125">get_args</link>();
+<anchor xml:id="_main_8cpp_source_1l00051"/>00051 
+<anchor xml:id="_main_8cpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(command_type&#32;==&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26">CommandLine::CommandType::GEN</link>){
+<anchor xml:id="_main_8cpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_generated">Generated</link>&#32;gen;
+<anchor xml:id="_main_8cpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gen.<link linkend="_class_generated_1a83bc49c8c5facc46a56afe4f1af0d01a">generateJsonFile</link>(<emphasis role="stringliteral">&quot;setting.json&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00056"/>00056 
+<anchor xml:id="_main_8cpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(command_type&#32;==&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">CommandLine::CommandType::UNKNOWN</link>){
+<anchor xml:id="_main_8cpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_main_8cpp_1ab97d7330981023823ad0d4017ddbec3b">print_duration</link>(start);
+<anchor xml:id="_main_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Неизвестная&#32;команда\n&quot;</emphasis>;
+<anchor xml:id="_main_8cpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="_main_8cpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00062"/>00062 
+<anchor xml:id="_main_8cpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(command_type&#32;==&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2">CommandLine::CommandType::CONVERT</link>){
+<anchor xml:id="_main_8cpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(args.size()&#32;==&#32;1){
+<anchor xml:id="_main_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter">EncodingConverter</link>&#32;converter(args[0]);
+<anchor xml:id="_main_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;converter.<link linkend="_class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3">convert</link>();
+<anchor xml:id="_main_8cpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(args.size()&#32;==&#32;2)&#32;{
+<anchor xml:id="_main_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_encoding_converter">EncodingConverter</link>&#32;converter(args[0],&#32;args[1]);
+<anchor xml:id="_main_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;converter.<link linkend="_class_encoding_converter_1ae79126a88077fe4ac04a5cd09edf72d3">convert</link>();
+<anchor xml:id="_main_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_main_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cerr&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Неверное&#32;количество&#32;аргументов.&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_main_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;
+<anchor xml:id="_main_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00075"/>00075 
+<anchor xml:id="_main_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b">CommandLine::CommandType::PRINT</link>&#32;==&#32;command_type){
+<anchor xml:id="_main_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;config_parser&#32;=&#32;<link linkend="_namespaceparser_1a6a1b9a41dcebf3bc40e63bcb26a93f64">parser::create</link>(args[0]);
+<anchor xml:id="_main_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;debug&#32;=&#32;config_parser-&gt;getInteger(<emphasis role="stringliteral">&quot;debug&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00079"/>00079 
+<anchor xml:id="_main_8cpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;tbl_directory&#32;=&#32;config_parser-&gt;getFilePath(<emphasis role="stringliteral">&quot;tbl&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;tbl_files&#32;=&#32;config_parser-&gt;getFileList(<emphasis role="stringliteral">&quot;tbl&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;scale&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;tbl&gt;&#32;tbl_data;
+<anchor xml:id="_main_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&amp;&#32;tbl_file&#32;:&#32;tbl_files)&#32;{
+<anchor xml:id="_main_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Чтение&#32;TBL:\t&quot;</emphasis>&#32;&lt;&lt;&#32;tbl_file&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_main_8cpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structtbl">tbl</link>&#32;temp_tbl;
+<anchor xml:id="_main_8cpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classtext_reader">textReader</link>(tbl_file).<link linkend="_classtext_reader_1ac9b23d5e5a58431fb114f221098a2640">read_tbl</link>(temp_tbl);
+<anchor xml:id="_main_8cpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tbl_data.push_back(temp_tbl);
+<anchor xml:id="_main_8cpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(debug){
+<anchor xml:id="_main_8cpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;temp_tbl.<link linkend="_structtbl_1a1656f3d8341995db3e9711ecf583cc94">display</link>();
+<anchor xml:id="_main_8cpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00092"/>00092 
+<anchor xml:id="_main_8cpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;cfm_file&#32;=&#32;config_parser-&gt;getFilePath(<emphasis role="stringliteral">&quot;cfm&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;cfm_file_path&#32;=&#32;<link linkend="_main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4">find_file_by_name</link>(cfm_file,&#32;tbl_data[0].model,&#32;<emphasis role="stringliteral">&quot;.cfm&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Чтение&#32;CFM:\t&quot;</emphasis>&#32;&lt;&lt;&#32;cfm_file_path&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_main_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structcfm">cfm</link>&#32;cfm_data;
+<anchor xml:id="_main_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classtext_reader">textReader</link>(cfm_file_path).<link linkend="_classtext_reader_1a5cd4eeebf53787a1434d037c54993071">read_cfm</link>(cfm_data);
+<anchor xml:id="_main_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(debug){
+<anchor xml:id="_main_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfm_data.<link linkend="_structcfm_1a34655b4bfca15e5fb6afeedcf05c1289">display</link>();
+<anchor xml:id="_main_8cpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00101"/>00101 
+<anchor xml:id="_main_8cpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;point_file&#32;=&#32;config_parser-&gt;getFilePath(<emphasis role="stringliteral">&quot;point&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;point_file_path&#32;=&#32;<link linkend="_main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4">find_file_by_name</link>(point_file,&#32;tbl_data[0].model,&#32;<emphasis role="stringliteral">&quot;.point&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Чтение&#32;набора&#32;точек:\t&quot;</emphasis>&#32;&lt;&lt;&#32;point_file_path&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_main_8cpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structpoint">point</link>&#32;point_data;
+<anchor xml:id="_main_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classtext_reader">textReader</link>(point_file_path).<link linkend="_classtext_reader_1a9f261ea0ff26bf191afd61212c0a79e5">read_point</link>(point_data);
+<anchor xml:id="_main_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(debug){
+<anchor xml:id="_main_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;point_data.<link linkend="_structpoint_1a0b248ae2a8dab47a95f68ffb03f33ede">display</link>();
+<anchor xml:id="_main_8cpp_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00110"/>00110 
+<anchor xml:id="_main_8cpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;zgt_file&#32;=&#32;config_parser-&gt;getFilePath(<emphasis role="stringliteral">&quot;zgt&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;zgt_file_path&#32;=&#32;<link linkend="_main_8cpp_1a17fe4a740253ee0f9a2dbe3821cb02b4">find_file_by_name</link>(zgt_file,&#32;cfm_data.<link linkend="_structcfm_1a6400105680203ffabfa9860662530647">blank</link>,&#32;<emphasis role="stringliteral">&quot;.згт&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Чтение&#32;заготовок:\t&quot;</emphasis>&#32;&lt;&lt;&#32;zgt_file_path&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_main_8cpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structzgt">zgt</link>&#32;zgt_data;
+<anchor xml:id="_main_8cpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classtext_reader">textReader</link>(zgt_file_path).<link linkend="_classtext_reader_1af98fb017c822ba0f17c58a1dda32a787">read_zgt</link>(zgt_data);
+<anchor xml:id="_main_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(debug){
+<anchor xml:id="_main_8cpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;zgt_data.<link linkend="_structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2">display</link>();
+<anchor xml:id="_main_8cpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::cout&#32;&lt;&lt;&#32;&quot;Чтение&#32;наборов&#32;изображений:\t&quot;&#32;&lt;&lt;&#32;nbr_file_path&#32;&lt;&lt;&#32;std::endl;</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;nbr_file&#32;=&#32;config_parser-&gt;getFilePath(<emphasis role="stringliteral">&quot;nbr&quot;</emphasis>);
+<anchor xml:id="_main_8cpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//auto&#32;nbr_file_path&#32;=&#32;find_file_by_name(zgt_file,&#32;cfm_data.blank,&#32;&quot;.нбр&quot;);</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structnbr">nbr</link>&#32;nbr_data;
+<anchor xml:id="_main_8cpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//textReader(nbr_file_path).read_nbr(nbr_data);</emphasis>
+<anchor xml:id="_main_8cpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(debug&#32;==&#32;0){
+<anchor xml:id="_main_8cpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00126"/>00126 
+<anchor xml:id="_main_8cpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f">RenderPDF</link>&#32;pdf(cfm_data,&#32;zgt_data,&#32;tbl_data,&#32;nbr_data,&#32;point_data,&#32;config_parser-&gt;getFilePath(<emphasis role="stringliteral">&quot;fontPath&quot;</emphasis>));
+<anchor xml:id="_main_8cpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string&#32;filename&#32;=&#32;<link linkend="_main_8cpp_1a333b5413e0cb25ebfc2919e897c49e0c">getCurrentDateTime</link>()&#32;+&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;+&#32;cfm_data.<link linkend="_structcfm_1a6400105680203ffabfa9860662530647">blank</link>&#32;+&#32;<emphasis role="stringliteral">&quot;)&quot;</emphasis>;
+<anchor xml:id="_main_8cpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pdf.<link linkend="_class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2">generatePDF</link>(filename);
+<anchor xml:id="_main_8cpp_source_1l00130"/>00130 
+<anchor xml:id="_main_8cpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00132"/>00132 
+<anchor xml:id="_main_8cpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_main_8cpp_source_1l00134"/>00134 
+<anchor xml:id="_main_8cpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;<link linkend="_main_8cpp_1ab97d7330981023823ad0d4017ddbec3b">print_duration</link>(start);
+<anchor xml:id="_main_8cpp_source_1l00136"/>00136 }
+</programlisting></section>

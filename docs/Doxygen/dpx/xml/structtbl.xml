@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="structtbl" kind="struct" language="C++" prot="public">
+    <compoundname>tbl</compoundname>
+    <includes refid="tbl_8h" local="yes">tbl.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tbl::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <qualifiedname>tbl::position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" line="16" column="9" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="structtbl_1a1656f3d8341995db3e9711ecf583cc94" compoundref="tbl_8h" startline="23" endline="34">display</referencedby>
+        <referencedby refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" compoundref="text_reader_8cpp" startline="95" endline="137">textReader::read_tbl</referencedby>
+        <referencedby refid="class_render_p_d_f_1ae8716d07394557fb0434e419be24d04f" compoundref="_processor_8cpp" startline="25" endline="32">RenderPDF::sortTblData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structtbl_1ac995e4da6d437a046c2074f9dc33b833" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string tbl::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <qualifiedname>tbl::model</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" line="17" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" bodystart="17" bodyend="-1"/>
+        <referencedby refid="structtbl_1a1656f3d8341995db3e9711ecf583cc94" compoundref="tbl_8h" startline="23" endline="34">display</referencedby>
+        <referencedby refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" compoundref="text_reader_8cpp" startline="95" endline="137">textReader::read_tbl</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structtbl_1a2c40d6d0a86d9981eb8852fe90431334" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; double &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;double&gt; &gt; tbl::measurements</definition>
+        <argsstring></argsstring>
+        <name>measurements</name>
+        <qualifiedname>tbl::measurements</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" line="18" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="structtbl_1a1656f3d8341995db3e9711ecf583cc94" compoundref="tbl_8h" startline="23" endline="34">display</referencedby>
+        <referencedby refid="classtext_reader_1ac9b23d5e5a58431fb114f221098a2640" compoundref="text_reader_8cpp" startline="95" endline="137">textReader::read_tbl</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtbl_1a1656f3d8341995db3e9711ecf583cc94" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tbl::display</definition>
+        <argsstring>() const</argsstring>
+        <name>display</name>
+        <qualifiedname>tbl::display</qualifiedname>
+        <briefdescription>
+<para>Выводит данные таблицы в стандартный вывод. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" line="23" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" bodystart="23" bodyend="34"/>
+        <references refid="structtbl_1a2c40d6d0a86d9981eb8852fe90431334" compoundref="tbl_8h" startline="18">measurements</references>
+        <references refid="structtbl_1ac995e4da6d437a046c2074f9dc33b833" compoundref="tbl_8h" startline="17">model</references>
+        <references refid="structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8" compoundref="tbl_8h" startline="16">position</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Структура для хранения данных таблицы. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Позиция в таблице. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Модель из таблицы. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>measurements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Измерения, связанные с таблицей. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tbl</label>
+        <link refid="structtbl"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>measurements</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; double &gt;</label>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; std::vector&lt; double &gt; &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" line="15" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/tbl.h" bodystart="15" bodyend="35"/>
+    <listofallmembers>
+      <member refid="structtbl_1a1656f3d8341995db3e9711ecf583cc94" prot="public" virt="non-virtual"><scope>tbl</scope><name>display</name></member>
+      <member refid="structtbl_1a2c40d6d0a86d9981eb8852fe90431334" prot="public" virt="non-virtual"><scope>tbl</scope><name>measurements</name></member>
+      <member refid="structtbl_1ac995e4da6d437a046c2074f9dc33b833" prot="public" virt="non-virtual"><scope>tbl</scope><name>model</name></member>
+      <member refid="structtbl_1aeb4ff1fbbdb4b42214f4763a8a8e18b8" prot="public" virt="non-virtual"><scope>tbl</scope><name>position</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

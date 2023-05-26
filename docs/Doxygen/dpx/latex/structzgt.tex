@@ -1,0 +1,163 @@
+\doxysection{Структура zgt}
+\hypertarget{structzgt}{}\label{structzgt}\index{zgt@{zgt}}
+
+
+Структура для хранения данных типа zgt.  
+
+
+
+
+{\ttfamily \#include \"{}zgt.\+h\"{}}
+
+
+
+Граф связей класса zgt\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structzgt__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structzgt_a54f8b1de8e8e339540ddddd0e7503ac2}{display}} () const
+\begin{DoxyCompactList}\small\item\em Выводит содержимое структуры zgt на консоль. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{structzgt_ab347a1a6d59fde2e507a7035e65e2544}{diameter}}
+\item 
+double \mbox{\hyperlink{structzgt_a158a8320351f554c1aa14cf6436b505f}{center\+\_\+hole\+\_\+diameter}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\+\_\+holes}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structzgt_a9ca1baeee9e45b33b39efc727f206e34}{marker\+\_\+position}}
+\item 
+std\+::array$<$ double, 2 $>$ \mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\+\_\+serial\+\_\+number}} \{\}
+\item 
+std\+::array$<$ double, 3 $>$ \mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\+\_\+position}} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура для хранения данных типа zgt. 
+
+Структура zgt содержит поля для хранения различных данных типа zgt, которые представляют параметры для зубчатой передачи. 
+
+См. определение в файле \mbox{\hyperlink{zgt_8h_source}{zgt.\+h}} строка \mbox{\hyperlink{zgt_8h_source_l00015}{15}}
+
+
+
+\doxysubsection{Методы}
+\Hypertarget{structzgt_a54f8b1de8e8e339540ddddd0e7503ac2}\label{structzgt_a54f8b1de8e8e339540ddddd0e7503ac2} 
+\index{zgt@{zgt}!display@{display}}
+\index{display@{display}!zgt@{zgt}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void zgt\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит содержимое структуры zgt на консоль. 
+
+Функция \doxylink{structzgt_a54f8b1de8e8e339540ddddd0e7503ac2}{display()} выводит значения каждого поля структуры zgt на консоль. Затем выводит значения отверстий для крепления, позицию маркера, серийный номер шрифта и позицию стопора. 
+
+См. определение в файле \mbox{\hyperlink{zgt_8h_source}{zgt.\+h}} строка \mbox{\hyperlink{zgt_8h_source_l00030}{30}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Diameter:\ "{}}\ <<\ \mbox{\hyperlink{structzgt_ab347a1a6d59fde2e507a7035e65e2544}{diameter}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Center\ Hole\ Diameter:\ "{}}\ <<\ \mbox{\hyperlink{structzgt_a158a8320351f554c1aa14cf6436b505f}{center\_hole\_diameter}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Mounting\ Holes:\ "{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ \mbox{\hyperlink{structzgt_afa245cc963981088182fcad61a544bb4}{mounting\_holes}})}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ val\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Marker\ Position:\ "{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ val\ :\ \mbox{\hyperlink{structzgt_a9ca1baeee9e45b33b39efc727f206e34}{marker\_position}})}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ val\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Font\ Serial\ Number:\ "{}}\ <<\ \mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}{font\_serial\_number}}[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Stop\ Position:\ "{}}\ <<\ \mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[0]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[1]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ \mbox{\hyperlink{structzgt_af7851982bb5b4ce441b81c641775837d}{stop\_position}}[2]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{structzgt_a54f8b1de8e8e339540ddddd0e7503ac2_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{structzgt_a158a8320351f554c1aa14cf6436b505f}\label{structzgt_a158a8320351f554c1aa14cf6436b505f} 
+\index{zgt@{zgt}!center\_hole\_diameter@{center\_hole\_diameter}}
+\index{center\_hole\_diameter@{center\_hole\_diameter}!zgt@{zgt}}
+\doxysubsubsection{\texorpdfstring{center\_hole\_diameter}{center\_hole\_diameter}}
+{\footnotesize\ttfamily double zgt\+::center\+\_\+hole\+\_\+diameter}
+
+Диаметр центрального отверстия 
+
+См. определение в файле \mbox{\hyperlink{zgt_8h_source}{zgt.\+h}} строка \mbox{\hyperlink{zgt_8h_source_l00017}{17}}
+
+\Hypertarget{structzgt_ab347a1a6d59fde2e507a7035e65e2544}\label{structzgt_ab347a1a6d59fde2e507a7035e65e2544} 
+\index{zgt@{zgt}!diameter@{diameter}}
+\index{diameter@{diameter}!zgt@{zgt}}
+\doxysubsubsection{\texorpdfstring{diameter}{diameter}}
+{\footnotesize\ttfamily double zgt\+::diameter}
+
+Диаметр 
+
+См. определение в файле \mbox{\hyperlink{zgt_8h_source}{zgt.\+h}} строка \mbox{\hyperlink{zgt_8h_source_l00016}{16}}
+
+\Hypertarget{structzgt_a31882abc85ea34cbbc6c41192f3c35b8}\label{structzgt_a31882abc85ea34cbbc6c41192f3c35b8} 
+\index{zgt@{zgt}!font\_serial\_number@{font\_serial\_number}}
+\index{font\_serial\_number@{font\_serial\_number}!zgt@{zgt}}
+\doxysubsubsection{\texorpdfstring{font\_serial\_number}{font\_serial\_number}}
+{\footnotesize\ttfamily std\+::array$<$double, 2$>$ zgt\+::font\+\_\+serial\+\_\+number \{\}}
+
+Серийный номер шрифта 
+
+См. определение в файле \mbox{\hyperlink{zgt_8h_source}{zgt.\+h}} строка \mbox{\hyperlink{zgt_8h_source_l00020}{20}}
+
+\Hypertarget{structzgt_a9ca1baeee9e45b33b39efc727f206e34}\label{structzgt_a9ca1baeee9e45b33b39efc727f206e34} 
+\index{zgt@{zgt}!marker\_position@{marker\_position}}
+\index{marker\_position@{marker\_position}!zgt@{zgt}}
+\doxysubsubsection{\texorpdfstring{marker\_position}{marker\_position}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ zgt\+::marker\+\_\+position}
+
+Позиция маркера 
+
+См. определение в файле \mbox{\hyperlink{zgt_8h_source}{zgt.\+h}} строка \mbox{\hyperlink{zgt_8h_source_l00019}{19}}
+
+\Hypertarget{structzgt_afa245cc963981088182fcad61a544bb4}\label{structzgt_afa245cc963981088182fcad61a544bb4} 
+\index{zgt@{zgt}!mounting\_holes@{mounting\_holes}}
+\index{mounting\_holes@{mounting\_holes}!zgt@{zgt}}
+\doxysubsubsection{\texorpdfstring{mounting\_holes}{mounting\_holes}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ zgt\+::mounting\+\_\+holes}
+
+Отверстия для крепления 
+
+См. определение в файле \mbox{\hyperlink{zgt_8h_source}{zgt.\+h}} строка \mbox{\hyperlink{zgt_8h_source_l00018}{18}}
+
+\Hypertarget{structzgt_af7851982bb5b4ce441b81c641775837d}\label{structzgt_af7851982bb5b4ce441b81c641775837d} 
+\index{zgt@{zgt}!stop\_position@{stop\_position}}
+\index{stop\_position@{stop\_position}!zgt@{zgt}}
+\doxysubsubsection{\texorpdfstring{stop\_position}{stop\_position}}
+{\footnotesize\ttfamily std\+::array$<$double, 3$>$ zgt\+::stop\+\_\+position \{\}}
+
+Позиция стопора 
+
+См. определение в файле \mbox{\hyperlink{zgt_8h_source}{zgt.\+h}} строка \mbox{\hyperlink{zgt_8h_source_l00021}{21}}
+
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{zgt_8h}{zgt.\+h}}\end{DoxyCompactItemize}

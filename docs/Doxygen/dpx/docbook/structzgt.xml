@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structzgt" xml:lang="ru">
+<title>Структура zgt</title>
+<indexterm><primary>zgt</primary></indexterm>
+<para>
+
+<para>Структура для хранения данных типа zgt. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &quot;zgt.h&quot;</computeroutput>
+</para>
+Граф связей класса zgt:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structzgt__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2">display</link> () const</para>
+
+<para>Выводит содержимое структуры zgt на консоль. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Открытые атрибуты    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544">diameter</link></para>
+</listitem>
+            <listitem><para>double <link linkend="_structzgt_1a158a8320351f554c1aa14cf6436b505f">center_hole_diameter</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; double &gt; <link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; double &gt; <link linkend="_structzgt_1a9ca1baeee9e45b33b39efc727f206e34">marker_position</link></para>
+</listitem>
+            <listitem><para>std::array&lt; double, 2 &gt; <link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link> {}</para>
+</listitem>
+            <listitem><para>std::array&lt; double, 3 &gt; <link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link> {}</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+
+<para>Структура для хранения данных типа zgt. </para>
+
+
+
+<para>Структура zgt содержит поля для хранения различных данных типа zgt, которые представляют параметры для зубчатой передачи. </para>
+<para>
+См. определение в файле <link linkend="_zgt_8h_source">zgt.h</link> строка <link linkend="_zgt_8h_source_1l00015">15</link></para>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2"/><section>
+    <title>display()</title>
+<indexterm><primary>display</primary><secondary>zgt</secondary></indexterm>
+<indexterm><primary>zgt</primary><secondary>display</secondary></indexterm>
+<para><computeroutput>void zgt::display ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Выводит содержимое структуры zgt на консоль. </para>
+</para>
+
+<para>Функция <link linkend="_structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2">display()</link> выводит значения каждого поля структуры zgt на консоль. Затем выводит значения отверстий для крепления, позицию маркера, серийный номер шрифта и позицию стопора. </para>
+<para>
+См. определение в файле <link linkend="_zgt_8h_source">zgt.h</link> строка <link linkend="_zgt_8h_source_1l00030">30</link></para>
+<programlisting linenumbering="unnumbered">00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Diameter:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544">diameter</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Center&#32;Hole&#32;Diameter:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1a158a8320351f554c1aa14cf6436b505f">center_hole_diameter</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00033 
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Mounting&#32;Holes:&#32;&quot;</emphasis>;
+00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&#32;val&#32;:&#32;<link linkend="_structzgt_1afa245cc963981088182fcad61a544bb4">mounting_holes</link>)
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;val&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00038 
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Marker&#32;Position:&#32;&quot;</emphasis>;
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keyword">auto</emphasis>&#32;val&#32;:&#32;<link linkend="_structzgt_1a9ca1baeee9e45b33b39efc727f206e34">marker_position</link>)
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;val&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>;
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00043 
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Font&#32;Serial&#32;Number:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>[0]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8">font_serial_number</link>[1]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00045 
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Stop&#32;Position:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[0]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[1]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<link linkend="_structzgt_1af7851982bb5b4ce441b81c641775837d">stop_position</link>[2]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n&quot;</emphasis>;
+00047 &#32;&#32;&#32;&#32;}
+</programlisting>Граф вызова функции:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structzgt_a54f8b1de8e8e339540ddddd0e7503ac2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_structzgt_1a158a8320351f554c1aa14cf6436b505f"/><section>
+    <title>center_hole_diameter</title>
+<indexterm><primary>center_hole_diameter</primary><secondary>zgt</secondary></indexterm>
+<indexterm><primary>zgt</primary><secondary>center_hole_diameter</secondary></indexterm>
+<para><computeroutput>double zgt::center_hole_diameter</computeroutput></para>
+<para>Диаметр центрального отверстия </para>
+<para>
+См. определение в файле <link linkend="_zgt_8h_source">zgt.h</link> строка <link linkend="_zgt_8h_source_1l00017">17</link></para>
+</section>
+<anchor xml:id="_structzgt_1ab347a1a6d59fde2e507a7035e65e2544"/><section>
+    <title>diameter</title>
+<indexterm><primary>diameter</primary><secondary>zgt</secondary></indexterm>
+<indexterm><primary>zgt</primary><secondary>diameter</secondary></indexterm>
+<para><computeroutput>double zgt::diameter</computeroutput></para>
+<para>Диаметр </para>
+<para>
+См. определение в файле <link linkend="_zgt_8h_source">zgt.h</link> строка <link linkend="_zgt_8h_source_1l00016">16</link></para>
+</section>
+<anchor xml:id="_structzgt_1a31882abc85ea34cbbc6c41192f3c35b8"/><section>
+    <title>font_serial_number</title>
+<indexterm><primary>font_serial_number</primary><secondary>zgt</secondary></indexterm>
+<indexterm><primary>zgt</primary><secondary>font_serial_number</secondary></indexterm>
+<para><computeroutput>std::array&lt;double, 2&gt; zgt::font_serial_number {}</computeroutput></para>
+<para>Серийный номер шрифта </para>
+<para>
+См. определение в файле <link linkend="_zgt_8h_source">zgt.h</link> строка <link linkend="_zgt_8h_source_1l00020">20</link></para>
+</section>
+<anchor xml:id="_structzgt_1a9ca1baeee9e45b33b39efc727f206e34"/><section>
+    <title>marker_position</title>
+<indexterm><primary>marker_position</primary><secondary>zgt</secondary></indexterm>
+<indexterm><primary>zgt</primary><secondary>marker_position</secondary></indexterm>
+<para><computeroutput>std::vector&lt;double&gt; zgt::marker_position</computeroutput></para>
+<para>Позиция маркера </para>
+<para>
+См. определение в файле <link linkend="_zgt_8h_source">zgt.h</link> строка <link linkend="_zgt_8h_source_1l00019">19</link></para>
+</section>
+<anchor xml:id="_structzgt_1afa245cc963981088182fcad61a544bb4"/><section>
+    <title>mounting_holes</title>
+<indexterm><primary>mounting_holes</primary><secondary>zgt</secondary></indexterm>
+<indexterm><primary>zgt</primary><secondary>mounting_holes</secondary></indexterm>
+<para><computeroutput>std::vector&lt;double&gt; zgt::mounting_holes</computeroutput></para>
+<para>Отверстия для крепления </para>
+<para>
+См. определение в файле <link linkend="_zgt_8h_source">zgt.h</link> строка <link linkend="_zgt_8h_source_1l00018">18</link></para>
+</section>
+<anchor xml:id="_structzgt_1af7851982bb5b4ce441b81c641775837d"/><section>
+    <title>stop_position</title>
+<indexterm><primary>stop_position</primary><secondary>zgt</secondary></indexterm>
+<indexterm><primary>zgt</primary><secondary>stop_position</secondary></indexterm>
+<para><computeroutput>std::array&lt;double, 3&gt; zgt::stop_position {}</computeroutput></para>
+<para>Позиция стопора </para>
+<para>
+См. определение в файле <link linkend="_zgt_8h_source">zgt.h</link> строка <link linkend="_zgt_8h_source_1l00021">21</link></para>
+</section>
+<para>
+Объявления и описания членов структуры находятся в файле:</para>
+<link linkend="_zgt_8h">zgt.h</link></section>
+</section>

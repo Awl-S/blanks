@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_digit_8cpp_source" xml:lang="ru">
+<title>digit.cpp</title>
+<indexterm><primary>digit.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_digit_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../../include/RenderPDF/RenderPDF.h&quot;</emphasis>
+<anchor xml:id="_digit_8cpp_source_1l00002"/>00002 
+<anchor xml:id="_digit_8cpp_source_1l00009"/><link linkend="_class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52">00009</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1abaccfd0526f13c8d8c5d9f74ceb31f52">RenderPDF::drawDigitIndices</link>(HPDF_Page&#32;page,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;blank)&#32;{
+<anchor xml:id="_digit_8cpp_source_1l00010"/>00010 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Установка&#32;размера&#32;шрифта&#32;для&#32;индексов</emphasis>
+<anchor xml:id="_digit_8cpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36">setFontSize</link>(page,&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>);
+<anchor xml:id="_digit_8cpp_source_1l00012"/>00012 
+<anchor xml:id="_digit_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Цикл&#32;по&#32;всем&#32;меткам</emphasis>
+<anchor xml:id="_digit_8cpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>.size();&#32;i++)&#32;{
+<anchor xml:id="_digit_8cpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Вычисление&#32;угла&#32;для&#32;каждой&#32;метки</emphasis>
+<anchor xml:id="_digit_8cpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;angle&#32;=&#32;4.71239&#32;-&#32;<link linkend="_class_render_p_d_f_1a922299c1a62d014f6a7afcaeddddf0ff">marks</link>[i];
+<anchor xml:id="_digit_8cpp_source_1l00017"/>00017 
+<anchor xml:id="_digit_8cpp_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Форматирование&#32;текста&#32;метки</emphasis>
+<anchor xml:id="_digit_8cpp_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;text&#32;=&#32;<link linkend="_class_render_p_d_f_1a87d9d5335c694603bf6686851879879a">formatText</link>(i);
+<anchor xml:id="_digit_8cpp_source_1l00020"/>00020 
+<anchor xml:id="_digit_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Вычисление&#32;ширины&#32;текста&#32;метки</emphasis>
+<anchor xml:id="_digit_8cpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;textWidth&#32;=&#32;HPDF_Page_TextWidth(page,&#32;text.c_str());
+<anchor xml:id="_digit_8cpp_source_1l00023"/>00023 
+<anchor xml:id="_digit_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Вычисление&#32;координат&#32;x&#32;и&#32;y&#32;для&#32;текста&#32;метки</emphasis>
+<anchor xml:id="_digit_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;x&#32;=&#32;<link linkend="_class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f">calculateXCoordinate</link>(angle,&#32;textWidth,&#32;blank);
+<anchor xml:id="_digit_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HPDF_REAL&#32;y&#32;=&#32;<link linkend="_class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b">calculateYCoordinate</link>(angle,&#32;blank);
+<anchor xml:id="_digit_8cpp_source_1l00027"/>00027 
+<anchor xml:id="_digit_8cpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Рисование&#32;текста&#32;метки&#32;на&#32;странице</emphasis>
+<anchor xml:id="_digit_8cpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_render_p_d_f_1af00237dc614fc46323aead1daae13a15">drawText</link>(page,&#32;text,&#32;x,&#32;y);
+<anchor xml:id="_digit_8cpp_source_1l00030"/>00030 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_digit_8cpp_source_1l00031"/>00031 }
+<anchor xml:id="_digit_8cpp_source_1l00032"/>00032 
+</programlisting></section>

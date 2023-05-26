@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="dir_b0e350edabd710148c030a514adc7053" kind="dir">
+    <compoundname>Converting</compoundname>
+    <innerfile refid="_encoding_converter_8cpp">EncodingConverter.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/src/Converting/"/>
+  </compounddef>
+</doxygen>

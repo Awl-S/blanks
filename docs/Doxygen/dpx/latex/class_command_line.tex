@@ -1,0 +1,241 @@
+\doxysection{Класс Command\+Line}
+\hypertarget{class_command_line}{}\label{class_command_line}\index{CommandLine@{CommandLine}}
+
+
+Класс, представляющий интерфейс командной строки.  
+
+
+
+
+{\ttfamily \#include \"{}Command\+Line.\+h\"{}}
+
+
+
+Граф связей класса Command\+Line\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_command_line__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые типы}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941}{Command\+Type}} \{ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2}{CONVERT}}
+, \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b}{PRINT}}
+, \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26}{GEN}}
+, \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3}{UNKNOWN}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_command_line_a1aa9581e68b84a283af934ccb8aeef3b}{Command\+Line}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Конструктор объекта \doxylink{class_command_line}{Command\+Line}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941}{Command\+Type}} \mbox{\hyperlink{class_command_line_aa17cd3db7ef897f09cb04bd2acbfabd6}{get\+\_\+command\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Получить тип команды. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_command_line_a58060c2f8b6032c5d1feab576b642125}{get\+\_\+args}} () const
+\begin{DoxyCompactList}\small\item\em Получить аргументы команды. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941}{Command\+Type}} \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\+\_\+type}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_command_line_a0b7436a3732b1fc19cfdd3dd48b09fca}{args}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс, представляющий интерфейс командной строки. 
+
+Этот класс обрабатывает аргументы командной строки и категоризирует тип команды на основе аргументов. В настоящее время поддерживаются команды \textquotesingle{}convert\textquotesingle{}, \textquotesingle{}print\textquotesingle{} и \textquotesingle{}gen\textquotesingle{}. 
+
+См. определение в файле \mbox{\hyperlink{_command_line_8h_source}{Command\+Line.\+h}} строка \mbox{\hyperlink{_command_line_8h_source_l00012}{12}}
+
+
+
+\doxysubsection{Перечисления}
+\Hypertarget{class_command_line_a92cbc16916d68d2117eef38093155941}\label{class_command_line_a92cbc16916d68d2117eef38093155941} 
+\index{CommandLine@{CommandLine}!CommandType@{CommandType}}
+\index{CommandType@{CommandType}!CommandLine@{CommandLine}}
+\doxysubsubsection{\texorpdfstring{CommandType}{CommandType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941}{Command\+Line\+::\+Command\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Элементы перечислений}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONVERT@{CONVERT}!CommandLine@{CommandLine}}\index{CommandLine@{CommandLine}!CONVERT@{CONVERT}}}\Hypertarget{class_command_line_a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2}\label{class_command_line_a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2} 
+CONVERT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRINT@{PRINT}!CommandLine@{CommandLine}}\index{CommandLine@{CommandLine}!PRINT@{PRINT}}}\Hypertarget{class_command_line_a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b}\label{class_command_line_a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b} 
+PRINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GEN@{GEN}!CommandLine@{CommandLine}}\index{CommandLine@{CommandLine}!GEN@{GEN}}}\Hypertarget{class_command_line_a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26}\label{class_command_line_a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26} 
+GEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWN@{UNKNOWN}!CommandLine@{CommandLine}}\index{CommandLine@{CommandLine}!UNKNOWN@{UNKNOWN}}}\Hypertarget{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3}\label{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3} 
+UNKNOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+См. определение в файле \mbox{\hyperlink{_command_line_8h_source}{Command\+Line.\+h}} строка \mbox{\hyperlink{_command_line_8h_source_l00015}{15}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2}{CONVERT}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b}{PRINT}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26}{GEN}},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3}{UNKNOWN}}}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{class_command_line_a1aa9581e68b84a283af934ccb8aeef3b}\label{class_command_line_a1aa9581e68b84a283af934ccb8aeef3b} 
+\index{CommandLine@{CommandLine}!CommandLine@{CommandLine}}
+\index{CommandLine@{CommandLine}!CommandLine@{CommandLine}}
+\doxysubsubsection{\texorpdfstring{CommandLine()}{CommandLine()}}
+{\footnotesize\ttfamily Command\+Line\+::\+Command\+Line (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Конструктор объекта \doxylink{class_command_line}{Command\+Line}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em argc} & Количество аргументов командной строки. \\
+\hline
+{\em argv} & Массив аргументов командной строки.\\
+\hline
+\end{DoxyParams}
+Если количество аргументов меньше двух, тип команды будет определен как UNKNOWN. В противном случае тип команды определяется на основе первого аргумента. Остальные аргументы сохраняются в векторе args. 
+
+См. определение в файле \mbox{\hyperlink{_command_line_8cpp_source}{Command\+Line.\+cpp}} строка \mbox{\hyperlink{_command_line_8cpp_source_l00015}{15}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 2)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3}{CommandType::UNKNOWN}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ command(argv[1]);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}convert"{}})\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2}{CommandType::CONVERT}};}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}print"{}})\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b}{CommandType::PRINT}};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}gen"{}})\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26}{CommandType::GEN}};}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}}\ =\ \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3}{CommandType::UNKNOWN}};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 2;\ i\ <\ argc;\ ++i)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_command_line_a0b7436a3732b1fc19cfdd3dd48b09fca}{args}}.emplace\_back(argv[i]);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Методы}
+\Hypertarget{class_command_line_a58060c2f8b6032c5d1feab576b642125}\label{class_command_line_a58060c2f8b6032c5d1feab576b642125} 
+\index{CommandLine@{CommandLine}!get\_args@{get\_args}}
+\index{get\_args@{get\_args}!CommandLine@{CommandLine}}
+\doxysubsubsection{\texorpdfstring{get\_args()}{get\_args()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Command\+Line\+::get\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Получить аргументы команды. 
+
+\begin{DoxyReturn}{Возвращает}
+std\+::vector$<$std\+::string$>$ Аргументы команды.
+\end{DoxyReturn}
+Возвращает вектор строк, представляющих аргументы команды, сохраненные при создании объекта \doxylink{class_command_line}{Command\+Line}. 
+
+См. определение в файле \mbox{\hyperlink{_command_line_8cpp_source}{Command\+Line.\+cpp}} строка \mbox{\hyperlink{_command_line_8cpp_source_l00058}{58}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_command_line_a0b7436a3732b1fc19cfdd3dd48b09fca}{args}};}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{class_command_line_a58060c2f8b6032c5d1feab576b642125_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_command_line_aa17cd3db7ef897f09cb04bd2acbfabd6}\label{class_command_line_aa17cd3db7ef897f09cb04bd2acbfabd6} 
+\index{CommandLine@{CommandLine}!get\_command\_type@{get\_command\_type}}
+\index{get\_command\_type@{get\_command\_type}!CommandLine@{CommandLine}}
+\doxysubsubsection{\texorpdfstring{get\_command\_type()}{get\_command\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941}{Command\+Line\+::\+Command\+Type}} Command\+Line\+::get\+\_\+command\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Получить тип команды. 
+
+\begin{DoxyReturn}{Возвращает}
+Command\+Type Тип команды.
+\end{DoxyReturn}
+Возвращает тип команды, определенный при создании объекта \doxylink{class_command_line}{Command\+Line}. 
+
+См. определение в файле \mbox{\hyperlink{_command_line_8cpp_source}{Command\+Line.\+cpp}} строка \mbox{\hyperlink{_command_line_8cpp_source_l00047}{47}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_command_line_ab4fd31333cdf63113b591497e40d2c82}{command\_type}};}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+Граф вызова функции\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_command_line_aa17cd3db7ef897f09cb04bd2acbfabd6_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Данные класса}
+\Hypertarget{class_command_line_a0b7436a3732b1fc19cfdd3dd48b09fca}\label{class_command_line_a0b7436a3732b1fc19cfdd3dd48b09fca} 
+\index{CommandLine@{CommandLine}!args@{args}}
+\index{args@{args}!CommandLine@{CommandLine}}
+\doxysubsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Command\+Line\+::args\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_command_line_8h_source}{Command\+Line.\+h}} строка \mbox{\hyperlink{_command_line_8h_source_l00025}{25}}
+
+\Hypertarget{class_command_line_ab4fd31333cdf63113b591497e40d2c82}\label{class_command_line_ab4fd31333cdf63113b591497e40d2c82} 
+\index{CommandLine@{CommandLine}!command\_type@{command\_type}}
+\index{command\_type@{command\_type}!CommandLine@{CommandLine}}
+\doxysubsubsection{\texorpdfstring{command\_type}{command\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_command_line_a92cbc16916d68d2117eef38093155941}{Command\+Type}} Command\+Line\+::command\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{_command_line_8h_source}{Command\+Line.\+h}} строка \mbox{\hyperlink{_command_line_8h_source_l00024}{24}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_command_line_8h}{Command\+Line.\+h}}\item 
+\mbox{\hyperlink{_command_line_8cpp}{Command\+Line.\+cpp}}\end{DoxyCompactItemize}

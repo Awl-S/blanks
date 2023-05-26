@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__command_line_8h_source" xml:lang="ru">
+<title>CommandLine.h</title>
+<indexterm><primary>CommandLine.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="__command_line_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANKS_COMMANDLINE_H</emphasis>
+<anchor xml:id="__command_line_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANKS_COMMANDLINE_H</emphasis>
+<anchor xml:id="__command_line_8h_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+<anchor xml:id="__command_line_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+<anchor xml:id="__command_line_8h_source_1l00012"/><link linkend="_class_command_line">00012</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_command_line">CommandLine</link>&#32;{
+<anchor xml:id="__command_line_8h_source_1l00013"/>00013 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="__command_line_8h_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<link linkend="_class_command_line">CommandLine</link>(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;argv[]);
+<anchor xml:id="__command_line_8h_source_1l00015"/><link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">00015</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">enum&#32;class</emphasis>&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandType</link>&#32;{
+<anchor xml:id="__command_line_8h_source_1l00016"/>00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a947a338c0e482e4afcffca292d5944f2">CONVERT</link>,
+<anchor xml:id="__command_line_8h_source_1l00017"/>00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941af96eee4e48ee90430f17fb3a8388507b">PRINT</link>,
+<anchor xml:id="__command_line_8h_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a58cb16120e5f67c8966bbe20c5c8ff26">GEN</link>,
+<anchor xml:id="__command_line_8h_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941a696b031073e74bf2cb98e5ef201d4aa3">UNKNOWN</link>
+<anchor xml:id="__command_line_8h_source_1l00020"/>00020 &#32;&#32;&#32;&#32;};
+<anchor xml:id="__command_line_8h_source_1l00021"/>00021 &#32;&#32;&#32;&#32;[[nodiscard]]&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandType</link>&#32;<link linkend="_class_command_line_1aa17cd3db7ef897f09cb04bd2acbfabd6">get_command_type</link>()&#32;<emphasis role="keyword">const</emphasis>;
+<anchor xml:id="__command_line_8h_source_1l00022"/>00022 &#32;&#32;&#32;&#32;[[nodiscard]]&#32;std::vector&lt;std::string&gt;&#32;<link linkend="_class_command_line_1a58060c2f8b6032c5d1feab576b642125">get_args</link>()&#32;<emphasis role="keyword">const</emphasis>;
+<anchor xml:id="__command_line_8h_source_1l00023"/>00023 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="__command_line_8h_source_1l00024"/><link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">00024</link> &#32;&#32;&#32;&#32;<link linkend="_class_command_line_1a92cbc16916d68d2117eef38093155941">CommandType</link>&#32;<link linkend="_class_command_line_1ab4fd31333cdf63113b591497e40d2c82">command_type</link>;
+<anchor xml:id="__command_line_8h_source_1l00025"/><link linkend="_class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca">00025</link> &#32;&#32;&#32;&#32;std::vector&lt;std::string&gt;&#32;<link linkend="_class_command_line_1a0b7436a3732b1fc19cfdd3dd48b09fca">args</link>;
+<anchor xml:id="__command_line_8h_source_1l00026"/>00026 };
+<anchor xml:id="__command_line_8h_source_1l00027"/>00027 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

@@ -1,0 +1,91 @@
+.TH "tbl" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+tbl \- Структура для хранения данных таблицы\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'tbl\&.h'\fP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBdisplay\fP () const"
+.br
+.RI "Выводит данные таблицы в стандартный вывод\&. "
+.in -1c
+.SS "Открытые атрибуты"
+
+.in +1c
+.ti -1c
+.RI "int \fBposition\fP"
+.br
+.ti -1c
+.RI "std::string \fBmodel\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< double > > \fBmeasurements\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Структура для хранения данных таблицы\&. 
+
+
+.PP
+\fBАргументы\fP
+.RS 4
+\fIposition\fP Позиция в таблице\&. 
+.br
+\fImodel\fP Модель из таблицы\&. 
+.br
+\fImeasurements\fP Измерения, связанные с таблицей\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBtbl\&.h\fP строка \fB15\fP
+.SH "Методы"
+.PP 
+.SS "void tbl::display () const\fC [inline]\fP"
+
+.PP
+Выводит данные таблицы в стандартный вывод\&. 
+.PP
+См\&. определение в файле \fBtbl\&.h\fP строка \fB23\fP.PP
+.nf
+23                          {
+24         std::cout << "Position: " << position << "\\n";
+25         std::cout << "Model: " << model << "\\n";
+26 
+27         std::cout << "Measurements:\\n";
+28         for (const auto& row : measurements) {
+29             for (const auto& value : row) {
+30                 std::cout << value << " ";
+31             }
+32             std::cout << "\\n";
+33         }
+34     }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "std::vector<std::vector<double> > tbl::measurements"
+
+.PP
+См\&. определение в файле \fBtbl\&.h\fP строка \fB18\fP
+.SS "std::string tbl::model"
+
+.PP
+См\&. определение в файле \fBtbl\&.h\fP строка \fB17\fP
+.SS "int tbl::position"
+
+.PP
+См\&. определение в файле \fBtbl\&.h\fP строка \fB16\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

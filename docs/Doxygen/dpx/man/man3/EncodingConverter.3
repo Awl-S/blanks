@@ -1,0 +1,371 @@
+.TH "EncodingConverter" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EncodingConverter \- Класс для преобразования кодировки файлов\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include 'EncodingConverter\&.h'\fP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBEncodingConverter\fP (std::string inputDir, const std::string &outputDir='')"
+.br
+.RI "Конструктор объекта \fBEncodingConverter\fP\&. "
+.ti -1c
+.RI "void \fBconvert\fP ()"
+.br
+.RI "Конвертирует файлы в директории\&. "
+.in -1c
+.SS "Закрытые члены"
+
+.in +1c
+.ti -1c
+.RI "void \fBloadSettings\fP ()"
+.br
+.RI "Загружает настройки преобразования кодировки\&. "
+.ti -1c
+.RI "void \fBconvertDirectory\fP (const std::filesystem::path &dir)"
+.br
+.RI "Конвертирует файлы в указанной директории и её поддиректориях\&. "
+.ti -1c
+.RI "void \fBconvertFile\fP (const std::filesystem::path &filepath)"
+.br
+.RI "Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл\&. "
+.ti -1c
+.RI "void \fBprintStats\fP () const"
+.br
+.RI "Выводит статистику по конвертированным файлам\&. "
+.in -1c
+.SS "Закрытые статические члены"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBiconvConvert\fP (const std::string &input, std::string &output, const std::string &fromCharset, const std::string &toCharset)"
+.br
+.RI "Конвертирует строку из одной кодировки в другую с помощью iconv\&. "
+.ti -1c
+.RI "static bool \fBis_utf8\fP (const std::string &str)"
+.br
+.RI "Проверяет, является ли строка в кодировке UTF-8\&. "
+.in -1c
+.SS "Закрытые данные"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBinputDirectory\fP"
+.br
+.ti -1c
+.RI "std::string \fBoutputDirectory\fP"
+.br
+.ti -1c
+.RI "bool \fBuseTempDirectory\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBfileExtensions\fP"
+.br
+.ti -1c
+.RI "std::string \fBsourceEncoding\fP"
+.br
+.ti -1c
+.RI "std::string \fBtargetEncoding\fP"
+.br
+.ti -1c
+.RI "size_t \fBfilesProcessed\fP"
+.br
+.ti -1c
+.RI "size_t \fBfilesConverted\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+Класс для преобразования кодировки файлов\&. 
+
+Конструктор класса принимает входной и выходной каталоги\&. Если выходной каталог не указан, используется временный каталог\&. 
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB14\fP
+.SH "Конструктор(ы)"
+.PP 
+.SS "EncodingConverter::EncodingConverter (std::string inputDir, const std::string & outputDir = \fC''\fP)"
+
+.PP
+Конструктор объекта \fBEncodingConverter\fP\&. 
+.PP
+\fBАргументы\fP
+.RS 4
+\fIinputDir\fP Входной каталог\&. 
+.br
+\fIoutputDir\fP Выходной каталог\&.
+.RE
+.PP
+Если outputDir пуст, используется временный каталог\&. Загружает настройки преобразования кодировки и сбрасывает счетчики файлов\&. 
+.PP
+См\&. определение в файле \fBEncodingConverter\&.cpp\fP строка \fB17\fP.PP
+.nf
+18         : inputDirectory(std::move(inputDir)), outputDirectory(outputDir), useTempDirectory(outputDir\&.empty()) {
+19     loadSettings(), filesConverted = 0, filesProcessed = 0;
+20 }
+.fi
+
+.SH "Методы"
+.PP 
+.SS "void EncodingConverter::convert ()"
+
+.PP
+Конвертирует файлы в директории\&. Метод конвертирует файлы в указанной директории и выводит статистику по конвертированным файлам\&. Путь к директории, содержащей исходные файлы, задается в переменной inputDirectory\&. 
+.PP
+См\&. определение в файле \fBEncodingConverter\&.cpp\fP строка \fB46\fP.PP
+.nf
+46                                 {
+47     std::filesystem::path inputPath(inputDirectory);
+48     convertDirectory(inputPath);
+49     printStats();
+50 }
+.fi
+
+.SS "void EncodingConverter::convertDirectory (const std::filesystem::path & dir)\fC [private]\fP"
+
+.PP
+Конвертирует файлы в указанной директории и её поддиректориях\&. Метод рекурсивно конвертирует все файлы в указанной директории и её поддиректориях\&. Конвертируемые файлы должны иметь расширения, указанные в списке fileExtensions\&. Если файл имеет другое расширение и outputDirectory указана, он будет скопирован в указанную выходную директорию\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIdir\fP Путь к директории, в которой нужно выполнить конвертацию файлов\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.cpp\fP строка \fB61\fP.PP
+.nf
+61                                                                      {
+62     for (const auto& entry : std::filesystem::recursive_directory_iterator(dir)) {
+63         if (entry\&.is_regular_file()) {
+64             filesProcessed++;
+65             std::filesystem::path relativePath = std::filesystem::relative(entry, inputDirectory);
+66             std::filesystem::path outputPath = useTempDirectory ? std::filesystem::temp_directory_path() / relativePath : outputDirectory / relativePath;
+67 
+68             if (std::find(fileExtensions\&.begin(), fileExtensions\&.end(), entry\&.path()\&.extension()) != fileExtensions\&.end()) {
+69                 convertFile(entry\&.path());
+70             } else if (!outputDirectory\&.empty()) {
+71                 // Если файл имеет другое расширение и outputDirectory указана, копируем его
+72                 std::filesystem::create_directories(outputPath\&.parent_path());
+73                 std::filesystem::copy_file(entry, outputPath, std::filesystem::copy_options::overwrite_existing);
+74             }
+75         }
+76     }
+77 }
+.fi
+
+.SS "void EncodingConverter::convertFile (const std::filesystem::path & filepath)\fC [private]\fP"
+
+.PP
+Конвертирует содержимое файла из одной кодировки в другую и сохраняет результат в файл\&. Метод читает содержимое файла с указанным путем, конвертирует его из исходной кодировки в целевую и сохраняет результат в файл\&. Если включена опция useTempDirectory, то промежуточный файл будет создан во временной директории, а затем скопирован и заменит исходный файл\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIfilepath\fP Путь к файлу, который нужно конвертировать\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.cpp\fP строка \fB128\fP.PP
+.nf
+128                                                                      {
+129     std::cout << filepath << std::endl;
+130     std::ifstream inFile(filepath, std::ios::binary);
+131     std::string content((std::istreambuf_iterator<char>(inFile)), std::istreambuf_iterator<char>());
+132 
+133     std::filesystem::path relativePath = std::filesystem::relative(filepath, inputDirectory);
+134     std::filesystem::path outputPath = useTempDirectory ? std::filesystem::temp_directory_path() / relativePath : outputDirectory / relativePath;
+135     std::filesystem::create_directories(outputPath\&.parent_path());
+136 
+137     if (!is_utf8(content)) {
+138         std::string utf8Content;
+139         if (iconvConvert(content, utf8Content, sourceEncoding, targetEncoding)) {
+140             content = utf8Content;
+141             filesConverted++;
+142         } else {
+143             std::cerr << "Error Converting file '" << filepath << "': Invalid or incomplete multibyte or wide character" << std::endl;
+144         }
+145     }
+146 
+147     std::ofstream outFile(outputPath, std::ios::binary);
+148     outFile\&.write(content\&.data(), content\&.size());
+149     outFile\&.close();
+150 
+151     if (useTempDirectory) {
+152         std::filesystem::copy(outputPath, filepath, std::filesystem::copy_options::overwrite_existing);
+153         std::filesystem::remove(outputPath);
+154     }
+155 }
+.fi
+
+.SS "bool EncodingConverter::iconvConvert (const std::string & input, std::string & output, const std::string & fromCharset, const std::string & toCharset)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Конвертирует строку из одной кодировки в другую с помощью iconv\&. Метод конвертирует строку из одной кодировки в другую с использованием функций iconv\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIinput\fP Входная строка для конвертации\&. 
+.br
+\fIoutput\fP Строка, в которую будет записан результат конвертации\&. 
+.br
+\fIfromCharset\fP Исходная кодировка\&. 
+.br
+\fItoCharset\fP Целевая кодировка\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+true, если конвертация прошла успешно, иначе false\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.cpp\fP строка \fB90\fP.PP
+.nf
+90                                                                                                                                         {
+91     iconv_t cd = iconv_open(toCharset\&.c_str(), fromCharset\&.c_str());
+92     if (cd == (iconv_t)\-1) {
+93         perror("iconv_open");
+94         return false;
+95     }
+96 
+97     std::vector<char> inBuf(input\&.begin(), input\&.end());
+98     size_t inLeft = inBuf\&.size();
+99     size_t outLeft = inLeft * 4;
+100     std::vector<char> outBuf(outLeft);
+101 
+102     char* inPtr = inBuf\&.data();
+103     char* outPtr = outBuf\&.data();
+104 
+105     while (inLeft > 0) {
+106         size_t result = iconv(cd, &inPtr, &inLeft, &outPtr, &outLeft);
+107         if (result == (size_t)\-1) {
+108             iconv_close(cd);
+109             return false;
+110         }
+111     }
+112 
+113     iconv_close(cd);
+114     outBuf\&.resize(outBuf\&.size() \- outLeft);
+115 
+116     output\&.assign(outBuf\&.begin(), outBuf\&.end());
+117     return true;
+118 }
+.fi
+
+.SS "bool EncodingConverter::is_utf8 (const std::string & str)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Проверяет, является ли строка в кодировке UTF-8\&. Метод проверяет, является ли строка в кодировке UTF-8 путем анализа байтовой последовательности\&. Возвращает true, если строка является корректной UTF-8 строкой, иначе false\&.
+.PP
+\fBАргументы\fP
+.RS 4
+\fIstr\fP Строка, которую нужно проверить\&. 
+.RE
+.PP
+\fBВозвращает\fP
+.RS 4
+true, если строка является корректной UTF-8 строкой, иначе false\&. 
+.RE
+.PP
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.cpp\fP строка \fB176\fP.PP
+.nf
+176                                                     {
+177     size_t length = str\&.size();
+178     for (size_t i = 0; i < length; ) {
+179         if ((str[i] & 0x80) == 0) {
+180             i += 1;
+181         } else if ((str[i] & 0xE0) == 0xC0 && i + 1 < length && (str[i + 1] & 0xC0) == 0x80) {
+182             i += 2;
+183         } else if ((str[i] & 0xF0) == 0xE0 && i + 2 < length && (str[i + 1] & 0xC0) == 0x80 && (str[i + 2] & 0xC0) == 0x80) {
+184             i += 3;
+185         } else if ((str[i] & 0xF8) == 0xF0 && i + 3 < length && (str[i + 1] & 0xC0) == 0x80 && (str[i + 2] & 0xC0) == 0x80 && (str[i + 3] & 0xC0) == 0x80) {
+186             i += 4;
+187         } else {
+188             return false;
+189         }
+190     }
+191     return true;
+192 }
+.fi
+
+.SS "void EncodingConverter::loadSettings ()\fC [private]\fP"
+
+.PP
+Загружает настройки преобразования кодировки\&. Устанавливает исходную кодировку в 'UTF-8' и целевую кодировку в 'WINDOWS-1251'\&. Задает расширения файлов, которые следует преобразовывать\&. 
+.PP
+См\&. определение в файле \fBEncodingConverter\&.cpp\fP строка \fB28\fP.PP
+.nf
+28                                     {
+29     sourceEncoding = "WINDOWS\-1251";
+30     targetEncoding = "UTF\-8";
+31 
+32     // Создаем массив итераторов на строки, которые нужно добавить
+33     std::string extensions[] = { "\&.tbl", "\&.нбр", "\&.згт", "\&.cfm" };
+34     size_t numExtensions = sizeof(extensions) / sizeof(extensions[0]);
+35 
+36     // Используем конструктор std::vector, принимающий два итератора
+37     fileExtensions\&.insert(fileExtensions\&.end(), extensions, extensions + numExtensions);
+38 }
+.fi
+
+.SS "void EncodingConverter::printStats () const\fC [private]\fP"
+
+.PP
+Выводит статистику по конвертированным файлам\&. Метод выводит информацию о количестве обработанных и конвертированных файлов\&. 
+.PP
+См\&. определение в файле \fBEncodingConverter\&.cpp\fP строка \fB162\fP.PP
+.nf
+162                                          {
+163     std::cout << "Files processed: " << filesProcessed << std::endl;
+164     std::cout << "Files converted: " << filesConverted << std::endl;
+165 }
+.fi
+
+.SH "Данные класса"
+.PP 
+.SS "std::vector<std::string> EncodingConverter::fileExtensions\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB22\fP
+.SS "size_t EncodingConverter::filesConverted\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB26\fP
+.SS "size_t EncodingConverter::filesProcessed\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB25\fP
+.SS "std::string EncodingConverter::inputDirectory\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB19\fP
+.SS "std::string EncodingConverter::outputDirectory\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB20\fP
+.SS "std::string EncodingConverter::sourceEncoding\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB23\fP
+.SS "std::string EncodingConverter::targetEncoding\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB24\fP
+.SS "bool EncodingConverter::useTempDirectory\fC [private]\fP"
+
+.PP
+См\&. определение в файле \fBEncodingConverter\&.h\fP строка \fB21\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

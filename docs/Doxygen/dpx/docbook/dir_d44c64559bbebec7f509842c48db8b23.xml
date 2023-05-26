@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_d44c64559bbebec7f509842c48db8b23" xml:lang="ru">
+<title>Содержание директории include</title>
+<indexterm><primary>Содержание директории include</primary></indexterm>
+Директория графа зависимостей include:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_d44c64559bbebec7f509842c48db8b23_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Директории    </title>
+        <itemizedlist>
+            <listitem><para>директория <link linkend="_dir_6b6970125a5fe838d7bc08f1f3cd56a6">CommandLine</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_2dbcd2ee52d6f3b0d99f870a4f848602">Converting</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_c2c259897cc2262388737d6a290322c8">Generated</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_3c6f26092d098408ec1d4e19068637e3">Parser</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_6616e9343255ee54ae6d093b3d69d88c">Reader</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_402311c011274d4063aba34f75c813eb">RenderPDF</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_06cab3a81b35ca7bdfaa2da1fffea9da">struct</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

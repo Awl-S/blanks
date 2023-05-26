@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_nbr_8h" xml:lang="ru">
+<title>Файл nbr.h</title>
+<indexterm><primary>nbr.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;map&gt;<?linebreak?>#include &lt;string&gt;<?linebreak?></programlisting>Граф включаемых заголовочных файлов для nbr.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nbr_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф файлов, в которые включается этот файл:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="nbr_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Классы    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structnbr">nbr</link></para>
+
+<para>Структура для хранения данных типа nbr. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

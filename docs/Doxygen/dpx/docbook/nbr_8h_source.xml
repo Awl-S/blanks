@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_nbr_8h_source" xml:lang="ru">
+<title>nbr.h</title>
+<indexterm><primary>nbr.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_nbr_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#ifndef&#32;BLANK_NBR_H</emphasis>
+<anchor xml:id="_nbr_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#define&#32;BLANK_NBR_H</emphasis>
+<anchor xml:id="_nbr_8h_source_1l00003"/>00003 
+<anchor xml:id="_nbr_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&lt;map&gt;</emphasis>
+<anchor xml:id="_nbr_8h_source_1l00005"/>00005 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+<anchor xml:id="_nbr_8h_source_1l00006"/>00006 
+<anchor xml:id="_nbr_8h_source_1l00014"/><link linkend="_structnbr">00014</link> <emphasis role="keyword">struct&#32;</emphasis><link linkend="_structnbr">nbr</link>{
+<anchor xml:id="_nbr_8h_source_1l00015"/><link linkend="_structnbr_1a54d820aea6c166beb70523a0694dc669">00015</link> &#32;&#32;&#32;&#32;std::map&lt;size_t,&#32;std::string&gt;&#32;<link linkend="_structnbr_1a54d820aea6c166beb70523a0694dc669">icon</link>;&#32;
+<anchor xml:id="_nbr_8h_source_1l00017"/>00017 };
+<anchor xml:id="_nbr_8h_source_1l00018"/>00018 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//BLANK_NBR_H</emphasis>
+</programlisting></section>

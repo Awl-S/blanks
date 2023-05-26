@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__plug_8h" xml:lang="ru">
+<title>Файл Plug.h</title>
+<indexterm><primary>Plug.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;string&gt;<?linebreak?>#include &quot;ParserConfiguration.h&quot;<?linebreak?>#include &quot;json.h&quot;<?linebreak?></programlisting>Граф включаемых заголовочных файлов для Plug.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_plug_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Граф файлов, в которые включается этот файл:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_plug_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Пространства имен    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespaceparser">parser</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Функции    </title>
+        <itemizedlist>
+            <listitem><para>static std::unique_ptr&lt; <link linkend="_class_parser_configuration">ParserConfiguration</link> &gt; <link linkend="_namespaceparser_1a6a1b9a41dcebf3bc40e63bcb26a93f64">parser::create</link> (const std::string &amp;config_file_path)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

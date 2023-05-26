@@ -1,0 +1,34 @@
+\doxysection{Encoding\+Converter.\+h}
+\hypertarget{_encoding_converter_8h_source}{}\label{_encoding_converter_8h_source}\index{EncodingConverter.h@{EncodingConverter.h}}
+\mbox{\hyperlink{_encoding_converter_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ BLANKS\_ENCODINGCONVERTER\_H}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ BLANKS\_ENCODINGCONVERTER\_H}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}string"{}}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}vector"{}}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}filesystem"{}}}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00014}\mbox{\hyperlink{class_encoding_converter}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_encoding_converter}{EncodingConverter}}\ \{}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_encoding_converter}{EncodingConverter}}(std::string\ \ inputDir,\ \textcolor{keyword}{const}\ std::string\&\ outputDir\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_ae79126a88077fe4ac04a5cd09edf72d3}{convert}}();}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00018}00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00019}\mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{00019}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_encoding_converter_aeeb826a3fbe68c0e94a9621efef19c9e}{inputDirectory}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00020}\mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{00020}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_encoding_converter_a7069e0d212765a9eae194b5b6f5edff4}{outputDirectory}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00021}\mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{00021}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_encoding_converter_ac566af31b8555e40cb8b14cbb21e5f02}{useTempDirectory}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00022}\mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{00022}}\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_encoding_converter_a7a697b1dd34f92c0ee0d94ea98966f89}{fileExtensions}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00023}\mbox{\hyperlink{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f}{00023}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_encoding_converter_a5b25a05020fd9ba0638cf2e21f69369f}{sourceEncoding}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00024}\mbox{\hyperlink{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7}{00024}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_encoding_converter_acbdca252b050fca89d6fda1caef80da7}{targetEncoding}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00025}\mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{00025}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_encoding_converter_a51031e51d1ab00d24ff3d1912044bf6b}{filesProcessed}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00026}\mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{00026}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_encoding_converter_a560484bdcdc929771c7d42877cab9643}{filesConverted}};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_a327b6fd6e84ab1949e73302fc9e153e4}{loadSettings}}();}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_ab066b92f365f593c44d6825071463e08}{convertDirectory}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ dir);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_a460858eb34940271be93a5aa08452a66}{convertFile}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ filepath);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_encoding_converter_ac7f6cefb08a76f5fa3696ee18beb8faf}{iconvConvert}}(\textcolor{keyword}{const}\ std::string\&\ input,\ std::string\&\ output,\ \textcolor{keyword}{const}\ std::string\&\ fromCharset,\ \textcolor{keyword}{const}\ std::string\&\ toCharset);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_encoding_converter_a6a4a2d610029ac2c890fb0265626ebd0}{printStats}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_encoding_converter_a9b72ba808c4b0c7087f63fd0c3b8a5d7}{is\_utf8}}(\textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00034}00034\ \};}
+\DoxyCodeLine{\Hypertarget{_encoding_converter_8h_source_l00035}00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//BLANKS\_ENCODINGCONVERTER\_H}}
+
+\end{DoxyCode}

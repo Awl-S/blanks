@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_draw_8cpp_source" xml:lang="ru">
+<title>draw.cpp</title>
+<indexterm><primary>draw.cpp</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_draw_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../../include/RenderPDF/RenderPDF.h&quot;</emphasis>
+<anchor xml:id="_draw_8cpp_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&lt;cmath&gt;</emphasis>
+<anchor xml:id="_draw_8cpp_source_1l00003"/>00003 
+<anchor xml:id="_draw_8cpp_source_1l00010"/><link linkend="_class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36">00010</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a0c2cb9d669fedf5910e7be20e7bb4b36">RenderPDF::setFontSize</link>(HPDF_Page&#32;page,&#32;<emphasis role="keywordtype">double</emphasis>&#32;size)&#32;{
+<anchor xml:id="_draw_8cpp_source_1l00011"/>00011 &#32;&#32;&#32;&#32;HPDF_Page_SetFontAndSize(page,&#32;<link linkend="_class_render_p_d_f_1a501db80f3bb869b9b3cff1722b040781">font_</link>,&#32;size);
+<anchor xml:id="_draw_8cpp_source_1l00012"/>00012 &#32;&#32;&#32;&#32;HPDF_Page_SetHeight(page,&#32;420);
+<anchor xml:id="_draw_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;HPDF_Page_SetWidth(page,&#32;297);
+<anchor xml:id="_draw_8cpp_source_1l00014"/>00014 }
+<anchor xml:id="_draw_8cpp_source_1l00015"/>00015 
+<anchor xml:id="_draw_8cpp_source_1l00024"/><link linkend="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27">00024</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1a50a4d487307986751eb5087f25961c27">RenderPDF::drawCircle</link>(HPDF_Page&#32;page,&#32;<emphasis role="keywordtype">double</emphasis>&#32;x,&#32;<emphasis role="keywordtype">double</emphasis>&#32;y,&#32;<emphasis role="keywordtype">double</emphasis>&#32;radius)&#32;{
+<anchor xml:id="_draw_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;HPDF_Page_Circle(page,&#32;x,&#32;y,&#32;radius);
+<anchor xml:id="_draw_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;HPDF_Page_Stroke(page);
+<anchor xml:id="_draw_8cpp_source_1l00027"/>00027 }
+<anchor xml:id="_draw_8cpp_source_1l00028"/>00028 
+<anchor xml:id="_draw_8cpp_source_1l00038"/><link linkend="_class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679">00038</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1ae17f88d413daf207f1b93fc43a8fd679">RenderPDF::draw_line</link>(HPDF_Page&#32;page,&#32;HPDF_REAL&#32;x1,&#32;HPDF_REAL&#32;y1,&#32;HPDF_REAL&#32;x2,&#32;HPDF_REAL&#32;y2)&#32;{
+<anchor xml:id="_draw_8cpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;HPDF_Page_MoveTo(page,&#32;x1,&#32;y1);
+<anchor xml:id="_draw_8cpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;HPDF_Page_LineTo(page,&#32;x2,&#32;y2);
+<anchor xml:id="_draw_8cpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;HPDF_Page_Stroke(page);
+<anchor xml:id="_draw_8cpp_source_1l00042"/>00042 }
+<anchor xml:id="_draw_8cpp_source_1l00043"/>00043 
+<anchor xml:id="_draw_8cpp_source_1l00052"/><link linkend="_class_render_p_d_f_1af00237dc614fc46323aead1daae13a15">00052</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_render_p_d_f_1af00237dc614fc46323aead1daae13a15">RenderPDF::drawText</link>(HPDF_Page&#32;page,&#32;<emphasis role="keyword">const</emphasis>&#32;std::string&amp;&#32;text,&#32;HPDF_REAL&#32;x,&#32;HPDF_REAL&#32;y)&#32;{
+<anchor xml:id="_draw_8cpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;HPDF_Page_BeginText(page);
+<anchor xml:id="_draw_8cpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;HPDF_Page_MoveTextPos(page,&#32;x,&#32;y);
+<anchor xml:id="_draw_8cpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;HPDF_Page_ShowText(page,&#32;text.c_str());
+<anchor xml:id="_draw_8cpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;HPDF_Page_EndText(page);
+<anchor xml:id="_draw_8cpp_source_1l00057"/>00057 }
+<anchor xml:id="_draw_8cpp_source_1l00058"/>00058 
+<anchor xml:id="_draw_8cpp_source_1l00065"/><link linkend="_class_render_p_d_f_1a87d9d5335c694603bf6686851879879a">00065</link> std::string&#32;<link linkend="_class_render_p_d_f_1a87d9d5335c694603bf6686851879879a">RenderPDF::formatText</link>(<emphasis role="keywordtype">int</emphasis>&#32;i)&#32;{
+<anchor xml:id="_draw_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;std::stringstream&#32;ss;
+<anchor xml:id="_draw_8cpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;ss.precision(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aa85fd3ad8be60f46a501cfd7e4c70ed6">format</link>[1]);
+<anchor xml:id="_draw_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;ss&#32;&lt;&lt;&#32;std::fixed&#32;&lt;&lt;&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1ad4cec00bcb67870e82af90e5d3676161">marks</link>[i];
+<anchor xml:id="_draw_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ss.str();
+<anchor xml:id="_draw_8cpp_source_1l00070"/>00070 }
+<anchor xml:id="_draw_8cpp_source_1l00071"/>00071 
+<anchor xml:id="_draw_8cpp_source_1l00080"/><link linkend="_class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f">00080</link> HPDF_REAL&#32;<link linkend="_class_render_p_d_f_1a98e9f7f26365660413fb541ecd7dc92f">RenderPDF::calculateXCoordinate</link>(HPDF_REAL&#32;angle,&#32;<emphasis role="keywordtype">double</emphasis>&#32;textWidth,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;blank)&#32;{
+<anchor xml:id="_draw_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;marginText&#32;=&#32;1;
+<anchor xml:id="_draw_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;radius&#32;=&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>&#32;/&#32;2.0)&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;/&#32;2;
+<anchor xml:id="_draw_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;HPDF_REAL&#32;x&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;marginText].first&#32;+
+<anchor xml:id="_draw_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]-1)&#32;*&#32;cos(angle)&#32;-&#32;textWidth&#32;/&#32;2;
+<anchor xml:id="_draw_8cpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;x;
+<anchor xml:id="_draw_8cpp_source_1l00086"/>00086 }
+<anchor xml:id="_draw_8cpp_source_1l00087"/>00087 
+<anchor xml:id="_draw_8cpp_source_1l00095"/><link linkend="_class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b">00095</link> HPDF_REAL&#32;<link linkend="_class_render_p_d_f_1a7931b27233f110635d4c15fd83508a3b">RenderPDF::calculateYCoordinate</link>(HPDF_REAL&#32;angle,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;blank)&#32;{
+<anchor xml:id="_draw_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;marginText&#32;=&#32;1;
+<anchor xml:id="_draw_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;radius&#32;=&#32;(<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1aed942bb5ac73f26bb0d48bbeb9ec7a85">diameter</link>&#32;/&#32;2.0)&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]&#32;/&#32;2;
+<anchor xml:id="_draw_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;HPDF_REAL&#32;y&#32;=&#32;<link linkend="_class_render_p_d_f_1afa788735693ee164252a3af3c83bc431">point_data_</link>.<link linkend="_structpoint_1a6917d518caab116551a862eba2717bec">coordinates</link>[<link linkend="_class_render_p_d_f_1aedb69be379199827b2a8c80e7901ea58">point_tbl</link>[blank]&#32;-&#32;marginText].second&#32;+
+<anchor xml:id="_draw_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(radius&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1a8fe3ba9b353d58719364384fc2132825">digital_tick</link>[0]-1)&#32;*&#32;sin(angle)&#32;-&#32;<link linkend="_class_render_p_d_f_1a4188a6f45597ad36f520c78b6ef1278d">cfm_data_</link>.<link linkend="_structcfm_1af1376357880c15d011d9c96fd485714e">digit_height</link>&#32;/&#32;2.5&#32;+&#32;0.5;
+<anchor xml:id="_draw_8cpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;y;
+<anchor xml:id="_draw_8cpp_source_1l00101"/>00101 }
+</programlisting></section>

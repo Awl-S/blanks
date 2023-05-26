@@ -1,0 +1,214 @@
+.TH "CMakeCXXCompilerId.cpp" 3Blanks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CMakeCXXCompilerId.cpp
+.SH SYNOPSIS
+.br
+.PP
+.SS "Макросы"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__has_include\fP(x)   0"
+.br
+.ti -1c
+.RI "#define \fBCOMPILER_ID\fP   ''"
+.br
+.ti -1c
+.RI "#define \fBSTRINGIFY_HELPER\fP(X)   #X"
+.br
+.ti -1c
+.RI "#define \fBSTRINGIFY\fP(X)   \fBSTRINGIFY_HELPER\fP(X)"
+.br
+.ti -1c
+.RI "#define \fBPLATFORM_ID\fP"
+.br
+.ti -1c
+.RI "#define \fBARCHITECTURE_ID\fP"
+.br
+.ti -1c
+.RI "#define \fBDEC\fP(n)"
+.br
+.ti -1c
+.RI "#define \fBHEX\fP(n)"
+.br
+.ti -1c
+.RI "#define \fBCXX_STD\fP   __cplusplus"
+.br
+.in -1c
+.SS "Функции"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Переменные"
+
+.in +1c
+.ti -1c
+.RI "char const  * \fBinfo_compiler\fP = 'INFO' ':' 'compiler[' COMPILER_ID ']'"
+.br
+.ti -1c
+.RI "char const  * \fBinfo_platform\fP = 'INFO' ':' 'platform[' PLATFORM_ID ']'"
+.br
+.ti -1c
+.RI "char const  * \fBinfo_arch\fP = 'INFO' ':' 'arch[' ARCHITECTURE_ID ']'"
+.br
+.ti -1c
+.RI "const char * \fBinfo_language_standard_default\fP"
+.br
+.ti -1c
+.RI "const char * \fBinfo_language_extensions_default\fP"
+.br
+.in -1c
+.SH "Макросы"
+.PP 
+.SS "#define __has_include(x)   0"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB11\fP
+.SS "#define ARCHITECTURE_ID"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB703\fP
+.SS "#define COMPILER_ID   ''"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB414\fP
+.SS "#define CXX_STD   __cplusplus"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB801\fP
+.SS "#define DEC(n)"
+\fBМакроопределение:\fP.PP
+.nf
+  ('0' + (((n) / 10000000)%10)), \\
+  ('0' + (((n) / 1000000)%10)),  \\
+  ('0' + (((n) / 100000)%10)),   \\
+  ('0' + (((n) / 10000)%10)),    \\
+  ('0' + (((n) / 1000)%10)),     \\
+  ('0' + (((n) / 100)%10)),      \\
+  ('0' + (((n) / 10)%10)),       \\
+  ('0' +  ((n) % 10))
+.fi
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB707\fP
+.SS "#define HEX(n)"
+\fBМакроопределение:\fP.PP
+.nf
+  ('0' + ((n)>>28 & 0xF)), \\
+  ('0' + ((n)>>24 & 0xF)), \\
+  ('0' + ((n)>>20 & 0xF)), \\
+  ('0' + ((n)>>16 & 0xF)), \\
+  ('0' + ((n)>>12 & 0xF)), \\
+  ('0' + ((n)>>8  & 0xF)), \\
+  ('0' + ((n)>>4  & 0xF)), \\
+  ('0' + ((n)     & 0xF))
+.fi
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB718\fP
+.SS "#define PLATFORM_ID"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB545\fP
+.SS "#define STRINGIFY(X)   \fBSTRINGIFY_HELPER\fP(X)"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB435\fP
+.SS "#define STRINGIFY_HELPER(X)   #X"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB434\fP
+.SH "Функции"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB832\fP.PP
+.nf
+833 {
+834   int require = 0;
+835   require += info_compiler[argc];
+836   require += info_platform[argc];
+837   require += info_arch[argc];
+838 #ifdef COMPILER_VERSION_MAJOR
+839   require += info_version[argc];
+840 #endif
+841 #ifdef COMPILER_VERSION_INTERNAL
+842   require += info_version_internal[argc];
+843 #endif
+844 #ifdef SIMULATE_ID
+845   require += info_simulate[argc];
+846 #endif
+847 #ifdef SIMULATE_VERSION_MAJOR
+848   require += info_simulate_version[argc];
+849 #endif
+850 #if defined(__CRAYXT_COMPUTE_LINUX_TARGET)
+851   require += info_cray[argc];
+852 #endif
+853   require += info_language_standard_default[argc];
+854   require += info_language_extensions_default[argc];
+855   (void)argv;
+856   return require;
+857 }
+.fi
+
+.SH "Переменные"
+.PP 
+.SS "char const* info_arch = 'INFO' ':' 'arch[' ARCHITECTURE_ID ']'"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB784\fP
+.SS "char const* info_compiler = 'INFO' ':' 'compiler[' COMPILER_ID ']'"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB421\fP
+.SS "const char* info_language_extensions_default"
+\fBИнициализатор\fP.PP
+.nf
+= "INFO" ":" "extensions_default["
+
+
+
+
+
+  "OFF"
+
+"]"
+.fi
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB820\fP
+.SS "const char* info_language_standard_default"
+\fBИнициализатор\fP.PP
+.nf
+= "INFO" ":" "standard_default["
+
+
+
+
+
+
+
+
+
+
+
+  "98"
+
+"]"
+.fi
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB804\fP
+.SS "char const* info_platform = 'INFO' ':' 'platform[' PLATFORM_ID ']'"
+
+.PP
+См\&. определение в файле \fBcmake\-build\-debug/CMakeFiles/3\&.25\&.2/CompilerIdCXX/CMakeCXXCompilerId\&.cpp\fP строка \fB783\fP
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для Blanks из исходного текста\&.

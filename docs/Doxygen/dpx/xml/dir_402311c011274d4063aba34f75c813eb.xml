@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="dir_402311c011274d4063aba34f75c813eb" kind="dir">
+    <compoundname>RenderPDF</compoundname>
+    <innerfile refid="_render_p_d_f_8h">RenderPDF.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/RenderPDF/"/>
+  </compounddef>
+</doxygen>

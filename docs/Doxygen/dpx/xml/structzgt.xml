@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="structzgt" kind="struct" language="C++" prot="public">
+    <compoundname>zgt</compoundname>
+    <includes refid="zgt_8h" local="yes">zgt.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structzgt_1ab347a1a6d59fde2e507a7035e65e2544" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double zgt::diameter</definition>
+        <argsstring></argsstring>
+        <name>diameter</name>
+        <qualifiedname>zgt::diameter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Диаметр </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" line="16" column="12" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" compoundref="zgt_8h" startline="30" endline="47">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">RenderPDF::generatePDF</referencedby>
+        <referencedby refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" compoundref="text_reader_8cpp" startline="55" endline="87">textReader::read_zgt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structzgt_1a158a8320351f554c1aa14cf6436b505f" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double zgt::center_hole_diameter</definition>
+        <argsstring></argsstring>
+        <name>center_hole_diameter</name>
+        <qualifiedname>zgt::center_hole_diameter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Диаметр центрального отверстия </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" line="17" column="12" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" bodystart="17" bodyend="-1"/>
+        <referencedby refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" compoundref="zgt_8h" startline="30" endline="47">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">RenderPDF::generatePDF</referencedby>
+        <referencedby refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" compoundref="text_reader_8cpp" startline="55" endline="87">textReader::read_zgt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structzgt_1afa245cc963981088182fcad61a544bb4" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; zgt::mounting_holes</definition>
+        <argsstring></argsstring>
+        <name>mounting_holes</name>
+        <qualifiedname>zgt::mounting_holes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Отверстия для крепления </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" line="18" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" compoundref="zgt_8h" startline="30" endline="47">display</referencedby>
+        <referencedby refid="class_render_p_d_f_1ab38c3850e484ba597ae3be5dbac1f5b2" compoundref="_print_8cpp" startline="12" endline="89">RenderPDF::generatePDF</referencedby>
+        <referencedby refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" compoundref="text_reader_8cpp" startline="55" endline="87">textReader::read_zgt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structzgt_1a9ca1baeee9e45b33b39efc727f206e34" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; zgt::marker_position</definition>
+        <argsstring></argsstring>
+        <name>marker_position</name>
+        <qualifiedname>zgt::marker_position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Позиция маркера </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" line="19" column="17" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" compoundref="zgt_8h" startline="30" endline="47">display</referencedby>
+        <referencedby refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" compoundref="text_reader_8cpp" startline="55" endline="87">textReader::read_zgt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structzgt_1a31882abc85ea34cbbc6c41192f3c35b8" prot="public" static="no" mutable="no">
+        <type>std::array&lt; double, 2 &gt;</type>
+        <definition>std::array&lt;double, 2&gt; zgt::font_serial_number</definition>
+        <argsstring></argsstring>
+        <name>font_serial_number</name>
+        <qualifiedname>zgt::font_serial_number</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Серийный номер шрифта </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" line="20" column="16" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" compoundref="zgt_8h" startline="30" endline="47">display</referencedby>
+        <referencedby refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" compoundref="text_reader_8cpp" startline="55" endline="87">textReader::read_zgt</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structzgt_1af7851982bb5b4ce441b81c641775837d" prot="public" static="no" mutable="no">
+        <type>std::array&lt; double, 3 &gt;</type>
+        <definition>std::array&lt;double, 3&gt; zgt::stop_position</definition>
+        <argsstring></argsstring>
+        <name>stop_position</name>
+        <qualifiedname>zgt::stop_position</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Позиция стопора </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" line="21" column="16" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" compoundref="zgt_8h" startline="30" endline="47">display</referencedby>
+        <referencedby refid="classtext_reader_1af98fb017c822ba0f17c58a1dda32a787" compoundref="text_reader_8cpp" startline="55" endline="87">textReader::read_zgt</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void zgt::display</definition>
+        <argsstring>() const</argsstring>
+        <name>display</name>
+        <qualifiedname>zgt::display</qualifiedname>
+        <briefdescription>
+<para>Выводит содержимое структуры zgt на консоль. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Функция <ref refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" kindref="member">display()</ref> выводит значения каждого поля структуры zgt на консоль. Затем выводит значения отверстий для крепления, позицию маркера, серийный номер шрифта и позицию стопора. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" line="30" column="10" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" bodystart="30" bodyend="47"/>
+        <references refid="structzgt_1a158a8320351f554c1aa14cf6436b505f" compoundref="zgt_8h" startline="17">center_hole_diameter</references>
+        <references refid="structzgt_1ab347a1a6d59fde2e507a7035e65e2544" compoundref="zgt_8h" startline="16">diameter</references>
+        <references refid="structzgt_1a31882abc85ea34cbbc6c41192f3c35b8" compoundref="zgt_8h" startline="20">font_serial_number</references>
+        <references refid="structzgt_1a9ca1baeee9e45b33b39efc727f206e34" compoundref="zgt_8h" startline="19">marker_position</references>
+        <references refid="structzgt_1afa245cc963981088182fcad61a544bb4" compoundref="zgt_8h" startline="18">mounting_holes</references>
+        <references refid="structzgt_1af7851982bb5b4ce441b81c641775837d" compoundref="zgt_8h" startline="21">stop_position</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="44" endline="136">main</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Структура для хранения данных типа zgt. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Структура zgt содержит поля для хранения различных данных типа zgt, которые представляют параметры для зубчатой передачи. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::array&lt; double, 2 &gt;</label>
+      </node>
+      <node id="4">
+        <label>std::array&lt; double, 3 &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; double &gt;</label>
+      </node>
+      <node id="1">
+        <label>zgt</label>
+        <link refid="structzgt"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>marker_position</edgelabel>
+          <edgelabel>mounting_holes</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>font_serial_number</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>stop_position</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" line="15" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/zgt.h" bodystart="15" bodyend="48"/>
+    <listofallmembers>
+      <member refid="structzgt_1a158a8320351f554c1aa14cf6436b505f" prot="public" virt="non-virtual"><scope>zgt</scope><name>center_hole_diameter</name></member>
+      <member refid="structzgt_1ab347a1a6d59fde2e507a7035e65e2544" prot="public" virt="non-virtual"><scope>zgt</scope><name>diameter</name></member>
+      <member refid="structzgt_1a54f8b1de8e8e339540ddddd0e7503ac2" prot="public" virt="non-virtual"><scope>zgt</scope><name>display</name></member>
+      <member refid="structzgt_1a31882abc85ea34cbbc6c41192f3c35b8" prot="public" virt="non-virtual"><scope>zgt</scope><name>font_serial_number</name></member>
+      <member refid="structzgt_1a9ca1baeee9e45b33b39efc727f206e34" prot="public" virt="non-virtual"><scope>zgt</scope><name>marker_position</name></member>
+      <member refid="structzgt_1afa245cc963981088182fcad61a544bb4" prot="public" virt="non-virtual"><scope>zgt</scope><name>mounting_holes</name></member>
+      <member refid="structzgt_1af7851982bb5b4ce441b81c641775837d" prot="public" virt="non-virtual"><scope>zgt</scope><name>stop_position</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

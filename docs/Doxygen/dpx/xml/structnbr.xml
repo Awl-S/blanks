@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="ru">
+  <compounddef id="structnbr" kind="struct" language="C++" prot="public">
+    <compoundname>nbr</compoundname>
+    <includes refid="nbr_8h" local="yes">nbr.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnbr_1a54d820aea6c166beb70523a0694dc669" prot="public" static="no" mutable="no">
+        <type>std::map&lt; size_t, std::string &gt;</type>
+        <definition>std::map&lt;size_t, std::string&gt; nbr::icon</definition>
+        <argsstring></argsstring>
+        <name>icon</name>
+        <qualifiedname>nbr::icon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Контейнер для хранения иконок </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/nbr.h" line="15" column="14" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/nbr.h" bodystart="15" bodyend="-1"/>
+        <referencedby refid="classtext_reader_1ad25e94320aa8adce9de68445d963b570" compoundref="text_reader_8cpp" startline="163" endline="175">textReader::read_nbr</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Структура для хранения данных типа nbr. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Структура nbr содержит поле для хранения отображения иконок в виде ассоциативного контейнера std::map. Ключом является размер иконки, а значением - строка, представляющая иконку. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::map&lt; size_t, std::string &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>nbr</label>
+        <link refid="structnbr"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>icon</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/nbr.h" line="14" column="1" bodyfile="C:/Users/stawl/OneDrive/Рабочий стол/blanks/include/struct/nbr.h" bodystart="14" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structnbr_1a54d820aea6c166beb70523a0694dc669" prot="public" virt="non-virtual"><scope>nbr</scope><name>icon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
